@@ -78,6 +78,8 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 			return createControlStructure();
 		case STPAsecPackage.COMMAND:
 			return createCommand();
+		case STPAsecPackage.ACTION:
+			return createAction();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -191,6 +193,16 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 	public Command createCommand() {
 		CommandImpl command = new CommandImpl();
 		return command;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Action createAction() {
+		ActionImpl action = new ActionImpl();
+		return action;
 	}
 
 	/**

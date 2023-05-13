@@ -112,13 +112,22 @@ public interface STPAsecPackage extends EPackage {
 	int LOSS_SCENARIO__RELATED_HAZARDS = 4;
 
 	/**
+	 * The feature id for the '<em><b>Causes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOSS_SCENARIO__CAUSES = 5;
+
+	/**
 	 * The number of structural features of the '<em>Loss Scenario</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOSS_SCENARIO_FEATURE_COUNT = 5;
+	int LOSS_SCENARIO_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Loss Scenario</em>' class.
@@ -158,22 +167,13 @@ public interface STPAsecPackage extends EPackage {
 	int HAZARD__DESCRIPTION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Causes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HAZARD__CAUSES = 2;
-
-	/**
 	 * The feature id for the '<em><b>Related Commands</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HAZARD__RELATED_COMMANDS = 3;
+	int HAZARD__RELATED_COMMANDS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Hazard</em>' class.
@@ -182,7 +182,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HAZARD_FEATURE_COUNT = 4;
+	int HAZARD_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Hazard</em>' class.
@@ -433,22 +433,13 @@ public interface STPAsecPackage extends EPackage {
 	int STRUCTURE_ELEMENT__DESCRIPTION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURE_ELEMENT__ELEMENTS = 2;
-
-	/**
 	 * The number of structural features of the '<em>Structure Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURE_ELEMENT_FEATURE_COUNT = 3;
+	int STRUCTURE_ELEMENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Structure Element</em>' class.
@@ -458,6 +449,61 @@ public interface STPAsecPackage extends EPackage {
 	 * @ordered
 	 */
 	int STRUCTURE_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.DataImpl <em>Data</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tau.systemengineering.STPAsec.impl.DataImpl
+	 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getData()
+	 * @generated
+	 */
+	int DATA = 13;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA__NAME = STRUCTURE_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA__DESCRIPTION = STRUCTURE_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA__ID = STRUCTURE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Data</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_FEATURE_COUNT = STRUCTURE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Data</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_OPERATION_COUNT = STRUCTURE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.FeedbackImpl <em>Feedback</em>}' class.
@@ -476,7 +522,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEEDBACK__NAME = STRUCTURE_ELEMENT__NAME;
+	int FEEDBACK__NAME = DATA__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -485,16 +531,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEEDBACK__DESCRIPTION = STRUCTURE_ELEMENT__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEEDBACK__ELEMENTS = STRUCTURE_ELEMENT__ELEMENTS;
+	int FEEDBACK__DESCRIPTION = DATA__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -503,7 +540,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEEDBACK__ID = STRUCTURE_ELEMENT_FEATURE_COUNT + 0;
+	int FEEDBACK__ID = DATA__ID;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -512,7 +549,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEEDBACK__TYPE = STRUCTURE_ELEMENT_FEATURE_COUNT + 1;
+	int FEEDBACK__TYPE = DATA_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Feedback</em>' class.
@@ -521,7 +558,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEEDBACK_FEATURE_COUNT = STRUCTURE_ELEMENT_FEATURE_COUNT + 2;
+	int FEEDBACK_FEATURE_COUNT = DATA_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Feedback</em>' class.
@@ -530,7 +567,71 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEEDBACK_OPERATION_COUNT = STRUCTURE_ELEMENT_OPERATION_COUNT + 0;
+	int FEEDBACK_OPERATION_COUNT = DATA_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.ComponentImpl <em>Component</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tau.systemengineering.STPAsec.impl.ComponentImpl
+	 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getComponent()
+	 * @generated
+	 */
+	int COMPONENT = 14;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__NAME = STRUCTURE_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__DESCRIPTION = STRUCTURE_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Command</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__COMMAND = STRUCTURE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Data Flow</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__DATA_FLOW = STRUCTURE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Component</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_FEATURE_COUNT = STRUCTURE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Component</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_OPERATION_COUNT = STRUCTURE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.ControlledProcessImpl <em>Controlled Process</em>}' class.
@@ -549,7 +650,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLED_PROCESS__NAME = STRUCTURE_ELEMENT__NAME;
+	int CONTROLLED_PROCESS__NAME = COMPONENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -558,16 +659,25 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLED_PROCESS__DESCRIPTION = STRUCTURE_ELEMENT__DESCRIPTION;
+	int CONTROLLED_PROCESS__DESCRIPTION = COMPONENT__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Command</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLED_PROCESS__ELEMENTS = STRUCTURE_ELEMENT__ELEMENTS;
+	int CONTROLLED_PROCESS__COMMAND = COMPONENT__COMMAND;
+
+	/**
+	 * The feature id for the '<em><b>Data Flow</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLED_PROCESS__DATA_FLOW = COMPONENT__DATA_FLOW;
 
 	/**
 	 * The number of structural features of the '<em>Controlled Process</em>' class.
@@ -576,7 +686,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLED_PROCESS_FEATURE_COUNT = STRUCTURE_ELEMENT_FEATURE_COUNT + 0;
+	int CONTROLLED_PROCESS_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Controlled Process</em>' class.
@@ -585,7 +695,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLED_PROCESS_OPERATION_COUNT = STRUCTURE_ELEMENT_OPERATION_COUNT + 0;
+	int CONTROLLED_PROCESS_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.ControllerImpl <em>Controller</em>}' class.
@@ -604,7 +714,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__NAME = STRUCTURE_ELEMENT__NAME;
+	int CONTROLLER__NAME = COMPONENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -613,16 +723,25 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__DESCRIPTION = STRUCTURE_ELEMENT__DESCRIPTION;
+	int CONTROLLER__DESCRIPTION = COMPONENT__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Command</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__ELEMENTS = STRUCTURE_ELEMENT__ELEMENTS;
+	int CONTROLLER__COMMAND = COMPONENT__COMMAND;
+
+	/**
+	 * The feature id for the '<em><b>Data Flow</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__DATA_FLOW = COMPONENT__DATA_FLOW;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -631,7 +750,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__TYPE = STRUCTURE_ELEMENT_FEATURE_COUNT + 0;
+	int CONTROLLER__TYPE = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Controller</em>' class.
@@ -640,7 +759,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER_FEATURE_COUNT = STRUCTURE_ELEMENT_FEATURE_COUNT + 1;
+	int CONTROLLER_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Controller</em>' class.
@@ -649,7 +768,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER_OPERATION_COUNT = STRUCTURE_ELEMENT_OPERATION_COUNT + 0;
+	int CONTROLLER_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.ControlStructureImpl <em>Control Structure</em>}' class.
@@ -662,13 +781,22 @@ public interface STPAsecPackage extends EPackage {
 	int CONTROL_STRUCTURE = 10;
 
 	/**
+	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_STRUCTURE__ELEMENTS = 0;
+
+	/**
 	 * The number of structural features of the '<em>Control Structure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_STRUCTURE_FEATURE_COUNT = 0;
+	int CONTROL_STRUCTURE_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Control Structure</em>' class.
@@ -696,7 +824,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMAND__NAME = STRUCTURE_ELEMENT__NAME;
+	int COMMAND__NAME = DATA__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -705,16 +833,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMAND__DESCRIPTION = STRUCTURE_ELEMENT__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMAND__ELEMENTS = STRUCTURE_ELEMENT__ELEMENTS;
+	int COMMAND__DESCRIPTION = DATA__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -723,7 +842,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMAND__ID = STRUCTURE_ELEMENT_FEATURE_COUNT + 0;
+	int COMMAND__ID = DATA__ID;
 
 	/**
 	 * The number of structural features of the '<em>Command</em>' class.
@@ -732,7 +851,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMAND_FEATURE_COUNT = STRUCTURE_ELEMENT_FEATURE_COUNT + 1;
+	int COMMAND_FEATURE_COUNT = DATA_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Command</em>' class.
@@ -741,7 +860,35 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMAND_OPERATION_COUNT = STRUCTURE_ELEMENT_OPERATION_COUNT + 0;
+	int COMMAND_OPERATION_COUNT = DATA_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.ActionImpl <em>Action</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tau.systemengineering.STPAsec.impl.ActionImpl
+	 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getAction()
+	 * @generated
+	 */
+	int ACTION = 12;
+
+	/**
+	 * The number of structural features of the '<em>Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.LossScenario <em>Loss Scenario</em>}'.
@@ -809,6 +956,17 @@ public interface STPAsecPackage extends EPackage {
 	EReference getLossScenario_RelatedHazards();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.LossScenario#getCauses <em>Causes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Causes</em>'.
+	 * @see tau.systemengineering.STPAsec.LossScenario#getCauses()
+	 * @see #getLossScenario()
+	 * @generated
+	 */
+	EReference getLossScenario_Causes();
+
+	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.Hazard <em>Hazard</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -839,17 +997,6 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getHazard_Description();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.Hazard#getCauses <em>Causes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Causes</em>'.
-	 * @see tau.systemengineering.STPAsec.Hazard#getCauses()
-	 * @see #getHazard()
-	 * @generated
-	 */
-	EReference getHazard_Causes();
 
 	/**
 	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.Hazard#getRelatedCommands <em>Related Commands</em>}'.
@@ -1034,17 +1181,6 @@ public interface STPAsecPackage extends EPackage {
 	EClass getFeedback();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tau.systemengineering.STPAsec.Feedback#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see tau.systemengineering.STPAsec.Feedback#getId()
-	 * @see #getFeedback()
-	 * @generated
-	 */
-	EAttribute getFeedback_Id();
-
-	/**
 	 * Returns the meta object for the attribute '{@link tau.systemengineering.STPAsec.Feedback#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1088,17 +1224,6 @@ public interface STPAsecPackage extends EPackage {
 	EAttribute getStructureElement_Description();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.StructureElement#getElements <em>Elements</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Elements</em>'.
-	 * @see tau.systemengineering.STPAsec.StructureElement#getElements()
-	 * @see #getStructureElement()
-	 * @generated
-	 */
-	EReference getStructureElement_Elements();
-
-	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.ControlledProcess <em>Controlled Process</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1140,6 +1265,17 @@ public interface STPAsecPackage extends EPackage {
 	EClass getControlStructure();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.ControlStructure#getElements <em>Elements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Elements</em>'.
+	 * @see tau.systemengineering.STPAsec.ControlStructure#getElements()
+	 * @see #getControlStructure()
+	 * @generated
+	 */
+	EReference getControlStructure_Elements();
+
+	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.Command <em>Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1150,15 +1286,67 @@ public interface STPAsecPackage extends EPackage {
 	EClass getCommand();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tau.systemengineering.STPAsec.Command#getId <em>Id</em>}'.
+	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.Action <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Action</em>'.
+	 * @see tau.systemengineering.STPAsec.Action
+	 * @generated
+	 */
+	EClass getAction();
+
+	/**
+	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.Data <em>Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Data</em>'.
+	 * @see tau.systemengineering.STPAsec.Data
+	 * @generated
+	 */
+	EClass getData();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tau.systemengineering.STPAsec.Data#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see tau.systemengineering.STPAsec.Command#getId()
-	 * @see #getCommand()
+	 * @see tau.systemengineering.STPAsec.Data#getId()
+	 * @see #getData()
 	 * @generated
 	 */
-	EAttribute getCommand_Id();
+	EAttribute getData_Id();
+
+	/**
+	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.Component <em>Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Component</em>'.
+	 * @see tau.systemengineering.STPAsec.Component
+	 * @generated
+	 */
+	EClass getComponent();
+
+	/**
+	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.Component#getCommand <em>Command</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Command</em>'.
+	 * @see tau.systemengineering.STPAsec.Component#getCommand()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_Command();
+
+	/**
+	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.Component#getDataFlow <em>Data Flow</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Data Flow</em>'.
+	 * @see tau.systemengineering.STPAsec.Component#getDataFlow()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_DataFlow();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1234,6 +1422,14 @@ public interface STPAsecPackage extends EPackage {
 		EReference LOSS_SCENARIO__RELATED_HAZARDS = eINSTANCE.getLossScenario_RelatedHazards();
 
 		/**
+		 * The meta object literal for the '<em><b>Causes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOSS_SCENARIO__CAUSES = eINSTANCE.getLossScenario_Causes();
+
+		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.HazardImpl <em>Hazard</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1258,14 +1454,6 @@ public interface STPAsecPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute HAZARD__DESCRIPTION = eINSTANCE.getHazard_Description();
-
-		/**
-		 * The meta object literal for the '<em><b>Causes</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference HAZARD__CAUSES = eINSTANCE.getHazard_Causes();
 
 		/**
 		 * The meta object literal for the '<em><b>Related Commands</b></em>' reference list feature.
@@ -1414,14 +1602,6 @@ public interface STPAsecPackage extends EPackage {
 		EClass FEEDBACK = eINSTANCE.getFeedback();
 
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FEEDBACK__ID = eINSTANCE.getFeedback_Id();
-
-		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1454,14 +1634,6 @@ public interface STPAsecPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STRUCTURE_ELEMENT__DESCRIPTION = eINSTANCE.getStructureElement_Description();
-
-		/**
-		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STRUCTURE_ELEMENT__ELEMENTS = eINSTANCE.getStructureElement_Elements();
 
 		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.ControlledProcessImpl <em>Controlled Process</em>}' class.
@@ -1502,6 +1674,14 @@ public interface STPAsecPackage extends EPackage {
 		EClass CONTROL_STRUCTURE = eINSTANCE.getControlStructure();
 
 		/**
+		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROL_STRUCTURE__ELEMENTS = eINSTANCE.getControlStructure_Elements();
+
+		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.CommandImpl <em>Command</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1512,12 +1692,58 @@ public interface STPAsecPackage extends EPackage {
 		EClass COMMAND = eINSTANCE.getCommand();
 
 		/**
+		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.ActionImpl <em>Action</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tau.systemengineering.STPAsec.impl.ActionImpl
+		 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getAction()
+		 * @generated
+		 */
+		EClass ACTION = eINSTANCE.getAction();
+
+		/**
+		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.DataImpl <em>Data</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tau.systemengineering.STPAsec.impl.DataImpl
+		 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getData()
+		 * @generated
+		 */
+		EClass DATA = eINSTANCE.getData();
+
+		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMAND__ID = eINSTANCE.getCommand_Id();
+		EAttribute DATA__ID = eINSTANCE.getData_Id();
+
+		/**
+		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.ComponentImpl <em>Component</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tau.systemengineering.STPAsec.impl.ComponentImpl
+		 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getComponent()
+		 * @generated
+		 */
+		EClass COMPONENT = eINSTANCE.getComponent();
+
+		/**
+		 * The meta object literal for the '<em><b>Command</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__COMMAND = eINSTANCE.getComponent_Command();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Flow</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__DATA_FLOW = eINSTANCE.getComponent_DataFlow();
 
 	}
 

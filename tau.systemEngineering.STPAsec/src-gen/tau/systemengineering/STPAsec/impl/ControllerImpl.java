@@ -24,7 +24,7 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  *
  * @generated
  */
-public class ControllerImpl extends StructureElementImpl implements Controller {
+public class ControllerImpl extends ComponentImpl implements Controller {
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->

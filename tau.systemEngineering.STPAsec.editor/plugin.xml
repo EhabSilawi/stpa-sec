@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated STPAsec -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="tau.systemengineering.STPAsec.presentation.STPAsecModelWizardID"
+            name="%_UI_STPAsecModelWizard_label"
+            class="tau.systemengineering.STPAsec.presentation.STPAsecModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/STPAsecModelFile.gif">
+         <description>%_UI_STPAsecModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated STPAsec -->
+      <editor
+            id="tau.systemengineering.STPAsec.presentation.STPAsecEditorID"
+            name="%_UI_STPAsecEditor_label"
+            icon="icons/full/obj16/STPAsecModelFile.gif"
+            extensions="stpasec"
+            class="tau.systemengineering.STPAsec.presentation.STPAsecEditor"
+            contributorClass="tau.systemengineering.STPAsec.presentation.STPAsecActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

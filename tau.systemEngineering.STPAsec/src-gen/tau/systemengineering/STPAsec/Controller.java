@@ -18,7 +18,7 @@ package tau.systemengineering.STPAsec;
  * @model
  * @generated
  */
-public interface Controller extends StructureElement {
+public interface Controller extends Component {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->

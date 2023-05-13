@@ -14,7 +14,7 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  *
  * @generated
  */
-public class ControlledProcessImpl extends StructureElementImpl implements ControlledProcess {
+public class ControlledProcessImpl extends ComponentImpl implements ControlledProcess {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

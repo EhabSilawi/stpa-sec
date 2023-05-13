@@ -112,6 +112,8 @@ public class STPAsecSwitch<T> extends Switch<T> {
 			Feedback feedback = (Feedback) theEObject;
 			T result = caseFeedback(feedback);
 			if (result == null)
+				result = caseData(feedback);
+			if (result == null)
 				result = caseStructureElement(feedback);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -128,6 +130,8 @@ public class STPAsecSwitch<T> extends Switch<T> {
 			ControlledProcess controlledProcess = (ControlledProcess) theEObject;
 			T result = caseControlledProcess(controlledProcess);
 			if (result == null)
+				result = caseComponent(controlledProcess);
+			if (result == null)
 				result = caseStructureElement(controlledProcess);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -136,6 +140,8 @@ public class STPAsecSwitch<T> extends Switch<T> {
 		case STPAsecPackage.CONTROLLER: {
 			Controller controller = (Controller) theEObject;
 			T result = caseController(controller);
+			if (result == null)
+				result = caseComponent(controller);
 			if (result == null)
 				result = caseStructureElement(controller);
 			if (result == null)
@@ -153,7 +159,34 @@ public class STPAsecSwitch<T> extends Switch<T> {
 			Command command = (Command) theEObject;
 			T result = caseCommand(command);
 			if (result == null)
+				result = caseData(command);
+			if (result == null)
 				result = caseStructureElement(command);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case STPAsecPackage.ACTION: {
+			Action action = (Action) theEObject;
+			T result = caseAction(action);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case STPAsecPackage.DATA: {
+			Data data = (Data) theEObject;
+			T result = caseData(data);
+			if (result == null)
+				result = caseStructureElement(data);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case STPAsecPackage.COMPONENT: {
+			Component component = (Component) theEObject;
+			T result = caseComponent(component);
+			if (result == null)
+				result = caseStructureElement(component);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -340,6 +373,51 @@ public class STPAsecSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCommand(Command object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Action</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAction(Action object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseData(Data object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponent(Component object) {
 		return null;
 	}
 

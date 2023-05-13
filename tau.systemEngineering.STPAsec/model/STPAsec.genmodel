@@ -16,11 +16,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//LossScenario/severity"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//LossScenario/solutions"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//LossScenario/relatedHazards"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//LossScenario/causes"/>
     </genClasses>
     <genClasses ecoreClass="STPAsec.ecore#//Hazard">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Hazard/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Hazard/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Hazard/causes"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Hazard/relatedCommands"/>
     </genClasses>
     <genClasses ecoreClass="STPAsec.ecore#//MissionGoal">
@@ -43,21 +43,27 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//STPASec/system"/>
     </genClasses>
     <genClasses ecoreClass="STPAsec.ecore#//Feedback">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Feedback/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Feedback/type"/>
     </genClasses>
     <genClasses ecoreClass="STPAsec.ecore#//StructureElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//StructureElement/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//StructureElement/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//StructureElement/elements"/>
     </genClasses>
     <genClasses ecoreClass="STPAsec.ecore#//ControlledProcess"/>
     <genClasses ecoreClass="STPAsec.ecore#//Controller">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Controller/type"/>
     </genClasses>
-    <genClasses ecoreClass="STPAsec.ecore#//ControlStructure"/>
-    <genClasses ecoreClass="STPAsec.ecore#//Command">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Command/id"/>
+    <genClasses ecoreClass="STPAsec.ecore#//ControlStructure">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlStructure/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="STPAsec.ecore#//Command"/>
+    <genClasses ecoreClass="STPAsec.ecore#//Action"/>
+    <genClasses ecoreClass="STPAsec.ecore#//Data">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Data/id"/>
+    </genClasses>
+    <genClasses ecoreClass="STPAsec.ecore#//Component">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Component/command"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Component/dataFlow"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

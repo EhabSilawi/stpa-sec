@@ -2,23 +2,10 @@
  */
 package tau.systemengineering.STPAsec.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import tau.systemengineering.STPAsec.ControlStructure;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 import tau.systemengineering.STPAsec.StructureElement;
 
@@ -32,7 +19,6 @@ import tau.systemengineering.STPAsec.StructureElement;
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.impl.StructureElementImpl#getName <em>Name</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.StructureElementImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.StructureElementImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
@@ -77,16 +63,6 @@ public abstract class StructureElementImpl extends MinimalEObjectImpl.Container 
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getElements()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ControlStructure> elements;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,33 +132,6 @@ public abstract class StructureElementImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ControlStructure> getElements() {
-		if (elements == null) {
-			elements = new EObjectContainmentEList<ControlStructure>(ControlStructure.class, this,
-					STPAsecPackage.STRUCTURE_ELEMENT__ELEMENTS);
-		}
-		return elements;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case STPAsecPackage.STRUCTURE_ELEMENT__ELEMENTS:
-			return ((InternalEList<?>) getElements()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -190,8 +139,6 @@ public abstract class StructureElementImpl extends MinimalEObjectImpl.Container 
 			return getName();
 		case STPAsecPackage.STRUCTURE_ELEMENT__DESCRIPTION:
 			return getDescription();
-		case STPAsecPackage.STRUCTURE_ELEMENT__ELEMENTS:
-			return getElements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,10 +158,6 @@ public abstract class StructureElementImpl extends MinimalEObjectImpl.Container 
 		case STPAsecPackage.STRUCTURE_ELEMENT__DESCRIPTION:
 			setDescription((String) newValue);
 			return;
-		case STPAsecPackage.STRUCTURE_ELEMENT__ELEMENTS:
-			getElements().clear();
-			getElements().addAll((Collection<? extends ControlStructure>) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -233,9 +176,6 @@ public abstract class StructureElementImpl extends MinimalEObjectImpl.Container 
 		case STPAsecPackage.STRUCTURE_ELEMENT__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
 			return;
-		case STPAsecPackage.STRUCTURE_ELEMENT__ELEMENTS:
-			getElements().clear();
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -252,8 +192,6 @@ public abstract class StructureElementImpl extends MinimalEObjectImpl.Container 
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case STPAsecPackage.STRUCTURE_ELEMENT__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		case STPAsecPackage.STRUCTURE_ELEMENT__ELEMENTS:
-			return elements != null && !elements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

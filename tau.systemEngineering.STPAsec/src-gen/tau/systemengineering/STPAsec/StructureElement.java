@@ -2,8 +2,6 @@
  */
 package tau.systemengineering.STPAsec;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -17,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.StructureElement#getName <em>Name</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.StructureElement#getDescription <em>Description</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.StructureElement#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getStructureElement()
@@ -68,17 +65,5 @@ public interface StructureElement extends EObject {
 	 * @generated
 	 */
 	void setDescription(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-	 * The list contents are of type {@link tau.systemengineering.STPAsec.ControlStructure}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Elements</em>' containment reference list.
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getStructureElement_Elements()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<ControlStructure> getElements();
 
 } // StructureElement
