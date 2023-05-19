@@ -158,7 +158,7 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 				STPAsecFactory.eINSTANCE.createController()));
 
 		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__ELEMENTS,
-				STPAsecFactory.eINSTANCE.createCommand()));
+				STPAsecFactory.eINSTANCE.createControlAction()));
 	}
 
 	/**

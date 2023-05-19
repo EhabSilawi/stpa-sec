@@ -71,7 +71,7 @@ public interface Hazard extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Related Commands</b></em>' reference list.
-	 * The list contents are of type {@link tau.systemengineering.STPAsec.Command}.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.ControlAction}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Related Commands</em>' reference list.
@@ -79,6 +79,6 @@ public interface Hazard extends EObject {
 	 * @model
 	 * @generated
 	 */
-	EList<Command> getRelatedCommands();
+	EList<ControlAction> getRelatedCommands();
 
 } // Hazard

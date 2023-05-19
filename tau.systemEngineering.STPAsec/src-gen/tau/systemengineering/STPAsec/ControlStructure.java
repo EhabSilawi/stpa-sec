@@ -3,6 +3,7 @@
 package tau.systemengineering.STPAsec;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,7 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface ControlStructure extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
 	 * The list contents are of type {@link tau.systemengineering.STPAsec.StructureElement}.
@@ -34,4 +34,5 @@ public interface ControlStructure extends EObject {
 	 * @generated
 	 */
 	EList<StructureElement> getElements();
+
 } // ControlStructure

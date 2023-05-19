@@ -165,26 +165,26 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.Mission} instances.
+	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.System} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MissionItemProvider missionItemProvider;
+	protected SystemItemProvider systemItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.Mission}.
+	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.System}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createMissionAdapter() {
-		if (missionItemProvider == null) {
-			missionItemProvider = new MissionItemProvider(this);
+	public Adapter createSystemAdapter() {
+		if (systemItemProvider == null) {
+			systemItemProvider = new SystemItemProvider(this);
 		}
 
-		return missionItemProvider;
+		return systemItemProvider;
 	}
 
 	/**
@@ -303,49 +303,26 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.Command} instances.
+	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.ControlAction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CommandItemProvider commandItemProvider;
+	protected ControlActionItemProvider controlActionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.Command}.
+	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.ControlAction}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCommandAdapter() {
-		if (commandItemProvider == null) {
-			commandItemProvider = new CommandItemProvider(this);
+	public Adapter createControlActionAdapter() {
+		if (controlActionItemProvider == null) {
+			controlActionItemProvider = new ControlActionItemProvider(this);
 		}
 
-		return commandItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.Action} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ActionItemProvider actionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.Action}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createActionAdapter() {
-		if (actionItemProvider == null) {
-			actionItemProvider = new ActionItemProvider(this);
-		}
-
-		return actionItemProvider;
+		return controlActionItemProvider;
 	}
 
 	/**
@@ -455,8 +432,8 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 			missionGoalItemProvider.dispose();
 		if (securityRecomendationItemProvider != null)
 			securityRecomendationItemProvider.dispose();
-		if (missionItemProvider != null)
-			missionItemProvider.dispose();
+		if (systemItemProvider != null)
+			systemItemProvider.dispose();
 		if (stpaSecItemProvider != null)
 			stpaSecItemProvider.dispose();
 		if (feedbackItemProvider != null)
@@ -467,10 +444,8 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 			controllerItemProvider.dispose();
 		if (controlStructureItemProvider != null)
 			controlStructureItemProvider.dispose();
-		if (commandItemProvider != null)
-			commandItemProvider.dispose();
-		if (actionItemProvider != null)
-			actionItemProvider.dispose();
+		if (controlActionItemProvider != null)
+			controlActionItemProvider.dispose();
 	}
 
 }

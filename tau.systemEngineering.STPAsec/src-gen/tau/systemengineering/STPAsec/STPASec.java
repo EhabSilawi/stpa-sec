@@ -26,12 +26,12 @@ public interface STPASec extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>System</em>' containment reference.
-	 * @see #setSystem(Mission)
+	 * @see #setSystem(tau.systemengineering.STPAsec.System)
 	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSTPASec_System()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Mission getSystem();
+	tau.systemengineering.STPAsec.System getSystem();
 
 	/**
 	 * Sets the value of the '{@link tau.systemengineering.STPAsec.STPASec#getSystem <em>System</em>}' containment reference.
@@ -41,6 +41,6 @@ public interface STPASec extends EObject {
 	 * @see #getSystem()
 	 * @generated
 	 */
-	void setSystem(Mission value);
+	void setSystem(tau.systemengineering.STPAsec.System value);
 
 } // STPASec

@@ -22,7 +22,7 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ControllerItemProvider extends ComponentItemProvider {
+public class ControllerItemProvider extends StructureElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -45,6 +45,7 @@ public class ControllerItemProvider extends ComponentItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTypePropertyDescriptor(object);
+			addFeadbackPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -63,6 +64,21 @@ public class ControllerItemProvider extends ComponentItemProvider {
 								"_UI_Controller_type"),
 						STPAsecPackage.Literals.CONTROLLER__TYPE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Feadback feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFeadbackPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Controller_feadback_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Controller_feadback_feature",
+								"_UI_Controller_type"),
+						STPAsecPackage.Literals.CONTROLLER__FEADBACK, true, false, true, null, null, null));
 	}
 
 	/**

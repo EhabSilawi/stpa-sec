@@ -3,23 +3,23 @@
 package tau.systemengineering.STPAsec.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import tau.systemengineering.STPAsec.Command;
+import tau.systemengineering.STPAsec.ControlAction;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Command</b></em>'.
+ * An implementation of the model object '<em><b>Control Action</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class CommandImpl extends DataImpl implements Command {
+public class ControlActionImpl extends DataFlowImpl implements ControlAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CommandImpl() {
+	protected ControlActionImpl() {
 		super();
 	}
 
@@ -30,7 +30,7 @@ public class CommandImpl extends DataImpl implements Command {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return STPAsecPackage.Literals.COMMAND;
+		return STPAsecPackage.Literals.CONTROL_ACTION;
 	}
 
-} //CommandImpl
+} //ControlActionImpl

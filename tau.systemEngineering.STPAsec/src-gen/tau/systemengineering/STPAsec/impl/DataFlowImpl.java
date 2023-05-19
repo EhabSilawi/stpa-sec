@@ -8,23 +8,23 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import tau.systemengineering.STPAsec.Data;
+import tau.systemengineering.STPAsec.DataFlow;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Data</b></em>'.
+ * An implementation of the model object '<em><b>Data Flow</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tau.systemengineering.STPAsec.impl.DataImpl#getId <em>Id</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.DataFlowImpl#getId <em>Id</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class DataImpl extends StructureElementImpl implements Data {
+public abstract class DataFlowImpl extends StructureElementImpl implements DataFlow {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -50,7 +50,7 @@ public abstract class DataImpl extends StructureElementImpl implements Data {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DataImpl() {
+	protected DataFlowImpl() {
 		super();
 	}
 
@@ -61,7 +61,7 @@ public abstract class DataImpl extends StructureElementImpl implements Data {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return STPAsecPackage.Literals.DATA;
+		return STPAsecPackage.Literals.DATA_FLOW;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public abstract class DataImpl extends StructureElementImpl implements Data {
 		int oldId = id;
 		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.DATA__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.DATA_FLOW__ID, oldId, id));
 	}
 
 	/**
@@ -93,7 +93,7 @@ public abstract class DataImpl extends StructureElementImpl implements Data {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case STPAsecPackage.DATA__ID:
+		case STPAsecPackage.DATA_FLOW__ID:
 			return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +107,7 @@ public abstract class DataImpl extends StructureElementImpl implements Data {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case STPAsecPackage.DATA__ID:
+		case STPAsecPackage.DATA_FLOW__ID:
 			setId((Integer) newValue);
 			return;
 		}
@@ -122,7 +122,7 @@ public abstract class DataImpl extends StructureElementImpl implements Data {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case STPAsecPackage.DATA__ID:
+		case STPAsecPackage.DATA_FLOW__ID:
 			setId(ID_EDEFAULT);
 			return;
 		}
@@ -137,7 +137,7 @@ public abstract class DataImpl extends StructureElementImpl implements Data {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case STPAsecPackage.DATA__ID:
+		case STPAsecPackage.DATA_FLOW__ID:
 			return id != ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -160,4 +160,4 @@ public abstract class DataImpl extends StructureElementImpl implements Data {
 		return result.toString();
 	}
 
-} //DataImpl
+} //DataFlowImpl

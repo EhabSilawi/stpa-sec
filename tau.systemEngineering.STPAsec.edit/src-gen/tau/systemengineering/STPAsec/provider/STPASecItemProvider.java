@@ -151,7 +151,7 @@ public class STPASecItemProvider extends ItemProviderAdapter implements IEditing
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.STPA_SEC__SYSTEM,
-				STPAsecFactory.eINSTANCE.createMission()));
+				STPAsecFactory.eINSTANCE.createSystem()));
 	}
 
 	/**

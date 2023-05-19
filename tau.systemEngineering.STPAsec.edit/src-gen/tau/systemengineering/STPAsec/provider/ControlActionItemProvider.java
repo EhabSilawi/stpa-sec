@@ -7,27 +7,24 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import tau.systemengineering.STPAsec.Component;
-import tau.systemengineering.STPAsec.STPAsecPackage;
+import tau.systemengineering.STPAsec.ControlAction;
 
 /**
- * This is the item provider adapter for a {@link tau.systemengineering.STPAsec.Component} object.
+ * This is the item provider adapter for a {@link tau.systemengineering.STPAsec.ControlAction} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentItemProvider extends StructureElementItemProvider {
+public class ControlActionItemProvider extends DataFlowItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentItemProvider(AdapterFactory adapterFactory) {
+	public ControlActionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -42,51 +39,19 @@ public class ComponentItemProvider extends StructureElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommandPropertyDescriptor(object);
-			addDataFlowPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Command feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommandPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Component_command_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Component_command_feature",
-								"_UI_Component_type"),
-						STPAsecPackage.Literals.COMPONENT__COMMAND, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Data Flow feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDataFlowPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Component_dataFlow_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Component_dataFlow_feature",
-								"_UI_Component_type"),
-						STPAsecPackage.Literals.COMPONENT__DATA_FLOW, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This returns Component.gif.
+	 * This returns ControlAction.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Component"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ControlAction"));
 	}
 
 	/**
@@ -107,9 +72,9 @@ public class ComponentItemProvider extends StructureElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Component) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Component_type")
-				: getString("_UI_Component_type") + " " + label;
+		String label = ((ControlAction) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_ControlAction_type")
+				: getString("_UI_ControlAction_type") + " " + label;
 	}
 
 	/**

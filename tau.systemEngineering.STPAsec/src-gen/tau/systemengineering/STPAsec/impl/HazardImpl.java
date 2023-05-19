@@ -5,13 +5,16 @@ package tau.systemengineering.STPAsec.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import tau.systemengineering.STPAsec.Command;
+import tau.systemengineering.STPAsec.ControlAction;
 import tau.systemengineering.STPAsec.Hazard;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 
@@ -79,7 +82,7 @@ public class HazardImpl extends MinimalEObjectImpl.Container implements Hazard {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Command> relatedCommands;
+	protected EList<ControlAction> relatedCommands;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,9 +151,9 @@ public class HazardImpl extends MinimalEObjectImpl.Container implements Hazard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Command> getRelatedCommands() {
+	public EList<ControlAction> getRelatedCommands() {
 		if (relatedCommands == null) {
-			relatedCommands = new EObjectResolvingEList<Command>(Command.class, this,
+			relatedCommands = new EObjectResolvingEList<ControlAction>(ControlAction.class, this,
 					STPAsecPackage.HAZARD__RELATED_COMMANDS);
 		}
 		return relatedCommands;
@@ -191,7 +194,7 @@ public class HazardImpl extends MinimalEObjectImpl.Container implements Hazard {
 			return;
 		case STPAsecPackage.HAZARD__RELATED_COMMANDS:
 			getRelatedCommands().clear();
-			getRelatedCommands().addAll((Collection<? extends Command>) newValue);
+			getRelatedCommands().addAll((Collection<? extends ControlAction>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

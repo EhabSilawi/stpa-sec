@@ -20,29 +20,29 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import tau.systemengineering.STPAsec.ControlStructure;
 import tau.systemengineering.STPAsec.LossScenario;
-import tau.systemengineering.STPAsec.Mission;
 import tau.systemengineering.STPAsec.MissionGoal;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 import tau.systemengineering.STPAsec.SecurityRecomendation;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Mission</b></em>'.
+ * An implementation of the model object '<em><b>System</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tau.systemengineering.STPAsec.impl.MissionImpl#getName <em>Name</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.MissionImpl#getRecomends <em>Recomends</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.MissionImpl#getGoals <em>Goals</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.MissionImpl#getScenario <em>Scenario</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.MissionImpl#getConsistsOf <em>Consists Of</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getName <em>Name</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getRecomends <em>Recomends</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getGoals <em>Goals</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getScenario <em>Scenario</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getConsistsOf <em>Consists Of</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MissionImpl extends MinimalEObjectImpl.Container implements Mission {
+public class SystemImpl extends MinimalEObjectImpl.Container implements tau.systemengineering.STPAsec.System {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -104,11 +104,31 @@ public class MissionImpl extends MinimalEObjectImpl.Container implements Mission
 	protected ControlStructure consistsOf;
 
 	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MissionImpl() {
+	protected SystemImpl() {
 		super();
 	}
 
@@ -119,7 +139,7 @@ public class MissionImpl extends MinimalEObjectImpl.Container implements Mission
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return STPAsecPackage.Literals.MISSION;
+		return STPAsecPackage.Literals.SYSTEM;
 	}
 
 	/**
@@ -140,7 +160,7 @@ public class MissionImpl extends MinimalEObjectImpl.Container implements Mission
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.MISSION__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.SYSTEM__NAME, oldName, name));
 	}
 
 	/**
@@ -151,7 +171,7 @@ public class MissionImpl extends MinimalEObjectImpl.Container implements Mission
 	public EList<SecurityRecomendation> getRecomends() {
 		if (recomends == null) {
 			recomends = new EObjectContainmentEList<SecurityRecomendation>(SecurityRecomendation.class, this,
-					STPAsecPackage.MISSION__RECOMENDS);
+					STPAsecPackage.SYSTEM__RECOMENDS);
 		}
 		return recomends;
 	}
@@ -163,7 +183,7 @@ public class MissionImpl extends MinimalEObjectImpl.Container implements Mission
 	 */
 	public EList<MissionGoal> getGoals() {
 		if (goals == null) {
-			goals = new EObjectContainmentEList<MissionGoal>(MissionGoal.class, this, STPAsecPackage.MISSION__GOALS);
+			goals = new EObjectContainmentEList<MissionGoal>(MissionGoal.class, this, STPAsecPackage.SYSTEM__GOALS);
 		}
 		return goals;
 	}
@@ -176,7 +196,7 @@ public class MissionImpl extends MinimalEObjectImpl.Container implements Mission
 	public EList<LossScenario> getScenario() {
 		if (scenario == null) {
 			scenario = new EObjectContainmentEList<LossScenario>(LossScenario.class, this,
-					STPAsecPackage.MISSION__SCENARIO);
+					STPAsecPackage.SYSTEM__SCENARIO);
 		}
 		return scenario;
 	}
@@ -200,7 +220,7 @@ public class MissionImpl extends MinimalEObjectImpl.Container implements Mission
 		consistsOf = newConsistsOf;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					STPAsecPackage.MISSION__CONSISTS_OF, oldConsistsOf, newConsistsOf);
+					STPAsecPackage.SYSTEM__CONSISTS_OF, oldConsistsOf, newConsistsOf);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -219,16 +239,38 @@ public class MissionImpl extends MinimalEObjectImpl.Container implements Mission
 			NotificationChain msgs = null;
 			if (consistsOf != null)
 				msgs = ((InternalEObject) consistsOf).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - STPAsecPackage.MISSION__CONSISTS_OF, null, msgs);
+						EOPPOSITE_FEATURE_BASE - STPAsecPackage.SYSTEM__CONSISTS_OF, null, msgs);
 			if (newConsistsOf != null)
 				msgs = ((InternalEObject) newConsistsOf).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - STPAsecPackage.MISSION__CONSISTS_OF, null, msgs);
+						EOPPOSITE_FEATURE_BASE - STPAsecPackage.SYSTEM__CONSISTS_OF, null, msgs);
 			msgs = basicSetConsistsOf(newConsistsOf, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.MISSION__CONSISTS_OF, newConsistsOf,
+			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.SYSTEM__CONSISTS_OF, newConsistsOf,
 					newConsistsOf));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDescription(String newDescription) {
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.SYSTEM__DESCRIPTION, oldDescription,
+					description));
 	}
 
 	/**
@@ -239,13 +281,13 @@ public class MissionImpl extends MinimalEObjectImpl.Container implements Mission
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case STPAsecPackage.MISSION__RECOMENDS:
+		case STPAsecPackage.SYSTEM__RECOMENDS:
 			return ((InternalEList<?>) getRecomends()).basicRemove(otherEnd, msgs);
-		case STPAsecPackage.MISSION__GOALS:
+		case STPAsecPackage.SYSTEM__GOALS:
 			return ((InternalEList<?>) getGoals()).basicRemove(otherEnd, msgs);
-		case STPAsecPackage.MISSION__SCENARIO:
+		case STPAsecPackage.SYSTEM__SCENARIO:
 			return ((InternalEList<?>) getScenario()).basicRemove(otherEnd, msgs);
-		case STPAsecPackage.MISSION__CONSISTS_OF:
+		case STPAsecPackage.SYSTEM__CONSISTS_OF:
 			return basicSetConsistsOf(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -259,16 +301,18 @@ public class MissionImpl extends MinimalEObjectImpl.Container implements Mission
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case STPAsecPackage.MISSION__NAME:
+		case STPAsecPackage.SYSTEM__NAME:
 			return getName();
-		case STPAsecPackage.MISSION__RECOMENDS:
+		case STPAsecPackage.SYSTEM__RECOMENDS:
 			return getRecomends();
-		case STPAsecPackage.MISSION__GOALS:
+		case STPAsecPackage.SYSTEM__GOALS:
 			return getGoals();
-		case STPAsecPackage.MISSION__SCENARIO:
+		case STPAsecPackage.SYSTEM__SCENARIO:
 			return getScenario();
-		case STPAsecPackage.MISSION__CONSISTS_OF:
+		case STPAsecPackage.SYSTEM__CONSISTS_OF:
 			return getConsistsOf();
+		case STPAsecPackage.SYSTEM__DESCRIPTION:
+			return getDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -282,23 +326,26 @@ public class MissionImpl extends MinimalEObjectImpl.Container implements Mission
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case STPAsecPackage.MISSION__NAME:
+		case STPAsecPackage.SYSTEM__NAME:
 			setName((String) newValue);
 			return;
-		case STPAsecPackage.MISSION__RECOMENDS:
+		case STPAsecPackage.SYSTEM__RECOMENDS:
 			getRecomends().clear();
 			getRecomends().addAll((Collection<? extends SecurityRecomendation>) newValue);
 			return;
-		case STPAsecPackage.MISSION__GOALS:
+		case STPAsecPackage.SYSTEM__GOALS:
 			getGoals().clear();
 			getGoals().addAll((Collection<? extends MissionGoal>) newValue);
 			return;
-		case STPAsecPackage.MISSION__SCENARIO:
+		case STPAsecPackage.SYSTEM__SCENARIO:
 			getScenario().clear();
 			getScenario().addAll((Collection<? extends LossScenario>) newValue);
 			return;
-		case STPAsecPackage.MISSION__CONSISTS_OF:
+		case STPAsecPackage.SYSTEM__CONSISTS_OF:
 			setConsistsOf((ControlStructure) newValue);
+			return;
+		case STPAsecPackage.SYSTEM__DESCRIPTION:
+			setDescription((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -312,20 +359,23 @@ public class MissionImpl extends MinimalEObjectImpl.Container implements Mission
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case STPAsecPackage.MISSION__NAME:
+		case STPAsecPackage.SYSTEM__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case STPAsecPackage.MISSION__RECOMENDS:
+		case STPAsecPackage.SYSTEM__RECOMENDS:
 			getRecomends().clear();
 			return;
-		case STPAsecPackage.MISSION__GOALS:
+		case STPAsecPackage.SYSTEM__GOALS:
 			getGoals().clear();
 			return;
-		case STPAsecPackage.MISSION__SCENARIO:
+		case STPAsecPackage.SYSTEM__SCENARIO:
 			getScenario().clear();
 			return;
-		case STPAsecPackage.MISSION__CONSISTS_OF:
+		case STPAsecPackage.SYSTEM__CONSISTS_OF:
 			setConsistsOf((ControlStructure) null);
+			return;
+		case STPAsecPackage.SYSTEM__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -339,16 +389,18 @@ public class MissionImpl extends MinimalEObjectImpl.Container implements Mission
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case STPAsecPackage.MISSION__NAME:
+		case STPAsecPackage.SYSTEM__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case STPAsecPackage.MISSION__RECOMENDS:
+		case STPAsecPackage.SYSTEM__RECOMENDS:
 			return recomends != null && !recomends.isEmpty();
-		case STPAsecPackage.MISSION__GOALS:
+		case STPAsecPackage.SYSTEM__GOALS:
 			return goals != null && !goals.isEmpty();
-		case STPAsecPackage.MISSION__SCENARIO:
+		case STPAsecPackage.SYSTEM__SCENARIO:
 			return scenario != null && !scenario.isEmpty();
-		case STPAsecPackage.MISSION__CONSISTS_OF:
+		case STPAsecPackage.SYSTEM__CONSISTS_OF:
 			return consistsOf != null;
+		case STPAsecPackage.SYSTEM__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -366,8 +418,10 @@ public class MissionImpl extends MinimalEObjectImpl.Container implements Mission
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", description: ");
+		result.append(description);
 		result.append(')');
 		return result.toString();
 	}
 
-} //MissionImpl
+} //SystemImpl

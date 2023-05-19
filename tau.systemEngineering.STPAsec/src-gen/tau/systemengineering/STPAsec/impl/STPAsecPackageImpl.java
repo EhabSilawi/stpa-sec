@@ -8,17 +8,14 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import tau.systemengineering.STPAsec.Action;
-import tau.systemengineering.STPAsec.Command;
-import tau.systemengineering.STPAsec.Component;
+import tau.systemengineering.STPAsec.ControlAction;
 import tau.systemengineering.STPAsec.ControlStructure;
 import tau.systemengineering.STPAsec.ControlledProcess;
 import tau.systemengineering.STPAsec.Controller;
-import tau.systemengineering.STPAsec.Data;
+import tau.systemengineering.STPAsec.DataFlow;
 import tau.systemengineering.STPAsec.Feedback;
 import tau.systemengineering.STPAsec.Hazard;
 import tau.systemengineering.STPAsec.LossScenario;
-import tau.systemengineering.STPAsec.Mission;
 import tau.systemengineering.STPAsec.MissionGoal;
 import tau.systemengineering.STPAsec.STPASec;
 import tau.systemengineering.STPAsec.STPAsecFactory;
@@ -66,7 +63,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass missionEClass = null;
+	private EClass systemEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,28 +112,14 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass commandEClass = null;
+	private EClass controlActionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass actionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dataEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass componentEClass = null;
+	private EClass dataFlowEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -369,8 +352,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMission() {
-		return missionEClass;
+	public EClass getSystem() {
+		return systemEClass;
 	}
 
 	/**
@@ -378,8 +361,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMission_Name() {
-		return (EAttribute) missionEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSystem_Name() {
+		return (EAttribute) systemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -387,8 +370,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMission_Recomends() {
-		return (EReference) missionEClass.getEStructuralFeatures().get(1);
+	public EReference getSystem_Recomends() {
+		return (EReference) systemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -396,8 +379,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMission_Goals() {
-		return (EReference) missionEClass.getEStructuralFeatures().get(2);
+	public EReference getSystem_Goals() {
+		return (EReference) systemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -405,8 +388,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMission_Scenario() {
-		return (EReference) missionEClass.getEStructuralFeatures().get(3);
+	public EReference getSystem_Scenario() {
+		return (EReference) systemEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -414,8 +397,17 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMission_ConsistsOf() {
-		return (EReference) missionEClass.getEStructuralFeatures().get(4);
+	public EReference getSystem_ConsistsOf() {
+		return (EReference) systemEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSystem_Description() {
+		return (EAttribute) systemEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -452,6 +444,15 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 */
 	public EAttribute getFeedback_Type() {
 		return (EAttribute) feedbackEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeedback_Receiver() {
+		return (EReference) feedbackEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -513,6 +514,15 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getController_Feadback() {
+		return (EReference) controllerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getControlStructure() {
 		return controlStructureEClass;
 	}
@@ -531,8 +541,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCommand() {
-		return commandEClass;
+	public EClass getControlAction() {
+		return controlActionEClass;
 	}
 
 	/**
@@ -540,8 +550,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAction() {
-		return actionEClass;
+	public EClass getDataFlow() {
+		return dataFlowEClass;
 	}
 
 	/**
@@ -549,44 +559,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getData() {
-		return dataEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getData_Id() {
-		return (EAttribute) dataEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getComponent() {
-		return componentEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getComponent_Command() {
-		return (EReference) componentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getComponent_DataFlow() {
-		return (EReference) componentEClass.getEStructuralFeatures().get(1);
+	public EAttribute getDataFlow_Id() {
+		return (EAttribute) dataFlowEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -640,18 +614,20 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		createEAttribute(securityRecomendationEClass, SECURITY_RECOMENDATION__ID);
 		createEAttribute(securityRecomendationEClass, SECURITY_RECOMENDATION__SOLUTION);
 
-		missionEClass = createEClass(MISSION);
-		createEAttribute(missionEClass, MISSION__NAME);
-		createEReference(missionEClass, MISSION__RECOMENDS);
-		createEReference(missionEClass, MISSION__GOALS);
-		createEReference(missionEClass, MISSION__SCENARIO);
-		createEReference(missionEClass, MISSION__CONSISTS_OF);
+		systemEClass = createEClass(SYSTEM);
+		createEAttribute(systemEClass, SYSTEM__NAME);
+		createEReference(systemEClass, SYSTEM__RECOMENDS);
+		createEReference(systemEClass, SYSTEM__GOALS);
+		createEReference(systemEClass, SYSTEM__SCENARIO);
+		createEReference(systemEClass, SYSTEM__CONSISTS_OF);
+		createEAttribute(systemEClass, SYSTEM__DESCRIPTION);
 
 		stpaSecEClass = createEClass(STPA_SEC);
 		createEReference(stpaSecEClass, STPA_SEC__SYSTEM);
 
 		feedbackEClass = createEClass(FEEDBACK);
 		createEAttribute(feedbackEClass, FEEDBACK__TYPE);
+		createEReference(feedbackEClass, FEEDBACK__RECEIVER);
 
 		structureElementEClass = createEClass(STRUCTURE_ELEMENT);
 		createEAttribute(structureElementEClass, STRUCTURE_ELEMENT__NAME);
@@ -661,20 +637,15 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 
 		controllerEClass = createEClass(CONTROLLER);
 		createEAttribute(controllerEClass, CONTROLLER__TYPE);
+		createEReference(controllerEClass, CONTROLLER__FEADBACK);
 
 		controlStructureEClass = createEClass(CONTROL_STRUCTURE);
 		createEReference(controlStructureEClass, CONTROL_STRUCTURE__ELEMENTS);
 
-		commandEClass = createEClass(COMMAND);
+		controlActionEClass = createEClass(CONTROL_ACTION);
 
-		actionEClass = createEClass(ACTION);
-
-		dataEClass = createEClass(DATA);
-		createEAttribute(dataEClass, DATA__ID);
-
-		componentEClass = createEClass(COMPONENT);
-		createEReference(componentEClass, COMPONENT__COMMAND);
-		createEReference(componentEClass, COMPONENT__DATA_FLOW);
+		dataFlowEClass = createEClass(DATA_FLOW);
+		createEAttribute(dataFlowEClass, DATA_FLOW__ID);
 	}
 
 	/**
@@ -706,12 +677,11 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		feedbackEClass.getESuperTypes().add(this.getData());
-		controlledProcessEClass.getESuperTypes().add(this.getComponent());
-		controllerEClass.getESuperTypes().add(this.getComponent());
-		commandEClass.getESuperTypes().add(this.getData());
-		dataEClass.getESuperTypes().add(this.getStructureElement());
-		componentEClass.getESuperTypes().add(this.getStructureElement());
+		feedbackEClass.getESuperTypes().add(this.getDataFlow());
+		controlledProcessEClass.getESuperTypes().add(this.getStructureElement());
+		controllerEClass.getESuperTypes().add(this.getStructureElement());
+		controlActionEClass.getESuperTypes().add(this.getDataFlow());
+		dataFlowEClass.getESuperTypes().add(this.getStructureElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(lossScenarioEClass, LossScenario.class, "LossScenario", !IS_ABSTRACT, !IS_INTERFACE,
@@ -739,7 +709,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHazard_Description(), ecorePackage.getEString(), "description", null, 0, 1, Hazard.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHazard_RelatedCommands(), this.getCommand(), null, "relatedCommands", null, 0, -1,
+		initEReference(getHazard_RelatedCommands(), this.getControlAction(), null, "relatedCommands", null, 0, -1,
 				Hazard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -763,24 +733,29 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 				SecurityRecomendation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(missionEClass, Mission.class, "Mission", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMission_Name(), ecorePackage.getEString(), "name", null, 0, 1, Mission.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMission_Recomends(), this.getSecurityRecomendation(), null, "recomends", null, 0, -1,
-				Mission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMission_Goals(), this.getMissionGoal(), null, "goals", null, 1, -1, Mission.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMission_Scenario(), this.getLossScenario(), null, "scenario", null, 0, -1, Mission.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMission_ConsistsOf(), this.getControlStructure(), null, "consistsOf", null, 1, 1,
-				Mission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(systemEClass, tau.systemengineering.STPAsec.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSystem_Name(), ecorePackage.getEString(), "name", null, 0, 1,
+				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSystem_Recomends(), this.getSecurityRecomendation(), null, "recomends", null, 0, -1,
+				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSystem_Goals(), this.getMissionGoal(), null, "goals", null, 1, -1,
+				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSystem_Scenario(), this.getLossScenario(), null, "scenario", null, 0, -1,
+				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSystem_ConsistsOf(), this.getControlStructure(), null, "consistsOf", null, 1, 1,
+				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSystem_Description(), ecorePackage.getEString(), "description", null, 0, 1,
+				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stpaSecEClass, STPASec.class, "STPASec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSTPASec_System(), this.getMission(), null, "system", null, 1, 1, STPASec.class, !IS_TRANSIENT,
+		initEReference(getSTPASec_System(), this.getSystem(), null, "system", null, 1, 1, STPASec.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
@@ -788,6 +763,9 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFeedback_Type(), ecorePackage.getEString(), "type", null, 0, 1, Feedback.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeedback_Receiver(), this.getController(), this.getController_Feadback(), "receiver", null, 0,
+				1, Feedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(structureElementEClass, StructureElement.class, "StructureElement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -805,6 +783,9 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getController_Type(), ecorePackage.getEString(), "type", null, 0, 1, Controller.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getController_Feadback(), this.getFeedback(), this.getFeedback_Receiver(), "feadback", null, 0,
+				1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controlStructureEClass, ControlStructure.class, "ControlStructure", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -812,22 +793,12 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 				ControlStructure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(commandEClass, Command.class, "Command", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(dataEClass, Data.class, "Data", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getData_Id(), ecorePackage.getEInt(), "id", null, 0, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(controlActionEClass, ControlAction.class, "ControlAction", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponent_Command(), this.getCommand(), null, "command", null, 0, 1, Component.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_DataFlow(), this.getFeedback(), null, "dataFlow", null, 0, 1, Component.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(dataFlowEClass, DataFlow.class, "DataFlow", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataFlow_Id(), ecorePackage.getEInt(), "id", null, 0, 1, DataFlow.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -16,7 +16,7 @@ import tau.systemengineering.STPAsec.Command;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CommandItemProvider extends DataItemProvider {
+public class CommandItemProvider extends DataFlowItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

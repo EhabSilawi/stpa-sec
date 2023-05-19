@@ -22,7 +22,7 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeedbackItemProvider extends DataItemProvider {
+public class FeedbackItemProvider extends DataFlowItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -45,6 +45,7 @@ public class FeedbackItemProvider extends DataItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTypePropertyDescriptor(object);
+			addReceiverPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -63,6 +64,21 @@ public class FeedbackItemProvider extends DataItemProvider {
 								"_UI_Feedback_type"),
 						STPAsecPackage.Literals.FEEDBACK__TYPE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Receiver feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReceiverPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Feedback_receiver_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Feedback_receiver_feature",
+								"_UI_Feedback_type"),
+						STPAsecPackage.Literals.FEEDBACK__RECEIVER, true, false, true, null, null, null));
 	}
 
 	/**

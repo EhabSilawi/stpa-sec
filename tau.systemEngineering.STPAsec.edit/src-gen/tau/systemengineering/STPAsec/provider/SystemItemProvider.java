@@ -23,17 +23,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import tau.systemengineering.STPAsec.Mission;
 import tau.systemengineering.STPAsec.STPAsecFactory;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 
 /**
- * This is the item provider adapter for a {@link tau.systemengineering.STPAsec.Mission} object.
+ * This is the item provider adapter for a {@link tau.systemengineering.STPAsec.System} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class MissionItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class SystemItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -41,7 +40,7 @@ public class MissionItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MissionItemProvider(AdapterFactory adapterFactory) {
+	public SystemItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -57,6 +56,7 @@ public class MissionItemProvider extends ItemProviderAdapter implements IEditing
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -70,9 +70,25 @@ public class MissionItemProvider extends ItemProviderAdapter implements IEditing
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Mission_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Mission_name_feature", "_UI_Mission_type"),
-						STPAsecPackage.Literals.MISSION__NAME, true, false, false,
+						getResourceLocator(), getString("_UI_System_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_System_name_feature", "_UI_System_type"),
+						STPAsecPackage.Literals.SYSTEM__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Description feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_System_description_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_System_description_feature",
+								"_UI_System_type"),
+						STPAsecPackage.Literals.SYSTEM__DESCRIPTION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -88,10 +104,10 @@ public class MissionItemProvider extends ItemProviderAdapter implements IEditing
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(STPAsecPackage.Literals.MISSION__RECOMENDS);
-			childrenFeatures.add(STPAsecPackage.Literals.MISSION__GOALS);
-			childrenFeatures.add(STPAsecPackage.Literals.MISSION__SCENARIO);
-			childrenFeatures.add(STPAsecPackage.Literals.MISSION__CONSISTS_OF);
+			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__RECOMENDS);
+			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__GOALS);
+			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__SCENARIO);
+			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__CONSISTS_OF);
 		}
 		return childrenFeatures;
 	}
@@ -110,14 +126,14 @@ public class MissionItemProvider extends ItemProviderAdapter implements IEditing
 	}
 
 	/**
-	 * This returns Mission.gif.
+	 * This returns System.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Mission"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/System"));
 	}
 
 	/**
@@ -138,9 +154,9 @@ public class MissionItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Mission) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Mission_type")
-				: getString("_UI_Mission_type") + " " + label;
+		String label = ((tau.systemengineering.STPAsec.System) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_System_type")
+				: getString("_UI_System_type") + " " + label;
 	}
 
 	/**
@@ -154,14 +170,15 @@ public class MissionItemProvider extends ItemProviderAdapter implements IEditing
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Mission.class)) {
-		case STPAsecPackage.MISSION__NAME:
+		switch (notification.getFeatureID(tau.systemengineering.STPAsec.System.class)) {
+		case STPAsecPackage.SYSTEM__NAME:
+		case STPAsecPackage.SYSTEM__DESCRIPTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case STPAsecPackage.MISSION__RECOMENDS:
-		case STPAsecPackage.MISSION__GOALS:
-		case STPAsecPackage.MISSION__SCENARIO:
-		case STPAsecPackage.MISSION__CONSISTS_OF:
+		case STPAsecPackage.SYSTEM__RECOMENDS:
+		case STPAsecPackage.SYSTEM__GOALS:
+		case STPAsecPackage.SYSTEM__SCENARIO:
+		case STPAsecPackage.SYSTEM__CONSISTS_OF:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -179,16 +196,16 @@ public class MissionItemProvider extends ItemProviderAdapter implements IEditing
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.MISSION__RECOMENDS,
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__RECOMENDS,
 				STPAsecFactory.eINSTANCE.createSecurityRecomendation()));
 
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.MISSION__GOALS,
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__GOALS,
 				STPAsecFactory.eINSTANCE.createMissionGoal()));
 
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.MISSION__SCENARIO,
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__SCENARIO,
 				STPAsecFactory.eINSTANCE.createLossScenario()));
 
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.MISSION__CONSISTS_OF,
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__CONSISTS_OF,
 				STPAsecFactory.eINSTANCE.createControlStructure()));
 	}
 

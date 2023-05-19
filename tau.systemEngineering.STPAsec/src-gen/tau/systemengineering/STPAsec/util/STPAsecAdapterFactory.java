@@ -9,7 +9,19 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import tau.systemengineering.STPAsec.*;
+import tau.systemengineering.STPAsec.ControlAction;
+import tau.systemengineering.STPAsec.ControlStructure;
+import tau.systemengineering.STPAsec.ControlledProcess;
+import tau.systemengineering.STPAsec.Controller;
+import tau.systemengineering.STPAsec.DataFlow;
+import tau.systemengineering.STPAsec.Feedback;
+import tau.systemengineering.STPAsec.Hazard;
+import tau.systemengineering.STPAsec.LossScenario;
+import tau.systemengineering.STPAsec.MissionGoal;
+import tau.systemengineering.STPAsec.STPASec;
+import tau.systemengineering.STPAsec.STPAsecPackage;
+import tau.systemengineering.STPAsec.SecurityRecomendation;
+import tau.systemengineering.STPAsec.StructureElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,8 +99,8 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseMission(Mission object) {
-			return createMissionAdapter();
+		public Adapter caseSystem(tau.systemengineering.STPAsec.System object) {
+			return createSystemAdapter();
 		}
 
 		@Override
@@ -122,23 +134,13 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseCommand(Command object) {
-			return createCommandAdapter();
+		public Adapter caseControlAction(ControlAction object) {
+			return createControlActionAdapter();
 		}
 
 		@Override
-		public Adapter caseAction(Action object) {
-			return createActionAdapter();
-		}
-
-		@Override
-		public Adapter caseData(Data object) {
-			return createDataAdapter();
-		}
-
-		@Override
-		public Adapter caseComponent(Component object) {
-			return createComponentAdapter();
+		public Adapter caseDataFlow(DataFlow object) {
+			return createDataFlowAdapter();
 		}
 
 		@Override
@@ -217,16 +219,16 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.Mission <em>Mission</em>}'.
+	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.System <em>System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.Mission
+	 * @see tau.systemengineering.STPAsec.System
 	 * @generated
 	 */
-	public Adapter createMissionAdapter() {
+	public Adapter createSystemAdapter() {
 		return null;
 	}
 
@@ -315,58 +317,30 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.Command <em>Command</em>}'.
+	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.ControlAction <em>Control Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.Command
+	 * @see tau.systemengineering.STPAsec.ControlAction
 	 * @generated
 	 */
-	public Adapter createCommandAdapter() {
+	public Adapter createControlActionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.Action <em>Action</em>}'.
+	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.DataFlow <em>Data Flow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.Action
+	 * @see tau.systemengineering.STPAsec.DataFlow
 	 * @generated
 	 */
-	public Adapter createActionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.Data <em>Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.Data
-	 * @generated
-	 */
-	public Adapter createDataAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.Component <em>Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.Component
-	 * @generated
-	 */
-	public Adapter createComponentAdapter() {
+	public Adapter createDataFlowAdapter() {
 		return null;
 	}
 

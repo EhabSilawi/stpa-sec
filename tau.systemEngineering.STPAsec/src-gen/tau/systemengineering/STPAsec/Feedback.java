@@ -12,13 +12,14 @@ package tau.systemengineering.STPAsec;
  * </p>
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.Feedback#getType <em>Type</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.Feedback#getReceiver <em>Receiver</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getFeedback()
  * @model
  * @generated
  */
-public interface Feedback extends Data {
+public interface Feedback extends DataFlow {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -40,5 +41,29 @@ public interface Feedback extends Data {
 	 * @generated
 	 */
 	void setType(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Receiver</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.Controller#getFeadback <em>Feadback</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Receiver</em>' reference.
+	 * @see #setReceiver(Controller)
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getFeedback_Receiver()
+	 * @see tau.systemengineering.STPAsec.Controller#getFeadback
+	 * @model opposite="feadback"
+	 * @generated
+	 */
+	Controller getReceiver();
+
+	/**
+	 * Sets the value of the '{@link tau.systemengineering.STPAsec.Feedback#getReceiver <em>Receiver</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Receiver</em>' reference.
+	 * @see #getReceiver()
+	 * @generated
+	 */
+	void setReceiver(Controller value);
 
 } // Feedback

@@ -58,13 +58,13 @@ public interface STPAsecFactory extends EFactory {
 	SecurityRecomendation createSecurityRecomendation();
 
 	/**
-	 * Returns a new object of class '<em>Mission</em>'.
+	 * Returns a new object of class '<em>System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Mission</em>'.
+	 * @return a new object of class '<em>System</em>'.
 	 * @generated
 	 */
-	Mission createMission();
+	System createSystem();
 
 	/**
 	 * Returns a new object of class '<em>STPA Sec</em>'.
@@ -112,22 +112,13 @@ public interface STPAsecFactory extends EFactory {
 	ControlStructure createControlStructure();
 
 	/**
-	 * Returns a new object of class '<em>Command</em>'.
+	 * Returns a new object of class '<em>Control Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Command</em>'.
+	 * @return a new object of class '<em>Control Action</em>'.
 	 * @generated
 	 */
-	Command createCommand();
-
-	/**
-	 * Returns a new object of class '<em>Action</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Action</em>'.
-	 * @generated
-	 */
-	Action createAction();
+	ControlAction createControlAction();
 
 	/**
 	 * Returns the package supported by this factory.

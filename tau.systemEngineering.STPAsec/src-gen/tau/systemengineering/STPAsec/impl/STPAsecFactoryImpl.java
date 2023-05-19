@@ -10,7 +10,18 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import tau.systemengineering.STPAsec.*;
+import tau.systemengineering.STPAsec.ControlAction;
+import tau.systemengineering.STPAsec.ControlStructure;
+import tau.systemengineering.STPAsec.ControlledProcess;
+import tau.systemengineering.STPAsec.Controller;
+import tau.systemengineering.STPAsec.Feedback;
+import tau.systemengineering.STPAsec.Hazard;
+import tau.systemengineering.STPAsec.LossScenario;
+import tau.systemengineering.STPAsec.MissionGoal;
+import tau.systemengineering.STPAsec.STPASec;
+import tau.systemengineering.STPAsec.STPAsecFactory;
+import tau.systemengineering.STPAsec.STPAsecPackage;
+import tau.systemengineering.STPAsec.SecurityRecomendation;
 
 /**
  * <!-- begin-user-doc -->
@@ -64,8 +75,8 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 			return createMissionGoal();
 		case STPAsecPackage.SECURITY_RECOMENDATION:
 			return createSecurityRecomendation();
-		case STPAsecPackage.MISSION:
-			return createMission();
+		case STPAsecPackage.SYSTEM:
+			return createSystem();
 		case STPAsecPackage.STPA_SEC:
 			return createSTPASec();
 		case STPAsecPackage.FEEDBACK:
@@ -76,10 +87,8 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 			return createController();
 		case STPAsecPackage.CONTROL_STRUCTURE:
 			return createControlStructure();
-		case STPAsecPackage.COMMAND:
-			return createCommand();
-		case STPAsecPackage.ACTION:
-			return createAction();
+		case STPAsecPackage.CONTROL_ACTION:
+			return createControlAction();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -130,9 +139,9 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Mission createMission() {
-		MissionImpl mission = new MissionImpl();
-		return mission;
+	public tau.systemengineering.STPAsec.System createSystem() {
+		SystemImpl system = new SystemImpl();
+		return system;
 	}
 
 	/**
@@ -190,19 +199,9 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Command createCommand() {
-		CommandImpl command = new CommandImpl();
-		return command;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Action createAction() {
-		ActionImpl action = new ActionImpl();
-		return action;
+	public ControlAction createControlAction() {
+		ControlActionImpl controlAction = new ControlActionImpl();
+		return controlAction;
 	}
 
 	/**

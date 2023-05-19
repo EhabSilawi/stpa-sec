@@ -12,5 +12,5 @@ package tau.systemengineering.STPAsec;
  * @model
  * @generated
  */
-public interface ControlledProcess extends Component {
+public interface ControlledProcess extends StructureElement {
 } // ControlledProcess

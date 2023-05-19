@@ -18,7 +18,7 @@ import tau.systemengineering.STPAsec.ControlledProcess;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ControlledProcessItemProvider extends ComponentItemProvider {
+public class ControlledProcessItemProvider extends StructureElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

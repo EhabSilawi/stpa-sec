@@ -10,8 +10,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import tau.systemengineering.STPAsec.Mission;
 import tau.systemengineering.STPAsec.STPASec;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 
@@ -37,7 +35,7 @@ public class STPASecImpl extends MinimalEObjectImpl.Container implements STPASec
 	 * @generated
 	 * @ordered
 	 */
-	protected Mission system;
+	protected tau.systemengineering.STPAsec.System system;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,7 +61,7 @@ public class STPASecImpl extends MinimalEObjectImpl.Container implements STPASec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Mission getSystem() {
+	public tau.systemengineering.STPAsec.System getSystem() {
 		return system;
 	}
 
@@ -72,8 +70,8 @@ public class STPASecImpl extends MinimalEObjectImpl.Container implements STPASec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSystem(Mission newSystem, NotificationChain msgs) {
-		Mission oldSystem = system;
+	public NotificationChain basicSetSystem(tau.systemengineering.STPAsec.System newSystem, NotificationChain msgs) {
+		tau.systemengineering.STPAsec.System oldSystem = system;
 		system = newSystem;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
@@ -91,7 +89,7 @@ public class STPASecImpl extends MinimalEObjectImpl.Container implements STPASec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSystem(Mission newSystem) {
+	public void setSystem(tau.systemengineering.STPAsec.System newSystem) {
 		if (newSystem != system) {
 			NotificationChain msgs = null;
 			if (system != null)
@@ -145,7 +143,7 @@ public class STPASecImpl extends MinimalEObjectImpl.Container implements STPASec
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case STPAsecPackage.STPA_SEC__SYSTEM:
-			setSystem((Mission) newValue);
+			setSystem((tau.systemengineering.STPAsec.System) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -160,7 +158,7 @@ public class STPASecImpl extends MinimalEObjectImpl.Container implements STPASec
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case STPAsecPackage.STPA_SEC__SYSTEM:
-			setSystem((Mission) null);
+			setSystem((tau.systemengineering.STPAsec.System) null);
 			return;
 		}
 		super.eUnset(featureID);

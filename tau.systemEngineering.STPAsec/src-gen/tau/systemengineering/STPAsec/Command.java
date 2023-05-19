@@ -12,6 +12,5 @@ package tau.systemengineering.STPAsec;
  * @model
  * @generated
  */
-public interface Command extends Data {
-
+public interface Command extends DataFlow {
 } // Command
