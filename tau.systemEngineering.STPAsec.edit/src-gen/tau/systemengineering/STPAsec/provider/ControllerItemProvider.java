@@ -45,7 +45,8 @@ public class ControllerItemProvider extends StructureElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTypePropertyDescriptor(object);
-			addFeadbackPropertyDescriptor(object);
+			addCommandsPropertyDescriptor(object);
+			addFeedbacksPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -67,18 +68,33 @@ public class ControllerItemProvider extends StructureElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Feadback feature.
+	 * This adds a property descriptor for the Commands feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFeadbackPropertyDescriptor(Object object) {
+	protected void addCommandsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Controller_feadback_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Controller_feadback_feature",
+						getResourceLocator(), getString("_UI_Controller_commands_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Controller_commands_feature",
 								"_UI_Controller_type"),
-						STPAsecPackage.Literals.CONTROLLER__FEADBACK, true, false, true, null, null, null));
+						STPAsecPackage.Literals.CONTROLLER__COMMANDS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Feedbacks feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFeedbacksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Controller_feedbacks_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Controller_feedbacks_feature",
+								"_UI_Controller_type"),
+						STPAsecPackage.Literals.CONTROLLER__FEEDBACKS, true, false, true, null, null, null));
 	}
 
 	/**

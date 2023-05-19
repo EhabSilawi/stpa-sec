@@ -12,7 +12,8 @@ package tau.systemengineering.STPAsec;
  * </p>
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.Feedback#getType <em>Type</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.Feedback#getReceiver <em>Receiver</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.Feedback#getController <em>Controller</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.Feedback#getControlledProcess <em>Controlled Process</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getFeedback()
@@ -43,27 +44,51 @@ public interface Feedback extends DataFlow {
 	void setType(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Receiver</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.Controller#getFeadback <em>Feadback</em>}'.
+	 * Returns the value of the '<em><b>Controller</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.Controller#getFeedbacks <em>Feedbacks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Receiver</em>' reference.
-	 * @see #setReceiver(Controller)
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getFeedback_Receiver()
-	 * @see tau.systemengineering.STPAsec.Controller#getFeadback
-	 * @model opposite="feadback"
+	 * @return the value of the '<em>Controller</em>' reference.
+	 * @see #setController(Controller)
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getFeedback_Controller()
+	 * @see tau.systemengineering.STPAsec.Controller#getFeedbacks
+	 * @model opposite="feedbacks"
 	 * @generated
 	 */
-	Controller getReceiver();
+	Controller getController();
 
 	/**
-	 * Sets the value of the '{@link tau.systemengineering.STPAsec.Feedback#getReceiver <em>Receiver</em>}' reference.
+	 * Sets the value of the '{@link tau.systemengineering.STPAsec.Feedback#getController <em>Controller</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Receiver</em>' reference.
-	 * @see #getReceiver()
+	 * @param value the new value of the '<em>Controller</em>' reference.
+	 * @see #getController()
 	 * @generated
 	 */
-	void setReceiver(Controller value);
+	void setController(Controller value);
+
+	/**
+	 * Returns the value of the '<em><b>Controlled Process</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.ControlledProcess#getFeedbacks <em>Feedbacks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Controlled Process</em>' reference.
+	 * @see #setControlledProcess(ControlledProcess)
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getFeedback_ControlledProcess()
+	 * @see tau.systemengineering.STPAsec.ControlledProcess#getFeedbacks
+	 * @model opposite="feedbacks"
+	 * @generated
+	 */
+	ControlledProcess getControlledProcess();
+
+	/**
+	 * Sets the value of the '{@link tau.systemengineering.STPAsec.Feedback#getControlledProcess <em>Controlled Process</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Controlled Process</em>' reference.
+	 * @see #getControlledProcess()
+	 * @generated
+	 */
+	void setControlledProcess(ControlledProcess value);
 
 } // Feedback

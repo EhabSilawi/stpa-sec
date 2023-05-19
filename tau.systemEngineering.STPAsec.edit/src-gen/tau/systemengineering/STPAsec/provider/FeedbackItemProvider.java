@@ -45,7 +45,8 @@ public class FeedbackItemProvider extends DataFlowItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTypePropertyDescriptor(object);
-			addReceiverPropertyDescriptor(object);
+			addControllerPropertyDescriptor(object);
+			addControlledProcessPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -67,18 +68,33 @@ public class FeedbackItemProvider extends DataFlowItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Receiver feature.
+	 * This adds a property descriptor for the Controller feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addReceiverPropertyDescriptor(Object object) {
+	protected void addControllerPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Feedback_receiver_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Feedback_receiver_feature",
+						getResourceLocator(), getString("_UI_Feedback_controller_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Feedback_controller_feature",
 								"_UI_Feedback_type"),
-						STPAsecPackage.Literals.FEEDBACK__RECEIVER, true, false, true, null, null, null));
+						STPAsecPackage.Literals.FEEDBACK__CONTROLLER, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Controlled Process feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControlledProcessPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Feedback_controlledProcess_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Feedback_controlledProcess_feature",
+								"_UI_Feedback_type"),
+						STPAsecPackage.Literals.FEEDBACK__CONTROLLED_PROCESS, true, false, true, null, null, null));
 	}
 
 	/**

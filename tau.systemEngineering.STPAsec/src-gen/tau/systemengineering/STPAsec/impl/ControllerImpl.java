@@ -2,13 +2,18 @@
  */
 package tau.systemengineering.STPAsec.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import tau.systemengineering.STPAsec.ControlAction;
 import tau.systemengineering.STPAsec.Controller;
 import tau.systemengineering.STPAsec.Feedback;
 import tau.systemengineering.STPAsec.STPAsecPackage;
@@ -22,7 +27,8 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  * </p>
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.impl.ControllerImpl#getType <em>Type</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.ControllerImpl#getFeadback <em>Feadback</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.ControllerImpl#getCommands <em>Commands</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.ControllerImpl#getFeedbacks <em>Feedbacks</em>}</li>
  * </ul>
  *
  * @generated
@@ -49,14 +55,24 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 	protected String type = TYPE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getFeadback() <em>Feadback</em>}' reference.
+	 * The cached value of the '{@link #getCommands() <em>Commands</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFeadback()
+	 * @see #getCommands()
 	 * @generated
 	 * @ordered
 	 */
-	protected Feedback feadback;
+	protected EList<ControlAction> commands;
+
+	/**
+	 * The cached value of the '{@link #getFeedbacks() <em>Feedbacks</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFeedbacks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Feedback> feedbacks;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,17 +119,12 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Feedback getFeadback() {
-		if (feadback != null && feadback.eIsProxy()) {
-			InternalEObject oldFeadback = (InternalEObject) feadback;
-			feadback = (Feedback) eResolveProxy(oldFeadback);
-			if (feadback != oldFeadback) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, STPAsecPackage.CONTROLLER__FEADBACK,
-							oldFeadback, feadback));
-			}
+	public EList<ControlAction> getCommands() {
+		if (commands == null) {
+			commands = new EObjectWithInverseResolvingEList<ControlAction>(ControlAction.class, this,
+					STPAsecPackage.CONTROLLER__COMMANDS, STPAsecPackage.CONTROL_ACTION__RECEIVER);
 		}
-		return feadback;
+		return commands;
 	}
 
 	/**
@@ -121,27 +132,12 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Feedback basicGetFeadback() {
-		return feadback;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetFeadback(Feedback newFeadback, NotificationChain msgs) {
-		Feedback oldFeadback = feadback;
-		feadback = newFeadback;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					STPAsecPackage.CONTROLLER__FEADBACK, oldFeadback, newFeadback);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+	public EList<Feedback> getFeedbacks() {
+		if (feedbacks == null) {
+			feedbacks = new EObjectWithInverseResolvingEList<Feedback>(Feedback.class, this,
+					STPAsecPackage.CONTROLLER__FEEDBACKS, STPAsecPackage.FEEDBACK__CONTROLLER);
 		}
-		return msgs;
+		return feedbacks;
 	}
 
 	/**
@@ -149,36 +145,14 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFeadback(Feedback newFeadback) {
-		if (newFeadback != feadback) {
-			NotificationChain msgs = null;
-			if (feadback != null)
-				msgs = ((InternalEObject) feadback).eInverseRemove(this, STPAsecPackage.FEEDBACK__RECEIVER,
-						Feedback.class, msgs);
-			if (newFeadback != null)
-				msgs = ((InternalEObject) newFeadback).eInverseAdd(this, STPAsecPackage.FEEDBACK__RECEIVER,
-						Feedback.class, msgs);
-			msgs = basicSetFeadback(newFeadback, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.CONTROLLER__FEADBACK, newFeadback,
-					newFeadback));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case STPAsecPackage.CONTROLLER__FEADBACK:
-			if (feadback != null)
-				msgs = ((InternalEObject) feadback).eInverseRemove(this, STPAsecPackage.FEEDBACK__RECEIVER,
-						Feedback.class, msgs);
-			return basicSetFeadback((Feedback) otherEnd, msgs);
+		case STPAsecPackage.CONTROLLER__COMMANDS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getCommands()).basicAdd(otherEnd, msgs);
+		case STPAsecPackage.CONTROLLER__FEEDBACKS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFeedbacks()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -191,8 +165,10 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case STPAsecPackage.CONTROLLER__FEADBACK:
-			return basicSetFeadback(null, msgs);
+		case STPAsecPackage.CONTROLLER__COMMANDS:
+			return ((InternalEList<?>) getCommands()).basicRemove(otherEnd, msgs);
+		case STPAsecPackage.CONTROLLER__FEEDBACKS:
+			return ((InternalEList<?>) getFeedbacks()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -207,10 +183,10 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 		switch (featureID) {
 		case STPAsecPackage.CONTROLLER__TYPE:
 			return getType();
-		case STPAsecPackage.CONTROLLER__FEADBACK:
-			if (resolve)
-				return getFeadback();
-			return basicGetFeadback();
+		case STPAsecPackage.CONTROLLER__COMMANDS:
+			return getCommands();
+		case STPAsecPackage.CONTROLLER__FEEDBACKS:
+			return getFeedbacks();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -220,14 +196,20 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case STPAsecPackage.CONTROLLER__TYPE:
 			setType((String) newValue);
 			return;
-		case STPAsecPackage.CONTROLLER__FEADBACK:
-			setFeadback((Feedback) newValue);
+		case STPAsecPackage.CONTROLLER__COMMANDS:
+			getCommands().clear();
+			getCommands().addAll((Collection<? extends ControlAction>) newValue);
+			return;
+		case STPAsecPackage.CONTROLLER__FEEDBACKS:
+			getFeedbacks().clear();
+			getFeedbacks().addAll((Collection<? extends Feedback>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -244,8 +226,11 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 		case STPAsecPackage.CONTROLLER__TYPE:
 			setType(TYPE_EDEFAULT);
 			return;
-		case STPAsecPackage.CONTROLLER__FEADBACK:
-			setFeadback((Feedback) null);
+		case STPAsecPackage.CONTROLLER__COMMANDS:
+			getCommands().clear();
+			return;
+		case STPAsecPackage.CONTROLLER__FEEDBACKS:
+			getFeedbacks().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -261,8 +246,10 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 		switch (featureID) {
 		case STPAsecPackage.CONTROLLER__TYPE:
 			return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-		case STPAsecPackage.CONTROLLER__FEADBACK:
-			return feadback != null;
+		case STPAsecPackage.CONTROLLER__COMMANDS:
+			return commands != null && !commands.isEmpty();
+		case STPAsecPackage.CONTROLLER__FEEDBACKS:
+			return feedbacks != null && !feedbacks.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

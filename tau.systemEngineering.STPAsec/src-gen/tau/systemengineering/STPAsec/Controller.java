@@ -2,6 +2,8 @@
  */
 package tau.systemengineering.STPAsec;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Controller</b></em>'.
@@ -12,7 +14,8 @@ package tau.systemengineering.STPAsec;
  * </p>
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.Controller#getType <em>Type</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.Controller#getFeadback <em>Feadback</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.Controller#getCommands <em>Commands</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.Controller#getFeedbacks <em>Feedbacks</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getController()
@@ -43,27 +46,31 @@ public interface Controller extends StructureElement {
 	void setType(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Feadback</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.Feedback#getReceiver <em>Receiver</em>}'.
+	 * Returns the value of the '<em><b>Commands</b></em>' reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.ControlAction}.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.ControlAction#getReceiver <em>Receiver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Feadback</em>' reference.
-	 * @see #setFeadback(Feedback)
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getController_Feadback()
-	 * @see tau.systemengineering.STPAsec.Feedback#getReceiver
+	 * @return the value of the '<em>Commands</em>' reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getController_Commands()
+	 * @see tau.systemengineering.STPAsec.ControlAction#getReceiver
 	 * @model opposite="receiver"
 	 * @generated
 	 */
-	Feedback getFeadback();
+	EList<ControlAction> getCommands();
 
 	/**
-	 * Sets the value of the '{@link tau.systemengineering.STPAsec.Controller#getFeadback <em>Feadback</em>}' reference.
+	 * Returns the value of the '<em><b>Feedbacks</b></em>' reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.Feedback}.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.Feedback#getController <em>Controller</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Feadback</em>' reference.
-	 * @see #getFeadback()
+	 * @return the value of the '<em>Feedbacks</em>' reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getController_Feedbacks()
+	 * @see tau.systemengineering.STPAsec.Feedback#getController
+	 * @model opposite="controller"
 	 * @generated
 	 */
-	void setFeadback(Feedback value);
+	EList<Feedback> getFeedbacks();
 
 } // Controller

@@ -561,13 +561,22 @@ public interface STPAsecPackage extends EPackage {
 	int FEEDBACK__TYPE = DATA_FLOW_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Receiver</b></em>' reference.
+	 * The feature id for the '<em><b>Controller</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEEDBACK__RECEIVER = DATA_FLOW_FEATURE_COUNT + 1;
+	int FEEDBACK__CONTROLLER = DATA_FLOW_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Controlled Process</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEEDBACK__CONTROLLED_PROCESS = DATA_FLOW_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Feedback</em>' class.
@@ -576,7 +585,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEEDBACK_FEATURE_COUNT = DATA_FLOW_FEATURE_COUNT + 2;
+	int FEEDBACK_FEATURE_COUNT = DATA_FLOW_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Feedback</em>' class.
@@ -616,13 +625,22 @@ public interface STPAsecPackage extends EPackage {
 	int CONTROLLED_PROCESS__DESCRIPTION = STRUCTURE_ELEMENT__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Feedbacks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLED_PROCESS__FEEDBACKS = STRUCTURE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Controlled Process</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLED_PROCESS_FEATURE_COUNT = STRUCTURE_ELEMENT_FEATURE_COUNT + 0;
+	int CONTROLLED_PROCESS_FEATURE_COUNT = STRUCTURE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Controlled Process</em>' class.
@@ -671,13 +689,22 @@ public interface STPAsecPackage extends EPackage {
 	int CONTROLLER__TYPE = STRUCTURE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Feadback</b></em>' reference.
+	 * The feature id for the '<em><b>Commands</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__FEADBACK = STRUCTURE_ELEMENT_FEATURE_COUNT + 1;
+	int CONTROLLER__COMMANDS = STRUCTURE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Feedbacks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__FEEDBACKS = STRUCTURE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Controller</em>' class.
@@ -686,7 +713,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER_FEATURE_COUNT = STRUCTURE_ELEMENT_FEATURE_COUNT + 2;
+	int CONTROLLER_FEATURE_COUNT = STRUCTURE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Controller</em>' class.
@@ -772,13 +799,22 @@ public interface STPAsecPackage extends EPackage {
 	int CONTROL_ACTION__ID = DATA_FLOW__ID;
 
 	/**
+	 * The feature id for the '<em><b>Receiver</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_ACTION__RECEIVER = DATA_FLOW_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Control Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_ACTION_FEATURE_COUNT = DATA_FLOW_FEATURE_COUNT + 0;
+	int CONTROL_ACTION_FEATURE_COUNT = DATA_FLOW_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Control Action</em>' class.
@@ -1102,15 +1138,26 @@ public interface STPAsecPackage extends EPackage {
 	EAttribute getFeedback_Type();
 
 	/**
-	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.Feedback#getReceiver <em>Receiver</em>}'.
+	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.Feedback#getController <em>Controller</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Receiver</em>'.
-	 * @see tau.systemengineering.STPAsec.Feedback#getReceiver()
+	 * @return the meta object for the reference '<em>Controller</em>'.
+	 * @see tau.systemengineering.STPAsec.Feedback#getController()
 	 * @see #getFeedback()
 	 * @generated
 	 */
-	EReference getFeedback_Receiver();
+	EReference getFeedback_Controller();
+
+	/**
+	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.Feedback#getControlledProcess <em>Controlled Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Controlled Process</em>'.
+	 * @see tau.systemengineering.STPAsec.Feedback#getControlledProcess()
+	 * @see #getFeedback()
+	 * @generated
+	 */
+	EReference getFeedback_ControlledProcess();
 
 	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.StructureElement <em>Structure Element</em>}'.
@@ -1155,6 +1202,17 @@ public interface STPAsecPackage extends EPackage {
 	EClass getControlledProcess();
 
 	/**
+	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.ControlledProcess#getFeedbacks <em>Feedbacks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Feedbacks</em>'.
+	 * @see tau.systemengineering.STPAsec.ControlledProcess#getFeedbacks()
+	 * @see #getControlledProcess()
+	 * @generated
+	 */
+	EReference getControlledProcess_Feedbacks();
+
+	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.Controller <em>Controller</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1176,15 +1234,26 @@ public interface STPAsecPackage extends EPackage {
 	EAttribute getController_Type();
 
 	/**
-	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.Controller#getFeadback <em>Feadback</em>}'.
+	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.Controller#getCommands <em>Commands</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Feadback</em>'.
-	 * @see tau.systemengineering.STPAsec.Controller#getFeadback()
+	 * @return the meta object for the reference list '<em>Commands</em>'.
+	 * @see tau.systemengineering.STPAsec.Controller#getCommands()
 	 * @see #getController()
 	 * @generated
 	 */
-	EReference getController_Feadback();
+	EReference getController_Commands();
+
+	/**
+	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.Controller#getFeedbacks <em>Feedbacks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Feedbacks</em>'.
+	 * @see tau.systemengineering.STPAsec.Controller#getFeedbacks()
+	 * @see #getController()
+	 * @generated
+	 */
+	EReference getController_Feedbacks();
 
 	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.ControlStructure <em>Control Structure</em>}'.
@@ -1216,6 +1285,17 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getControlAction();
+
+	/**
+	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.ControlAction#getReceiver <em>Receiver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Receiver</em>'.
+	 * @see tau.systemengineering.STPAsec.ControlAction#getReceiver()
+	 * @see #getControlAction()
+	 * @generated
+	 */
+	EReference getControlAction_Receiver();
 
 	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.DataFlow <em>Data Flow</em>}'.
@@ -1508,12 +1588,20 @@ public interface STPAsecPackage extends EPackage {
 		EAttribute FEEDBACK__TYPE = eINSTANCE.getFeedback_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Receiver</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Controller</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FEEDBACK__RECEIVER = eINSTANCE.getFeedback_Receiver();
+		EReference FEEDBACK__CONTROLLER = eINSTANCE.getFeedback_Controller();
+
+		/**
+		 * The meta object literal for the '<em><b>Controlled Process</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEEDBACK__CONTROLLED_PROCESS = eINSTANCE.getFeedback_ControlledProcess();
 
 		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.StructureElementImpl <em>Structure Element</em>}' class.
@@ -1552,6 +1640,14 @@ public interface STPAsecPackage extends EPackage {
 		EClass CONTROLLED_PROCESS = eINSTANCE.getControlledProcess();
 
 		/**
+		 * The meta object literal for the '<em><b>Feedbacks</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROLLED_PROCESS__FEEDBACKS = eINSTANCE.getControlledProcess_Feedbacks();
+
+		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.ControllerImpl <em>Controller</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1570,12 +1666,20 @@ public interface STPAsecPackage extends EPackage {
 		EAttribute CONTROLLER__TYPE = eINSTANCE.getController_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Feadback</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Commands</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTROLLER__FEADBACK = eINSTANCE.getController_Feadback();
+		EReference CONTROLLER__COMMANDS = eINSTANCE.getController_Commands();
+
+		/**
+		 * The meta object literal for the '<em><b>Feedbacks</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROLLER__FEEDBACKS = eINSTANCE.getController_Feedbacks();
 
 		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.ControlStructureImpl <em>Control Structure</em>}' class.
@@ -1604,6 +1708,14 @@ public interface STPAsecPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CONTROL_ACTION = eINSTANCE.getControlAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Receiver</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROL_ACTION__RECEIVER = eINSTANCE.getControlAction_Receiver();
 
 		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.DataFlowImpl <em>Data Flow</em>}' class.

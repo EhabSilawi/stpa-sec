@@ -8,9 +8,11 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 import tau.systemengineering.STPAsec.ControlledProcess;
+import tau.systemengineering.STPAsec.STPAsecPackage;
 
 /**
  * This is the item provider adapter for a {@link tau.systemengineering.STPAsec.ControlledProcess} object.
@@ -40,8 +42,24 @@ public class ControlledProcessItemProvider extends StructureElementItemProvider 
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addFeedbacksPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Feedbacks feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFeedbacksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ControlledProcess_feedbacks_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ControlledProcess_feedbacks_feature",
+								"_UI_ControlledProcess_type"),
+						STPAsecPackage.Literals.CONTROLLED_PROCESS__FEEDBACKS, true, false, true, null, null, null));
 	}
 
 	/**

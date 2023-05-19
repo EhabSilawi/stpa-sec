@@ -7,9 +7,11 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 import tau.systemengineering.STPAsec.ControlAction;
+import tau.systemengineering.STPAsec.STPAsecPackage;
 
 /**
  * This is the item provider adapter for a {@link tau.systemengineering.STPAsec.ControlAction} object.
@@ -39,8 +41,24 @@ public class ControlActionItemProvider extends DataFlowItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addReceiverPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Receiver feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReceiverPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ControlAction_receiver_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_receiver_feature",
+								"_UI_ControlAction_type"),
+						STPAsecPackage.Literals.CONTROL_ACTION__RECEIVER, true, false, true, null, null, null));
 	}
 
 	/**

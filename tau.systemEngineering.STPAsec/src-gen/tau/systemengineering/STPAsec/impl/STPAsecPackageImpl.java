@@ -451,8 +451,17 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeedback_Receiver() {
+	public EReference getFeedback_Controller() {
 		return (EReference) feedbackEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeedback_ControlledProcess() {
+		return (EReference) feedbackEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -496,6 +505,15 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getControlledProcess_Feedbacks() {
+		return (EReference) controlledProcessEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getController() {
 		return controllerEClass;
 	}
@@ -514,8 +532,17 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getController_Feadback() {
+	public EReference getController_Commands() {
 		return (EReference) controllerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getController_Feedbacks() {
+		return (EReference) controllerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -543,6 +570,15 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 */
 	public EClass getControlAction() {
 		return controlActionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControlAction_Receiver() {
+		return (EReference) controlActionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -627,22 +663,26 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 
 		feedbackEClass = createEClass(FEEDBACK);
 		createEAttribute(feedbackEClass, FEEDBACK__TYPE);
-		createEReference(feedbackEClass, FEEDBACK__RECEIVER);
+		createEReference(feedbackEClass, FEEDBACK__CONTROLLER);
+		createEReference(feedbackEClass, FEEDBACK__CONTROLLED_PROCESS);
 
 		structureElementEClass = createEClass(STRUCTURE_ELEMENT);
 		createEAttribute(structureElementEClass, STRUCTURE_ELEMENT__NAME);
 		createEAttribute(structureElementEClass, STRUCTURE_ELEMENT__DESCRIPTION);
 
 		controlledProcessEClass = createEClass(CONTROLLED_PROCESS);
+		createEReference(controlledProcessEClass, CONTROLLED_PROCESS__FEEDBACKS);
 
 		controllerEClass = createEClass(CONTROLLER);
 		createEAttribute(controllerEClass, CONTROLLER__TYPE);
-		createEReference(controllerEClass, CONTROLLER__FEADBACK);
+		createEReference(controllerEClass, CONTROLLER__COMMANDS);
+		createEReference(controllerEClass, CONTROLLER__FEEDBACKS);
 
 		controlStructureEClass = createEClass(CONTROL_STRUCTURE);
 		createEReference(controlStructureEClass, CONTROL_STRUCTURE__ELEMENTS);
 
 		controlActionEClass = createEClass(CONTROL_ACTION);
+		createEReference(controlActionEClass, CONTROL_ACTION__RECEIVER);
 
 		dataFlowEClass = createEClass(DATA_FLOW);
 		createEAttribute(dataFlowEClass, DATA_FLOW__ID);
@@ -763,9 +803,13 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFeedback_Type(), ecorePackage.getEString(), "type", null, 0, 1, Feedback.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFeedback_Receiver(), this.getController(), this.getController_Feadback(), "receiver", null, 0,
-				1, Feedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeedback_Controller(), this.getController(), this.getController_Feedbacks(), "controller",
+				null, 0, 1, Feedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeedback_ControlledProcess(), this.getControlledProcess(),
+				this.getControlledProcess_Feedbacks(), "controlledProcess", null, 0, 1, Feedback.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(structureElementEClass, StructureElement.class, "StructureElement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -778,13 +822,19 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 
 		initEClass(controlledProcessEClass, ControlledProcess.class, "ControlledProcess", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getControlledProcess_Feedbacks(), this.getFeedback(), this.getFeedback_ControlledProcess(),
+				"feedbacks", null, 0, -1, ControlledProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controllerEClass, Controller.class, "Controller", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getController_Type(), ecorePackage.getEString(), "type", null, 0, 1, Controller.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getController_Feadback(), this.getFeedback(), this.getFeedback_Receiver(), "feadback", null, 0,
-				1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEReference(getController_Commands(), this.getControlAction(), this.getControlAction_Receiver(), "commands",
+				null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getController_Feedbacks(), this.getFeedback(), this.getFeedback_Controller(), "feedbacks", null,
+				0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controlStructureEClass, ControlStructure.class, "ControlStructure", !IS_ABSTRACT, !IS_INTERFACE,
@@ -795,6 +845,9 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 
 		initEClass(controlActionEClass, ControlAction.class, "ControlAction", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getControlAction_Receiver(), this.getController(), this.getController_Commands(), "receiver",
+				null, 0, 1, ControlAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataFlowEClass, DataFlow.class, "DataFlow", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataFlow_Id(), ecorePackage.getEInt(), "id", null, 0, 1, DataFlow.class, !IS_TRANSIENT,
