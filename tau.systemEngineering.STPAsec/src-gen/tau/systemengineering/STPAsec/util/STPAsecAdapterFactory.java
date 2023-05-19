@@ -22,6 +22,7 @@ import tau.systemengineering.STPAsec.STPASec;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 import tau.systemengineering.STPAsec.SecurityRecomendation;
 import tau.systemengineering.STPAsec.StructureElement;
+import tau.systemengineering.STPAsec.UnsafeControlAction;
 
 /**
  * <!-- begin-user-doc -->
@@ -141,6 +142,11 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseDataFlow(DataFlow object) {
 			return createDataFlowAdapter();
+		}
+
+		@Override
+		public Adapter caseUnsafeControlAction(UnsafeControlAction object) {
+			return createUnsafeControlActionAdapter();
 		}
 
 		@Override
@@ -341,6 +347,20 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDataFlowAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.UnsafeControlAction <em>Unsafe Control Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tau.systemengineering.STPAsec.UnsafeControlAction
+	 * @generated
+	 */
+	public Adapter createUnsafeControlActionAdapter() {
 		return null;
 	}
 

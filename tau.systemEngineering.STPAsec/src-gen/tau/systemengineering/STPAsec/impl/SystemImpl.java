@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import tau.systemengineering.STPAsec.ControlStructure;
+import tau.systemengineering.STPAsec.Hazard;
 import tau.systemengineering.STPAsec.LossScenario;
 import tau.systemengineering.STPAsec.MissionGoal;
 import tau.systemengineering.STPAsec.STPAsecPackage;
@@ -38,6 +39,7 @@ import tau.systemengineering.STPAsec.SecurityRecomendation;
  *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getConsistsOf <em>Consists Of</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getCauses <em>Causes</em>}</li>
  * </ul>
  *
  * @generated
@@ -122,6 +124,16 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCauses() <em>Causes</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCauses()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Hazard> causes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -278,6 +290,18 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Hazard> getCauses() {
+		if (causes == null) {
+			causes = new EObjectContainmentEList<Hazard>(Hazard.class, this, STPAsecPackage.SYSTEM__CAUSES);
+		}
+		return causes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -289,6 +313,8 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 			return ((InternalEList<?>) getScenario()).basicRemove(otherEnd, msgs);
 		case STPAsecPackage.SYSTEM__CONSISTS_OF:
 			return basicSetConsistsOf(null, msgs);
+		case STPAsecPackage.SYSTEM__CAUSES:
+			return ((InternalEList<?>) getCauses()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -313,6 +339,8 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 			return getConsistsOf();
 		case STPAsecPackage.SYSTEM__DESCRIPTION:
 			return getDescription();
+		case STPAsecPackage.SYSTEM__CAUSES:
+			return getCauses();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -347,6 +375,10 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 		case STPAsecPackage.SYSTEM__DESCRIPTION:
 			setDescription((String) newValue);
 			return;
+		case STPAsecPackage.SYSTEM__CAUSES:
+			getCauses().clear();
+			getCauses().addAll((Collection<? extends Hazard>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -377,6 +409,9 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 		case STPAsecPackage.SYSTEM__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
 			return;
+		case STPAsecPackage.SYSTEM__CAUSES:
+			getCauses().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -401,6 +436,8 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 			return consistsOf != null;
 		case STPAsecPackage.SYSTEM__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case STPAsecPackage.SYSTEM__CAUSES:
+			return causes != null && !causes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

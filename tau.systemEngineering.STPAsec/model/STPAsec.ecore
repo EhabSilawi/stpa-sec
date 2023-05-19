@@ -7,16 +7,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="solutions" upperBound="-1"
         eType="#//SecurityRecomendation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedHazards" upperBound="-1"
-        eType="#//Hazard"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="causes" upperBound="-1"
-        eType="#//Hazard" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Hazard">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedCommands" upperBound="-1"
-        eType="#//ControlAction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedLosses" upperBound="-1"
+        eType="#//LossScenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unsafeControlActions" upperBound="-1"
+        eType="#//ControlAction" eOpposite="#//ControlAction/hazards"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MissionGoal">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -39,6 +37,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="consistsOf" lowerBound="1"
         eType="#//ControlStructure" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="causes" upperBound="-1"
+        eType="#//Hazard" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="STPASec">
     <eStructuralFeatures xsi:type="ecore:EReference" name="system" lowerBound="1"
@@ -70,11 +70,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//StructureElement" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataFlow" abstract="true" eSuperTypes="#//StructureElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ControlAction" eSuperTypes="#//DataFlow">
     <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" eType="#//Controller"
         eOpposite="#//Controller/commands"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataFlow" abstract="true" eSuperTypes="#//StructureElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hazards" upperBound="-1"
+        eType="#//Hazard" eOpposite="#//Hazard/unsafeControlActions"/>
   </eClassifiers>
 </ecore:EPackage>

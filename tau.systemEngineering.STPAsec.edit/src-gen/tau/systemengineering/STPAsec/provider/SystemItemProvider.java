@@ -108,6 +108,7 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__GOALS);
 			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__SCENARIO);
 			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__CONSISTS_OF);
+			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__CAUSES);
 		}
 		return childrenFeatures;
 	}
@@ -179,6 +180,7 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 		case STPAsecPackage.SYSTEM__GOALS:
 		case STPAsecPackage.SYSTEM__SCENARIO:
 		case STPAsecPackage.SYSTEM__CONSISTS_OF:
+		case STPAsecPackage.SYSTEM__CAUSES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -207,6 +209,9 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 
 		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__CONSISTS_OF,
 				STPAsecFactory.eINSTANCE.createControlStructure()));
+
+		newChildDescriptors.add(
+				createChildParameter(STPAsecPackage.Literals.SYSTEM__CAUSES, STPAsecFactory.eINSTANCE.createHazard()));
 	}
 
 	/**

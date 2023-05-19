@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tau.systemengineering.STPAsec.System#getScenario <em>Scenario</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.System#getConsistsOf <em>Consists Of</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.System#getDescription <em>Description</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.System#getCauses <em>Causes</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem()
@@ -129,5 +130,17 @@ public interface System extends EObject {
 	 * @generated
 	 */
 	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Causes</b></em>' containment reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.Hazard}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Causes</em>' containment reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem_Causes()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Hazard> getCauses();
 
 } // System

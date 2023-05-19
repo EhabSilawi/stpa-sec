@@ -9,14 +9,14 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import tau.systemengineering.STPAsec.ControlAction;
 import tau.systemengineering.STPAsec.Hazard;
+import tau.systemengineering.STPAsec.LossScenario;
 import tau.systemengineering.STPAsec.STPAsecPackage;
+import tau.systemengineering.STPAsec.UnsafeControlAction;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,8 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.impl.HazardImpl#getId <em>Id</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.HazardImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.HazardImpl#getRelatedCommands <em>Related Commands</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.HazardImpl#getRelatedLosses <em>Related Losses</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.HazardImpl#getUnsafeControlAction <em>Unsafe Control Action</em>}</li>
  * </ul>
  *
  * @generated
@@ -75,14 +76,24 @@ public class HazardImpl extends MinimalEObjectImpl.Container implements Hazard {
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRelatedCommands() <em>Related Commands</em>}' reference list.
+	 * The cached value of the '{@link #getRelatedLosses() <em>Related Losses</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRelatedCommands()
+	 * @see #getRelatedLosses()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ControlAction> relatedCommands;
+	protected EList<LossScenario> relatedLosses;
+
+	/**
+	 * The cached value of the '{@link #getUnsafeControlAction() <em>Unsafe Control Action</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUnsafeControlAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<UnsafeControlAction> unsafeControlAction;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,12 +162,25 @@ public class HazardImpl extends MinimalEObjectImpl.Container implements Hazard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ControlAction> getRelatedCommands() {
-		if (relatedCommands == null) {
-			relatedCommands = new EObjectResolvingEList<ControlAction>(ControlAction.class, this,
-					STPAsecPackage.HAZARD__RELATED_COMMANDS);
+	public EList<LossScenario> getRelatedLosses() {
+		if (relatedLosses == null) {
+			relatedLosses = new EObjectResolvingEList<LossScenario>(LossScenario.class, this,
+					STPAsecPackage.HAZARD__RELATED_LOSSES);
 		}
-		return relatedCommands;
+		return relatedLosses;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<UnsafeControlAction> getUnsafeControlAction() {
+		if (unsafeControlAction == null) {
+			unsafeControlAction = new EObjectResolvingEList<UnsafeControlAction>(UnsafeControlAction.class, this,
+					STPAsecPackage.HAZARD__UNSAFE_CONTROL_ACTION);
+		}
+		return unsafeControlAction;
 	}
 
 	/**
@@ -171,8 +195,10 @@ public class HazardImpl extends MinimalEObjectImpl.Container implements Hazard {
 			return getId();
 		case STPAsecPackage.HAZARD__DESCRIPTION:
 			return getDescription();
-		case STPAsecPackage.HAZARD__RELATED_COMMANDS:
-			return getRelatedCommands();
+		case STPAsecPackage.HAZARD__RELATED_LOSSES:
+			return getRelatedLosses();
+		case STPAsecPackage.HAZARD__UNSAFE_CONTROL_ACTION:
+			return getUnsafeControlAction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -192,9 +218,13 @@ public class HazardImpl extends MinimalEObjectImpl.Container implements Hazard {
 		case STPAsecPackage.HAZARD__DESCRIPTION:
 			setDescription((String) newValue);
 			return;
-		case STPAsecPackage.HAZARD__RELATED_COMMANDS:
-			getRelatedCommands().clear();
-			getRelatedCommands().addAll((Collection<? extends ControlAction>) newValue);
+		case STPAsecPackage.HAZARD__RELATED_LOSSES:
+			getRelatedLosses().clear();
+			getRelatedLosses().addAll((Collection<? extends LossScenario>) newValue);
+			return;
+		case STPAsecPackage.HAZARD__UNSAFE_CONTROL_ACTION:
+			getUnsafeControlAction().clear();
+			getUnsafeControlAction().addAll((Collection<? extends UnsafeControlAction>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -214,8 +244,11 @@ public class HazardImpl extends MinimalEObjectImpl.Container implements Hazard {
 		case STPAsecPackage.HAZARD__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
 			return;
-		case STPAsecPackage.HAZARD__RELATED_COMMANDS:
-			getRelatedCommands().clear();
+		case STPAsecPackage.HAZARD__RELATED_LOSSES:
+			getRelatedLosses().clear();
+			return;
+		case STPAsecPackage.HAZARD__UNSAFE_CONTROL_ACTION:
+			getUnsafeControlAction().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -233,8 +266,10 @@ public class HazardImpl extends MinimalEObjectImpl.Container implements Hazard {
 			return id != ID_EDEFAULT;
 		case STPAsecPackage.HAZARD__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		case STPAsecPackage.HAZARD__RELATED_COMMANDS:
-			return relatedCommands != null && !relatedCommands.isEmpty();
+		case STPAsecPackage.HAZARD__RELATED_LOSSES:
+			return relatedLosses != null && !relatedLosses.isEmpty();
+		case STPAsecPackage.HAZARD__UNSAFE_CONTROL_ACTION:
+			return unsafeControlAction != null && !unsafeControlAction.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

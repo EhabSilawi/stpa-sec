@@ -20,6 +20,7 @@ import tau.systemengineering.STPAsec.STPASec;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 import tau.systemengineering.STPAsec.SecurityRecomendation;
 import tau.systemengineering.STPAsec.StructureElement;
+import tau.systemengineering.STPAsec.UnsafeControlAction;
 
 /**
  * <!-- begin-user-doc -->
@@ -179,6 +180,19 @@ public class STPAsecSwitch<T> extends Switch<T> {
 			T result = caseDataFlow(dataFlow);
 			if (result == null)
 				result = caseStructureElement(dataFlow);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case STPAsecPackage.UNSAFE_CONTROL_ACTION: {
+			UnsafeControlAction unsafeControlAction = (UnsafeControlAction) theEObject;
+			T result = caseUnsafeControlAction(unsafeControlAction);
+			if (result == null)
+				result = caseControlAction(unsafeControlAction);
+			if (result == null)
+				result = caseDataFlow(unsafeControlAction);
+			if (result == null)
+				result = caseStructureElement(unsafeControlAction);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -380,6 +394,21 @@ public class STPAsecSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDataFlow(DataFlow object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Unsafe Control Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Unsafe Control Action</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUnsafeControlAction(UnsafeControlAction object) {
 		return null;
 	}
 

@@ -19,8 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tau.systemengineering.STPAsec.LossScenario#getDescription <em>Description</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.LossScenario#getSeverity <em>Severity</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.LossScenario#getSolutions <em>Solutions</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.LossScenario#getRelatedHazards <em>Related Hazards</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.LossScenario#getCauses <em>Causes</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getLossScenario()
@@ -105,29 +103,5 @@ public interface LossScenario extends EObject {
 	 * @generated
 	 */
 	EList<SecurityRecomendation> getSolutions();
-
-	/**
-	 * Returns the value of the '<em><b>Related Hazards</b></em>' reference list.
-	 * The list contents are of type {@link tau.systemengineering.STPAsec.Hazard}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Related Hazards</em>' reference list.
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getLossScenario_RelatedHazards()
-	 * @model
-	 * @generated
-	 */
-	EList<Hazard> getRelatedHazards();
-
-	/**
-	 * Returns the value of the '<em><b>Causes</b></em>' containment reference list.
-	 * The list contents are of type {@link tau.systemengineering.STPAsec.Hazard}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Causes</em>' containment reference list.
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getLossScenario_Causes()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Hazard> getCauses();
 
 } // LossScenario

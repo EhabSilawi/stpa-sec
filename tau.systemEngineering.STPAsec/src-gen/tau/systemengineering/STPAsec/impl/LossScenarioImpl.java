@@ -5,21 +5,12 @@ package tau.systemengineering.STPAsec.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import tau.systemengineering.STPAsec.Hazard;
 import tau.systemengineering.STPAsec.LossScenario;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 import tau.systemengineering.STPAsec.SecurityRecomendation;
@@ -36,8 +27,6 @@ import tau.systemengineering.STPAsec.SecurityRecomendation;
  *   <li>{@link tau.systemengineering.STPAsec.impl.LossScenarioImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.LossScenarioImpl#getSeverity <em>Severity</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.LossScenarioImpl#getSolutions <em>Solutions</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.LossScenarioImpl#getRelatedHazards <em>Related Hazards</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.LossScenarioImpl#getCauses <em>Causes</em>}</li>
  * </ul>
  *
  * @generated
@@ -112,26 +101,6 @@ public class LossScenarioImpl extends MinimalEObjectImpl.Container implements Lo
 	 * @ordered
 	 */
 	protected EList<SecurityRecomendation> solutions;
-
-	/**
-	 * The cached value of the '{@link #getRelatedHazards() <em>Related Hazards</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRelatedHazards()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Hazard> relatedHazards;
-
-	/**
-	 * The cached value of the '{@link #getCauses() <em>Causes</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCauses()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Hazard> causes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -235,45 +204,6 @@ public class LossScenarioImpl extends MinimalEObjectImpl.Container implements Lo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Hazard> getRelatedHazards() {
-		if (relatedHazards == null) {
-			relatedHazards = new EObjectResolvingEList<Hazard>(Hazard.class, this,
-					STPAsecPackage.LOSS_SCENARIO__RELATED_HAZARDS);
-		}
-		return relatedHazards;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Hazard> getCauses() {
-		if (causes == null) {
-			causes = new EObjectContainmentEList<Hazard>(Hazard.class, this, STPAsecPackage.LOSS_SCENARIO__CAUSES);
-		}
-		return causes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case STPAsecPackage.LOSS_SCENARIO__CAUSES:
-			return ((InternalEList<?>) getCauses()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -285,10 +215,6 @@ public class LossScenarioImpl extends MinimalEObjectImpl.Container implements Lo
 			return getSeverity();
 		case STPAsecPackage.LOSS_SCENARIO__SOLUTIONS:
 			return getSolutions();
-		case STPAsecPackage.LOSS_SCENARIO__RELATED_HAZARDS:
-			return getRelatedHazards();
-		case STPAsecPackage.LOSS_SCENARIO__CAUSES:
-			return getCauses();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -315,14 +241,6 @@ public class LossScenarioImpl extends MinimalEObjectImpl.Container implements Lo
 			getSolutions().clear();
 			getSolutions().addAll((Collection<? extends SecurityRecomendation>) newValue);
 			return;
-		case STPAsecPackage.LOSS_SCENARIO__RELATED_HAZARDS:
-			getRelatedHazards().clear();
-			getRelatedHazards().addAll((Collection<? extends Hazard>) newValue);
-			return;
-		case STPAsecPackage.LOSS_SCENARIO__CAUSES:
-			getCauses().clear();
-			getCauses().addAll((Collection<? extends Hazard>) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -347,12 +265,6 @@ public class LossScenarioImpl extends MinimalEObjectImpl.Container implements Lo
 		case STPAsecPackage.LOSS_SCENARIO__SOLUTIONS:
 			getSolutions().clear();
 			return;
-		case STPAsecPackage.LOSS_SCENARIO__RELATED_HAZARDS:
-			getRelatedHazards().clear();
-			return;
-		case STPAsecPackage.LOSS_SCENARIO__CAUSES:
-			getCauses().clear();
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -373,10 +285,6 @@ public class LossScenarioImpl extends MinimalEObjectImpl.Container implements Lo
 			return SEVERITY_EDEFAULT == null ? severity != null : !SEVERITY_EDEFAULT.equals(severity);
 		case STPAsecPackage.LOSS_SCENARIO__SOLUTIONS:
 			return solutions != null && !solutions.isEmpty();
-		case STPAsecPackage.LOSS_SCENARIO__RELATED_HAZARDS:
-			return relatedHazards != null && !relatedHazards.isEmpty();
-		case STPAsecPackage.LOSS_SCENARIO__CAUSES:
-			return causes != null && !causes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

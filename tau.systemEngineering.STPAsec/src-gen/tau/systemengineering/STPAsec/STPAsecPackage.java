@@ -103,31 +103,13 @@ public interface STPAsecPackage extends EPackage {
 	int LOSS_SCENARIO__SOLUTIONS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Related Hazards</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOSS_SCENARIO__RELATED_HAZARDS = 4;
-
-	/**
-	 * The feature id for the '<em><b>Causes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOSS_SCENARIO__CAUSES = 5;
-
-	/**
 	 * The number of structural features of the '<em>Loss Scenario</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOSS_SCENARIO_FEATURE_COUNT = 6;
+	int LOSS_SCENARIO_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Loss Scenario</em>' class.
@@ -167,13 +149,22 @@ public interface STPAsecPackage extends EPackage {
 	int HAZARD__DESCRIPTION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Related Commands</b></em>' reference list.
+	 * The feature id for the '<em><b>Related Losses</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HAZARD__RELATED_COMMANDS = 2;
+	int HAZARD__RELATED_LOSSES = 2;
+
+	/**
+	 * The feature id for the '<em><b>Unsafe Control Action</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HAZARD__UNSAFE_CONTROL_ACTION = 3;
 
 	/**
 	 * The number of structural features of the '<em>Hazard</em>' class.
@@ -182,7 +173,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HAZARD_FEATURE_COUNT = 3;
+	int HAZARD_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Hazard</em>' class.
@@ -359,13 +350,22 @@ public interface STPAsecPackage extends EPackage {
 	int SYSTEM__DESCRIPTION = 5;
 
 	/**
+	 * The feature id for the '<em><b>Causes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__CAUSES = 6;
+
+	/**
 	 * The number of structural features of the '<em>System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_FEATURE_COUNT = 6;
+	int SYSTEM_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>System</em>' class.
@@ -826,6 +826,79 @@ public interface STPAsecPackage extends EPackage {
 	int CONTROL_ACTION_OPERATION_COUNT = DATA_FLOW_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.UnsafeControlActionImpl <em>Unsafe Control Action</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tau.systemengineering.STPAsec.impl.UnsafeControlActionImpl
+	 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getUnsafeControlAction()
+	 * @generated
+	 */
+	int UNSAFE_CONTROL_ACTION = 13;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSAFE_CONTROL_ACTION__NAME = CONTROL_ACTION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSAFE_CONTROL_ACTION__DESCRIPTION = CONTROL_ACTION__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSAFE_CONTROL_ACTION__ID = CONTROL_ACTION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Receiver</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSAFE_CONTROL_ACTION__RECEIVER = CONTROL_ACTION__RECEIVER;
+
+	/**
+	 * The feature id for the '<em><b>Hazard</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSAFE_CONTROL_ACTION__HAZARD = CONTROL_ACTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Unsafe Control Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSAFE_CONTROL_ACTION_FEATURE_COUNT = CONTROL_ACTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Unsafe Control Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSAFE_CONTROL_ACTION_OPERATION_COUNT = CONTROL_ACTION_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.LossScenario <em>Loss Scenario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -880,28 +953,6 @@ public interface STPAsecPackage extends EPackage {
 	EReference getLossScenario_Solutions();
 
 	/**
-	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.LossScenario#getRelatedHazards <em>Related Hazards</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Related Hazards</em>'.
-	 * @see tau.systemengineering.STPAsec.LossScenario#getRelatedHazards()
-	 * @see #getLossScenario()
-	 * @generated
-	 */
-	EReference getLossScenario_RelatedHazards();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.LossScenario#getCauses <em>Causes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Causes</em>'.
-	 * @see tau.systemengineering.STPAsec.LossScenario#getCauses()
-	 * @see #getLossScenario()
-	 * @generated
-	 */
-	EReference getLossScenario_Causes();
-
-	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.Hazard <em>Hazard</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -934,15 +985,26 @@ public interface STPAsecPackage extends EPackage {
 	EAttribute getHazard_Description();
 
 	/**
-	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.Hazard#getRelatedCommands <em>Related Commands</em>}'.
+	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.Hazard#getRelatedLosses <em>Related Losses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Related Commands</em>'.
-	 * @see tau.systemengineering.STPAsec.Hazard#getRelatedCommands()
+	 * @return the meta object for the reference list '<em>Related Losses</em>'.
+	 * @see tau.systemengineering.STPAsec.Hazard#getRelatedLosses()
 	 * @see #getHazard()
 	 * @generated
 	 */
-	EReference getHazard_RelatedCommands();
+	EReference getHazard_RelatedLosses();
+
+	/**
+	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.Hazard#getUnsafeControlAction <em>Unsafe Control Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Unsafe Control Action</em>'.
+	 * @see tau.systemengineering.STPAsec.Hazard#getUnsafeControlAction()
+	 * @see #getHazard()
+	 * @generated
+	 */
+	EReference getHazard_UnsafeControlAction();
 
 	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.MissionGoal <em>Mission Goal</em>}'.
@@ -1094,6 +1156,17 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSystem_Description();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.System#getCauses <em>Causes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Causes</em>'.
+	 * @see tau.systemengineering.STPAsec.System#getCauses()
+	 * @see #getSystem()
+	 * @generated
+	 */
+	EReference getSystem_Causes();
 
 	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.STPASec <em>STPA Sec</em>}'.
@@ -1319,6 +1392,27 @@ public interface STPAsecPackage extends EPackage {
 	EAttribute getDataFlow_Id();
 
 	/**
+	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.UnsafeControlAction <em>Unsafe Control Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Unsafe Control Action</em>'.
+	 * @see tau.systemengineering.STPAsec.UnsafeControlAction
+	 * @generated
+	 */
+	EClass getUnsafeControlAction();
+
+	/**
+	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.UnsafeControlAction#getHazard <em>Hazard</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Hazard</em>'.
+	 * @see tau.systemengineering.STPAsec.UnsafeControlAction#getHazard()
+	 * @see #getUnsafeControlAction()
+	 * @generated
+	 */
+	EReference getUnsafeControlAction_Hazard();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1384,22 +1478,6 @@ public interface STPAsecPackage extends EPackage {
 		EReference LOSS_SCENARIO__SOLUTIONS = eINSTANCE.getLossScenario_Solutions();
 
 		/**
-		 * The meta object literal for the '<em><b>Related Hazards</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LOSS_SCENARIO__RELATED_HAZARDS = eINSTANCE.getLossScenario_RelatedHazards();
-
-		/**
-		 * The meta object literal for the '<em><b>Causes</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LOSS_SCENARIO__CAUSES = eINSTANCE.getLossScenario_Causes();
-
-		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.HazardImpl <em>Hazard</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1426,12 +1504,20 @@ public interface STPAsecPackage extends EPackage {
 		EAttribute HAZARD__DESCRIPTION = eINSTANCE.getHazard_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Related Commands</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Related Losses</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HAZARD__RELATED_COMMANDS = eINSTANCE.getHazard_RelatedCommands();
+		EReference HAZARD__RELATED_LOSSES = eINSTANCE.getHazard_RelatedLosses();
+
+		/**
+		 * The meta object literal for the '<em><b>Unsafe Control Action</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HAZARD__UNSAFE_CONTROL_ACTION = eINSTANCE.getHazard_UnsafeControlAction();
 
 		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.MissionGoalImpl <em>Mission Goal</em>}' class.
@@ -1550,6 +1636,14 @@ public interface STPAsecPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SYSTEM__DESCRIPTION = eINSTANCE.getSystem_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Causes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYSTEM__CAUSES = eINSTANCE.getSystem_Causes();
 
 		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.STPASecImpl <em>STPA Sec</em>}' class.
@@ -1734,6 +1828,24 @@ public interface STPAsecPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATA_FLOW__ID = eINSTANCE.getDataFlow_Id();
+
+		/**
+		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.UnsafeControlActionImpl <em>Unsafe Control Action</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tau.systemengineering.STPAsec.impl.UnsafeControlActionImpl
+		 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getUnsafeControlAction()
+		 * @generated
+		 */
+		EClass UNSAFE_CONTROL_ACTION = eINSTANCE.getUnsafeControlAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Hazard</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNSAFE_CONTROL_ACTION__HAZARD = eINSTANCE.getUnsafeControlAction_Hazard();
 
 	}
 

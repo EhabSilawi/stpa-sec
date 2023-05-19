@@ -54,7 +54,8 @@ public class HazardItemProvider extends ItemProviderAdapter implements IEditingD
 
 			addIdPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
-			addRelatedCommandsPropertyDescriptor(object);
+			addRelatedLossesPropertyDescriptor(object);
+			addUnsafeControlActionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -91,18 +92,33 @@ public class HazardItemProvider extends ItemProviderAdapter implements IEditingD
 	}
 
 	/**
-	 * This adds a property descriptor for the Related Commands feature.
+	 * This adds a property descriptor for the Related Losses feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRelatedCommandsPropertyDescriptor(Object object) {
+	protected void addRelatedLossesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Hazard_relatedCommands_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Hazard_relatedCommands_feature",
+						getResourceLocator(), getString("_UI_Hazard_relatedLosses_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Hazard_relatedLosses_feature",
 								"_UI_Hazard_type"),
-						STPAsecPackage.Literals.HAZARD__RELATED_COMMANDS, true, false, true, null, null, null));
+						STPAsecPackage.Literals.HAZARD__RELATED_LOSSES, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Unsafe Control Action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUnsafeControlActionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Hazard_unsafeControlAction_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Hazard_unsafeControlAction_feature",
+								"_UI_Hazard_type"),
+						STPAsecPackage.Literals.HAZARD__UNSAFE_CONTROL_ACTION, true, false, true, null, null, null));
 	}
 
 	/**

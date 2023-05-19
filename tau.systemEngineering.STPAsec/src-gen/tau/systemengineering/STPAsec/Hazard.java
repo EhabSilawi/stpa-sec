@@ -17,7 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.Hazard#getId <em>Id</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.Hazard#getDescription <em>Description</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.Hazard#getRelatedCommands <em>Related Commands</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.Hazard#getRelatedLosses <em>Related Losses</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.Hazard#getUnsafeControlAction <em>Unsafe Control Action</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getHazard()
@@ -70,15 +71,27 @@ public interface Hazard extends EObject {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Related Commands</b></em>' reference list.
-	 * The list contents are of type {@link tau.systemengineering.STPAsec.ControlAction}.
+	 * Returns the value of the '<em><b>Related Losses</b></em>' reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.LossScenario}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Related Commands</em>' reference list.
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getHazard_RelatedCommands()
+	 * @return the value of the '<em>Related Losses</em>' reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getHazard_RelatedLosses()
 	 * @model
 	 * @generated
 	 */
-	EList<ControlAction> getRelatedCommands();
+	EList<LossScenario> getRelatedLosses();
+
+	/**
+	 * Returns the value of the '<em><b>Unsafe Control Action</b></em>' reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.UnsafeControlAction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Unsafe Control Action</em>' reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getHazard_UnsafeControlAction()
+	 * @model
+	 * @generated
+	 */
+	EList<UnsafeControlAction> getUnsafeControlAction();
 
 } // Hazard

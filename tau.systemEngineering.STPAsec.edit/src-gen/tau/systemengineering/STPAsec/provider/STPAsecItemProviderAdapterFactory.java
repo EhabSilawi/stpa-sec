@@ -326,6 +326,29 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.UnsafeControlAction} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UnsafeControlActionItemProvider unsafeControlActionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.UnsafeControlAction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUnsafeControlActionAdapter() {
+		if (unsafeControlActionItemProvider == null) {
+			unsafeControlActionItemProvider = new UnsafeControlActionItemProvider(this);
+		}
+
+		return unsafeControlActionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -446,6 +469,8 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 			controlStructureItemProvider.dispose();
 		if (controlActionItemProvider != null)
 			controlActionItemProvider.dispose();
+		if (unsafeControlActionItemProvider != null)
+			unsafeControlActionItemProvider.dispose();
 	}
 
 }
