@@ -22,7 +22,6 @@ import tau.systemengineering.STPAsec.STPAsecFactory;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 import tau.systemengineering.STPAsec.SecurityRecomendation;
 import tau.systemengineering.STPAsec.StructureElement;
-import tau.systemengineering.STPAsec.UnsafeControlAction;
 
 /**
  * <!-- begin-user-doc -->
@@ -121,13 +120,6 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * @generated
 	 */
 	private EClass dataFlowEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass unsafeControlActionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -279,7 +271,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHazard_UnsafeControlAction() {
+	public EReference getHazard_UnsafeControlActions() {
 		return (EReference) hazardEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -594,6 +586,15 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getControlAction_Hazards() {
+		return (EReference) controlActionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDataFlow() {
 		return dataFlowEClass;
 	}
@@ -605,24 +606,6 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 */
 	public EAttribute getDataFlow_Id() {
 		return (EAttribute) dataFlowEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getUnsafeControlAction() {
-		return unsafeControlActionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getUnsafeControlAction_Hazard() {
-		return (EReference) unsafeControlActionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -664,7 +647,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		createEAttribute(hazardEClass, HAZARD__ID);
 		createEAttribute(hazardEClass, HAZARD__DESCRIPTION);
 		createEReference(hazardEClass, HAZARD__RELATED_LOSSES);
-		createEReference(hazardEClass, HAZARD__UNSAFE_CONTROL_ACTION);
+		createEReference(hazardEClass, HAZARD__UNSAFE_CONTROL_ACTIONS);
 
 		missionGoalEClass = createEClass(MISSION_GOAL);
 		createEAttribute(missionGoalEClass, MISSION_GOAL__NAME);
@@ -707,14 +690,12 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		controlStructureEClass = createEClass(CONTROL_STRUCTURE);
 		createEReference(controlStructureEClass, CONTROL_STRUCTURE__ELEMENTS);
 
-		controlActionEClass = createEClass(CONTROL_ACTION);
-		createEReference(controlActionEClass, CONTROL_ACTION__RECEIVER);
-
 		dataFlowEClass = createEClass(DATA_FLOW);
 		createEAttribute(dataFlowEClass, DATA_FLOW__ID);
 
-		unsafeControlActionEClass = createEClass(UNSAFE_CONTROL_ACTION);
-		createEReference(unsafeControlActionEClass, UNSAFE_CONTROL_ACTION__HAZARD);
+		controlActionEClass = createEClass(CONTROL_ACTION);
+		createEReference(controlActionEClass, CONTROL_ACTION__RECEIVER);
+		createEReference(controlActionEClass, CONTROL_ACTION__HAZARDS);
 	}
 
 	/**
@@ -749,9 +730,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		feedbackEClass.getESuperTypes().add(this.getDataFlow());
 		controlledProcessEClass.getESuperTypes().add(this.getStructureElement());
 		controllerEClass.getESuperTypes().add(this.getStructureElement());
-		controlActionEClass.getESuperTypes().add(this.getDataFlow());
 		dataFlowEClass.getESuperTypes().add(this.getStructureElement());
-		unsafeControlActionEClass.getESuperTypes().add(this.getControlAction());
+		controlActionEClass.getESuperTypes().add(this.getDataFlow());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(lossScenarioEClass, LossScenario.class, "LossScenario", !IS_ABSTRACT, !IS_INTERFACE,
@@ -776,9 +756,9 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		initEReference(getHazard_RelatedLosses(), this.getLossScenario(), null, "relatedLosses", null, 0, -1,
 				Hazard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHazard_UnsafeControlAction(), this.getUnsafeControlAction(), null, "unsafeControlAction",
-				null, 0, -1, Hazard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHazard_UnsafeControlActions(), this.getControlAction(), this.getControlAction_Hazards(),
+				"unsafeControlActions", null, 0, -1, Hazard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(missionGoalEClass, MissionGoal.class, "MissionGoal", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -873,20 +853,17 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 				ControlStructure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(dataFlowEClass, DataFlow.class, "DataFlow", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataFlow_Id(), ecorePackage.getEInt(), "id", null, 0, 1, DataFlow.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(controlActionEClass, ControlAction.class, "ControlAction", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getControlAction_Receiver(), this.getController(), this.getController_Commands(), "receiver",
 				null, 0, 1, ControlAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(dataFlowEClass, DataFlow.class, "DataFlow", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataFlow_Id(), ecorePackage.getEInt(), "id", null, 0, 1, DataFlow.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(unsafeControlActionEClass, UnsafeControlAction.class, "UnsafeControlAction", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUnsafeControlAction_Hazard(), this.getHazard(), null, "hazard", null, 0, 1,
-				UnsafeControlAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+		initEReference(getControlAction_Hazards(), this.getHazard(), this.getHazard_UnsafeControlActions(), "hazards",
+				null, 0, -1, ControlAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

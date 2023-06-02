@@ -22,7 +22,6 @@ import tau.systemengineering.STPAsec.STPASec;
 import tau.systemengineering.STPAsec.STPAsecFactory;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 import tau.systemengineering.STPAsec.SecurityRecomendation;
-import tau.systemengineering.STPAsec.UnsafeControlAction;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,8 +89,6 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 			return createControlStructure();
 		case STPAsecPackage.CONTROL_ACTION:
 			return createControlAction();
-		case STPAsecPackage.UNSAFE_CONTROL_ACTION:
-			return createUnsafeControlAction();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -205,16 +202,6 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 	public ControlAction createControlAction() {
 		ControlActionImpl controlAction = new ControlActionImpl();
 		return controlAction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UnsafeControlAction createUnsafeControlAction() {
-		UnsafeControlActionImpl unsafeControlAction = new UnsafeControlActionImpl();
-		return unsafeControlAction;
 	}
 
 	/**

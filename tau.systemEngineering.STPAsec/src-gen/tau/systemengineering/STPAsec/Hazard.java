@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tau.systemengineering.STPAsec.Hazard#getId <em>Id</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.Hazard#getDescription <em>Description</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.Hazard#getRelatedLosses <em>Related Losses</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.Hazard#getUnsafeControlAction <em>Unsafe Control Action</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.Hazard#getUnsafeControlActions <em>Unsafe Control Actions</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getHazard()
@@ -83,15 +83,17 @@ public interface Hazard extends EObject {
 	EList<LossScenario> getRelatedLosses();
 
 	/**
-	 * Returns the value of the '<em><b>Unsafe Control Action</b></em>' reference list.
-	 * The list contents are of type {@link tau.systemengineering.STPAsec.UnsafeControlAction}.
+	 * Returns the value of the '<em><b>Unsafe Control Actions</b></em>' reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.ControlAction}.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.ControlAction#getHazards <em>Hazards</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Unsafe Control Action</em>' reference list.
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getHazard_UnsafeControlAction()
-	 * @model
+	 * @return the value of the '<em>Unsafe Control Actions</em>' reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getHazard_UnsafeControlActions()
+	 * @see tau.systemengineering.STPAsec.ControlAction#getHazards
+	 * @model opposite="hazards"
 	 * @generated
 	 */
-	EList<UnsafeControlAction> getUnsafeControlAction();
+	EList<ControlAction> getUnsafeControlActions();
 
 } // Hazard

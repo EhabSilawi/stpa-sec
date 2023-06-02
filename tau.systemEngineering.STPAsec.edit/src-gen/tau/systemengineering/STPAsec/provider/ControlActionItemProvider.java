@@ -42,6 +42,7 @@ public class ControlActionItemProvider extends DataFlowItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addReceiverPropertyDescriptor(object);
+			addHazardsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -59,6 +60,21 @@ public class ControlActionItemProvider extends DataFlowItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_receiver_feature",
 								"_UI_ControlAction_type"),
 						STPAsecPackage.Literals.CONTROL_ACTION__RECEIVER, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Hazards feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHazardsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ControlAction_hazards_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_hazards_feature",
+								"_UI_ControlAction_type"),
+						STPAsecPackage.Literals.CONTROL_ACTION__HAZARDS, true, false, true, null, null, null));
 	}
 
 	/**

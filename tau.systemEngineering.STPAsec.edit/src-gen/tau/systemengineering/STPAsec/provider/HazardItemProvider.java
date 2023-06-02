@@ -55,7 +55,7 @@ public class HazardItemProvider extends ItemProviderAdapter implements IEditingD
 			addIdPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addRelatedLossesPropertyDescriptor(object);
-			addUnsafeControlActionPropertyDescriptor(object);
+			addUnsafeControlActionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -107,18 +107,18 @@ public class HazardItemProvider extends ItemProviderAdapter implements IEditingD
 	}
 
 	/**
-	 * This adds a property descriptor for the Unsafe Control Action feature.
+	 * This adds a property descriptor for the Unsafe Control Actions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addUnsafeControlActionPropertyDescriptor(Object object) {
+	protected void addUnsafeControlActionsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Hazard_unsafeControlAction_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Hazard_unsafeControlAction_feature",
+						getResourceLocator(), getString("_UI_Hazard_unsafeControlActions_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Hazard_unsafeControlActions_feature",
 								"_UI_Hazard_type"),
-						STPAsecPackage.Literals.HAZARD__UNSAFE_CONTROL_ACTION, true, false, true, null, null, null));
+						STPAsecPackage.Literals.HAZARD__UNSAFE_CONTROL_ACTIONS, true, false, true, null, null, null));
 	}
 
 	/**

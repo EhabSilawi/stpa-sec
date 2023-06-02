@@ -6,17 +6,21 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import tau.systemengineering.STPAsec.ControlAction;
 import tau.systemengineering.STPAsec.Hazard;
 import tau.systemengineering.STPAsec.LossScenario;
 import tau.systemengineering.STPAsec.STPAsecPackage;
-import tau.systemengineering.STPAsec.UnsafeControlAction;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +33,7 @@ import tau.systemengineering.STPAsec.UnsafeControlAction;
  *   <li>{@link tau.systemengineering.STPAsec.impl.HazardImpl#getId <em>Id</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.HazardImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.HazardImpl#getRelatedLosses <em>Related Losses</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.HazardImpl#getUnsafeControlAction <em>Unsafe Control Action</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.HazardImpl#getUnsafeControlActions <em>Unsafe Control Actions</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,14 +90,14 @@ public class HazardImpl extends MinimalEObjectImpl.Container implements Hazard {
 	protected EList<LossScenario> relatedLosses;
 
 	/**
-	 * The cached value of the '{@link #getUnsafeControlAction() <em>Unsafe Control Action</em>}' reference list.
+	 * The cached value of the '{@link #getUnsafeControlActions() <em>Unsafe Control Actions</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUnsafeControlAction()
+	 * @see #getUnsafeControlActions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<UnsafeControlAction> unsafeControlAction;
+	protected EList<ControlAction> unsafeControlActions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,12 +179,42 @@ public class HazardImpl extends MinimalEObjectImpl.Container implements Hazard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<UnsafeControlAction> getUnsafeControlAction() {
-		if (unsafeControlAction == null) {
-			unsafeControlAction = new EObjectResolvingEList<UnsafeControlAction>(UnsafeControlAction.class, this,
-					STPAsecPackage.HAZARD__UNSAFE_CONTROL_ACTION);
+	public EList<ControlAction> getUnsafeControlActions() {
+		if (unsafeControlActions == null) {
+			unsafeControlActions = new EObjectWithInverseResolvingEList.ManyInverse<ControlAction>(ControlAction.class,
+					this, STPAsecPackage.HAZARD__UNSAFE_CONTROL_ACTIONS, STPAsecPackage.CONTROL_ACTION__HAZARDS);
 		}
-		return unsafeControlAction;
+		return unsafeControlActions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case STPAsecPackage.HAZARD__UNSAFE_CONTROL_ACTIONS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getUnsafeControlActions()).basicAdd(otherEnd,
+					msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case STPAsecPackage.HAZARD__UNSAFE_CONTROL_ACTIONS:
+			return ((InternalEList<?>) getUnsafeControlActions()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -197,8 +231,8 @@ public class HazardImpl extends MinimalEObjectImpl.Container implements Hazard {
 			return getDescription();
 		case STPAsecPackage.HAZARD__RELATED_LOSSES:
 			return getRelatedLosses();
-		case STPAsecPackage.HAZARD__UNSAFE_CONTROL_ACTION:
-			return getUnsafeControlAction();
+		case STPAsecPackage.HAZARD__UNSAFE_CONTROL_ACTIONS:
+			return getUnsafeControlActions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -222,9 +256,9 @@ public class HazardImpl extends MinimalEObjectImpl.Container implements Hazard {
 			getRelatedLosses().clear();
 			getRelatedLosses().addAll((Collection<? extends LossScenario>) newValue);
 			return;
-		case STPAsecPackage.HAZARD__UNSAFE_CONTROL_ACTION:
-			getUnsafeControlAction().clear();
-			getUnsafeControlAction().addAll((Collection<? extends UnsafeControlAction>) newValue);
+		case STPAsecPackage.HAZARD__UNSAFE_CONTROL_ACTIONS:
+			getUnsafeControlActions().clear();
+			getUnsafeControlActions().addAll((Collection<? extends ControlAction>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -247,8 +281,8 @@ public class HazardImpl extends MinimalEObjectImpl.Container implements Hazard {
 		case STPAsecPackage.HAZARD__RELATED_LOSSES:
 			getRelatedLosses().clear();
 			return;
-		case STPAsecPackage.HAZARD__UNSAFE_CONTROL_ACTION:
-			getUnsafeControlAction().clear();
+		case STPAsecPackage.HAZARD__UNSAFE_CONTROL_ACTIONS:
+			getUnsafeControlActions().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -268,8 +302,8 @@ public class HazardImpl extends MinimalEObjectImpl.Container implements Hazard {
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		case STPAsecPackage.HAZARD__RELATED_LOSSES:
 			return relatedLosses != null && !relatedLosses.isEmpty();
-		case STPAsecPackage.HAZARD__UNSAFE_CONTROL_ACTION:
-			return unsafeControlAction != null && !unsafeControlAction.isEmpty();
+		case STPAsecPackage.HAZARD__UNSAFE_CONTROL_ACTIONS:
+			return unsafeControlActions != null && !unsafeControlActions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

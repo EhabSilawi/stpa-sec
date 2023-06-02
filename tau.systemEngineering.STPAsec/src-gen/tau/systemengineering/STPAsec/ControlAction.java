@@ -2,6 +2,8 @@
  */
 package tau.systemengineering.STPAsec;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Control Action</b></em>'.
@@ -12,6 +14,7 @@ package tau.systemengineering.STPAsec;
  * </p>
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.ControlAction#getReceiver <em>Receiver</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.ControlAction#getHazards <em>Hazards</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlAction()
@@ -43,4 +46,18 @@ public interface ControlAction extends DataFlow {
 	 * @generated
 	 */
 	void setReceiver(Controller value);
+
+	/**
+	 * Returns the value of the '<em><b>Hazards</b></em>' reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.Hazard}.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.Hazard#getUnsafeControlActions <em>Unsafe Control Actions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hazards</em>' reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlAction_Hazards()
+	 * @see tau.systemengineering.STPAsec.Hazard#getUnsafeControlActions
+	 * @model opposite="unsafeControlActions"
+	 * @generated
+	 */
+	EList<Hazard> getHazards();
 } // ControlAction

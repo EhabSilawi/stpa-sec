@@ -2,13 +2,18 @@
  */
 package tau.systemengineering.STPAsec.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import tau.systemengineering.STPAsec.ControlAction;
 import tau.systemengineering.STPAsec.Controller;
+import tau.systemengineering.STPAsec.Hazard;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 
 /**
@@ -20,6 +25,7 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  * </p>
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.impl.ControlActionImpl#getReceiver <em>Receiver</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.ControlActionImpl#getHazards <em>Hazards</em>}</li>
  * </ul>
  *
  * @generated
@@ -34,6 +40,16 @@ public class ControlActionImpl extends DataFlowImpl implements ControlAction {
 	 * @ordered
 	 */
 	protected Controller receiver;
+
+	/**
+	 * The cached value of the '{@link #getHazards() <em>Hazards</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHazards()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Hazard> hazards;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,6 +143,20 @@ public class ControlActionImpl extends DataFlowImpl implements ControlAction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Hazard> getHazards() {
+		if (hazards == null) {
+			hazards = new EObjectWithInverseResolvingEList.ManyInverse<Hazard>(Hazard.class, this,
+					STPAsecPackage.CONTROL_ACTION__HAZARDS, STPAsecPackage.HAZARD__UNSAFE_CONTROL_ACTIONS);
+		}
+		return hazards;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -135,6 +165,8 @@ public class ControlActionImpl extends DataFlowImpl implements ControlAction {
 				msgs = ((InternalEObject) receiver).eInverseRemove(this, STPAsecPackage.CONTROLLER__COMMANDS,
 						Controller.class, msgs);
 			return basicSetReceiver((Controller) otherEnd, msgs);
+		case STPAsecPackage.CONTROL_ACTION__HAZARDS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getHazards()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -149,6 +181,8 @@ public class ControlActionImpl extends DataFlowImpl implements ControlAction {
 		switch (featureID) {
 		case STPAsecPackage.CONTROL_ACTION__RECEIVER:
 			return basicSetReceiver(null, msgs);
+		case STPAsecPackage.CONTROL_ACTION__HAZARDS:
+			return ((InternalEList<?>) getHazards()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -165,6 +199,8 @@ public class ControlActionImpl extends DataFlowImpl implements ControlAction {
 			if (resolve)
 				return getReceiver();
 			return basicGetReceiver();
+		case STPAsecPackage.CONTROL_ACTION__HAZARDS:
+			return getHazards();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -174,11 +210,16 @@ public class ControlActionImpl extends DataFlowImpl implements ControlAction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case STPAsecPackage.CONTROL_ACTION__RECEIVER:
 			setReceiver((Controller) newValue);
+			return;
+		case STPAsecPackage.CONTROL_ACTION__HAZARDS:
+			getHazards().clear();
+			getHazards().addAll((Collection<? extends Hazard>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -195,6 +236,9 @@ public class ControlActionImpl extends DataFlowImpl implements ControlAction {
 		case STPAsecPackage.CONTROL_ACTION__RECEIVER:
 			setReceiver((Controller) null);
 			return;
+		case STPAsecPackage.CONTROL_ACTION__HAZARDS:
+			getHazards().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -209,6 +253,8 @@ public class ControlActionImpl extends DataFlowImpl implements ControlAction {
 		switch (featureID) {
 		case STPAsecPackage.CONTROL_ACTION__RECEIVER:
 			return receiver != null;
+		case STPAsecPackage.CONTROL_ACTION__HAZARDS:
+			return hazards != null && !hazards.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
