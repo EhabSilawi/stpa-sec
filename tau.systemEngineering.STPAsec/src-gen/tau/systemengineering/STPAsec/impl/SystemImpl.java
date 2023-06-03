@@ -23,7 +23,7 @@ import tau.systemengineering.STPAsec.Hazard;
 import tau.systemengineering.STPAsec.LossScenario;
 import tau.systemengineering.STPAsec.MissionGoal;
 import tau.systemengineering.STPAsec.STPAsecPackage;
-import tau.systemengineering.STPAsec.SecurityRecomendation;
+import tau.systemengineering.STPAsec.SecurityRecommendation;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,12 +34,12 @@ import tau.systemengineering.STPAsec.SecurityRecomendation;
  * </p>
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getName <em>Name</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getRecomends <em>Recomends</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getRecommends <em>Recommends</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getGoals <em>Goals</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getConsistsOf <em>Consists Of</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getCauses <em>Causes</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getPotentialHazards <em>Potential Hazards</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,14 +66,14 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRecomends() <em>Recomends</em>}' containment reference list.
+	 * The cached value of the '{@link #getRecommends() <em>Recommends</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRecomends()
+	 * @see #getRecommends()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SecurityRecomendation> recomends;
+	protected EList<SecurityRecommendation> recommends;
 
 	/**
 	 * The cached value of the '{@link #getGoals() <em>Goals</em>}' containment reference list.
@@ -96,14 +96,14 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 	protected EList<LossScenario> scenario;
 
 	/**
-	 * The cached value of the '{@link #getConsistsOf() <em>Consists Of</em>}' containment reference.
+	 * The cached value of the '{@link #getConsistsOf() <em>Consists Of</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getConsistsOf()
 	 * @generated
 	 * @ordered
 	 */
-	protected ControlStructure consistsOf;
+	protected EList<ControlStructure> consistsOf;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -126,14 +126,14 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCauses() <em>Causes</em>}' containment reference list.
+	 * The cached value of the '{@link #getPotentialHazards() <em>Potential Hazards</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCauses()
+	 * @see #getPotentialHazards()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Hazard> causes;
+	protected EList<Hazard> potentialHazards;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,12 +180,12 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SecurityRecomendation> getRecomends() {
-		if (recomends == null) {
-			recomends = new EObjectContainmentEList<SecurityRecomendation>(SecurityRecomendation.class, this,
-					STPAsecPackage.SYSTEM__RECOMENDS);
+	public EList<SecurityRecommendation> getRecommends() {
+		if (recommends == null) {
+			recommends = new EObjectContainmentEList<SecurityRecommendation>(SecurityRecommendation.class, this,
+					STPAsecPackage.SYSTEM__RECOMMENDS);
 		}
-		return recomends;
+		return recommends;
 	}
 
 	/**
@@ -218,49 +218,12 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControlStructure getConsistsOf() {
-		return consistsOf;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetConsistsOf(ControlStructure newConsistsOf, NotificationChain msgs) {
-		ControlStructure oldConsistsOf = consistsOf;
-		consistsOf = newConsistsOf;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					STPAsecPackage.SYSTEM__CONSISTS_OF, oldConsistsOf, newConsistsOf);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+	public EList<ControlStructure> getConsistsOf() {
+		if (consistsOf == null) {
+			consistsOf = new EObjectContainmentEList<ControlStructure>(ControlStructure.class, this,
+					STPAsecPackage.SYSTEM__CONSISTS_OF);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setConsistsOf(ControlStructure newConsistsOf) {
-		if (newConsistsOf != consistsOf) {
-			NotificationChain msgs = null;
-			if (consistsOf != null)
-				msgs = ((InternalEObject) consistsOf).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - STPAsecPackage.SYSTEM__CONSISTS_OF, null, msgs);
-			if (newConsistsOf != null)
-				msgs = ((InternalEObject) newConsistsOf).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - STPAsecPackage.SYSTEM__CONSISTS_OF, null, msgs);
-			msgs = basicSetConsistsOf(newConsistsOf, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.SYSTEM__CONSISTS_OF, newConsistsOf,
-					newConsistsOf));
+		return consistsOf;
 	}
 
 	/**
@@ -290,11 +253,12 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Hazard> getCauses() {
-		if (causes == null) {
-			causes = new EObjectContainmentEList<Hazard>(Hazard.class, this, STPAsecPackage.SYSTEM__CAUSES);
+	public EList<Hazard> getPotentialHazards() {
+		if (potentialHazards == null) {
+			potentialHazards = new EObjectContainmentEList<Hazard>(Hazard.class, this,
+					STPAsecPackage.SYSTEM__POTENTIAL_HAZARDS);
 		}
-		return causes;
+		return potentialHazards;
 	}
 
 	/**
@@ -305,16 +269,16 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case STPAsecPackage.SYSTEM__RECOMENDS:
-			return ((InternalEList<?>) getRecomends()).basicRemove(otherEnd, msgs);
+		case STPAsecPackage.SYSTEM__RECOMMENDS:
+			return ((InternalEList<?>) getRecommends()).basicRemove(otherEnd, msgs);
 		case STPAsecPackage.SYSTEM__GOALS:
 			return ((InternalEList<?>) getGoals()).basicRemove(otherEnd, msgs);
 		case STPAsecPackage.SYSTEM__SCENARIO:
 			return ((InternalEList<?>) getScenario()).basicRemove(otherEnd, msgs);
 		case STPAsecPackage.SYSTEM__CONSISTS_OF:
-			return basicSetConsistsOf(null, msgs);
-		case STPAsecPackage.SYSTEM__CAUSES:
-			return ((InternalEList<?>) getCauses()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getConsistsOf()).basicRemove(otherEnd, msgs);
+		case STPAsecPackage.SYSTEM__POTENTIAL_HAZARDS:
+			return ((InternalEList<?>) getPotentialHazards()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -329,8 +293,8 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 		switch (featureID) {
 		case STPAsecPackage.SYSTEM__NAME:
 			return getName();
-		case STPAsecPackage.SYSTEM__RECOMENDS:
-			return getRecomends();
+		case STPAsecPackage.SYSTEM__RECOMMENDS:
+			return getRecommends();
 		case STPAsecPackage.SYSTEM__GOALS:
 			return getGoals();
 		case STPAsecPackage.SYSTEM__SCENARIO:
@@ -339,8 +303,8 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 			return getConsistsOf();
 		case STPAsecPackage.SYSTEM__DESCRIPTION:
 			return getDescription();
-		case STPAsecPackage.SYSTEM__CAUSES:
-			return getCauses();
+		case STPAsecPackage.SYSTEM__POTENTIAL_HAZARDS:
+			return getPotentialHazards();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -357,9 +321,9 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 		case STPAsecPackage.SYSTEM__NAME:
 			setName((String) newValue);
 			return;
-		case STPAsecPackage.SYSTEM__RECOMENDS:
-			getRecomends().clear();
-			getRecomends().addAll((Collection<? extends SecurityRecomendation>) newValue);
+		case STPAsecPackage.SYSTEM__RECOMMENDS:
+			getRecommends().clear();
+			getRecommends().addAll((Collection<? extends SecurityRecommendation>) newValue);
 			return;
 		case STPAsecPackage.SYSTEM__GOALS:
 			getGoals().clear();
@@ -370,14 +334,15 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 			getScenario().addAll((Collection<? extends LossScenario>) newValue);
 			return;
 		case STPAsecPackage.SYSTEM__CONSISTS_OF:
-			setConsistsOf((ControlStructure) newValue);
+			getConsistsOf().clear();
+			getConsistsOf().addAll((Collection<? extends ControlStructure>) newValue);
 			return;
 		case STPAsecPackage.SYSTEM__DESCRIPTION:
 			setDescription((String) newValue);
 			return;
-		case STPAsecPackage.SYSTEM__CAUSES:
-			getCauses().clear();
-			getCauses().addAll((Collection<? extends Hazard>) newValue);
+		case STPAsecPackage.SYSTEM__POTENTIAL_HAZARDS:
+			getPotentialHazards().clear();
+			getPotentialHazards().addAll((Collection<? extends Hazard>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -394,8 +359,8 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 		case STPAsecPackage.SYSTEM__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case STPAsecPackage.SYSTEM__RECOMENDS:
-			getRecomends().clear();
+		case STPAsecPackage.SYSTEM__RECOMMENDS:
+			getRecommends().clear();
 			return;
 		case STPAsecPackage.SYSTEM__GOALS:
 			getGoals().clear();
@@ -404,13 +369,13 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 			getScenario().clear();
 			return;
 		case STPAsecPackage.SYSTEM__CONSISTS_OF:
-			setConsistsOf((ControlStructure) null);
+			getConsistsOf().clear();
 			return;
 		case STPAsecPackage.SYSTEM__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
 			return;
-		case STPAsecPackage.SYSTEM__CAUSES:
-			getCauses().clear();
+		case STPAsecPackage.SYSTEM__POTENTIAL_HAZARDS:
+			getPotentialHazards().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -426,18 +391,18 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 		switch (featureID) {
 		case STPAsecPackage.SYSTEM__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case STPAsecPackage.SYSTEM__RECOMENDS:
-			return recomends != null && !recomends.isEmpty();
+		case STPAsecPackage.SYSTEM__RECOMMENDS:
+			return recommends != null && !recommends.isEmpty();
 		case STPAsecPackage.SYSTEM__GOALS:
 			return goals != null && !goals.isEmpty();
 		case STPAsecPackage.SYSTEM__SCENARIO:
 			return scenario != null && !scenario.isEmpty();
 		case STPAsecPackage.SYSTEM__CONSISTS_OF:
-			return consistsOf != null;
+			return consistsOf != null && !consistsOf.isEmpty();
 		case STPAsecPackage.SYSTEM__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		case STPAsecPackage.SYSTEM__CAUSES:
-			return causes != null && !causes.isEmpty();
+		case STPAsecPackage.SYSTEM__POTENTIAL_HAZARDS:
+			return potentialHazards != null && !potentialHazards.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

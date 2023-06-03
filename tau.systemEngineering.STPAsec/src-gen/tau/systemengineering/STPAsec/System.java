@@ -16,12 +16,12 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.System#getName <em>Name</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.System#getRecomends <em>Recomends</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.System#getRecommends <em>Recommends</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.System#getGoals <em>Goals</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.System#getScenario <em>Scenario</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.System#getConsistsOf <em>Consists Of</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.System#getDescription <em>Description</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.System#getCauses <em>Causes</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.System#getPotentialHazards <em>Potential Hazards</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem()
@@ -52,16 +52,16 @@ public interface System extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Recomends</b></em>' containment reference list.
-	 * The list contents are of type {@link tau.systemengineering.STPAsec.SecurityRecomendation}.
+	 * Returns the value of the '<em><b>Recommends</b></em>' containment reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.SecurityRecommendation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Recomends</em>' containment reference list.
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem_Recomends()
+	 * @return the value of the '<em>Recommends</em>' containment reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem_Recommends()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<SecurityRecomendation> getRecomends();
+	EList<SecurityRecommendation> getRecommends();
 
 	/**
 	 * Returns the value of the '<em><b>Goals</b></em>' containment reference list.
@@ -88,26 +88,16 @@ public interface System extends EObject {
 	EList<LossScenario> getScenario();
 
 	/**
-	 * Returns the value of the '<em><b>Consists Of</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Consists Of</b></em>' containment reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.ControlStructure}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Consists Of</em>' containment reference.
-	 * @see #setConsistsOf(ControlStructure)
+	 * @return the value of the '<em>Consists Of</em>' containment reference list.
 	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem_ConsistsOf()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	ControlStructure getConsistsOf();
-
-	/**
-	 * Sets the value of the '{@link tau.systemengineering.STPAsec.System#getConsistsOf <em>Consists Of</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Consists Of</em>' containment reference.
-	 * @see #getConsistsOf()
-	 * @generated
-	 */
-	void setConsistsOf(ControlStructure value);
+	EList<ControlStructure> getConsistsOf();
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
@@ -132,15 +122,15 @@ public interface System extends EObject {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Causes</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Potential Hazards</b></em>' containment reference list.
 	 * The list contents are of type {@link tau.systemengineering.STPAsec.Hazard}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Causes</em>' containment reference list.
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem_Causes()
+	 * @return the value of the '<em>Potential Hazards</em>' containment reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem_PotentialHazards()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Hazard> getCauses();
+	EList<Hazard> getPotentialHazards();
 
 } // System

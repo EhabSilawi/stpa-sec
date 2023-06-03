@@ -14,6 +14,7 @@ import tau.systemengineering.STPAsec.ControlAction;
 import tau.systemengineering.STPAsec.ControlStructure;
 import tau.systemengineering.STPAsec.ControlledProcess;
 import tau.systemengineering.STPAsec.Controller;
+import tau.systemengineering.STPAsec.DataElment;
 import tau.systemengineering.STPAsec.Feedback;
 import tau.systemengineering.STPAsec.Hazard;
 import tau.systemengineering.STPAsec.LossScenario;
@@ -21,7 +22,7 @@ import tau.systemengineering.STPAsec.MissionGoal;
 import tau.systemengineering.STPAsec.STPASec;
 import tau.systemengineering.STPAsec.STPAsecFactory;
 import tau.systemengineering.STPAsec.STPAsecPackage;
-import tau.systemengineering.STPAsec.SecurityRecomendation;
+import tau.systemengineering.STPAsec.SecurityRecommendation;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,8 +74,8 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 			return createHazard();
 		case STPAsecPackage.MISSION_GOAL:
 			return createMissionGoal();
-		case STPAsecPackage.SECURITY_RECOMENDATION:
-			return createSecurityRecomendation();
+		case STPAsecPackage.SECURITY_RECOMMENDATION:
+			return createSecurityRecommendation();
 		case STPAsecPackage.SYSTEM:
 			return createSystem();
 		case STPAsecPackage.STPA_SEC:
@@ -89,6 +90,8 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 			return createControlStructure();
 		case STPAsecPackage.CONTROL_ACTION:
 			return createControlAction();
+		case STPAsecPackage.DATA_ELMENT:
+			return createDataElment();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -129,9 +132,9 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SecurityRecomendation createSecurityRecomendation() {
-		SecurityRecomendationImpl securityRecomendation = new SecurityRecomendationImpl();
-		return securityRecomendation;
+	public SecurityRecommendation createSecurityRecommendation() {
+		SecurityRecommendationImpl securityRecommendation = new SecurityRecommendationImpl();
+		return securityRecommendation;
 	}
 
 	/**
@@ -202,6 +205,16 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 	public ControlAction createControlAction() {
 		ControlActionImpl controlAction = new ControlActionImpl();
 		return controlAction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataElment createDataElment() {
+		DataElmentImpl dataElment = new DataElmentImpl();
+		return dataElment;
 	}
 
 	/**

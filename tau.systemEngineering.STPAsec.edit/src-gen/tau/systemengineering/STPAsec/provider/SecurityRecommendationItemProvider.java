@@ -22,15 +22,15 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import tau.systemengineering.STPAsec.STPAsecPackage;
-import tau.systemengineering.STPAsec.SecurityRecomendation;
+import tau.systemengineering.STPAsec.SecurityRecommendation;
 
 /**
- * This is the item provider adapter for a {@link tau.systemengineering.STPAsec.SecurityRecomendation} object.
+ * This is the item provider adapter for a {@link tau.systemengineering.STPAsec.SecurityRecommendation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SecurityRecomendationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class SecurityRecommendationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -38,7 +38,7 @@ public class SecurityRecomendationItemProvider extends ItemProviderAdapter imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SecurityRecomendationItemProvider(AdapterFactory adapterFactory) {
+	public SecurityRecommendationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -68,10 +68,10 @@ public class SecurityRecomendationItemProvider extends ItemProviderAdapter imple
 	protected void addIdPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_SecurityRecomendation_id_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_SecurityRecomendation_id_feature",
-								"_UI_SecurityRecomendation_type"),
-						STPAsecPackage.Literals.SECURITY_RECOMENDATION__ID, true, false, false,
+						getResourceLocator(), getString("_UI_SecurityRecommendation_id_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_SecurityRecommendation_id_feature",
+								"_UI_SecurityRecommendation_type"),
+						STPAsecPackage.Literals.SECURITY_RECOMMENDATION__ID, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
@@ -84,22 +84,22 @@ public class SecurityRecomendationItemProvider extends ItemProviderAdapter imple
 	protected void addSolutionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_SecurityRecomendation_solution_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_SecurityRecomendation_solution_feature",
-						"_UI_SecurityRecomendation_type"),
-				STPAsecPackage.Literals.SECURITY_RECOMENDATION__SOLUTION, true, false, false,
+				getString("_UI_SecurityRecommendation_solution_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_SecurityRecommendation_solution_feature",
+						"_UI_SecurityRecommendation_type"),
+				STPAsecPackage.Literals.SECURITY_RECOMMENDATION__SOLUTION, true, false, false,
 				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns SecurityRecomendation.gif.
+	 * This returns SecurityRecommendation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/SecurityRecomendation"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/SecurityRecommendation"));
 	}
 
 	/**
@@ -120,8 +120,8 @@ public class SecurityRecomendationItemProvider extends ItemProviderAdapter imple
 	 */
 	@Override
 	public String getText(Object object) {
-		SecurityRecomendation securityRecomendation = (SecurityRecomendation) object;
-		return getString("_UI_SecurityRecomendation_type") + " " + securityRecomendation.getId();
+		SecurityRecommendation securityRecommendation = (SecurityRecommendation) object;
+		return getString("_UI_SecurityRecommendation_type") + " " + securityRecommendation.getId();
 	}
 
 	/**
@@ -135,9 +135,9 @@ public class SecurityRecomendationItemProvider extends ItemProviderAdapter imple
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SecurityRecomendation.class)) {
-		case STPAsecPackage.SECURITY_RECOMENDATION__ID:
-		case STPAsecPackage.SECURITY_RECOMENDATION__SOLUTION:
+		switch (notification.getFeatureID(SecurityRecommendation.class)) {
+		case STPAsecPackage.SECURITY_RECOMMENDATION__ID:
+		case STPAsecPackage.SECURITY_RECOMMENDATION__SOLUTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

@@ -10,23 +10,23 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tau.systemengineering.STPAsec.STPAsecPackage;
-import tau.systemengineering.STPAsec.SecurityRecomendation;
+import tau.systemengineering.STPAsec.SecurityRecommendation;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Security Recomendation</b></em>'.
+ * An implementation of the model object '<em><b>Security Recommendation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tau.systemengineering.STPAsec.impl.SecurityRecomendationImpl#getId <em>Id</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.SecurityRecomendationImpl#getSolution <em>Solution</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.SecurityRecommendationImpl#getId <em>Id</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.SecurityRecommendationImpl#getSolution <em>Solution</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SecurityRecomendationImpl extends MinimalEObjectImpl.Container implements SecurityRecomendation {
+public class SecurityRecommendationImpl extends MinimalEObjectImpl.Container implements SecurityRecommendation {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public class SecurityRecomendationImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SecurityRecomendationImpl() {
+	protected SecurityRecommendationImpl() {
 		super();
 	}
 
@@ -83,7 +83,7 @@ public class SecurityRecomendationImpl extends MinimalEObjectImpl.Container impl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return STPAsecPackage.Literals.SECURITY_RECOMENDATION;
+		return STPAsecPackage.Literals.SECURITY_RECOMMENDATION;
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class SecurityRecomendationImpl extends MinimalEObjectImpl.Container impl
 		int oldId = id;
 		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.SECURITY_RECOMENDATION__ID, oldId,
+			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.SECURITY_RECOMMENDATION__ID, oldId,
 					id));
 	}
 
@@ -126,7 +126,7 @@ public class SecurityRecomendationImpl extends MinimalEObjectImpl.Container impl
 		String oldSolution = solution;
 		solution = newSolution;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.SECURITY_RECOMENDATION__SOLUTION,
+			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.SECURITY_RECOMMENDATION__SOLUTION,
 					oldSolution, solution));
 	}
 
@@ -138,9 +138,9 @@ public class SecurityRecomendationImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case STPAsecPackage.SECURITY_RECOMENDATION__ID:
+		case STPAsecPackage.SECURITY_RECOMMENDATION__ID:
 			return getId();
-		case STPAsecPackage.SECURITY_RECOMENDATION__SOLUTION:
+		case STPAsecPackage.SECURITY_RECOMMENDATION__SOLUTION:
 			return getSolution();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -154,10 +154,10 @@ public class SecurityRecomendationImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case STPAsecPackage.SECURITY_RECOMENDATION__ID:
+		case STPAsecPackage.SECURITY_RECOMMENDATION__ID:
 			setId((Integer) newValue);
 			return;
-		case STPAsecPackage.SECURITY_RECOMENDATION__SOLUTION:
+		case STPAsecPackage.SECURITY_RECOMMENDATION__SOLUTION:
 			setSolution((String) newValue);
 			return;
 		}
@@ -172,10 +172,10 @@ public class SecurityRecomendationImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case STPAsecPackage.SECURITY_RECOMENDATION__ID:
+		case STPAsecPackage.SECURITY_RECOMMENDATION__ID:
 			setId(ID_EDEFAULT);
 			return;
-		case STPAsecPackage.SECURITY_RECOMENDATION__SOLUTION:
+		case STPAsecPackage.SECURITY_RECOMMENDATION__SOLUTION:
 			setSolution(SOLUTION_EDEFAULT);
 			return;
 		}
@@ -190,9 +190,9 @@ public class SecurityRecomendationImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case STPAsecPackage.SECURITY_RECOMENDATION__ID:
+		case STPAsecPackage.SECURITY_RECOMMENDATION__ID:
 			return id != ID_EDEFAULT;
-		case STPAsecPackage.SECURITY_RECOMENDATION__SOLUTION:
+		case STPAsecPackage.SECURITY_RECOMMENDATION__SOLUTION:
 			return SOLUTION_EDEFAULT == null ? solution != null : !SOLUTION_EDEFAULT.equals(solution);
 		}
 		return super.eIsSet(featureID);
@@ -217,4 +217,4 @@ public class SecurityRecomendationImpl extends MinimalEObjectImpl.Container impl
 		return result.toString();
 	}
 
-} //SecurityRecomendationImpl
+} //SecurityRecommendationImpl

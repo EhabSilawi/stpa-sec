@@ -2,6 +2,7 @@
  */
 package tau.systemengineering.STPAsec;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,25 +23,15 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface STPASec extends EObject {
 	/**
-	 * Returns the value of the '<em><b>System</b></em>' containment reference.
+	 * Returns the value of the '<em><b>System</b></em>' containment reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.System}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>System</em>' containment reference.
-	 * @see #setSystem(tau.systemengineering.STPAsec.System)
+	 * @return the value of the '<em>System</em>' containment reference list.
 	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSTPASec_System()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	tau.systemengineering.STPAsec.System getSystem();
-
-	/**
-	 * Sets the value of the '{@link tau.systemengineering.STPAsec.STPASec#getSystem <em>System</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>System</em>' containment reference.
-	 * @see #getSystem()
-	 * @generated
-	 */
-	void setSystem(tau.systemengineering.STPAsec.System value);
+	EList<tau.systemengineering.STPAsec.System> getSystem();
 
 } // STPASec

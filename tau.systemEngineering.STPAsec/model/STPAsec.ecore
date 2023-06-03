@@ -6,7 +6,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="solutions" upperBound="-1"
-        eType="#//SecurityRecomendation"/>
+        eType="#//SecurityRecommendation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Hazard">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -22,27 +22,27 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="issues" upperBound="-1"
         eType="#//LossScenario"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SecurityRecomendation">
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityRecommendation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="solution" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="System">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="recomends" upperBound="-1"
-        eType="#//SecurityRecomendation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recommends" upperBound="-1"
+        eType="#//SecurityRecommendation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="goals" lowerBound="1" upperBound="-1"
         eType="#//MissionGoal" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" upperBound="-1"
         eType="#//LossScenario" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="consistsOf" lowerBound="1"
-        eType="#//ControlStructure" containment="true"/>
+        upperBound="-1" eType="#//ControlStructure" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="causes" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="potentialHazards" upperBound="-1"
         eType="#//Hazard" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="STPASec">
     <eStructuralFeatures xsi:type="ecore:EReference" name="system" lowerBound="1"
-        eType="#//System" containment="true"/>
+        upperBound="-1" eType="#//System" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feedback" eSuperTypes="#//DataFlow">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -71,12 +71,18 @@
         eType="#//StructureElement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataFlow" abstract="true" eSuperTypes="#//StructureElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataElment" upperBound="-1"
+        eType="#//DataElment" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ControlAction" eSuperTypes="#//DataFlow">
     <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" eType="#//Controller"
         eOpposite="#//Controller/commands"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hazards" upperBound="-1"
         eType="#//Hazard" eOpposite="#//Hazard/unsafeControlActions"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataElment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
   </eClassifiers>
 </ecore:EPackage>

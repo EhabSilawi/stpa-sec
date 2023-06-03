@@ -240,14 +240,14 @@ public interface STPAsecPackage extends EPackage {
 	int MISSION_GOAL_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.SecurityRecomendationImpl <em>Security Recomendation</em>}' class.
+	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.SecurityRecommendationImpl <em>Security Recommendation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see tau.systemengineering.STPAsec.impl.SecurityRecomendationImpl
-	 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getSecurityRecomendation()
+	 * @see tau.systemengineering.STPAsec.impl.SecurityRecommendationImpl
+	 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getSecurityRecommendation()
 	 * @generated
 	 */
-	int SECURITY_RECOMENDATION = 3;
+	int SECURITY_RECOMMENDATION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -256,7 +256,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECURITY_RECOMENDATION__ID = 0;
+	int SECURITY_RECOMMENDATION__ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Solution</b></em>' attribute.
@@ -265,25 +265,25 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECURITY_RECOMENDATION__SOLUTION = 1;
+	int SECURITY_RECOMMENDATION__SOLUTION = 1;
 
 	/**
-	 * The number of structural features of the '<em>Security Recomendation</em>' class.
+	 * The number of structural features of the '<em>Security Recommendation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECURITY_RECOMENDATION_FEATURE_COUNT = 2;
+	int SECURITY_RECOMMENDATION_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>Security Recomendation</em>' class.
+	 * The number of operations of the '<em>Security Recommendation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECURITY_RECOMENDATION_OPERATION_COUNT = 0;
+	int SECURITY_RECOMMENDATION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.SystemImpl <em>System</em>}' class.
@@ -305,13 +305,13 @@ public interface STPAsecPackage extends EPackage {
 	int SYSTEM__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Recomends</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Recommends</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__RECOMENDS = 1;
+	int SYSTEM__RECOMMENDS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Goals</b></em>' containment reference list.
@@ -332,7 +332,7 @@ public interface STPAsecPackage extends EPackage {
 	int SYSTEM__SCENARIO = 3;
 
 	/**
-	 * The feature id for the '<em><b>Consists Of</b></em>' containment reference.
+	 * The feature id for the '<em><b>Consists Of</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -350,13 +350,13 @@ public interface STPAsecPackage extends EPackage {
 	int SYSTEM__DESCRIPTION = 5;
 
 	/**
-	 * The feature id for the '<em><b>Causes</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Potential Hazards</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__CAUSES = 6;
+	int SYSTEM__POTENTIAL_HAZARDS = 6;
 
 	/**
 	 * The number of structural features of the '<em>System</em>' class.
@@ -387,7 +387,7 @@ public interface STPAsecPackage extends EPackage {
 	int STPA_SEC = 5;
 
 	/**
-	 * The feature id for the '<em><b>System</b></em>' containment reference.
+	 * The feature id for the '<em><b>System</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -497,13 +497,22 @@ public interface STPAsecPackage extends EPackage {
 	int DATA_FLOW__ID = STRUCTURE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Data Elment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_FLOW__DATA_ELMENT = STRUCTURE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Data Flow</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FLOW_FEATURE_COUNT = STRUCTURE_ELEMENT_FEATURE_COUNT + 1;
+	int DATA_FLOW_FEATURE_COUNT = STRUCTURE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Data Flow</em>' class.
@@ -550,6 +559,15 @@ public interface STPAsecPackage extends EPackage {
 	 * @ordered
 	 */
 	int FEEDBACK__ID = DATA_FLOW__ID;
+
+	/**
+	 * The feature id for the '<em><b>Data Elment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEEDBACK__DATA_ELMENT = DATA_FLOW__DATA_ELMENT;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -799,6 +817,15 @@ public interface STPAsecPackage extends EPackage {
 	int CONTROL_ACTION__ID = DATA_FLOW__ID;
 
 	/**
+	 * The feature id for the '<em><b>Data Elment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_ACTION__DATA_ELMENT = DATA_FLOW__DATA_ELMENT;
+
+	/**
 	 * The feature id for the '<em><b>Receiver</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -833,6 +860,52 @@ public interface STPAsecPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL_ACTION_OPERATION_COUNT = DATA_FLOW_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.DataElmentImpl <em>Data Elment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tau.systemengineering.STPAsec.impl.DataElmentImpl
+	 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getDataElment()
+	 * @generated
+	 */
+	int DATA_ELMENT = 13;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_ELMENT__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_ELMENT__DATA = 1;
+
+	/**
+	 * The number of structural features of the '<em>Data Elment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_ELMENT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Data Elment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_ELMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.LossScenario <em>Loss Scenario</em>}'.
@@ -986,36 +1059,36 @@ public interface STPAsecPackage extends EPackage {
 	EReference getMissionGoal_Issues();
 
 	/**
-	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.SecurityRecomendation <em>Security Recomendation</em>}'.
+	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.SecurityRecommendation <em>Security Recommendation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Security Recomendation</em>'.
-	 * @see tau.systemengineering.STPAsec.SecurityRecomendation
+	 * @return the meta object for class '<em>Security Recommendation</em>'.
+	 * @see tau.systemengineering.STPAsec.SecurityRecommendation
 	 * @generated
 	 */
-	EClass getSecurityRecomendation();
+	EClass getSecurityRecommendation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tau.systemengineering.STPAsec.SecurityRecomendation#getId <em>Id</em>}'.
+	 * Returns the meta object for the attribute '{@link tau.systemengineering.STPAsec.SecurityRecommendation#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see tau.systemengineering.STPAsec.SecurityRecomendation#getId()
-	 * @see #getSecurityRecomendation()
+	 * @see tau.systemengineering.STPAsec.SecurityRecommendation#getId()
+	 * @see #getSecurityRecommendation()
 	 * @generated
 	 */
-	EAttribute getSecurityRecomendation_Id();
+	EAttribute getSecurityRecommendation_Id();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tau.systemengineering.STPAsec.SecurityRecomendation#getSolution <em>Solution</em>}'.
+	 * Returns the meta object for the attribute '{@link tau.systemengineering.STPAsec.SecurityRecommendation#getSolution <em>Solution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Solution</em>'.
-	 * @see tau.systemengineering.STPAsec.SecurityRecomendation#getSolution()
-	 * @see #getSecurityRecomendation()
+	 * @see tau.systemengineering.STPAsec.SecurityRecommendation#getSolution()
+	 * @see #getSecurityRecommendation()
 	 * @generated
 	 */
-	EAttribute getSecurityRecomendation_Solution();
+	EAttribute getSecurityRecommendation_Solution();
 
 	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.System <em>System</em>}'.
@@ -1039,15 +1112,15 @@ public interface STPAsecPackage extends EPackage {
 	EAttribute getSystem_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.System#getRecomends <em>Recomends</em>}'.
+	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.System#getRecommends <em>Recommends</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Recomends</em>'.
-	 * @see tau.systemengineering.STPAsec.System#getRecomends()
+	 * @return the meta object for the containment reference list '<em>Recommends</em>'.
+	 * @see tau.systemengineering.STPAsec.System#getRecommends()
 	 * @see #getSystem()
 	 * @generated
 	 */
-	EReference getSystem_Recomends();
+	EReference getSystem_Recommends();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.System#getGoals <em>Goals</em>}'.
@@ -1072,10 +1145,10 @@ public interface STPAsecPackage extends EPackage {
 	EReference getSystem_Scenario();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link tau.systemengineering.STPAsec.System#getConsistsOf <em>Consists Of</em>}'.
+	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.System#getConsistsOf <em>Consists Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Consists Of</em>'.
+	 * @return the meta object for the containment reference list '<em>Consists Of</em>'.
 	 * @see tau.systemengineering.STPAsec.System#getConsistsOf()
 	 * @see #getSystem()
 	 * @generated
@@ -1094,15 +1167,15 @@ public interface STPAsecPackage extends EPackage {
 	EAttribute getSystem_Description();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.System#getCauses <em>Causes</em>}'.
+	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.System#getPotentialHazards <em>Potential Hazards</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Causes</em>'.
-	 * @see tau.systemengineering.STPAsec.System#getCauses()
+	 * @return the meta object for the containment reference list '<em>Potential Hazards</em>'.
+	 * @see tau.systemengineering.STPAsec.System#getPotentialHazards()
 	 * @see #getSystem()
 	 * @generated
 	 */
-	EReference getSystem_Causes();
+	EReference getSystem_PotentialHazards();
 
 	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.STPASec <em>STPA Sec</em>}'.
@@ -1115,10 +1188,10 @@ public interface STPAsecPackage extends EPackage {
 	EClass getSTPASec();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link tau.systemengineering.STPAsec.STPASec#getSystem <em>System</em>}'.
+	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.STPASec#getSystem <em>System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>System</em>'.
+	 * @return the meta object for the containment reference list '<em>System</em>'.
 	 * @see tau.systemengineering.STPAsec.STPASec#getSystem()
 	 * @see #getSTPASec()
 	 * @generated
@@ -1318,6 +1391,38 @@ public interface STPAsecPackage extends EPackage {
 	EReference getControlAction_Hazards();
 
 	/**
+	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.DataElment <em>Data Elment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Data Elment</em>'.
+	 * @see tau.systemengineering.STPAsec.DataElment
+	 * @generated
+	 */
+	EClass getDataElment();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tau.systemengineering.STPAsec.DataElment#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see tau.systemengineering.STPAsec.DataElment#getId()
+	 * @see #getDataElment()
+	 * @generated
+	 */
+	EAttribute getDataElment_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tau.systemengineering.STPAsec.DataElment#getData <em>Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Data</em>'.
+	 * @see tau.systemengineering.STPAsec.DataElment#getData()
+	 * @see #getDataElment()
+	 * @generated
+	 */
+	EAttribute getDataElment_Data();
+
+	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.DataFlow <em>Data Flow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1337,6 +1442,17 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDataFlow_Id();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.DataFlow#getDataElment <em>Data Elment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Data Elment</em>'.
+	 * @see tau.systemengineering.STPAsec.DataFlow#getDataElment()
+	 * @see #getDataFlow()
+	 * @generated
+	 */
+	EReference getDataFlow_DataElment();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1480,14 +1596,14 @@ public interface STPAsecPackage extends EPackage {
 		EReference MISSION_GOAL__ISSUES = eINSTANCE.getMissionGoal_Issues();
 
 		/**
-		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.SecurityRecomendationImpl <em>Security Recomendation</em>}' class.
+		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.SecurityRecommendationImpl <em>Security Recommendation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see tau.systemengineering.STPAsec.impl.SecurityRecomendationImpl
-		 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getSecurityRecomendation()
+		 * @see tau.systemengineering.STPAsec.impl.SecurityRecommendationImpl
+		 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getSecurityRecommendation()
 		 * @generated
 		 */
-		EClass SECURITY_RECOMENDATION = eINSTANCE.getSecurityRecomendation();
+		EClass SECURITY_RECOMMENDATION = eINSTANCE.getSecurityRecommendation();
 
 		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
@@ -1495,7 +1611,7 @@ public interface STPAsecPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SECURITY_RECOMENDATION__ID = eINSTANCE.getSecurityRecomendation_Id();
+		EAttribute SECURITY_RECOMMENDATION__ID = eINSTANCE.getSecurityRecommendation_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Solution</b></em>' attribute feature.
@@ -1503,7 +1619,7 @@ public interface STPAsecPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SECURITY_RECOMENDATION__SOLUTION = eINSTANCE.getSecurityRecomendation_Solution();
+		EAttribute SECURITY_RECOMMENDATION__SOLUTION = eINSTANCE.getSecurityRecommendation_Solution();
 
 		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.SystemImpl <em>System</em>}' class.
@@ -1524,12 +1640,12 @@ public interface STPAsecPackage extends EPackage {
 		EAttribute SYSTEM__NAME = eINSTANCE.getSystem_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Recomends</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Recommends</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SYSTEM__RECOMENDS = eINSTANCE.getSystem_Recomends();
+		EReference SYSTEM__RECOMMENDS = eINSTANCE.getSystem_Recommends();
 
 		/**
 		 * The meta object literal for the '<em><b>Goals</b></em>' containment reference list feature.
@@ -1548,7 +1664,7 @@ public interface STPAsecPackage extends EPackage {
 		EReference SYSTEM__SCENARIO = eINSTANCE.getSystem_Scenario();
 
 		/**
-		 * The meta object literal for the '<em><b>Consists Of</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Consists Of</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1564,12 +1680,12 @@ public interface STPAsecPackage extends EPackage {
 		EAttribute SYSTEM__DESCRIPTION = eINSTANCE.getSystem_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Causes</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Potential Hazards</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SYSTEM__CAUSES = eINSTANCE.getSystem_Causes();
+		EReference SYSTEM__POTENTIAL_HAZARDS = eINSTANCE.getSystem_PotentialHazards();
 
 		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.STPASecImpl <em>STPA Sec</em>}' class.
@@ -1582,7 +1698,7 @@ public interface STPAsecPackage extends EPackage {
 		EClass STPA_SEC = eINSTANCE.getSTPASec();
 
 		/**
-		 * The meta object literal for the '<em><b>System</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>System</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1746,6 +1862,32 @@ public interface STPAsecPackage extends EPackage {
 		EReference CONTROL_ACTION__HAZARDS = eINSTANCE.getControlAction_Hazards();
 
 		/**
+		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.DataElmentImpl <em>Data Elment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tau.systemengineering.STPAsec.impl.DataElmentImpl
+		 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getDataElment()
+		 * @generated
+		 */
+		EClass DATA_ELMENT = eINSTANCE.getDataElment();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_ELMENT__ID = eINSTANCE.getDataElment_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Data</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_ELMENT__DATA = eINSTANCE.getDataElment_Data();
+
+		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.DataFlowImpl <em>Data Flow</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1762,6 +1904,14 @@ public interface STPAsecPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATA_FLOW__ID = eINSTANCE.getDataFlow_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Elment</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_FLOW__DATA_ELMENT = eINSTANCE.getDataFlow_DataElment();
 
 	}
 

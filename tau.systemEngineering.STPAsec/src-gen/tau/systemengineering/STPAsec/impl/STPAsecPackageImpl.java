@@ -8,10 +8,12 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 import tau.systemengineering.STPAsec.ControlAction;
 import tau.systemengineering.STPAsec.ControlStructure;
 import tau.systemengineering.STPAsec.ControlledProcess;
 import tau.systemengineering.STPAsec.Controller;
+import tau.systemengineering.STPAsec.DataElment;
 import tau.systemengineering.STPAsec.DataFlow;
 import tau.systemengineering.STPAsec.Feedback;
 import tau.systemengineering.STPAsec.Hazard;
@@ -20,7 +22,7 @@ import tau.systemengineering.STPAsec.MissionGoal;
 import tau.systemengineering.STPAsec.STPASec;
 import tau.systemengineering.STPAsec.STPAsecFactory;
 import tau.systemengineering.STPAsec.STPAsecPackage;
-import tau.systemengineering.STPAsec.SecurityRecomendation;
+import tau.systemengineering.STPAsec.SecurityRecommendation;
 import tau.systemengineering.STPAsec.StructureElement;
 
 /**
@@ -56,7 +58,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass securityRecomendationEClass = null;
+	private EClass securityRecommendationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,6 +121,13 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass dataElmentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass dataFlowEClass = null;
 
 	/**
@@ -170,6 +179,9 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 				: new STPAsecPackageImpl();
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		XMLTypePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theSTPAsecPackage.createPackageContents();
@@ -316,8 +328,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSecurityRecomendation() {
-		return securityRecomendationEClass;
+	public EClass getSecurityRecommendation() {
+		return securityRecommendationEClass;
 	}
 
 	/**
@@ -325,8 +337,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSecurityRecomendation_Id() {
-		return (EAttribute) securityRecomendationEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSecurityRecommendation_Id() {
+		return (EAttribute) securityRecommendationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -334,8 +346,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSecurityRecomendation_Solution() {
-		return (EAttribute) securityRecomendationEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSecurityRecommendation_Solution() {
+		return (EAttribute) securityRecommendationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -361,7 +373,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSystem_Recomends() {
+	public EReference getSystem_Recommends() {
 		return (EReference) systemEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -406,7 +418,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSystem_Causes() {
+	public EReference getSystem_PotentialHazards() {
 		return (EReference) systemEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -595,6 +607,33 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getDataElment() {
+		return dataElmentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataElment_Id() {
+		return (EAttribute) dataElmentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataElment_Data() {
+		return (EAttribute) dataElmentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDataFlow() {
 		return dataFlowEClass;
 	}
@@ -606,6 +645,15 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 */
 	public EAttribute getDataFlow_Id() {
 		return (EAttribute) dataFlowEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDataFlow_DataElment() {
+		return (EReference) dataFlowEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -654,18 +702,18 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		createEAttribute(missionGoalEClass, MISSION_GOAL__DESCRIPTION);
 		createEReference(missionGoalEClass, MISSION_GOAL__ISSUES);
 
-		securityRecomendationEClass = createEClass(SECURITY_RECOMENDATION);
-		createEAttribute(securityRecomendationEClass, SECURITY_RECOMENDATION__ID);
-		createEAttribute(securityRecomendationEClass, SECURITY_RECOMENDATION__SOLUTION);
+		securityRecommendationEClass = createEClass(SECURITY_RECOMMENDATION);
+		createEAttribute(securityRecommendationEClass, SECURITY_RECOMMENDATION__ID);
+		createEAttribute(securityRecommendationEClass, SECURITY_RECOMMENDATION__SOLUTION);
 
 		systemEClass = createEClass(SYSTEM);
 		createEAttribute(systemEClass, SYSTEM__NAME);
-		createEReference(systemEClass, SYSTEM__RECOMENDS);
+		createEReference(systemEClass, SYSTEM__RECOMMENDS);
 		createEReference(systemEClass, SYSTEM__GOALS);
 		createEReference(systemEClass, SYSTEM__SCENARIO);
 		createEReference(systemEClass, SYSTEM__CONSISTS_OF);
 		createEAttribute(systemEClass, SYSTEM__DESCRIPTION);
-		createEReference(systemEClass, SYSTEM__CAUSES);
+		createEReference(systemEClass, SYSTEM__POTENTIAL_HAZARDS);
 
 		stpaSecEClass = createEClass(STPA_SEC);
 		createEReference(stpaSecEClass, STPA_SEC__SYSTEM);
@@ -692,10 +740,15 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 
 		dataFlowEClass = createEClass(DATA_FLOW);
 		createEAttribute(dataFlowEClass, DATA_FLOW__ID);
+		createEReference(dataFlowEClass, DATA_FLOW__DATA_ELMENT);
 
 		controlActionEClass = createEClass(CONTROL_ACTION);
 		createEReference(controlActionEClass, CONTROL_ACTION__RECEIVER);
 		createEReference(controlActionEClass, CONTROL_ACTION__HAZARDS);
+
+		dataElmentEClass = createEClass(DATA_ELMENT);
+		createEAttribute(dataElmentEClass, DATA_ELMENT__ID);
+		createEAttribute(dataElmentEClass, DATA_ELMENT__DATA);
 	}
 
 	/**
@@ -722,6 +775,10 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		XMLTypePackage theXMLTypePackage = (XMLTypePackage) EPackage.Registry.INSTANCE
+				.getEPackage(XMLTypePackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -744,7 +801,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		initEAttribute(getLossScenario_Severity(), ecorePackage.getEString(), "severity", null, 0, 1,
 				LossScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getLossScenario_Solutions(), this.getSecurityRecomendation(), null, "solutions", null, 0, -1,
+		initEReference(getLossScenario_Solutions(), this.getSecurityRecommendation(), null, "solutions", null, 0, -1,
 				LossScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -771,13 +828,13 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(securityRecomendationEClass, SecurityRecomendation.class, "SecurityRecomendation", !IS_ABSTRACT,
+		initEClass(securityRecommendationEClass, SecurityRecommendation.class, "SecurityRecommendation", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSecurityRecomendation_Id(), ecorePackage.getEInt(), "id", null, 0, 1,
-				SecurityRecomendation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+		initEAttribute(getSecurityRecommendation_Id(), ecorePackage.getEInt(), "id", null, 0, 1,
+				SecurityRecommendation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSecurityRecomendation_Solution(), ecorePackage.getEString(), "solution", null, 0, 1,
-				SecurityRecomendation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+		initEAttribute(getSecurityRecommendation_Solution(), ecorePackage.getEString(), "solution", null, 0, 1,
+				SecurityRecommendation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(systemEClass, tau.systemengineering.STPAsec.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE,
@@ -785,7 +842,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		initEAttribute(getSystem_Name(), ecorePackage.getEString(), "name", null, 0, 1,
 				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
 				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSystem_Recomends(), this.getSecurityRecomendation(), null, "recomends", null, 0, -1,
+		initEReference(getSystem_Recommends(), this.getSecurityRecommendation(), null, "recommends", null, 0, -1,
 				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSystem_Goals(), this.getMissionGoal(), null, "goals", null, 1, -1,
@@ -794,18 +851,18 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		initEReference(getSystem_Scenario(), this.getLossScenario(), null, "scenario", null, 0, -1,
 				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSystem_ConsistsOf(), this.getControlStructure(), null, "consistsOf", null, 1, 1,
+		initEReference(getSystem_ConsistsOf(), this.getControlStructure(), null, "consistsOf", null, 1, -1,
 				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSystem_Description(), ecorePackage.getEString(), "description", null, 0, 1,
 				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
 				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSystem_Causes(), this.getHazard(), null, "causes", null, 0, -1,
+		initEReference(getSystem_PotentialHazards(), this.getHazard(), null, "potentialHazards", null, 0, -1,
 				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stpaSecEClass, STPASec.class, "STPASec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSTPASec_System(), this.getSystem(), null, "system", null, 1, 1, STPASec.class, !IS_TRANSIENT,
+		initEReference(getSTPASec_System(), this.getSystem(), null, "system", null, 1, -1, STPASec.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
@@ -854,8 +911,11 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataFlowEClass, DataFlow.class, "DataFlow", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataFlow_Id(), ecorePackage.getEInt(), "id", null, 0, 1, DataFlow.class, !IS_TRANSIENT,
+		initEAttribute(getDataFlow_Id(), theXMLTypePackage.getInt(), "id", null, 0, 1, DataFlow.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataFlow_DataElment(), this.getDataElment(), null, "dataElment", null, 0, -1, DataFlow.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controlActionEClass, ControlAction.class, "ControlAction", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -865,6 +925,13 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		initEReference(getControlAction_Hazards(), this.getHazard(), this.getHazard_UnsafeControlActions(), "hazards",
 				null, 0, -1, ControlAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dataElmentEClass, DataElment.class, "DataElment", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataElment_Id(), ecorePackage.getEInt(), "id", null, 0, 1, DataElment.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataElment_Data(), ecorePackage.getEJavaObject(), "data", null, 0, 1, DataElment.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -94,7 +94,7 @@ public interface LossScenario extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Solutions</b></em>' reference list.
-	 * The list contents are of type {@link tau.systemengineering.STPAsec.SecurityRecomendation}.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.SecurityRecommendation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Solutions</em>' reference list.
@@ -102,6 +102,6 @@ public interface LossScenario extends EObject {
 	 * @model
 	 * @generated
 	 */
-	EList<SecurityRecomendation> getSolutions();
+	EList<SecurityRecommendation> getSolutions();
 
 } // LossScenario

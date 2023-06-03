@@ -104,11 +104,11 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__RECOMENDS);
+			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__RECOMMENDS);
 			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__GOALS);
 			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__SCENARIO);
 			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__CONSISTS_OF);
-			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__CAUSES);
+			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__POTENTIAL_HAZARDS);
 		}
 		return childrenFeatures;
 	}
@@ -176,11 +176,11 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 		case STPAsecPackage.SYSTEM__DESCRIPTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case STPAsecPackage.SYSTEM__RECOMENDS:
+		case STPAsecPackage.SYSTEM__RECOMMENDS:
 		case STPAsecPackage.SYSTEM__GOALS:
 		case STPAsecPackage.SYSTEM__SCENARIO:
 		case STPAsecPackage.SYSTEM__CONSISTS_OF:
-		case STPAsecPackage.SYSTEM__CAUSES:
+		case STPAsecPackage.SYSTEM__POTENTIAL_HAZARDS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -198,8 +198,8 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__RECOMENDS,
-				STPAsecFactory.eINSTANCE.createSecurityRecomendation()));
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__RECOMMENDS,
+				STPAsecFactory.eINSTANCE.createSecurityRecommendation()));
 
 		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__GOALS,
 				STPAsecFactory.eINSTANCE.createMissionGoal()));
@@ -210,8 +210,8 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__CONSISTS_OF,
 				STPAsecFactory.eINSTANCE.createControlStructure()));
 
-		newChildDescriptors.add(
-				createChildParameter(STPAsecPackage.Literals.SYSTEM__CAUSES, STPAsecFactory.eINSTANCE.createHazard()));
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__POTENTIAL_HAZARDS,
+				STPAsecFactory.eINSTANCE.createHazard()));
 	}
 
 	/**

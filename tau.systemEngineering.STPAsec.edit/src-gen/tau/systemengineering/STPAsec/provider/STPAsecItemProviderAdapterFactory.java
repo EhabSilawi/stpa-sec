@@ -142,26 +142,26 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.SecurityRecomendation} instances.
+	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.SecurityRecommendation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SecurityRecomendationItemProvider securityRecomendationItemProvider;
+	protected SecurityRecommendationItemProvider securityRecommendationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.SecurityRecomendation}.
+	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.SecurityRecommendation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSecurityRecomendationAdapter() {
-		if (securityRecomendationItemProvider == null) {
-			securityRecomendationItemProvider = new SecurityRecomendationItemProvider(this);
+	public Adapter createSecurityRecommendationAdapter() {
+		if (securityRecommendationItemProvider == null) {
+			securityRecommendationItemProvider = new SecurityRecommendationItemProvider(this);
 		}
 
-		return securityRecomendationItemProvider;
+		return securityRecommendationItemProvider;
 	}
 
 	/**
@@ -326,6 +326,29 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.DataElment} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DataElmentItemProvider dataElmentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.DataElment}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDataElmentAdapter() {
+		if (dataElmentItemProvider == null) {
+			dataElmentItemProvider = new DataElmentItemProvider(this);
+		}
+
+		return dataElmentItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -430,8 +453,8 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 			hazardItemProvider.dispose();
 		if (missionGoalItemProvider != null)
 			missionGoalItemProvider.dispose();
-		if (securityRecomendationItemProvider != null)
-			securityRecomendationItemProvider.dispose();
+		if (securityRecommendationItemProvider != null)
+			securityRecommendationItemProvider.dispose();
 		if (systemItemProvider != null)
 			systemItemProvider.dispose();
 		if (stpaSecItemProvider != null)
@@ -446,6 +469,8 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 			controlStructureItemProvider.dispose();
 		if (controlActionItemProvider != null)
 			controlActionItemProvider.dispose();
+		if (dataElmentItemProvider != null)
+			dataElmentItemProvider.dispose();
 	}
 
 }

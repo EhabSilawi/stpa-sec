@@ -11,6 +11,7 @@ import tau.systemengineering.STPAsec.ControlAction;
 import tau.systemengineering.STPAsec.ControlStructure;
 import tau.systemengineering.STPAsec.ControlledProcess;
 import tau.systemengineering.STPAsec.Controller;
+import tau.systemengineering.STPAsec.DataElment;
 import tau.systemengineering.STPAsec.DataFlow;
 import tau.systemengineering.STPAsec.Feedback;
 import tau.systemengineering.STPAsec.Hazard;
@@ -18,7 +19,7 @@ import tau.systemengineering.STPAsec.LossScenario;
 import tau.systemengineering.STPAsec.MissionGoal;
 import tau.systemengineering.STPAsec.STPASec;
 import tau.systemengineering.STPAsec.STPAsecPackage;
-import tau.systemengineering.STPAsec.SecurityRecomendation;
+import tau.systemengineering.STPAsec.SecurityRecommendation;
 import tau.systemengineering.STPAsec.StructureElement;
 
 /**
@@ -99,9 +100,9 @@ public class STPAsecSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case STPAsecPackage.SECURITY_RECOMENDATION: {
-			SecurityRecomendation securityRecomendation = (SecurityRecomendation) theEObject;
-			T result = caseSecurityRecomendation(securityRecomendation);
+		case STPAsecPackage.SECURITY_RECOMMENDATION: {
+			SecurityRecommendation securityRecommendation = (SecurityRecommendation) theEObject;
+			T result = caseSecurityRecommendation(securityRecommendation);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -183,6 +184,13 @@ public class STPAsecSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case STPAsecPackage.DATA_ELMENT: {
+			DataElment dataElment = (DataElment) theEObject;
+			T result = caseDataElment(dataElment);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -234,17 +242,17 @@ public class STPAsecSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Security Recomendation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Security Recommendation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Security Recomendation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Security Recommendation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSecurityRecomendation(SecurityRecomendation object) {
+	public T caseSecurityRecommendation(SecurityRecommendation object) {
 		return null;
 	}
 
@@ -365,6 +373,21 @@ public class STPAsecSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseControlAction(ControlAction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Elment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Elment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataElment(DataElment object) {
 		return null;
 	}
 

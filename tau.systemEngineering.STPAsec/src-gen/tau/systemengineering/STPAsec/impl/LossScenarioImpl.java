@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import tau.systemengineering.STPAsec.LossScenario;
 import tau.systemengineering.STPAsec.STPAsecPackage;
-import tau.systemengineering.STPAsec.SecurityRecomendation;
+import tau.systemengineering.STPAsec.SecurityRecommendation;
 
 /**
  * <!-- begin-user-doc -->
@@ -100,7 +100,7 @@ public class LossScenarioImpl extends MinimalEObjectImpl.Container implements Lo
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SecurityRecomendation> solutions;
+	protected EList<SecurityRecommendation> solutions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,9 +191,9 @@ public class LossScenarioImpl extends MinimalEObjectImpl.Container implements Lo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SecurityRecomendation> getSolutions() {
+	public EList<SecurityRecommendation> getSolutions() {
 		if (solutions == null) {
-			solutions = new EObjectResolvingEList<SecurityRecomendation>(SecurityRecomendation.class, this,
+			solutions = new EObjectResolvingEList<SecurityRecommendation>(SecurityRecommendation.class, this,
 					STPAsecPackage.LOSS_SCENARIO__SOLUTIONS);
 		}
 		return solutions;
@@ -239,7 +239,7 @@ public class LossScenarioImpl extends MinimalEObjectImpl.Container implements Lo
 			return;
 		case STPAsecPackage.LOSS_SCENARIO__SOLUTIONS:
 			getSolutions().clear();
-			getSolutions().addAll((Collection<? extends SecurityRecomendation>) newValue);
+			getSolutions().addAll((Collection<? extends SecurityRecommendation>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

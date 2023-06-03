@@ -13,6 +13,7 @@ import tau.systemengineering.STPAsec.ControlAction;
 import tau.systemengineering.STPAsec.ControlStructure;
 import tau.systemengineering.STPAsec.ControlledProcess;
 import tau.systemengineering.STPAsec.Controller;
+import tau.systemengineering.STPAsec.DataElment;
 import tau.systemengineering.STPAsec.DataFlow;
 import tau.systemengineering.STPAsec.Feedback;
 import tau.systemengineering.STPAsec.Hazard;
@@ -20,7 +21,7 @@ import tau.systemengineering.STPAsec.LossScenario;
 import tau.systemengineering.STPAsec.MissionGoal;
 import tau.systemengineering.STPAsec.STPASec;
 import tau.systemengineering.STPAsec.STPAsecPackage;
-import tau.systemengineering.STPAsec.SecurityRecomendation;
+import tau.systemengineering.STPAsec.SecurityRecommendation;
 import tau.systemengineering.STPAsec.StructureElement;
 
 /**
@@ -94,8 +95,8 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseSecurityRecomendation(SecurityRecomendation object) {
-			return createSecurityRecomendationAdapter();
+		public Adapter caseSecurityRecommendation(SecurityRecommendation object) {
+			return createSecurityRecommendationAdapter();
 		}
 
 		@Override
@@ -141,6 +142,11 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseControlAction(ControlAction object) {
 			return createControlActionAdapter();
+		}
+
+		@Override
+		public Adapter caseDataElment(DataElment object) {
+			return createDataElmentAdapter();
 		}
 
 		@Override
@@ -205,16 +211,16 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.SecurityRecomendation <em>Security Recomendation</em>}'.
+	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.SecurityRecommendation <em>Security Recommendation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.SecurityRecomendation
+	 * @see tau.systemengineering.STPAsec.SecurityRecommendation
 	 * @generated
 	 */
-	public Adapter createSecurityRecomendationAdapter() {
+	public Adapter createSecurityRecommendationAdapter() {
 		return null;
 	}
 
@@ -327,6 +333,20 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createControlActionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.DataElment <em>Data Elment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tau.systemengineering.STPAsec.DataElment
+	 * @generated
+	 */
+	public Adapter createDataElmentAdapter() {
 		return null;
 	}
 
