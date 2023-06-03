@@ -14,8 +14,9 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.Controller#getType <em>Type</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.Controller#getCommands <em>Commands</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.Controller#getReceivedCommands <em>Received Commands</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.Controller#getFeedbacks <em>Feedbacks</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.Controller#getSentCommands <em>Sent Commands</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getController()
@@ -46,18 +47,18 @@ public interface Controller extends StructureElement {
 	void setType(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Commands</b></em>' reference list.
+	 * Returns the value of the '<em><b>Received Commands</b></em>' reference list.
 	 * The list contents are of type {@link tau.systemengineering.STPAsec.ControlAction}.
 	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.ControlAction#getReceiver <em>Receiver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Commands</em>' reference list.
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getController_Commands()
+	 * @return the value of the '<em>Received Commands</em>' reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getController_ReceivedCommands()
 	 * @see tau.systemengineering.STPAsec.ControlAction#getReceiver
 	 * @model opposite="receiver"
 	 * @generated
 	 */
-	EList<ControlAction> getCommands();
+	EList<ControlAction> getReceivedCommands();
 
 	/**
 	 * Returns the value of the '<em><b>Feedbacks</b></em>' reference list.
@@ -72,5 +73,19 @@ public interface Controller extends StructureElement {
 	 * @generated
 	 */
 	EList<Feedback> getFeedbacks();
+
+	/**
+	 * Returns the value of the '<em><b>Sent Commands</b></em>' reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.ControlAction}.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.ControlAction#getSender <em>Sender</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sent Commands</em>' reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getController_SentCommands()
+	 * @see tau.systemengineering.STPAsec.ControlAction#getSender
+	 * @model opposite="sender"
+	 * @generated
+	 */
+	EList<ControlAction> getSentCommands();
 
 } // Controller

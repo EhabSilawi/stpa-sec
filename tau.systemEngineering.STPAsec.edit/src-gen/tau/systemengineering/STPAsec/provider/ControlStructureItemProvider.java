@@ -69,6 +69,7 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(STPAsecPackage.Literals.CONTROL_STRUCTURE__ELEMENTS);
+			childrenFeatures.add(STPAsecPackage.Literals.CONTROL_STRUCTURE__SUB_SYSTEMS);
 		}
 		return childrenFeatures;
 	}
@@ -131,6 +132,7 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 
 		switch (notification.getFeatureID(ControlStructure.class)) {
 		case STPAsecPackage.CONTROL_STRUCTURE__ELEMENTS:
+		case STPAsecPackage.CONTROL_STRUCTURE__SUB_SYSTEMS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -159,6 +161,9 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 
 		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__ELEMENTS,
 				STPAsecFactory.eINSTANCE.createControlAction()));
+
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__SUB_SYSTEMS,
+				STPAsecFactory.eINSTANCE.createSystem()));
 	}
 
 	/**

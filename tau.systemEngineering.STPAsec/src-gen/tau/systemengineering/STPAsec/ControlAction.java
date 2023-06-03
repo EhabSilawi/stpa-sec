@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.ControlAction#getReceiver <em>Receiver</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.ControlAction#getHazards <em>Hazards</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.ControlAction#getSender <em>Sender</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlAction()
@@ -25,14 +26,14 @@ public interface ControlAction extends DataFlow {
 
 	/**
 	 * Returns the value of the '<em><b>Receiver</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.Controller#getCommands <em>Commands</em>}'.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.Controller#getReceivedCommands <em>Received Commands</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Receiver</em>' reference.
 	 * @see #setReceiver(Controller)
 	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlAction_Receiver()
-	 * @see tau.systemengineering.STPAsec.Controller#getCommands
-	 * @model opposite="commands"
+	 * @see tau.systemengineering.STPAsec.Controller#getReceivedCommands
+	 * @model opposite="receivedCommands"
 	 * @generated
 	 */
 	Controller getReceiver();
@@ -60,4 +61,28 @@ public interface ControlAction extends DataFlow {
 	 * @generated
 	 */
 	EList<Hazard> getHazards();
+
+	/**
+	 * Returns the value of the '<em><b>Sender</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.Controller#getSentCommands <em>Sent Commands</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sender</em>' reference.
+	 * @see #setSender(Controller)
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlAction_Sender()
+	 * @see tau.systemengineering.STPAsec.Controller#getSentCommands
+	 * @model opposite="sentCommands"
+	 * @generated
+	 */
+	Controller getSender();
+
+	/**
+	 * Sets the value of the '{@link tau.systemengineering.STPAsec.ControlAction#getSender <em>Sender</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sender</em>' reference.
+	 * @see #getSender()
+	 * @generated
+	 */
+	void setSender(Controller value);
 } // ControlAction

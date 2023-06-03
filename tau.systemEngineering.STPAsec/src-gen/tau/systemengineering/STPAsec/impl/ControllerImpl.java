@@ -27,8 +27,9 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  * </p>
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.impl.ControllerImpl#getType <em>Type</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.ControllerImpl#getCommands <em>Commands</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.ControllerImpl#getReceivedCommands <em>Received Commands</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.ControllerImpl#getFeedbacks <em>Feedbacks</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.ControllerImpl#getSentCommands <em>Sent Commands</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,14 +56,14 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 	protected String type = TYPE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCommands() <em>Commands</em>}' reference list.
+	 * The cached value of the '{@link #getReceivedCommands() <em>Received Commands</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCommands()
+	 * @see #getReceivedCommands()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ControlAction> commands;
+	protected EList<ControlAction> receivedCommands;
 
 	/**
 	 * The cached value of the '{@link #getFeedbacks() <em>Feedbacks</em>}' reference list.
@@ -73,6 +74,16 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 	 * @ordered
 	 */
 	protected EList<Feedback> feedbacks;
+
+	/**
+	 * The cached value of the '{@link #getSentCommands() <em>Sent Commands</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSentCommands()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ControlAction> sentCommands;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,12 +130,12 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ControlAction> getCommands() {
-		if (commands == null) {
-			commands = new EObjectWithInverseResolvingEList<ControlAction>(ControlAction.class, this,
-					STPAsecPackage.CONTROLLER__COMMANDS, STPAsecPackage.CONTROL_ACTION__RECEIVER);
+	public EList<ControlAction> getReceivedCommands() {
+		if (receivedCommands == null) {
+			receivedCommands = new EObjectWithInverseResolvingEList<ControlAction>(ControlAction.class, this,
+					STPAsecPackage.CONTROLLER__RECEIVED_COMMANDS, STPAsecPackage.CONTROL_ACTION__RECEIVER);
 		}
-		return commands;
+		return receivedCommands;
 	}
 
 	/**
@@ -145,14 +156,29 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ControlAction> getSentCommands() {
+		if (sentCommands == null) {
+			sentCommands = new EObjectWithInverseResolvingEList<ControlAction>(ControlAction.class, this,
+					STPAsecPackage.CONTROLLER__SENT_COMMANDS, STPAsecPackage.CONTROL_ACTION__SENDER);
+		}
+		return sentCommands;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case STPAsecPackage.CONTROLLER__COMMANDS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getCommands()).basicAdd(otherEnd, msgs);
+		case STPAsecPackage.CONTROLLER__RECEIVED_COMMANDS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getReceivedCommands()).basicAdd(otherEnd, msgs);
 		case STPAsecPackage.CONTROLLER__FEEDBACKS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFeedbacks()).basicAdd(otherEnd, msgs);
+		case STPAsecPackage.CONTROLLER__SENT_COMMANDS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getSentCommands()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -165,10 +191,12 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case STPAsecPackage.CONTROLLER__COMMANDS:
-			return ((InternalEList<?>) getCommands()).basicRemove(otherEnd, msgs);
+		case STPAsecPackage.CONTROLLER__RECEIVED_COMMANDS:
+			return ((InternalEList<?>) getReceivedCommands()).basicRemove(otherEnd, msgs);
 		case STPAsecPackage.CONTROLLER__FEEDBACKS:
 			return ((InternalEList<?>) getFeedbacks()).basicRemove(otherEnd, msgs);
+		case STPAsecPackage.CONTROLLER__SENT_COMMANDS:
+			return ((InternalEList<?>) getSentCommands()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -183,10 +211,12 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 		switch (featureID) {
 		case STPAsecPackage.CONTROLLER__TYPE:
 			return getType();
-		case STPAsecPackage.CONTROLLER__COMMANDS:
-			return getCommands();
+		case STPAsecPackage.CONTROLLER__RECEIVED_COMMANDS:
+			return getReceivedCommands();
 		case STPAsecPackage.CONTROLLER__FEEDBACKS:
 			return getFeedbacks();
+		case STPAsecPackage.CONTROLLER__SENT_COMMANDS:
+			return getSentCommands();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,13 +233,17 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 		case STPAsecPackage.CONTROLLER__TYPE:
 			setType((String) newValue);
 			return;
-		case STPAsecPackage.CONTROLLER__COMMANDS:
-			getCommands().clear();
-			getCommands().addAll((Collection<? extends ControlAction>) newValue);
+		case STPAsecPackage.CONTROLLER__RECEIVED_COMMANDS:
+			getReceivedCommands().clear();
+			getReceivedCommands().addAll((Collection<? extends ControlAction>) newValue);
 			return;
 		case STPAsecPackage.CONTROLLER__FEEDBACKS:
 			getFeedbacks().clear();
 			getFeedbacks().addAll((Collection<? extends Feedback>) newValue);
+			return;
+		case STPAsecPackage.CONTROLLER__SENT_COMMANDS:
+			getSentCommands().clear();
+			getSentCommands().addAll((Collection<? extends ControlAction>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,11 +260,14 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 		case STPAsecPackage.CONTROLLER__TYPE:
 			setType(TYPE_EDEFAULT);
 			return;
-		case STPAsecPackage.CONTROLLER__COMMANDS:
-			getCommands().clear();
+		case STPAsecPackage.CONTROLLER__RECEIVED_COMMANDS:
+			getReceivedCommands().clear();
 			return;
 		case STPAsecPackage.CONTROLLER__FEEDBACKS:
 			getFeedbacks().clear();
+			return;
+		case STPAsecPackage.CONTROLLER__SENT_COMMANDS:
+			getSentCommands().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -246,10 +283,12 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 		switch (featureID) {
 		case STPAsecPackage.CONTROLLER__TYPE:
 			return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-		case STPAsecPackage.CONTROLLER__COMMANDS:
-			return commands != null && !commands.isEmpty();
+		case STPAsecPackage.CONTROLLER__RECEIVED_COMMANDS:
+			return receivedCommands != null && !receivedCommands.isEmpty();
 		case STPAsecPackage.CONTROLLER__FEEDBACKS:
 			return feedbacks != null && !feedbacks.isEmpty();
+		case STPAsecPackage.CONTROLLER__SENT_COMMANDS:
+			return sentCommands != null && !sentCommands.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

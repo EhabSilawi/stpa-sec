@@ -26,6 +26,7 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.impl.ControlActionImpl#getReceiver <em>Receiver</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.ControlActionImpl#getHazards <em>Hazards</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.ControlActionImpl#getSender <em>Sender</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,6 +51,16 @@ public class ControlActionImpl extends DataFlowImpl implements ControlAction {
 	 * @ordered
 	 */
 	protected EList<Hazard> hazards;
+
+	/**
+	 * The cached value of the '{@link #getSender() <em>Sender</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSender()
+	 * @generated
+	 * @ordered
+	 */
+	protected Controller sender;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,10 +136,10 @@ public class ControlActionImpl extends DataFlowImpl implements ControlAction {
 		if (newReceiver != receiver) {
 			NotificationChain msgs = null;
 			if (receiver != null)
-				msgs = ((InternalEObject) receiver).eInverseRemove(this, STPAsecPackage.CONTROLLER__COMMANDS,
+				msgs = ((InternalEObject) receiver).eInverseRemove(this, STPAsecPackage.CONTROLLER__RECEIVED_COMMANDS,
 						Controller.class, msgs);
 			if (newReceiver != null)
-				msgs = ((InternalEObject) newReceiver).eInverseAdd(this, STPAsecPackage.CONTROLLER__COMMANDS,
+				msgs = ((InternalEObject) newReceiver).eInverseAdd(this, STPAsecPackage.CONTROLLER__RECEIVED_COMMANDS,
 						Controller.class, msgs);
 			msgs = basicSetReceiver(newReceiver, msgs);
 			if (msgs != null)
@@ -156,17 +167,90 @@ public class ControlActionImpl extends DataFlowImpl implements ControlAction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Controller getSender() {
+		if (sender != null && sender.eIsProxy()) {
+			InternalEObject oldSender = (InternalEObject) sender;
+			sender = (Controller) eResolveProxy(oldSender);
+			if (sender != oldSender) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, STPAsecPackage.CONTROL_ACTION__SENDER,
+							oldSender, sender));
+			}
+		}
+		return sender;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Controller basicGetSender() {
+		return sender;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSender(Controller newSender, NotificationChain msgs) {
+		Controller oldSender = sender;
+		sender = newSender;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					STPAsecPackage.CONTROL_ACTION__SENDER, oldSender, newSender);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSender(Controller newSender) {
+		if (newSender != sender) {
+			NotificationChain msgs = null;
+			if (sender != null)
+				msgs = ((InternalEObject) sender).eInverseRemove(this, STPAsecPackage.CONTROLLER__SENT_COMMANDS,
+						Controller.class, msgs);
+			if (newSender != null)
+				msgs = ((InternalEObject) newSender).eInverseAdd(this, STPAsecPackage.CONTROLLER__SENT_COMMANDS,
+						Controller.class, msgs);
+			msgs = basicSetSender(newSender, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.CONTROL_ACTION__SENDER, newSender,
+					newSender));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case STPAsecPackage.CONTROL_ACTION__RECEIVER:
 			if (receiver != null)
-				msgs = ((InternalEObject) receiver).eInverseRemove(this, STPAsecPackage.CONTROLLER__COMMANDS,
+				msgs = ((InternalEObject) receiver).eInverseRemove(this, STPAsecPackage.CONTROLLER__RECEIVED_COMMANDS,
 						Controller.class, msgs);
 			return basicSetReceiver((Controller) otherEnd, msgs);
 		case STPAsecPackage.CONTROL_ACTION__HAZARDS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getHazards()).basicAdd(otherEnd, msgs);
+		case STPAsecPackage.CONTROL_ACTION__SENDER:
+			if (sender != null)
+				msgs = ((InternalEObject) sender).eInverseRemove(this, STPAsecPackage.CONTROLLER__SENT_COMMANDS,
+						Controller.class, msgs);
+			return basicSetSender((Controller) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -183,6 +267,8 @@ public class ControlActionImpl extends DataFlowImpl implements ControlAction {
 			return basicSetReceiver(null, msgs);
 		case STPAsecPackage.CONTROL_ACTION__HAZARDS:
 			return ((InternalEList<?>) getHazards()).basicRemove(otherEnd, msgs);
+		case STPAsecPackage.CONTROL_ACTION__SENDER:
+			return basicSetSender(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -201,6 +287,10 @@ public class ControlActionImpl extends DataFlowImpl implements ControlAction {
 			return basicGetReceiver();
 		case STPAsecPackage.CONTROL_ACTION__HAZARDS:
 			return getHazards();
+		case STPAsecPackage.CONTROL_ACTION__SENDER:
+			if (resolve)
+				return getSender();
+			return basicGetSender();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -221,6 +311,9 @@ public class ControlActionImpl extends DataFlowImpl implements ControlAction {
 			getHazards().clear();
 			getHazards().addAll((Collection<? extends Hazard>) newValue);
 			return;
+		case STPAsecPackage.CONTROL_ACTION__SENDER:
+			setSender((Controller) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -239,6 +332,9 @@ public class ControlActionImpl extends DataFlowImpl implements ControlAction {
 		case STPAsecPackage.CONTROL_ACTION__HAZARDS:
 			getHazards().clear();
 			return;
+		case STPAsecPackage.CONTROL_ACTION__SENDER:
+			setSender((Controller) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -255,6 +351,8 @@ public class ControlActionImpl extends DataFlowImpl implements ControlAction {
 			return receiver != null;
 		case STPAsecPackage.CONTROL_ACTION__HAZARDS:
 			return hazards != null && !hazards.isEmpty();
+		case STPAsecPackage.CONTROL_ACTION__SENDER:
+			return sender != null;
 		}
 		return super.eIsSet(featureID);
 	}

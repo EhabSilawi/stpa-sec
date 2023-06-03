@@ -29,6 +29,7 @@ import tau.systemengineering.STPAsec.StructureElement;
  * </p>
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.impl.ControlStructureImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.ControlStructureImpl#getSubSystems <em>Sub Systems</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,6 +44,16 @@ public class ControlStructureImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected EList<StructureElement> elements;
+
+	/**
+	 * The cached value of the '{@link #getSubSystems() <em>Sub Systems</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubSystems()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<tau.systemengineering.STPAsec.System> subSystems;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,11 +92,26 @@ public class ControlStructureImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<tau.systemengineering.STPAsec.System> getSubSystems() {
+		if (subSystems == null) {
+			subSystems = new EObjectContainmentEList<tau.systemengineering.STPAsec.System>(
+					tau.systemengineering.STPAsec.System.class, this, STPAsecPackage.CONTROL_STRUCTURE__SUB_SYSTEMS);
+		}
+		return subSystems;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case STPAsecPackage.CONTROL_STRUCTURE__ELEMENTS:
 			return ((InternalEList<?>) getElements()).basicRemove(otherEnd, msgs);
+		case STPAsecPackage.CONTROL_STRUCTURE__SUB_SYSTEMS:
+			return ((InternalEList<?>) getSubSystems()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -100,6 +126,8 @@ public class ControlStructureImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case STPAsecPackage.CONTROL_STRUCTURE__ELEMENTS:
 			return getElements();
+		case STPAsecPackage.CONTROL_STRUCTURE__SUB_SYSTEMS:
+			return getSubSystems();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,6 +145,10 @@ public class ControlStructureImpl extends MinimalEObjectImpl.Container implement
 			getElements().clear();
 			getElements().addAll((Collection<? extends StructureElement>) newValue);
 			return;
+		case STPAsecPackage.CONTROL_STRUCTURE__SUB_SYSTEMS:
+			getSubSystems().clear();
+			getSubSystems().addAll((Collection<? extends tau.systemengineering.STPAsec.System>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -132,6 +164,9 @@ public class ControlStructureImpl extends MinimalEObjectImpl.Container implement
 		case STPAsecPackage.CONTROL_STRUCTURE__ELEMENTS:
 			getElements().clear();
 			return;
+		case STPAsecPackage.CONTROL_STRUCTURE__SUB_SYSTEMS:
+			getSubSystems().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -146,6 +181,8 @@ public class ControlStructureImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case STPAsecPackage.CONTROL_STRUCTURE__ELEMENTS:
 			return elements != null && !elements.isEmpty();
+		case STPAsecPackage.CONTROL_STRUCTURE__SUB_SYSTEMS:
+			return subSystems != null && !subSystems.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

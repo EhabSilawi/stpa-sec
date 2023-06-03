@@ -45,8 +45,9 @@ public class ControllerItemProvider extends StructureElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTypePropertyDescriptor(object);
-			addCommandsPropertyDescriptor(object);
+			addReceivedCommandsPropertyDescriptor(object);
 			addFeedbacksPropertyDescriptor(object);
+			addSentCommandsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -68,18 +69,18 @@ public class ControllerItemProvider extends StructureElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Commands feature.
+	 * This adds a property descriptor for the Received Commands feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCommandsPropertyDescriptor(Object object) {
+	protected void addReceivedCommandsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Controller_commands_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Controller_commands_feature",
+						getResourceLocator(), getString("_UI_Controller_receivedCommands_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Controller_receivedCommands_feature",
 								"_UI_Controller_type"),
-						STPAsecPackage.Literals.CONTROLLER__COMMANDS, true, false, true, null, null, null));
+						STPAsecPackage.Literals.CONTROLLER__RECEIVED_COMMANDS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -95,6 +96,21 @@ public class ControllerItemProvider extends StructureElementItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Controller_feedbacks_feature",
 								"_UI_Controller_type"),
 						STPAsecPackage.Literals.CONTROLLER__FEEDBACKS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sent Commands feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSentCommandsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Controller_sentCommands_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Controller_sentCommands_feature",
+								"_UI_Controller_type"),
+						STPAsecPackage.Literals.CONTROLLER__SENT_COMMANDS, true, false, true, null, null, null));
 	}
 
 	/**

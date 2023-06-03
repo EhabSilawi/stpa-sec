@@ -61,14 +61,18 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Controller" eSuperTypes="#//StructureElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receivedCommands" upperBound="-1"
         eType="#//ControlAction" eOpposite="#//ControlAction/receiver"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="feedbacks" upperBound="-1"
         eType="#//Feedback" eOpposite="#//Feedback/controller"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sentCommands" upperBound="-1"
+        eType="#//ControlAction" eOpposite="#//ControlAction/sender"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ControlStructure">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//StructureElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subSystems" upperBound="-1"
+        eType="#//System" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataFlow" abstract="true" eSuperTypes="#//StructureElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
@@ -77,9 +81,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ControlAction" eSuperTypes="#//DataFlow">
     <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" eType="#//Controller"
-        eOpposite="#//Controller/commands"/>
+        eOpposite="#//Controller/receivedCommands"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hazards" upperBound="-1"
         eType="#//Hazard" eOpposite="#//Hazard/unsafeControlActions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sender" eType="#//Controller"
+        eOpposite="#//Controller/sentCommands"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataElment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

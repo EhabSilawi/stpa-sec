@@ -544,7 +544,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getController_Commands() {
+	public EReference getController_ReceivedCommands() {
 		return (EReference) controllerEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -555,6 +555,15 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 */
 	public EReference getController_Feedbacks() {
 		return (EReference) controllerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getController_SentCommands() {
+		return (EReference) controllerEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -573,6 +582,15 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 */
 	public EReference getControlStructure_Elements() {
 		return (EReference) controlStructureEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControlStructure_SubSystems() {
+		return (EReference) controlStructureEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -600,6 +618,15 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 */
 	public EReference getControlAction_Hazards() {
 		return (EReference) controlActionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControlAction_Sender() {
+		return (EReference) controlActionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -732,11 +759,13 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 
 		controllerEClass = createEClass(CONTROLLER);
 		createEAttribute(controllerEClass, CONTROLLER__TYPE);
-		createEReference(controllerEClass, CONTROLLER__COMMANDS);
+		createEReference(controllerEClass, CONTROLLER__RECEIVED_COMMANDS);
 		createEReference(controllerEClass, CONTROLLER__FEEDBACKS);
+		createEReference(controllerEClass, CONTROLLER__SENT_COMMANDS);
 
 		controlStructureEClass = createEClass(CONTROL_STRUCTURE);
 		createEReference(controlStructureEClass, CONTROL_STRUCTURE__ELEMENTS);
+		createEReference(controlStructureEClass, CONTROL_STRUCTURE__SUB_SYSTEMS);
 
 		dataFlowEClass = createEClass(DATA_FLOW);
 		createEAttribute(dataFlowEClass, DATA_FLOW__ID);
@@ -745,6 +774,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		controlActionEClass = createEClass(CONTROL_ACTION);
 		createEReference(controlActionEClass, CONTROL_ACTION__RECEIVER);
 		createEReference(controlActionEClass, CONTROL_ACTION__HAZARDS);
+		createEReference(controlActionEClass, CONTROL_ACTION__SENDER);
 
 		dataElmentEClass = createEClass(DATA_ELMENT);
 		createEAttribute(dataElmentEClass, DATA_ELMENT__ID);
@@ -897,16 +927,22 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getController_Type(), ecorePackage.getEString(), "type", null, 0, 1, Controller.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getController_Commands(), this.getControlAction(), this.getControlAction_Receiver(), "commands",
-				null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getController_ReceivedCommands(), this.getControlAction(), this.getControlAction_Receiver(),
+				"receivedCommands", null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getController_Feedbacks(), this.getFeedback(), this.getFeedback_Controller(), "feedbacks", null,
 				0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getController_SentCommands(), this.getControlAction(), this.getControlAction_Sender(),
+				"sentCommands", null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controlStructureEClass, ControlStructure.class, "ControlStructure", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getControlStructure_Elements(), this.getStructureElement(), null, "elements", null, 0, -1,
+				ControlStructure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlStructure_SubSystems(), this.getSystem(), null, "subSystems", null, 0, -1,
 				ControlStructure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -919,11 +955,14 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 
 		initEClass(controlActionEClass, ControlAction.class, "ControlAction", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getControlAction_Receiver(), this.getController(), this.getController_Commands(), "receiver",
-				null, 0, 1, ControlAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+		initEReference(getControlAction_Receiver(), this.getController(), this.getController_ReceivedCommands(),
+				"receiver", null, 0, 1, ControlAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getControlAction_Hazards(), this.getHazard(), this.getHazard_UnsafeControlActions(), "hazards",
 				null, 0, -1, ControlAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlAction_Sender(), this.getController(), this.getController_SentCommands(), "sender",
+				null, 0, 1, ControlAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataElmentEClass, DataElment.class, "DataElment", !IS_ABSTRACT, !IS_INTERFACE,
