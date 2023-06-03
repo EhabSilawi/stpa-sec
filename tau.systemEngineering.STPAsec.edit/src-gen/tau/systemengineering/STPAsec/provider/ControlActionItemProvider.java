@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
@@ -41,26 +42,28 @@ public class ControlActionItemProvider extends DataFlowItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addReceiverPropertyDescriptor(object);
+			addControllerReceiverPropertyDescriptor(object);
 			addHazardsPropertyDescriptor(object);
-			addSenderPropertyDescriptor(object);
+			addContollerSenderPropertyDescriptor(object);
+			addControlledProcessReceiverPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Receiver feature.
+	 * This adds a property descriptor for the Controller Receiver feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addReceiverPropertyDescriptor(Object object) {
+	protected void addControllerReceiverPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ControlAction_receiver_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_receiver_feature",
+						getResourceLocator(), getString("_UI_ControlAction_controllerReceiver_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_controllerReceiver_feature",
 								"_UI_ControlAction_type"),
-						STPAsecPackage.Literals.CONTROL_ACTION__RECEIVER, true, false, true, null, null, null));
+						STPAsecPackage.Literals.CONTROL_ACTION__CONTROLLER_RECEIVER, true, false, true, null, null,
+						null));
 	}
 
 	/**
@@ -79,18 +82,34 @@ public class ControlActionItemProvider extends DataFlowItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Sender feature.
+	 * This adds a property descriptor for the Contoller Sender feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSenderPropertyDescriptor(Object object) {
+	protected void addContollerSenderPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ControlAction_sender_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_sender_feature",
+						getResourceLocator(), getString("_UI_ControlAction_contollerSender_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_contollerSender_feature",
 								"_UI_ControlAction_type"),
-						STPAsecPackage.Literals.CONTROL_ACTION__SENDER, true, false, true, null, null, null));
+						STPAsecPackage.Literals.CONTROL_ACTION__CONTOLLER_SENDER, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Controlled Process Receiver feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControlledProcessReceiverPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_ControlAction_controlledProcessReceiver_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_controlledProcessReceiver_feature",
+						"_UI_ControlAction_type"),
+				STPAsecPackage.Literals.CONTROL_ACTION__CONTROLLED_PROCESS_RECEIVER, true, false, true, null, null,
+				null));
 	}
 
 	/**

@@ -111,6 +111,10 @@ public class STPAsecSwitch<T> extends Switch<T> {
 			tau.systemengineering.STPAsec.System system = (tau.systemengineering.STPAsec.System) theEObject;
 			T result = caseSystem(system);
 			if (result == null)
+				result = caseController(system);
+			if (result == null)
+				result = caseStructureElement(system);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}

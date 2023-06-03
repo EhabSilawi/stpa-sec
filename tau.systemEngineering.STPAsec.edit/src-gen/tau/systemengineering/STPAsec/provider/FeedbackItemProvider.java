@@ -45,8 +45,9 @@ public class FeedbackItemProvider extends DataFlowItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTypePropertyDescriptor(object);
-			addControllerPropertyDescriptor(object);
-			addControlledProcessPropertyDescriptor(object);
+			addControllerReceiverPropertyDescriptor(object);
+			addControlledProcessSenderPropertyDescriptor(object);
+			addControllerSenderPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -68,33 +69,49 @@ public class FeedbackItemProvider extends DataFlowItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Controller feature.
+	 * This adds a property descriptor for the Controller Receiver feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addControllerPropertyDescriptor(Object object) {
+	protected void addControllerReceiverPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Feedback_controller_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Feedback_controller_feature",
+						getResourceLocator(), getString("_UI_Feedback_controllerReceiver_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Feedback_controllerReceiver_feature",
 								"_UI_Feedback_type"),
-						STPAsecPackage.Literals.FEEDBACK__CONTROLLER, true, false, true, null, null, null));
+						STPAsecPackage.Literals.FEEDBACK__CONTROLLER_RECEIVER, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Controlled Process feature.
+	 * This adds a property descriptor for the Controlled Process Sender feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addControlledProcessPropertyDescriptor(Object object) {
+	protected void addControlledProcessSenderPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Feedback_controlledProcess_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Feedback_controlledProcess_feature",
+						getResourceLocator(), getString("_UI_Feedback_controlledProcessSender_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Feedback_controlledProcessSender_feature",
 								"_UI_Feedback_type"),
-						STPAsecPackage.Literals.FEEDBACK__CONTROLLED_PROCESS, true, false, true, null, null, null));
+						STPAsecPackage.Literals.FEEDBACK__CONTROLLED_PROCESS_SENDER, true, false, true, null, null,
+						null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Controller Sender feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControllerSenderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Feedback_controllerSender_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Feedback_controllerSender_feature",
+								"_UI_Feedback_type"),
+						STPAsecPackage.Literals.FEEDBACK__CONTROLLER_SENDER, true, false, true, null, null, null));
 	}
 
 	/**

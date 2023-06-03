@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -19,6 +20,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import tau.systemengineering.STPAsec.ControlStructure;
 import tau.systemengineering.STPAsec.STPAsecFactory;
 import tau.systemengineering.STPAsec.STPAsecPackage;
@@ -69,7 +71,6 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(STPAsecPackage.Literals.CONTROL_STRUCTURE__ELEMENTS);
-			childrenFeatures.add(STPAsecPackage.Literals.CONTROL_STRUCTURE__SUB_SYSTEMS);
 		}
 		return childrenFeatures;
 	}
@@ -132,7 +133,6 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 
 		switch (notification.getFeatureID(ControlStructure.class)) {
 		case STPAsecPackage.CONTROL_STRUCTURE__ELEMENTS:
-		case STPAsecPackage.CONTROL_STRUCTURE__SUB_SYSTEMS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -151,19 +151,19 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__ELEMENTS,
+				STPAsecFactory.eINSTANCE.createController()));
+
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__ELEMENTS,
+				STPAsecFactory.eINSTANCE.createSystem()));
+
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__ELEMENTS,
 				STPAsecFactory.eINSTANCE.createFeedback()));
 
 		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__ELEMENTS,
 				STPAsecFactory.eINSTANCE.createControlledProcess()));
 
 		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__ELEMENTS,
-				STPAsecFactory.eINSTANCE.createController()));
-
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__ELEMENTS,
 				STPAsecFactory.eINSTANCE.createControlAction()));
-
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__SUB_SYSTEMS,
-				STPAsecFactory.eINSTANCE.createSystem()));
 	}
 
 	/**

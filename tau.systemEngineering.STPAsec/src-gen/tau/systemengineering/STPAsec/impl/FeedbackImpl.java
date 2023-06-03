@@ -23,8 +23,9 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  * </p>
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.impl.FeedbackImpl#getType <em>Type</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.FeedbackImpl#getController <em>Controller</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.FeedbackImpl#getControlledProcess <em>Controlled Process</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.FeedbackImpl#getControllerReceiver <em>Controller Receiver</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.FeedbackImpl#getControlledProcessSender <em>Controlled Process Sender</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.FeedbackImpl#getControllerSender <em>Controller Sender</em>}</li>
  * </ul>
  *
  * @generated
@@ -51,24 +52,34 @@ public class FeedbackImpl extends DataFlowImpl implements Feedback {
 	protected String type = TYPE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getController() <em>Controller</em>}' reference.
+	 * The cached value of the '{@link #getControllerReceiver() <em>Controller Receiver</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getController()
+	 * @see #getControllerReceiver()
 	 * @generated
 	 * @ordered
 	 */
-	protected Controller controller;
+	protected Controller controllerReceiver;
 
 	/**
-	 * The cached value of the '{@link #getControlledProcess() <em>Controlled Process</em>}' reference.
+	 * The cached value of the '{@link #getControlledProcessSender() <em>Controlled Process Sender</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getControlledProcess()
+	 * @see #getControlledProcessSender()
 	 * @generated
 	 * @ordered
 	 */
-	protected ControlledProcess controlledProcess;
+	protected ControlledProcess controlledProcessSender;
+
+	/**
+	 * The cached value of the '{@link #getControllerSender() <em>Controller Sender</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getControllerSender()
+	 * @generated
+	 * @ordered
+	 */
+	protected Controller controllerSender;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,85 +126,17 @@ public class FeedbackImpl extends DataFlowImpl implements Feedback {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Controller getController() {
-		if (controller != null && controller.eIsProxy()) {
-			InternalEObject oldController = (InternalEObject) controller;
-			controller = (Controller) eResolveProxy(oldController);
-			if (controller != oldController) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, STPAsecPackage.FEEDBACK__CONTROLLER,
-							oldController, controller));
-			}
-		}
-		return controller;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Controller basicGetController() {
-		return controller;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetController(Controller newController, NotificationChain msgs) {
-		Controller oldController = controller;
-		controller = newController;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					STPAsecPackage.FEEDBACK__CONTROLLER, oldController, newController);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setController(Controller newController) {
-		if (newController != controller) {
-			NotificationChain msgs = null;
-			if (controller != null)
-				msgs = ((InternalEObject) controller).eInverseRemove(this, STPAsecPackage.CONTROLLER__FEEDBACKS,
-						Controller.class, msgs);
-			if (newController != null)
-				msgs = ((InternalEObject) newController).eInverseAdd(this, STPAsecPackage.CONTROLLER__FEEDBACKS,
-						Controller.class, msgs);
-			msgs = basicSetController(newController, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.FEEDBACK__CONTROLLER, newController,
-					newController));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ControlledProcess getControlledProcess() {
-		if (controlledProcess != null && controlledProcess.eIsProxy()) {
-			InternalEObject oldControlledProcess = (InternalEObject) controlledProcess;
-			controlledProcess = (ControlledProcess) eResolveProxy(oldControlledProcess);
-			if (controlledProcess != oldControlledProcess) {
+	public Controller getControllerReceiver() {
+		if (controllerReceiver != null && controllerReceiver.eIsProxy()) {
+			InternalEObject oldControllerReceiver = (InternalEObject) controllerReceiver;
+			controllerReceiver = (Controller) eResolveProxy(oldControllerReceiver);
+			if (controllerReceiver != oldControllerReceiver) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS, oldControlledProcess, controlledProcess));
+							STPAsecPackage.FEEDBACK__CONTROLLER_RECEIVER, oldControllerReceiver, controllerReceiver));
 			}
 		}
-		return controlledProcess;
+		return controllerReceiver;
 	}
 
 	/**
@@ -201,8 +144,8 @@ public class FeedbackImpl extends DataFlowImpl implements Feedback {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControlledProcess basicGetControlledProcess() {
-		return controlledProcess;
+	public Controller basicGetControllerReceiver() {
+		return controllerReceiver;
 	}
 
 	/**
@@ -210,12 +153,12 @@ public class FeedbackImpl extends DataFlowImpl implements Feedback {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetControlledProcess(ControlledProcess newControlledProcess, NotificationChain msgs) {
-		ControlledProcess oldControlledProcess = controlledProcess;
-		controlledProcess = newControlledProcess;
+	public NotificationChain basicSetControllerReceiver(Controller newControllerReceiver, NotificationChain msgs) {
+		Controller oldControllerReceiver = controllerReceiver;
+		controllerReceiver = newControllerReceiver;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS, oldControlledProcess, newControlledProcess);
+					STPAsecPackage.FEEDBACK__CONTROLLER_RECEIVER, oldControllerReceiver, newControllerReceiver);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -229,21 +172,160 @@ public class FeedbackImpl extends DataFlowImpl implements Feedback {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setControlledProcess(ControlledProcess newControlledProcess) {
-		if (newControlledProcess != controlledProcess) {
+	public void setControllerReceiver(Controller newControllerReceiver) {
+		if (newControllerReceiver != controllerReceiver) {
 			NotificationChain msgs = null;
-			if (controlledProcess != null)
-				msgs = ((InternalEObject) controlledProcess).eInverseRemove(this,
-						STPAsecPackage.CONTROLLED_PROCESS__FEEDBACKS, ControlledProcess.class, msgs);
-			if (newControlledProcess != null)
-				msgs = ((InternalEObject) newControlledProcess).eInverseAdd(this,
-						STPAsecPackage.CONTROLLED_PROCESS__FEEDBACKS, ControlledProcess.class, msgs);
-			msgs = basicSetControlledProcess(newControlledProcess, msgs);
+			if (controllerReceiver != null)
+				msgs = ((InternalEObject) controllerReceiver).eInverseRemove(this,
+						STPAsecPackage.CONTROLLER__RECEIVED_FEEDBACKS, Controller.class, msgs);
+			if (newControllerReceiver != null)
+				msgs = ((InternalEObject) newControllerReceiver).eInverseAdd(this,
+						STPAsecPackage.CONTROLLER__RECEIVED_FEEDBACKS, Controller.class, msgs);
+			msgs = basicSetControllerReceiver(newControllerReceiver, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS,
-					newControlledProcess, newControlledProcess));
+			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.FEEDBACK__CONTROLLER_RECEIVER,
+					newControllerReceiver, newControllerReceiver));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ControlledProcess getControlledProcessSender() {
+		if (controlledProcessSender != null && controlledProcessSender.eIsProxy()) {
+			InternalEObject oldControlledProcessSender = (InternalEObject) controlledProcessSender;
+			controlledProcessSender = (ControlledProcess) eResolveProxy(oldControlledProcessSender);
+			if (controlledProcessSender != oldControlledProcessSender) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS_SENDER, oldControlledProcessSender,
+							controlledProcessSender));
+			}
+		}
+		return controlledProcessSender;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ControlledProcess basicGetControlledProcessSender() {
+		return controlledProcessSender;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetControlledProcessSender(ControlledProcess newControlledProcessSender,
+			NotificationChain msgs) {
+		ControlledProcess oldControlledProcessSender = controlledProcessSender;
+		controlledProcessSender = newControlledProcessSender;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS_SENDER, oldControlledProcessSender,
+					newControlledProcessSender);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setControlledProcessSender(ControlledProcess newControlledProcessSender) {
+		if (newControlledProcessSender != controlledProcessSender) {
+			NotificationChain msgs = null;
+			if (controlledProcessSender != null)
+				msgs = ((InternalEObject) controlledProcessSender).eInverseRemove(this,
+						STPAsecPackage.CONTROLLED_PROCESS__SENT_FEEDBACKS, ControlledProcess.class, msgs);
+			if (newControlledProcessSender != null)
+				msgs = ((InternalEObject) newControlledProcessSender).eInverseAdd(this,
+						STPAsecPackage.CONTROLLED_PROCESS__SENT_FEEDBACKS, ControlledProcess.class, msgs);
+			msgs = basicSetControlledProcessSender(newControlledProcessSender, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS_SENDER,
+					newControlledProcessSender, newControlledProcessSender));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Controller getControllerSender() {
+		if (controllerSender != null && controllerSender.eIsProxy()) {
+			InternalEObject oldControllerSender = (InternalEObject) controllerSender;
+			controllerSender = (Controller) eResolveProxy(oldControllerSender);
+			if (controllerSender != oldControllerSender) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							STPAsecPackage.FEEDBACK__CONTROLLER_SENDER, oldControllerSender, controllerSender));
+			}
+		}
+		return controllerSender;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Controller basicGetControllerSender() {
+		return controllerSender;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetControllerSender(Controller newControllerSender, NotificationChain msgs) {
+		Controller oldControllerSender = controllerSender;
+		controllerSender = newControllerSender;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					STPAsecPackage.FEEDBACK__CONTROLLER_SENDER, oldControllerSender, newControllerSender);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setControllerSender(Controller newControllerSender) {
+		if (newControllerSender != controllerSender) {
+			NotificationChain msgs = null;
+			if (controllerSender != null)
+				msgs = ((InternalEObject) controllerSender).eInverseRemove(this,
+						STPAsecPackage.CONTROLLER__SENT_FEEDBACKS, Controller.class, msgs);
+			if (newControllerSender != null)
+				msgs = ((InternalEObject) newControllerSender).eInverseAdd(this,
+						STPAsecPackage.CONTROLLER__SENT_FEEDBACKS, Controller.class, msgs);
+			msgs = basicSetControllerSender(newControllerSender, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.FEEDBACK__CONTROLLER_SENDER,
+					newControllerSender, newControllerSender));
 	}
 
 	/**
@@ -255,16 +337,21 @@ public class FeedbackImpl extends DataFlowImpl implements Feedback {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case STPAsecPackage.FEEDBACK__CONTROLLER:
-			if (controller != null)
-				msgs = ((InternalEObject) controller).eInverseRemove(this, STPAsecPackage.CONTROLLER__FEEDBACKS,
-						Controller.class, msgs);
-			return basicSetController((Controller) otherEnd, msgs);
-		case STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS:
-			if (controlledProcess != null)
-				msgs = ((InternalEObject) controlledProcess).eInverseRemove(this,
-						STPAsecPackage.CONTROLLED_PROCESS__FEEDBACKS, ControlledProcess.class, msgs);
-			return basicSetControlledProcess((ControlledProcess) otherEnd, msgs);
+		case STPAsecPackage.FEEDBACK__CONTROLLER_RECEIVER:
+			if (controllerReceiver != null)
+				msgs = ((InternalEObject) controllerReceiver).eInverseRemove(this,
+						STPAsecPackage.CONTROLLER__RECEIVED_FEEDBACKS, Controller.class, msgs);
+			return basicSetControllerReceiver((Controller) otherEnd, msgs);
+		case STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS_SENDER:
+			if (controlledProcessSender != null)
+				msgs = ((InternalEObject) controlledProcessSender).eInverseRemove(this,
+						STPAsecPackage.CONTROLLED_PROCESS__SENT_FEEDBACKS, ControlledProcess.class, msgs);
+			return basicSetControlledProcessSender((ControlledProcess) otherEnd, msgs);
+		case STPAsecPackage.FEEDBACK__CONTROLLER_SENDER:
+			if (controllerSender != null)
+				msgs = ((InternalEObject) controllerSender).eInverseRemove(this,
+						STPAsecPackage.CONTROLLER__SENT_FEEDBACKS, Controller.class, msgs);
+			return basicSetControllerSender((Controller) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -277,10 +364,12 @@ public class FeedbackImpl extends DataFlowImpl implements Feedback {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case STPAsecPackage.FEEDBACK__CONTROLLER:
-			return basicSetController(null, msgs);
-		case STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS:
-			return basicSetControlledProcess(null, msgs);
+		case STPAsecPackage.FEEDBACK__CONTROLLER_RECEIVER:
+			return basicSetControllerReceiver(null, msgs);
+		case STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS_SENDER:
+			return basicSetControlledProcessSender(null, msgs);
+		case STPAsecPackage.FEEDBACK__CONTROLLER_SENDER:
+			return basicSetControllerSender(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -295,14 +384,18 @@ public class FeedbackImpl extends DataFlowImpl implements Feedback {
 		switch (featureID) {
 		case STPAsecPackage.FEEDBACK__TYPE:
 			return getType();
-		case STPAsecPackage.FEEDBACK__CONTROLLER:
+		case STPAsecPackage.FEEDBACK__CONTROLLER_RECEIVER:
 			if (resolve)
-				return getController();
-			return basicGetController();
-		case STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS:
+				return getControllerReceiver();
+			return basicGetControllerReceiver();
+		case STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS_SENDER:
 			if (resolve)
-				return getControlledProcess();
-			return basicGetControlledProcess();
+				return getControlledProcessSender();
+			return basicGetControlledProcessSender();
+		case STPAsecPackage.FEEDBACK__CONTROLLER_SENDER:
+			if (resolve)
+				return getControllerSender();
+			return basicGetControllerSender();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -319,11 +412,14 @@ public class FeedbackImpl extends DataFlowImpl implements Feedback {
 		case STPAsecPackage.FEEDBACK__TYPE:
 			setType((String) newValue);
 			return;
-		case STPAsecPackage.FEEDBACK__CONTROLLER:
-			setController((Controller) newValue);
+		case STPAsecPackage.FEEDBACK__CONTROLLER_RECEIVER:
+			setControllerReceiver((Controller) newValue);
 			return;
-		case STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS:
-			setControlledProcess((ControlledProcess) newValue);
+		case STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS_SENDER:
+			setControlledProcessSender((ControlledProcess) newValue);
+			return;
+		case STPAsecPackage.FEEDBACK__CONTROLLER_SENDER:
+			setControllerSender((Controller) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -340,11 +436,14 @@ public class FeedbackImpl extends DataFlowImpl implements Feedback {
 		case STPAsecPackage.FEEDBACK__TYPE:
 			setType(TYPE_EDEFAULT);
 			return;
-		case STPAsecPackage.FEEDBACK__CONTROLLER:
-			setController((Controller) null);
+		case STPAsecPackage.FEEDBACK__CONTROLLER_RECEIVER:
+			setControllerReceiver((Controller) null);
 			return;
-		case STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS:
-			setControlledProcess((ControlledProcess) null);
+		case STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS_SENDER:
+			setControlledProcessSender((ControlledProcess) null);
+			return;
+		case STPAsecPackage.FEEDBACK__CONTROLLER_SENDER:
+			setControllerSender((Controller) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -360,10 +459,12 @@ public class FeedbackImpl extends DataFlowImpl implements Feedback {
 		switch (featureID) {
 		case STPAsecPackage.FEEDBACK__TYPE:
 			return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-		case STPAsecPackage.FEEDBACK__CONTROLLER:
-			return controller != null;
-		case STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS:
-			return controlledProcess != null;
+		case STPAsecPackage.FEEDBACK__CONTROLLER_RECEIVER:
+			return controllerReceiver != null;
+		case STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS_SENDER:
+			return controlledProcessSender != null;
+		case STPAsecPackage.FEEDBACK__CONTROLLER_SENDER:
+			return controllerSender != null;
 		}
 		return super.eIsSet(featureID);
 	}

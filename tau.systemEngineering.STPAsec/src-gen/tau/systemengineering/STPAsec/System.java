@@ -4,8 +4,6 @@ package tau.systemengineering.STPAsec;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>System</b></em>'.
@@ -15,12 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link tau.systemengineering.STPAsec.System#getName <em>Name</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.System#getRecommends <em>Recommends</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.System#getGoals <em>Goals</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.System#getScenario <em>Scenario</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.System#getConsistsOf <em>Consists Of</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.System#getDescription <em>Description</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.System#getPotentialHazards <em>Potential Hazards</em>}</li>
  * </ul>
  *
@@ -28,29 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface System extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link tau.systemengineering.STPAsec.System#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
+public interface System extends Controller {
 	/**
 	 * Returns the value of the '<em><b>Recommends</b></em>' containment reference list.
 	 * The list contents are of type {@link tau.systemengineering.STPAsec.SecurityRecommendation}.
@@ -98,28 +72,6 @@ public interface System extends EObject {
 	 * @generated
 	 */
 	EList<ControlStructure> getConsistsOf();
-
-	/**
-	 * Returns the value of the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Description</em>' attribute.
-	 * @see #setDescription(String)
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem_Description()
-	 * @model
-	 * @generated
-	 */
-	String getDescription();
-
-	/**
-	 * Sets the value of the '{@link tau.systemengineering.STPAsec.System#getDescription <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
-	 * @see #getDescription()
-	 * @generated
-	 */
-	void setDescription(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Potential Hazards</b></em>' containment reference list.

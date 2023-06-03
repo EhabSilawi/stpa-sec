@@ -42,24 +42,42 @@ public class ControlledProcessItemProvider extends StructureElementItemProvider 
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFeedbacksPropertyDescriptor(object);
+			addSentFeedbacksPropertyDescriptor(object);
+			addControlledProcessReceivedCommandsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Feedbacks feature.
+	 * This adds a property descriptor for the Sent Feedbacks feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFeedbacksPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ControlledProcess_feedbacks_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ControlledProcess_feedbacks_feature",
-								"_UI_ControlledProcess_type"),
-						STPAsecPackage.Literals.CONTROLLED_PROCESS__FEEDBACKS, true, false, true, null, null, null));
+	protected void addSentFeedbacksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_ControlledProcess_sentFeedbacks_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ControlledProcess_sentFeedbacks_feature",
+						"_UI_ControlledProcess_type"),
+				STPAsecPackage.Literals.CONTROLLED_PROCESS__SENT_FEEDBACKS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Controlled Process Received Commands feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControlledProcessReceivedCommandsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_ControlledProcess_controlledProcessReceivedCommands_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_ControlledProcess_controlledProcessReceivedCommands_feature",
+						"_UI_ControlledProcess_type"),
+				STPAsecPackage.Literals.CONTROLLED_PROCESS__CONTROLLED_PROCESS_RECEIVED_COMMANDS, true, false, true,
+				null, null, null));
 	}
 
 	/**

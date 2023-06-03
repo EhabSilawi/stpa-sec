@@ -296,87 +296,6 @@ public interface STPAsecPackage extends EPackage {
 	int SYSTEM = 4;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Recommends</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM__RECOMMENDS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Goals</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM__GOALS = 2;
-
-	/**
-	 * The feature id for the '<em><b>Scenario</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM__SCENARIO = 3;
-
-	/**
-	 * The feature id for the '<em><b>Consists Of</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM__CONSISTS_OF = 4;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM__DESCRIPTION = 5;
-
-	/**
-	 * The feature id for the '<em><b>Potential Hazards</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM__POTENTIAL_HAZARDS = 6;
-
-	/**
-	 * The number of structural features of the '<em>System</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM_FEATURE_COUNT = 7;
-
-	/**
-	 * The number of operations of the '<em>System</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.STPASecImpl <em>STPA Sec</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -385,33 +304,6 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 */
 	int STPA_SEC = 5;
-
-	/**
-	 * The feature id for the '<em><b>System</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STPA_SEC__SYSTEM = 0;
-
-	/**
-	 * The number of structural features of the '<em>STPA Sec</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STPA_SEC_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>STPA Sec</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STPA_SEC_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.StructureElementImpl <em>Structure Element</em>}' class.
@@ -470,6 +362,288 @@ public interface STPAsecPackage extends EPackage {
 	int DATA_FLOW = 11;
 
 	/**
+	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.FeedbackImpl <em>Feedback</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tau.systemengineering.STPAsec.impl.FeedbackImpl
+	 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getFeedback()
+	 * @generated
+	 */
+	int FEEDBACK = 6;
+
+	/**
+	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.ControlledProcessImpl <em>Controlled Process</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tau.systemengineering.STPAsec.impl.ControlledProcessImpl
+	 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getControlledProcess()
+	 * @generated
+	 */
+	int CONTROLLED_PROCESS = 8;
+
+	/**
+	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.ControllerImpl <em>Controller</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tau.systemengineering.STPAsec.impl.ControllerImpl
+	 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getController()
+	 * @generated
+	 */
+	int CONTROLLER = 9;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__NAME = STRUCTURE_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__DESCRIPTION = STRUCTURE_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__TYPE = STRUCTURE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Received Commands</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__RECEIVED_COMMANDS = STRUCTURE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Received Feedbacks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__RECEIVED_FEEDBACKS = STRUCTURE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Sent Commands</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__SENT_COMMANDS = STRUCTURE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Sub Systems</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__SUB_SYSTEMS = STRUCTURE_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Sent Feedbacks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__SENT_FEEDBACKS = STRUCTURE_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Controller</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER_FEATURE_COUNT = STRUCTURE_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The number of operations of the '<em>Controller</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER_OPERATION_COUNT = STRUCTURE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__NAME = CONTROLLER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__DESCRIPTION = CONTROLLER__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__TYPE = CONTROLLER__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Received Commands</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__RECEIVED_COMMANDS = CONTROLLER__RECEIVED_COMMANDS;
+
+	/**
+	 * The feature id for the '<em><b>Received Feedbacks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__RECEIVED_FEEDBACKS = CONTROLLER__RECEIVED_FEEDBACKS;
+
+	/**
+	 * The feature id for the '<em><b>Sent Commands</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__SENT_COMMANDS = CONTROLLER__SENT_COMMANDS;
+
+	/**
+	 * The feature id for the '<em><b>Sub Systems</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__SUB_SYSTEMS = CONTROLLER__SUB_SYSTEMS;
+
+	/**
+	 * The feature id for the '<em><b>Sent Feedbacks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__SENT_FEEDBACKS = CONTROLLER__SENT_FEEDBACKS;
+
+	/**
+	 * The feature id for the '<em><b>Recommends</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__RECOMMENDS = CONTROLLER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Goals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__GOALS = CONTROLLER_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Scenario</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__SCENARIO = CONTROLLER_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Consists Of</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__CONSISTS_OF = CONTROLLER_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Potential Hazards</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__POTENTIAL_HAZARDS = CONTROLLER_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>System</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM_FEATURE_COUNT = CONTROLLER_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>System</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM_OPERATION_COUNT = CONTROLLER_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>System</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STPA_SEC__SYSTEM = 0;
+
+	/**
+	 * The number of structural features of the '<em>STPA Sec</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STPA_SEC_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>STPA Sec</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STPA_SEC_OPERATION_COUNT = 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -524,16 +698,6 @@ public interface STPAsecPackage extends EPackage {
 	int DATA_FLOW_OPERATION_COUNT = STRUCTURE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.FeedbackImpl <em>Feedback</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tau.systemengineering.STPAsec.impl.FeedbackImpl
-	 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getFeedback()
-	 * @generated
-	 */
-	int FEEDBACK = 6;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -579,22 +743,31 @@ public interface STPAsecPackage extends EPackage {
 	int FEEDBACK__TYPE = DATA_FLOW_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Controller</b></em>' reference.
+	 * The feature id for the '<em><b>Controller Receiver</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEEDBACK__CONTROLLER = DATA_FLOW_FEATURE_COUNT + 1;
+	int FEEDBACK__CONTROLLER_RECEIVER = DATA_FLOW_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Controlled Process</b></em>' reference.
+	 * The feature id for the '<em><b>Controlled Process Sender</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEEDBACK__CONTROLLED_PROCESS = DATA_FLOW_FEATURE_COUNT + 2;
+	int FEEDBACK__CONTROLLED_PROCESS_SENDER = DATA_FLOW_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Controller Sender</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEEDBACK__CONTROLLER_SENDER = DATA_FLOW_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Feedback</em>' class.
@@ -603,7 +776,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEEDBACK_FEATURE_COUNT = DATA_FLOW_FEATURE_COUNT + 3;
+	int FEEDBACK_FEATURE_COUNT = DATA_FLOW_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Feedback</em>' class.
@@ -613,16 +786,6 @@ public interface STPAsecPackage extends EPackage {
 	 * @ordered
 	 */
 	int FEEDBACK_OPERATION_COUNT = DATA_FLOW_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.ControlledProcessImpl <em>Controlled Process</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tau.systemengineering.STPAsec.impl.ControlledProcessImpl
-	 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getControlledProcess()
-	 * @generated
-	 */
-	int CONTROLLED_PROCESS = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -643,13 +806,22 @@ public interface STPAsecPackage extends EPackage {
 	int CONTROLLED_PROCESS__DESCRIPTION = STRUCTURE_ELEMENT__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Feedbacks</b></em>' reference list.
+	 * The feature id for the '<em><b>Sent Feedbacks</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLED_PROCESS__FEEDBACKS = STRUCTURE_ELEMENT_FEATURE_COUNT + 0;
+	int CONTROLLED_PROCESS__SENT_FEEDBACKS = STRUCTURE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Controlled Process Received Commands</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLED_PROCESS__CONTROLLED_PROCESS_RECEIVED_COMMANDS = STRUCTURE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Controlled Process</em>' class.
@@ -658,7 +830,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLED_PROCESS_FEATURE_COUNT = STRUCTURE_ELEMENT_FEATURE_COUNT + 1;
+	int CONTROLLED_PROCESS_FEATURE_COUNT = STRUCTURE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Controlled Process</em>' class.
@@ -668,88 +840,6 @@ public interface STPAsecPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROLLED_PROCESS_OPERATION_COUNT = STRUCTURE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.ControllerImpl <em>Controller</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tau.systemengineering.STPAsec.impl.ControllerImpl
-	 * @see tau.systemengineering.STPAsec.impl.STPAsecPackageImpl#getController()
-	 * @generated
-	 */
-	int CONTROLLER = 9;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER__NAME = STRUCTURE_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER__DESCRIPTION = STRUCTURE_ELEMENT__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER__TYPE = STRUCTURE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Received Commands</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER__RECEIVED_COMMANDS = STRUCTURE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Feedbacks</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER__FEEDBACKS = STRUCTURE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Sent Commands</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER__SENT_COMMANDS = STRUCTURE_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Controller</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER_FEATURE_COUNT = STRUCTURE_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Controller</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER_OPERATION_COUNT = STRUCTURE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.ControlStructureImpl <em>Control Structure</em>}' class.
@@ -771,22 +861,13 @@ public interface STPAsecPackage extends EPackage {
 	int CONTROL_STRUCTURE__ELEMENTS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Sub Systems</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_STRUCTURE__SUB_SYSTEMS = 1;
-
-	/**
 	 * The number of structural features of the '<em>Control Structure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_STRUCTURE_FEATURE_COUNT = 2;
+	int CONTROL_STRUCTURE_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Control Structure</em>' class.
@@ -844,13 +925,13 @@ public interface STPAsecPackage extends EPackage {
 	int CONTROL_ACTION__DATA_ELMENT = DATA_FLOW__DATA_ELMENT;
 
 	/**
-	 * The feature id for the '<em><b>Receiver</b></em>' reference.
+	 * The feature id for the '<em><b>Controller Receiver</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_ACTION__RECEIVER = DATA_FLOW_FEATURE_COUNT + 0;
+	int CONTROL_ACTION__CONTROLLER_RECEIVER = DATA_FLOW_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Hazards</b></em>' reference list.
@@ -862,13 +943,22 @@ public interface STPAsecPackage extends EPackage {
 	int CONTROL_ACTION__HAZARDS = DATA_FLOW_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Sender</b></em>' reference.
+	 * The feature id for the '<em><b>Contoller Sender</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_ACTION__SENDER = DATA_FLOW_FEATURE_COUNT + 2;
+	int CONTROL_ACTION__CONTOLLER_SENDER = DATA_FLOW_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Controlled Process Receiver</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_ACTION__CONTROLLED_PROCESS_RECEIVER = DATA_FLOW_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Control Action</em>' class.
@@ -877,7 +967,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_ACTION_FEATURE_COUNT = DATA_FLOW_FEATURE_COUNT + 3;
+	int CONTROL_ACTION_FEATURE_COUNT = DATA_FLOW_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Control Action</em>' class.
@@ -1128,17 +1218,6 @@ public interface STPAsecPackage extends EPackage {
 	EClass getSystem();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tau.systemengineering.STPAsec.System#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see tau.systemengineering.STPAsec.System#getName()
-	 * @see #getSystem()
-	 * @generated
-	 */
-	EAttribute getSystem_Name();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.System#getRecommends <em>Recommends</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1181,17 +1260,6 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSystem_ConsistsOf();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tau.systemengineering.STPAsec.System#getDescription <em>Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Description</em>'.
-	 * @see tau.systemengineering.STPAsec.System#getDescription()
-	 * @see #getSystem()
-	 * @generated
-	 */
-	EAttribute getSystem_Description();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.System#getPotentialHazards <em>Potential Hazards</em>}'.
@@ -1247,26 +1315,37 @@ public interface STPAsecPackage extends EPackage {
 	EAttribute getFeedback_Type();
 
 	/**
-	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.Feedback#getController <em>Controller</em>}'.
+	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.Feedback#getControllerReceiver <em>Controller Receiver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Controller</em>'.
-	 * @see tau.systemengineering.STPAsec.Feedback#getController()
+	 * @return the meta object for the reference '<em>Controller Receiver</em>'.
+	 * @see tau.systemengineering.STPAsec.Feedback#getControllerReceiver()
 	 * @see #getFeedback()
 	 * @generated
 	 */
-	EReference getFeedback_Controller();
+	EReference getFeedback_ControllerReceiver();
 
 	/**
-	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.Feedback#getControlledProcess <em>Controlled Process</em>}'.
+	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.Feedback#getControlledProcessSender <em>Controlled Process Sender</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Controlled Process</em>'.
-	 * @see tau.systemengineering.STPAsec.Feedback#getControlledProcess()
+	 * @return the meta object for the reference '<em>Controlled Process Sender</em>'.
+	 * @see tau.systemengineering.STPAsec.Feedback#getControlledProcessSender()
 	 * @see #getFeedback()
 	 * @generated
 	 */
-	EReference getFeedback_ControlledProcess();
+	EReference getFeedback_ControlledProcessSender();
+
+	/**
+	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.Feedback#getControllerSender <em>Controller Sender</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Controller Sender</em>'.
+	 * @see tau.systemengineering.STPAsec.Feedback#getControllerSender()
+	 * @see #getFeedback()
+	 * @generated
+	 */
+	EReference getFeedback_ControllerSender();
 
 	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.StructureElement <em>Structure Element</em>}'.
@@ -1311,15 +1390,26 @@ public interface STPAsecPackage extends EPackage {
 	EClass getControlledProcess();
 
 	/**
-	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.ControlledProcess#getFeedbacks <em>Feedbacks</em>}'.
+	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.ControlledProcess#getSentFeedbacks <em>Sent Feedbacks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Feedbacks</em>'.
-	 * @see tau.systemengineering.STPAsec.ControlledProcess#getFeedbacks()
+	 * @return the meta object for the reference list '<em>Sent Feedbacks</em>'.
+	 * @see tau.systemengineering.STPAsec.ControlledProcess#getSentFeedbacks()
 	 * @see #getControlledProcess()
 	 * @generated
 	 */
-	EReference getControlledProcess_Feedbacks();
+	EReference getControlledProcess_SentFeedbacks();
+
+	/**
+	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.ControlledProcess#getControlledProcessReceivedCommands <em>Controlled Process Received Commands</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Controlled Process Received Commands</em>'.
+	 * @see tau.systemengineering.STPAsec.ControlledProcess#getControlledProcessReceivedCommands()
+	 * @see #getControlledProcess()
+	 * @generated
+	 */
+	EReference getControlledProcess_ControlledProcessReceivedCommands();
 
 	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.Controller <em>Controller</em>}'.
@@ -1354,15 +1444,15 @@ public interface STPAsecPackage extends EPackage {
 	EReference getController_ReceivedCommands();
 
 	/**
-	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.Controller#getFeedbacks <em>Feedbacks</em>}'.
+	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.Controller#getReceivedFeedbacks <em>Received Feedbacks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Feedbacks</em>'.
-	 * @see tau.systemengineering.STPAsec.Controller#getFeedbacks()
+	 * @return the meta object for the reference list '<em>Received Feedbacks</em>'.
+	 * @see tau.systemengineering.STPAsec.Controller#getReceivedFeedbacks()
 	 * @see #getController()
 	 * @generated
 	 */
-	EReference getController_Feedbacks();
+	EReference getController_ReceivedFeedbacks();
 
 	/**
 	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.Controller#getSentCommands <em>Sent Commands</em>}'.
@@ -1374,6 +1464,28 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getController_SentCommands();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.Controller#getSubSystems <em>Sub Systems</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Sub Systems</em>'.
+	 * @see tau.systemengineering.STPAsec.Controller#getSubSystems()
+	 * @see #getController()
+	 * @generated
+	 */
+	EReference getController_SubSystems();
+
+	/**
+	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.Controller#getSentFeedbacks <em>Sent Feedbacks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Sent Feedbacks</em>'.
+	 * @see tau.systemengineering.STPAsec.Controller#getSentFeedbacks()
+	 * @see #getController()
+	 * @generated
+	 */
+	EReference getController_SentFeedbacks();
 
 	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.ControlStructure <em>Control Structure</em>}'.
@@ -1397,17 +1509,6 @@ public interface STPAsecPackage extends EPackage {
 	EReference getControlStructure_Elements();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.ControlStructure#getSubSystems <em>Sub Systems</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Sub Systems</em>'.
-	 * @see tau.systemengineering.STPAsec.ControlStructure#getSubSystems()
-	 * @see #getControlStructure()
-	 * @generated
-	 */
-	EReference getControlStructure_SubSystems();
-
-	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.ControlAction <em>Control Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1418,15 +1519,15 @@ public interface STPAsecPackage extends EPackage {
 	EClass getControlAction();
 
 	/**
-	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.ControlAction#getReceiver <em>Receiver</em>}'.
+	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.ControlAction#getControllerReceiver <em>Controller Receiver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Receiver</em>'.
-	 * @see tau.systemengineering.STPAsec.ControlAction#getReceiver()
+	 * @return the meta object for the reference '<em>Controller Receiver</em>'.
+	 * @see tau.systemengineering.STPAsec.ControlAction#getControllerReceiver()
 	 * @see #getControlAction()
 	 * @generated
 	 */
-	EReference getControlAction_Receiver();
+	EReference getControlAction_ControllerReceiver();
 
 	/**
 	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.ControlAction#getHazards <em>Hazards</em>}'.
@@ -1440,15 +1541,26 @@ public interface STPAsecPackage extends EPackage {
 	EReference getControlAction_Hazards();
 
 	/**
-	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.ControlAction#getSender <em>Sender</em>}'.
+	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.ControlAction#getContollerSender <em>Contoller Sender</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Sender</em>'.
-	 * @see tau.systemengineering.STPAsec.ControlAction#getSender()
+	 * @return the meta object for the reference '<em>Contoller Sender</em>'.
+	 * @see tau.systemengineering.STPAsec.ControlAction#getContollerSender()
 	 * @see #getControlAction()
 	 * @generated
 	 */
-	EReference getControlAction_Sender();
+	EReference getControlAction_ContollerSender();
+
+	/**
+	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.ControlAction#getControlledProcessReceiver <em>Controlled Process Receiver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Controlled Process Receiver</em>'.
+	 * @see tau.systemengineering.STPAsec.ControlAction#getControlledProcessReceiver()
+	 * @see #getControlAction()
+	 * @generated
+	 */
+	EReference getControlAction_ControlledProcessReceiver();
 
 	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.DataElment <em>Data Elment</em>}'.
@@ -1692,14 +1804,6 @@ public interface STPAsecPackage extends EPackage {
 		EClass SYSTEM = eINSTANCE.getSystem();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SYSTEM__NAME = eINSTANCE.getSystem_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Recommends</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1730,14 +1834,6 @@ public interface STPAsecPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SYSTEM__CONSISTS_OF = eINSTANCE.getSystem_ConsistsOf();
-
-		/**
-		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SYSTEM__DESCRIPTION = eINSTANCE.getSystem_Description();
 
 		/**
 		 * The meta object literal for the '<em><b>Potential Hazards</b></em>' containment reference list feature.
@@ -1784,20 +1880,28 @@ public interface STPAsecPackage extends EPackage {
 		EAttribute FEEDBACK__TYPE = eINSTANCE.getFeedback_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Controller</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Controller Receiver</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FEEDBACK__CONTROLLER = eINSTANCE.getFeedback_Controller();
+		EReference FEEDBACK__CONTROLLER_RECEIVER = eINSTANCE.getFeedback_ControllerReceiver();
 
 		/**
-		 * The meta object literal for the '<em><b>Controlled Process</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Controlled Process Sender</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FEEDBACK__CONTROLLED_PROCESS = eINSTANCE.getFeedback_ControlledProcess();
+		EReference FEEDBACK__CONTROLLED_PROCESS_SENDER = eINSTANCE.getFeedback_ControlledProcessSender();
+
+		/**
+		 * The meta object literal for the '<em><b>Controller Sender</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEEDBACK__CONTROLLER_SENDER = eINSTANCE.getFeedback_ControllerSender();
 
 		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.StructureElementImpl <em>Structure Element</em>}' class.
@@ -1836,12 +1940,21 @@ public interface STPAsecPackage extends EPackage {
 		EClass CONTROLLED_PROCESS = eINSTANCE.getControlledProcess();
 
 		/**
-		 * The meta object literal for the '<em><b>Feedbacks</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Sent Feedbacks</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTROLLED_PROCESS__FEEDBACKS = eINSTANCE.getControlledProcess_Feedbacks();
+		EReference CONTROLLED_PROCESS__SENT_FEEDBACKS = eINSTANCE.getControlledProcess_SentFeedbacks();
+
+		/**
+		 * The meta object literal for the '<em><b>Controlled Process Received Commands</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROLLED_PROCESS__CONTROLLED_PROCESS_RECEIVED_COMMANDS = eINSTANCE
+				.getControlledProcess_ControlledProcessReceivedCommands();
 
 		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.ControllerImpl <em>Controller</em>}' class.
@@ -1870,12 +1983,12 @@ public interface STPAsecPackage extends EPackage {
 		EReference CONTROLLER__RECEIVED_COMMANDS = eINSTANCE.getController_ReceivedCommands();
 
 		/**
-		 * The meta object literal for the '<em><b>Feedbacks</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Received Feedbacks</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTROLLER__FEEDBACKS = eINSTANCE.getController_Feedbacks();
+		EReference CONTROLLER__RECEIVED_FEEDBACKS = eINSTANCE.getController_ReceivedFeedbacks();
 
 		/**
 		 * The meta object literal for the '<em><b>Sent Commands</b></em>' reference list feature.
@@ -1884,6 +1997,22 @@ public interface STPAsecPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTROLLER__SENT_COMMANDS = eINSTANCE.getController_SentCommands();
+
+		/**
+		 * The meta object literal for the '<em><b>Sub Systems</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROLLER__SUB_SYSTEMS = eINSTANCE.getController_SubSystems();
+
+		/**
+		 * The meta object literal for the '<em><b>Sent Feedbacks</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROLLER__SENT_FEEDBACKS = eINSTANCE.getController_SentFeedbacks();
 
 		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.ControlStructureImpl <em>Control Structure</em>}' class.
@@ -1904,14 +2033,6 @@ public interface STPAsecPackage extends EPackage {
 		EReference CONTROL_STRUCTURE__ELEMENTS = eINSTANCE.getControlStructure_Elements();
 
 		/**
-		 * The meta object literal for the '<em><b>Sub Systems</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONTROL_STRUCTURE__SUB_SYSTEMS = eINSTANCE.getControlStructure_SubSystems();
-
-		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.ControlActionImpl <em>Control Action</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1922,12 +2043,12 @@ public interface STPAsecPackage extends EPackage {
 		EClass CONTROL_ACTION = eINSTANCE.getControlAction();
 
 		/**
-		 * The meta object literal for the '<em><b>Receiver</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Controller Receiver</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTROL_ACTION__RECEIVER = eINSTANCE.getControlAction_Receiver();
+		EReference CONTROL_ACTION__CONTROLLER_RECEIVER = eINSTANCE.getControlAction_ControllerReceiver();
 
 		/**
 		 * The meta object literal for the '<em><b>Hazards</b></em>' reference list feature.
@@ -1938,12 +2059,20 @@ public interface STPAsecPackage extends EPackage {
 		EReference CONTROL_ACTION__HAZARDS = eINSTANCE.getControlAction_Hazards();
 
 		/**
-		 * The meta object literal for the '<em><b>Sender</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Contoller Sender</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTROL_ACTION__SENDER = eINSTANCE.getControlAction_Sender();
+		EReference CONTROL_ACTION__CONTOLLER_SENDER = eINSTANCE.getControlAction_ContollerSender();
+
+		/**
+		 * The meta object literal for the '<em><b>Controlled Process Receiver</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROL_ACTION__CONTROLLED_PROCESS_RECEIVER = eINSTANCE.getControlAction_ControlledProcessReceiver();
 
 		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.DataElmentImpl <em>Data Elment</em>}' class.

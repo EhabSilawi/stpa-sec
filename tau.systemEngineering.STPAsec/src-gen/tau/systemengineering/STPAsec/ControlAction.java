@@ -13,9 +13,10 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link tau.systemengineering.STPAsec.ControlAction#getReceiver <em>Receiver</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.ControlAction#getControllerReceiver <em>Controller Receiver</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.ControlAction#getHazards <em>Hazards</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.ControlAction#getSender <em>Sender</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.ControlAction#getContollerSender <em>Contoller Sender</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.ControlAction#getControlledProcessReceiver <em>Controlled Process Receiver</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlAction()
@@ -25,28 +26,28 @@ import org.eclipse.emf.common.util.EList;
 public interface ControlAction extends DataFlow {
 
 	/**
-	 * Returns the value of the '<em><b>Receiver</b></em>' reference.
+	 * Returns the value of the '<em><b>Controller Receiver</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.Controller#getReceivedCommands <em>Received Commands</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Receiver</em>' reference.
-	 * @see #setReceiver(Controller)
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlAction_Receiver()
+	 * @return the value of the '<em>Controller Receiver</em>' reference.
+	 * @see #setControllerReceiver(Controller)
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlAction_ControllerReceiver()
 	 * @see tau.systemengineering.STPAsec.Controller#getReceivedCommands
 	 * @model opposite="receivedCommands"
 	 * @generated
 	 */
-	Controller getReceiver();
+	Controller getControllerReceiver();
 
 	/**
-	 * Sets the value of the '{@link tau.systemengineering.STPAsec.ControlAction#getReceiver <em>Receiver</em>}' reference.
+	 * Sets the value of the '{@link tau.systemengineering.STPAsec.ControlAction#getControllerReceiver <em>Controller Receiver</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Receiver</em>' reference.
-	 * @see #getReceiver()
+	 * @param value the new value of the '<em>Controller Receiver</em>' reference.
+	 * @see #getControllerReceiver()
 	 * @generated
 	 */
-	void setReceiver(Controller value);
+	void setControllerReceiver(Controller value);
 
 	/**
 	 * Returns the value of the '<em><b>Hazards</b></em>' reference list.
@@ -63,26 +64,50 @@ public interface ControlAction extends DataFlow {
 	EList<Hazard> getHazards();
 
 	/**
-	 * Returns the value of the '<em><b>Sender</b></em>' reference.
+	 * Returns the value of the '<em><b>Contoller Sender</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.Controller#getSentCommands <em>Sent Commands</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sender</em>' reference.
-	 * @see #setSender(Controller)
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlAction_Sender()
+	 * @return the value of the '<em>Contoller Sender</em>' reference.
+	 * @see #setContollerSender(Controller)
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlAction_ContollerSender()
 	 * @see tau.systemengineering.STPAsec.Controller#getSentCommands
 	 * @model opposite="sentCommands"
 	 * @generated
 	 */
-	Controller getSender();
+	Controller getContollerSender();
 
 	/**
-	 * Sets the value of the '{@link tau.systemengineering.STPAsec.ControlAction#getSender <em>Sender</em>}' reference.
+	 * Sets the value of the '{@link tau.systemengineering.STPAsec.ControlAction#getContollerSender <em>Contoller Sender</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sender</em>' reference.
-	 * @see #getSender()
+	 * @param value the new value of the '<em>Contoller Sender</em>' reference.
+	 * @see #getContollerSender()
 	 * @generated
 	 */
-	void setSender(Controller value);
+	void setContollerSender(Controller value);
+
+	/**
+	 * Returns the value of the '<em><b>Controlled Process Receiver</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.ControlledProcess#getControlledProcessReceivedCommands <em>Controlled Process Received Commands</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Controlled Process Receiver</em>' reference.
+	 * @see #setControlledProcessReceiver(ControlledProcess)
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlAction_ControlledProcessReceiver()
+	 * @see tau.systemengineering.STPAsec.ControlledProcess#getControlledProcessReceivedCommands
+	 * @model opposite="controlledProcessReceivedCommands"
+	 * @generated
+	 */
+	ControlledProcess getControlledProcessReceiver();
+
+	/**
+	 * Sets the value of the '{@link tau.systemengineering.STPAsec.ControlAction#getControlledProcessReceiver <em>Controlled Process Receiver</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Controlled Process Receiver</em>' reference.
+	 * @see #getControlledProcessReceiver()
+	 * @generated
+	 */
+	void setControlledProcessReceiver(ControlledProcess value);
 } // ControlAction
