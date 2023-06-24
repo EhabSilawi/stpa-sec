@@ -316,42 +316,6 @@ public interface STPAsecPackage extends EPackage {
 	int STRUCTURE_ELEMENT = 7;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURE_ELEMENT__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURE_ELEMENT__DESCRIPTION = 1;
-
-	/**
-	 * The number of structural features of the '<em>Structure Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURE_ELEMENT_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Structure Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURE_ELEMENT_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.DataFlowImpl <em>Data Flow</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -392,175 +356,13 @@ public interface STPAsecPackage extends EPackage {
 	int CONTROLLER = 9;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER__NAME = STRUCTURE_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER__DESCRIPTION = STRUCTURE_ELEMENT__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER__TYPE = STRUCTURE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Received Commands</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER__RECEIVED_COMMANDS = STRUCTURE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Received Feedbacks</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER__RECEIVED_FEEDBACKS = STRUCTURE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Sent Commands</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER__SENT_COMMANDS = STRUCTURE_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Sub Systems</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER__SUB_SYSTEMS = STRUCTURE_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Sent Feedbacks</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER__SENT_FEEDBACKS = STRUCTURE_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>Controller</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER_FEATURE_COUNT = STRUCTURE_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The number of operations of the '<em>Controller</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER_OPERATION_COUNT = STRUCTURE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM__NAME = CONTROLLER__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM__DESCRIPTION = CONTROLLER__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM__TYPE = CONTROLLER__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Received Commands</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM__RECEIVED_COMMANDS = CONTROLLER__RECEIVED_COMMANDS;
-
-	/**
-	 * The feature id for the '<em><b>Received Feedbacks</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM__RECEIVED_FEEDBACKS = CONTROLLER__RECEIVED_FEEDBACKS;
-
-	/**
-	 * The feature id for the '<em><b>Sent Commands</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM__SENT_COMMANDS = CONTROLLER__SENT_COMMANDS;
-
-	/**
-	 * The feature id for the '<em><b>Sub Systems</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM__SUB_SYSTEMS = CONTROLLER__SUB_SYSTEMS;
-
-	/**
-	 * The feature id for the '<em><b>Sent Feedbacks</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM__SENT_FEEDBACKS = CONTROLLER__SENT_FEEDBACKS;
-
-	/**
 	 * The feature id for the '<em><b>Recommends</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__RECOMMENDS = CONTROLLER_FEATURE_COUNT + 0;
+	int SYSTEM__RECOMMENDS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Goals</b></em>' containment reference list.
@@ -569,7 +371,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__GOALS = CONTROLLER_FEATURE_COUNT + 1;
+	int SYSTEM__GOALS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' containment reference list.
@@ -578,7 +380,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__SCENARIO = CONTROLLER_FEATURE_COUNT + 2;
+	int SYSTEM__SCENARIO = 2;
 
 	/**
 	 * The feature id for the '<em><b>Consists Of</b></em>' containment reference list.
@@ -587,7 +389,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__CONSISTS_OF = CONTROLLER_FEATURE_COUNT + 3;
+	int SYSTEM__CONSISTS_OF = 3;
 
 	/**
 	 * The feature id for the '<em><b>Potential Hazards</b></em>' containment reference list.
@@ -596,7 +398,25 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__POTENTIAL_HAZARDS = CONTROLLER_FEATURE_COUNT + 4;
+	int SYSTEM__POTENTIAL_HAZARDS = 4;
+
+	/**
+	 * The feature id for the '<em><b>System</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__SYSTEM = 5;
+
+	/**
+	 * The feature id for the '<em><b>Sub System</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__SUB_SYSTEM = 6;
 
 	/**
 	 * The number of structural features of the '<em>System</em>' class.
@@ -605,7 +425,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_FEATURE_COUNT = CONTROLLER_FEATURE_COUNT + 5;
+	int SYSTEM_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>System</em>' class.
@@ -614,7 +434,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_OPERATION_COUNT = CONTROLLER_OPERATION_COUNT + 0;
+	int SYSTEM_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>System</b></em>' containment reference list.
@@ -642,6 +462,42 @@ public interface STPAsecPackage extends EPackage {
 	 * @ordered
 	 */
 	int STPA_SEC_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_ELEMENT__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_ELEMENT__DESCRIPTION = 1;
+
+	/**
+	 * The number of structural features of the '<em>Structure Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_ELEMENT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Structure Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -840,6 +696,87 @@ public interface STPAsecPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROLLED_PROCESS_OPERATION_COUNT = STRUCTURE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__NAME = STRUCTURE_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__DESCRIPTION = STRUCTURE_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__TYPE = STRUCTURE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Received Commands</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__RECEIVED_COMMANDS = STRUCTURE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Received Feedbacks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__RECEIVED_FEEDBACKS = STRUCTURE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Sent Commands</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__SENT_COMMANDS = STRUCTURE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Sent Feedbacks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__SENT_FEEDBACKS = STRUCTURE_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Controller</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER_FEATURE_COUNT = STRUCTURE_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Controller</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER_OPERATION_COUNT = STRUCTURE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link tau.systemengineering.STPAsec.impl.ControlStructureImpl <em>Control Structure</em>}' class.
@@ -1273,6 +1210,28 @@ public interface STPAsecPackage extends EPackage {
 	EReference getSystem_PotentialHazards();
 
 	/**
+	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.System#getSystem <em>System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>System</em>'.
+	 * @see tau.systemengineering.STPAsec.System#getSystem()
+	 * @see #getSystem()
+	 * @generated
+	 */
+	EReference getSystem_System();
+
+	/**
+	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.System#getSubSystem <em>Sub System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Sub System</em>'.
+	 * @see tau.systemengineering.STPAsec.System#getSubSystem()
+	 * @see #getSystem()
+	 * @generated
+	 */
+	EReference getSystem_SubSystem();
+
+	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.STPASec <em>STPA Sec</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1464,17 +1423,6 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getController_SentCommands();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.Controller#getSubSystems <em>Sub Systems</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Sub Systems</em>'.
-	 * @see tau.systemengineering.STPAsec.Controller#getSubSystems()
-	 * @see #getController()
-	 * @generated
-	 */
-	EReference getController_SubSystems();
 
 	/**
 	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.Controller#getSentFeedbacks <em>Sent Feedbacks</em>}'.
@@ -1844,6 +1792,22 @@ public interface STPAsecPackage extends EPackage {
 		EReference SYSTEM__POTENTIAL_HAZARDS = eINSTANCE.getSystem_PotentialHazards();
 
 		/**
+		 * The meta object literal for the '<em><b>System</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYSTEM__SYSTEM = eINSTANCE.getSystem_System();
+
+		/**
+		 * The meta object literal for the '<em><b>Sub System</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYSTEM__SUB_SYSTEM = eINSTANCE.getSystem_SubSystem();
+
+		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.STPASecImpl <em>STPA Sec</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1997,14 +1961,6 @@ public interface STPAsecPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTROLLER__SENT_COMMANDS = eINSTANCE.getController_SentCommands();
-
-		/**
-		 * The meta object literal for the '<em><b>Sub Systems</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONTROLLER__SUB_SYSTEMS = eINSTANCE.getController_SubSystems();
 
 		/**
 		 * The meta object literal for the '<em><b>Sent Feedbacks</b></em>' reference list feature.

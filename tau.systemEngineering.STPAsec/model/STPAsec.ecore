@@ -26,7 +26,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="solution" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//Controller">
+  <eClassifiers xsi:type="ecore:EClass" name="System">
     <eStructuralFeatures xsi:type="ecore:EReference" name="recommends" upperBound="-1"
         eType="#//SecurityRecommendation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="goals" lowerBound="1" upperBound="-1"
@@ -37,6 +37,10 @@
         upperBound="-1" eType="#//ControlStructure" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="potentialHazards" upperBound="-1"
         eType="#//Hazard" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="system" eType="#//System"
+        eOpposite="#//System/subSystem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subSystem" upperBound="-1"
+        eType="#//System" eOpposite="#//System/system"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="STPASec">
     <eStructuralFeatures xsi:type="ecore:EReference" name="system" lowerBound="1"
@@ -69,8 +73,6 @@
         upperBound="-1" eType="#//Feedback" eOpposite="#//Feedback/controllerReceiver"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sentCommands" upperBound="-1"
         eType="#//ControlAction" eOpposite="#//ControlAction/contollerSender"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="subSystems" upperBound="-1"
-        eType="#//System" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sentFeedbacks" lowerBound="1"
         upperBound="-1" eType="#//Feedback" eOpposite="#//Feedback/controllerSender"/>
   </eClassifiers>

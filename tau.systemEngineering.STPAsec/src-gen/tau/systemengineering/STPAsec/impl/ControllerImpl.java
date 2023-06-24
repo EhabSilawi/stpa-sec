@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import tau.systemengineering.STPAsec.ControlAction;
@@ -31,7 +30,6 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  *   <li>{@link tau.systemengineering.STPAsec.impl.ControllerImpl#getReceivedCommands <em>Received Commands</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.ControllerImpl#getReceivedFeedbacks <em>Received Feedbacks</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.ControllerImpl#getSentCommands <em>Sent Commands</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.ControllerImpl#getSubSystems <em>Sub Systems</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.ControllerImpl#getSentFeedbacks <em>Sent Feedbacks</em>}</li>
  * </ul>
  *
@@ -87,16 +85,6 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 	 * @ordered
 	 */
 	protected EList<ControlAction> sentCommands;
-
-	/**
-	 * The cached value of the '{@link #getSubSystems() <em>Sub Systems</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubSystems()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<tau.systemengineering.STPAsec.System> subSystems;
 
 	/**
 	 * The cached value of the '{@link #getSentFeedbacks() <em>Sent Feedbacks</em>}' reference list.
@@ -192,19 +180,6 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<tau.systemengineering.STPAsec.System> getSubSystems() {
-		if (subSystems == null) {
-			subSystems = new EObjectContainmentEList<tau.systemengineering.STPAsec.System>(
-					tau.systemengineering.STPAsec.System.class, this, STPAsecPackage.CONTROLLER__SUB_SYSTEMS);
-		}
-		return subSystems;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Feedback> getSentFeedbacks() {
 		if (sentFeedbacks == null) {
 			sentFeedbacks = new EObjectWithInverseResolvingEList<Feedback>(Feedback.class, this,
@@ -249,8 +224,6 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 			return ((InternalEList<?>) getReceivedFeedbacks()).basicRemove(otherEnd, msgs);
 		case STPAsecPackage.CONTROLLER__SENT_COMMANDS:
 			return ((InternalEList<?>) getSentCommands()).basicRemove(otherEnd, msgs);
-		case STPAsecPackage.CONTROLLER__SUB_SYSTEMS:
-			return ((InternalEList<?>) getSubSystems()).basicRemove(otherEnd, msgs);
 		case STPAsecPackage.CONTROLLER__SENT_FEEDBACKS:
 			return ((InternalEList<?>) getSentFeedbacks()).basicRemove(otherEnd, msgs);
 		}
@@ -273,8 +246,6 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 			return getReceivedFeedbacks();
 		case STPAsecPackage.CONTROLLER__SENT_COMMANDS:
 			return getSentCommands();
-		case STPAsecPackage.CONTROLLER__SUB_SYSTEMS:
-			return getSubSystems();
 		case STPAsecPackage.CONTROLLER__SENT_FEEDBACKS:
 			return getSentFeedbacks();
 		}
@@ -305,10 +276,6 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 			getSentCommands().clear();
 			getSentCommands().addAll((Collection<? extends ControlAction>) newValue);
 			return;
-		case STPAsecPackage.CONTROLLER__SUB_SYSTEMS:
-			getSubSystems().clear();
-			getSubSystems().addAll((Collection<? extends tau.systemengineering.STPAsec.System>) newValue);
-			return;
 		case STPAsecPackage.CONTROLLER__SENT_FEEDBACKS:
 			getSentFeedbacks().clear();
 			getSentFeedbacks().addAll((Collection<? extends Feedback>) newValue);
@@ -337,9 +304,6 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 		case STPAsecPackage.CONTROLLER__SENT_COMMANDS:
 			getSentCommands().clear();
 			return;
-		case STPAsecPackage.CONTROLLER__SUB_SYSTEMS:
-			getSubSystems().clear();
-			return;
 		case STPAsecPackage.CONTROLLER__SENT_FEEDBACKS:
 			getSentFeedbacks().clear();
 			return;
@@ -363,8 +327,6 @@ public class ControllerImpl extends StructureElementImpl implements Controller {
 			return receivedFeedbacks != null && !receivedFeedbacks.isEmpty();
 		case STPAsecPackage.CONTROLLER__SENT_COMMANDS:
 			return sentCommands != null && !sentCommands.isEmpty();
-		case STPAsecPackage.CONTROLLER__SUB_SYSTEMS:
-			return subSystems != null && !subSystems.isEmpty();
 		case STPAsecPackage.CONTROLLER__SENT_FEEDBACKS:
 			return sentFeedbacks != null && !sentFeedbacks.isEmpty();
 		}

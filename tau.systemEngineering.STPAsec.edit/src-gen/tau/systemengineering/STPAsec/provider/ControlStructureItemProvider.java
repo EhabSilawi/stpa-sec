@@ -151,16 +151,13 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__ELEMENTS,
-				STPAsecFactory.eINSTANCE.createController()));
-
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__ELEMENTS,
-				STPAsecFactory.eINSTANCE.createSystem()));
-
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__ELEMENTS,
 				STPAsecFactory.eINSTANCE.createFeedback()));
 
 		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__ELEMENTS,
 				STPAsecFactory.eINSTANCE.createControlledProcess()));
+
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__ELEMENTS,
+				STPAsecFactory.eINSTANCE.createController()));
 
 		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__ELEMENTS,
 				STPAsecFactory.eINSTANCE.createControlAction()));

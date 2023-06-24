@@ -3,13 +3,17 @@
 package tau.systemengineering.STPAsec.impl;
 
 import java.util.Collection;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import tau.systemengineering.STPAsec.ControlStructure;
@@ -32,11 +36,13 @@ import tau.systemengineering.STPAsec.SecurityRecommendation;
  *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getConsistsOf <em>Consists Of</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getPotentialHazards <em>Potential Hazards</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getSystem <em>System</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getSubSystem <em>Sub System</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SystemImpl extends ControllerImpl implements tau.systemengineering.STPAsec.System {
+public class SystemImpl extends MinimalEObjectImpl.Container implements tau.systemengineering.STPAsec.System {
 	/**
 	 * The cached value of the '{@link #getRecommends() <em>Recommends</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -86,6 +92,26 @@ public class SystemImpl extends ControllerImpl implements tau.systemengineering.
 	 * @ordered
 	 */
 	protected EList<Hazard> potentialHazards;
+
+	/**
+	 * The cached value of the '{@link #getSystem() <em>System</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSystem()
+	 * @generated
+	 * @ordered
+	 */
+	protected tau.systemengineering.STPAsec.System system;
+
+	/**
+	 * The cached value of the '{@link #getSubSystem() <em>Sub System</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubSystem()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<tau.systemengineering.STPAsec.System> subSystem;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,6 +201,107 @@ public class SystemImpl extends ControllerImpl implements tau.systemengineering.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public tau.systemengineering.STPAsec.System getSystem() {
+		if (system != null && system.eIsProxy()) {
+			InternalEObject oldSystem = (InternalEObject) system;
+			system = (tau.systemengineering.STPAsec.System) eResolveProxy(oldSystem);
+			if (system != oldSystem) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, STPAsecPackage.SYSTEM__SYSTEM, oldSystem,
+							system));
+			}
+		}
+		return system;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public tau.systemengineering.STPAsec.System basicGetSystem() {
+		return system;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSystem(tau.systemengineering.STPAsec.System newSystem, NotificationChain msgs) {
+		tau.systemengineering.STPAsec.System oldSystem = system;
+		system = newSystem;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					STPAsecPackage.SYSTEM__SYSTEM, oldSystem, newSystem);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSystem(tau.systemengineering.STPAsec.System newSystem) {
+		if (newSystem != system) {
+			NotificationChain msgs = null;
+			if (system != null)
+				msgs = ((InternalEObject) system).eInverseRemove(this, STPAsecPackage.SYSTEM__SUB_SYSTEM,
+						tau.systemengineering.STPAsec.System.class, msgs);
+			if (newSystem != null)
+				msgs = ((InternalEObject) newSystem).eInverseAdd(this, STPAsecPackage.SYSTEM__SUB_SYSTEM,
+						tau.systemengineering.STPAsec.System.class, msgs);
+			msgs = basicSetSystem(newSystem, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.SYSTEM__SYSTEM, newSystem, newSystem));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<tau.systemengineering.STPAsec.System> getSubSystem() {
+		if (subSystem == null) {
+			subSystem = new EObjectWithInverseResolvingEList<tau.systemengineering.STPAsec.System>(
+					tau.systemengineering.STPAsec.System.class, this, STPAsecPackage.SYSTEM__SUB_SYSTEM,
+					STPAsecPackage.SYSTEM__SYSTEM);
+		}
+		return subSystem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case STPAsecPackage.SYSTEM__SYSTEM:
+			if (system != null)
+				msgs = ((InternalEObject) system).eInverseRemove(this, STPAsecPackage.SYSTEM__SUB_SYSTEM,
+						tau.systemengineering.STPAsec.System.class, msgs);
+			return basicSetSystem((tau.systemengineering.STPAsec.System) otherEnd, msgs);
+		case STPAsecPackage.SYSTEM__SUB_SYSTEM:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getSubSystem()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -188,6 +315,10 @@ public class SystemImpl extends ControllerImpl implements tau.systemengineering.
 			return ((InternalEList<?>) getConsistsOf()).basicRemove(otherEnd, msgs);
 		case STPAsecPackage.SYSTEM__POTENTIAL_HAZARDS:
 			return ((InternalEList<?>) getPotentialHazards()).basicRemove(otherEnd, msgs);
+		case STPAsecPackage.SYSTEM__SYSTEM:
+			return basicSetSystem(null, msgs);
+		case STPAsecPackage.SYSTEM__SUB_SYSTEM:
+			return ((InternalEList<?>) getSubSystem()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -210,6 +341,12 @@ public class SystemImpl extends ControllerImpl implements tau.systemengineering.
 			return getConsistsOf();
 		case STPAsecPackage.SYSTEM__POTENTIAL_HAZARDS:
 			return getPotentialHazards();
+		case STPAsecPackage.SYSTEM__SYSTEM:
+			if (resolve)
+				return getSystem();
+			return basicGetSystem();
+		case STPAsecPackage.SYSTEM__SUB_SYSTEM:
+			return getSubSystem();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -243,6 +380,13 @@ public class SystemImpl extends ControllerImpl implements tau.systemengineering.
 			getPotentialHazards().clear();
 			getPotentialHazards().addAll((Collection<? extends Hazard>) newValue);
 			return;
+		case STPAsecPackage.SYSTEM__SYSTEM:
+			setSystem((tau.systemengineering.STPAsec.System) newValue);
+			return;
+		case STPAsecPackage.SYSTEM__SUB_SYSTEM:
+			getSubSystem().clear();
+			getSubSystem().addAll((Collection<? extends tau.systemengineering.STPAsec.System>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -270,6 +414,12 @@ public class SystemImpl extends ControllerImpl implements tau.systemengineering.
 		case STPAsecPackage.SYSTEM__POTENTIAL_HAZARDS:
 			getPotentialHazards().clear();
 			return;
+		case STPAsecPackage.SYSTEM__SYSTEM:
+			setSystem((tau.systemengineering.STPAsec.System) null);
+			return;
+		case STPAsecPackage.SYSTEM__SUB_SYSTEM:
+			getSubSystem().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -292,6 +442,10 @@ public class SystemImpl extends ControllerImpl implements tau.systemengineering.
 			return consistsOf != null && !consistsOf.isEmpty();
 		case STPAsecPackage.SYSTEM__POTENTIAL_HAZARDS:
 			return potentialHazards != null && !potentialHazards.isEmpty();
+		case STPAsecPackage.SYSTEM__SYSTEM:
+			return system != null;
+		case STPAsecPackage.SYSTEM__SUB_SYSTEM:
+			return subSystem != null && !subSystem.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -2,18 +2,4 @@
 <STPAsec:STPASec
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:STPAsec="http://www.example.org/STPAsec">
-  <system>
-    <consistsOf>
-      <elements
-          xsi:type="STPAsec:ControlAction"/>
-      <elements
-          xsi:type="STPAsec:Controller"/>
-      <elements
-          xsi:type="STPAsec:Feedback"/>
-      <elements
-          xsi:type="STPAsec:ControlledProcess"/>
-    </consistsOf>
-  </system>
-</STPAsec:STPASec>
+    xmlns:STPAsec="http://www.example.org/STPAsec"/>

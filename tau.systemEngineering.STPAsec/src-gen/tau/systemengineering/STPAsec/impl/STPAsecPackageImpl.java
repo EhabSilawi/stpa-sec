@@ -409,6 +409,24 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSystem_System() {
+		return (EReference) systemEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSystem_SubSystem() {
+		return (EReference) systemEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSTPASec() {
 		return stpaSecEClass;
 	}
@@ -571,17 +589,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getController_SubSystems() {
-		return (EReference) controllerEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getController_SentFeedbacks() {
-		return (EReference) controllerEClass.getEStructuralFeatures().get(5);
+		return (EReference) controllerEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -757,6 +766,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		createEReference(systemEClass, SYSTEM__SCENARIO);
 		createEReference(systemEClass, SYSTEM__CONSISTS_OF);
 		createEReference(systemEClass, SYSTEM__POTENTIAL_HAZARDS);
+		createEReference(systemEClass, SYSTEM__SYSTEM);
+		createEReference(systemEClass, SYSTEM__SUB_SYSTEM);
 
 		stpaSecEClass = createEClass(STPA_SEC);
 		createEReference(stpaSecEClass, STPA_SEC__SYSTEM);
@@ -780,7 +791,6 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		createEReference(controllerEClass, CONTROLLER__RECEIVED_COMMANDS);
 		createEReference(controllerEClass, CONTROLLER__RECEIVED_FEEDBACKS);
 		createEReference(controllerEClass, CONTROLLER__SENT_COMMANDS);
-		createEReference(controllerEClass, CONTROLLER__SUB_SYSTEMS);
 		createEReference(controllerEClass, CONTROLLER__SENT_FEEDBACKS);
 
 		controlStructureEClass = createEClass(CONTROL_STRUCTURE);
@@ -834,7 +844,6 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		systemEClass.getESuperTypes().add(this.getController());
 		feedbackEClass.getESuperTypes().add(this.getDataFlow());
 		controlledProcessEClass.getESuperTypes().add(this.getStructureElement());
 		controllerEClass.getESuperTypes().add(this.getStructureElement());
@@ -905,6 +914,12 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		initEReference(getSystem_PotentialHazards(), this.getHazard(), null, "potentialHazards", null, 0, -1,
 				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSystem_System(), this.getSystem(), this.getSystem_SubSystem(), "system", null, 0, 1,
+				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSystem_SubSystem(), this.getSystem(), this.getSystem_System(), "subSystem", null, 0, -1,
+				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stpaSecEClass, STPASec.class, "STPASec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSTPASec_System(), this.getSystem(), null, "system", null, 1, -1, STPASec.class, !IS_TRANSIENT,
@@ -960,9 +975,6 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		initEReference(getController_SentCommands(), this.getControlAction(), this.getControlAction_ContollerSender(),
 				"sentCommands", null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getController_SubSystems(), this.getSystem(), null, "subSystems", null, 0, -1, Controller.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getController_SentFeedbacks(), this.getFeedback(), this.getFeedback_ControllerSender(),
 				"sentFeedbacks", null, 1, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

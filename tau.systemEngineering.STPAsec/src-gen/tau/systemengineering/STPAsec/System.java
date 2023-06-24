@@ -3,6 +3,7 @@
 package tau.systemengineering.STPAsec;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,13 +19,15 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link tau.systemengineering.STPAsec.System#getScenario <em>Scenario</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.System#getConsistsOf <em>Consists Of</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.System#getPotentialHazards <em>Potential Hazards</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.System#getSystem <em>System</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.System#getSubSystem <em>Sub System</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem()
  * @model
  * @generated
  */
-public interface System extends Controller {
+public interface System extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Recommends</b></em>' containment reference list.
 	 * The list contents are of type {@link tau.systemengineering.STPAsec.SecurityRecommendation}.
@@ -84,5 +87,43 @@ public interface System extends Controller {
 	 * @generated
 	 */
 	EList<Hazard> getPotentialHazards();
+
+	/**
+	 * Returns the value of the '<em><b>System</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.System#getSubSystem <em>Sub System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>System</em>' reference.
+	 * @see #setSystem(System)
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem_System()
+	 * @see tau.systemengineering.STPAsec.System#getSubSystem
+	 * @model opposite="subSystem"
+	 * @generated
+	 */
+	System getSystem();
+
+	/**
+	 * Sets the value of the '{@link tau.systemengineering.STPAsec.System#getSystem <em>System</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>System</em>' reference.
+	 * @see #getSystem()
+	 * @generated
+	 */
+	void setSystem(System value);
+
+	/**
+	 * Returns the value of the '<em><b>Sub System</b></em>' reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.System}.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.System#getSystem <em>System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sub System</em>' reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem_SubSystem()
+	 * @see tau.systemengineering.STPAsec.System#getSystem
+	 * @model opposite="system"
+	 * @generated
+	 */
+	EList<System> getSubSystem();
 
 } // System

@@ -8,9 +8,17 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import tau.systemengineering.STPAsec.STPAsecFactory;
@@ -22,7 +30,8 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SystemItemProvider extends ControllerItemProvider {
+public class SystemItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -44,8 +53,39 @@ public class SystemItemProvider extends ControllerItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSystemPropertyDescriptor(object);
+			addSubSystemPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the System feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSystemPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_System_system_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_System_system_feature", "_UI_System_type"),
+						STPAsecPackage.Literals.SYSTEM__SYSTEM, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sub System feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSubSystemPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_System_subSystem_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_System_subSystem_feature",
+								"_UI_System_type"),
+						STPAsecPackage.Literals.SYSTEM__SUB_SYSTEM, true, false, true, null, null, null));
 	}
 
 	/**
@@ -111,9 +151,7 @@ public class SystemItemProvider extends ControllerItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((tau.systemengineering.STPAsec.System) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_System_type")
-				: getString("_UI_System_type") + " " + label;
+		return getString("_UI_System_type");
 	}
 
 	/**
@@ -164,6 +202,17 @@ public class SystemItemProvider extends ControllerItemProvider {
 
 		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__POTENTIAL_HAZARDS,
 				STPAsecFactory.eINSTANCE.createHazard()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return STPAsecEditPlugin.INSTANCE;
 	}
 
 }

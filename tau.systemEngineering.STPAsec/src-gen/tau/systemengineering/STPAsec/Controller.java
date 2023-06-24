@@ -17,7 +17,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link tau.systemengineering.STPAsec.Controller#getReceivedCommands <em>Received Commands</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.Controller#getReceivedFeedbacks <em>Received Feedbacks</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.Controller#getSentCommands <em>Sent Commands</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.Controller#getSubSystems <em>Sub Systems</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.Controller#getSentFeedbacks <em>Sent Feedbacks</em>}</li>
  * </ul>
  *
@@ -89,18 +88,6 @@ public interface Controller extends StructureElement {
 	 * @generated
 	 */
 	EList<ControlAction> getSentCommands();
-
-	/**
-	 * Returns the value of the '<em><b>Sub Systems</b></em>' containment reference list.
-	 * The list contents are of type {@link tau.systemengineering.STPAsec.System}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sub Systems</em>' containment reference list.
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getController_SubSystems()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<tau.systemengineering.STPAsec.System> getSubSystems();
 
 	/**
 	 * Returns the value of the '<em><b>Sent Feedbacks</b></em>' reference list.
