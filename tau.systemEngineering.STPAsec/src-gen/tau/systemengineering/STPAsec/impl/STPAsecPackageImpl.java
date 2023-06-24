@@ -23,7 +23,6 @@ import tau.systemengineering.STPAsec.STPASec;
 import tau.systemengineering.STPAsec.STPAsecFactory;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 import tau.systemengineering.STPAsec.SecurityRecommendation;
-import tau.systemengineering.STPAsec.StructureElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -80,13 +79,6 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * @generated
 	 */
 	private EClass feedbackEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass structureElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -508,33 +500,6 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getStructureElement() {
-		return structureElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getStructureElement_Name() {
-		return (EAttribute) structureElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getStructureElement_Description() {
-		return (EAttribute) structureElementEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getControlledProcess() {
 		return controlledProcessEClass;
 	}
@@ -625,8 +590,17 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getControlStructure_Elements() {
-		return (EReference) controlStructureEClass.getEStructuralFeatures().get(0);
+	public EAttribute getControlStructure_Name() {
+		return (EAttribute) controlStructureEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getControlStructure_Description() {
+		return (EAttribute) controlStructureEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -798,10 +772,6 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		createEReference(feedbackEClass, FEEDBACK__CONTROLLED_PROCESS_SENDER);
 		createEReference(feedbackEClass, FEEDBACK__CONTROLLER_SENDER);
 
-		structureElementEClass = createEClass(STRUCTURE_ELEMENT);
-		createEAttribute(structureElementEClass, STRUCTURE_ELEMENT__NAME);
-		createEAttribute(structureElementEClass, STRUCTURE_ELEMENT__DESCRIPTION);
-
 		controlledProcessEClass = createEClass(CONTROLLED_PROCESS);
 		createEReference(controlledProcessEClass, CONTROLLED_PROCESS__SENT_FEEDBACKS);
 		createEReference(controlledProcessEClass, CONTROLLED_PROCESS__CONTROLLED_PROCESS_RECEIVED_COMMANDS);
@@ -814,7 +784,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		createEReference(controllerEClass, CONTROLLER__SENT_FEEDBACKS);
 
 		controlStructureEClass = createEClass(CONTROL_STRUCTURE);
-		createEReference(controlStructureEClass, CONTROL_STRUCTURE__ELEMENTS);
+		createEAttribute(controlStructureEClass, CONTROL_STRUCTURE__NAME);
+		createEAttribute(controlStructureEClass, CONTROL_STRUCTURE__DESCRIPTION);
 
 		dataFlowEClass = createEClass(DATA_FLOW);
 		createEAttribute(dataFlowEClass, DATA_FLOW__ID);
@@ -865,9 +836,9 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 
 		// Add supertypes to classes
 		feedbackEClass.getESuperTypes().add(this.getDataFlow());
-		controlledProcessEClass.getESuperTypes().add(this.getStructureElement());
-		controllerEClass.getESuperTypes().add(this.getStructureElement());
-		dataFlowEClass.getESuperTypes().add(this.getStructureElement());
+		controlledProcessEClass.getESuperTypes().add(this.getControlStructure());
+		controllerEClass.getESuperTypes().add(this.getControlStructure());
+		dataFlowEClass.getESuperTypes().add(this.getControlStructure());
 		controlActionEClass.getESuperTypes().add(this.getDataFlow());
 
 		// Initialize classes, features, and operations; add parameters
@@ -967,15 +938,6 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 				"controllerSender", null, 0, 1, Feedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(structureElementEClass, StructureElement.class, "StructureElement", IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStructureElement_Name(), ecorePackage.getEString(), "name", null, 0, 1,
-				StructureElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStructureElement_Description(), ecorePackage.getEString(), "description", null, 0, 1,
-				StructureElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-
 		initEClass(controlledProcessEClass, ControlledProcess.class, "ControlledProcess", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getControlledProcess_SentFeedbacks(), this.getFeedback(),
@@ -1005,11 +967,14 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 				"sentFeedbacks", null, 1, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(controlStructureEClass, ControlStructure.class, "ControlStructure", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(controlStructureEClass, ControlStructure.class, "ControlStructure", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getControlStructure_Elements(), this.getStructureElement(), null, "elements", null, 0, -1,
-				ControlStructure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getControlStructure_Name(), ecorePackage.getEString(), "name", null, 0, 1,
+				ControlStructure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getControlStructure_Description(), ecorePackage.getEString(), "description", null, 0, 1,
+				ControlStructure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataFlowEClass, DataFlow.class, "DataFlow", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataFlow_Id(), theXMLTypePackage.getInt(), "id", null, 0, 1, DataFlow.class, !IS_TRANSIENT,

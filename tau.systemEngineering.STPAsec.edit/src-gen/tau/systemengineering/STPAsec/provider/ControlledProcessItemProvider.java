@@ -10,7 +10,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
 import tau.systemengineering.STPAsec.ControlledProcess;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 
@@ -20,7 +19,7 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ControlledProcessItemProvider extends StructureElementItemProvider {
+public class ControlledProcessItemProvider extends ControlStructureItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -22,7 +22,6 @@ import tau.systemengineering.STPAsec.MissionGoal;
 import tau.systemengineering.STPAsec.STPASec;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 import tau.systemengineering.STPAsec.SecurityRecommendation;
-import tau.systemengineering.STPAsec.StructureElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,11 +111,6 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseFeedback(Feedback object) {
 			return createFeedbackAdapter();
-		}
-
-		@Override
-		public Adapter caseStructureElement(StructureElement object) {
-			return createStructureElementAdapter();
 		}
 
 		@Override
@@ -263,20 +257,6 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFeedbackAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.StructureElement <em>Structure Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.StructureElement
-	 * @generated
-	 */
-	public Adapter createStructureElementAdapter() {
 		return null;
 	}
 

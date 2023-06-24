@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import tau.systemengineering.STPAsec.ControlAction;
-import tau.systemengineering.STPAsec.ControlStructure;
 import tau.systemengineering.STPAsec.ControlledProcess;
 import tau.systemengineering.STPAsec.Controller;
 import tau.systemengineering.STPAsec.DataElment;
@@ -86,8 +85,6 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 			return createControlledProcess();
 		case STPAsecPackage.CONTROLLER:
 			return createController();
-		case STPAsecPackage.CONTROL_STRUCTURE:
-			return createControlStructure();
 		case STPAsecPackage.CONTROL_ACTION:
 			return createControlAction();
 		case STPAsecPackage.DATA_ELMENT:
@@ -185,16 +182,6 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 	public Controller createController() {
 		ControllerImpl controller = new ControllerImpl();
 		return controller;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ControlStructure createControlStructure() {
-		ControlStructureImpl controlStructure = new ControlStructureImpl();
-		return controlStructure;
 	}
 
 	/**

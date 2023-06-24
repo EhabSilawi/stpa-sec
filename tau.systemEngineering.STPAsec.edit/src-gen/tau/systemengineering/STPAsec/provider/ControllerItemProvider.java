@@ -21,7 +21,7 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ControllerItemProvider extends StructureElementItemProvider {
+public class ControllerItemProvider extends ControlStructureItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

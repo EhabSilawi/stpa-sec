@@ -29,7 +29,7 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  *
  * @generated
  */
-public class ControlledProcessImpl extends StructureElementImpl implements ControlledProcess {
+public class ControlledProcessImpl extends ControlStructureImpl implements ControlledProcess {
 	/**
 	 * The cached value of the '{@link #getSentFeedbacks() <em>Sent Feedbacks</em>}' reference list.
 	 * <!-- begin-user-doc -->

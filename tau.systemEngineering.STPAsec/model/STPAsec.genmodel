@@ -51,10 +51,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Feedback/controlledProcessSender"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Feedback/controllerSender"/>
     </genClasses>
-    <genClasses ecoreClass="STPAsec.ecore#//StructureElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//StructureElement/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//StructureElement/description"/>
-    </genClasses>
     <genClasses ecoreClass="STPAsec.ecore#//ControlledProcess">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlledProcess/sentFeedbacks"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlledProcess/controlledProcessReceivedCommands"/>
@@ -67,7 +63,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Controller/sentFeedbacks"/>
     </genClasses>
     <genClasses ecoreClass="STPAsec.ecore#//ControlStructure">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlStructure/elements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//ControlStructure/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//ControlStructure/description"/>
     </genClasses>
     <genClasses ecoreClass="STPAsec.ecore#//DataFlow">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//DataFlow/id"/>

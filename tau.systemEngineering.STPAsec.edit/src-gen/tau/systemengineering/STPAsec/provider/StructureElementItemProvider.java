@@ -9,20 +9,13 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import tau.systemengineering.STPAsec.STPAsecPackage;
-import tau.systemengineering.STPAsec.StructureElement;
 
 /**
  * This is the item provider adapter for a {@link tau.systemengineering.STPAsec.StructureElement} object.
@@ -53,42 +46,8 @@ public class StructureElementItemProvider extends ItemProviderAdapter implements
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_StructureElement_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_StructureElement_name_feature",
-								"_UI_StructureElement_type"),
-						STPAsecPackage.Literals.STRUCTURE_ELEMENT__NAME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Description feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_StructureElement_description_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_StructureElement_description_feature",
-								"_UI_StructureElement_type"),
-						STPAsecPackage.Literals.STRUCTURE_ELEMENT__DESCRIPTION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -120,9 +79,7 @@ public class StructureElementItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StructureElement) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_StructureElement_type")
-				: getString("_UI_StructureElement_type") + " " + label;
+		return getString("_UI_StructureElement_type");
 	}
 
 	/**
@@ -135,13 +92,6 @@ public class StructureElementItemProvider extends ItemProviderAdapter implements
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(StructureElement.class)) {
-		case STPAsecPackage.STRUCTURE_ELEMENT__NAME:
-		case STPAsecPackage.STRUCTURE_ELEMENT__DESCRIPTION:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		}
 		super.notifyChanged(notification);
 	}
 

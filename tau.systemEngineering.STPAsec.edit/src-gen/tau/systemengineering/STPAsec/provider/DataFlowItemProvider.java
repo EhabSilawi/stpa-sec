@@ -25,7 +25,7 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DataFlowItemProvider extends StructureElementItemProvider {
+public class DataFlowItemProvider extends ControlStructureItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

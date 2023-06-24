@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<STPAsec:STPASec
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:STPAsec="http://www.example.org/STPAsec">
+  <system subSystem="//@system.1 //@system.2 //@system.3"
+      name="Airport"
+      description="Airport"/>
+  <system system="//@system.0"
+      name="ATC"
+      description="Air traffic Control"/>
+  <system system="//@system.0"
+      name="FC"
+      description="Flight Crew">
+    <consistsOf
+        xsi:type="STPAsec:Controller"
+        name="FCGeneralController"
+        description="Flight Crew general Controller"
+        receivedFeedbacks="//@system.7/@consistsOf.1 //@system.6/@consistsOf.3 //@system.4/@consistsOf.5 //@system.4/@consistsOf.7"
+        sentCommands="//@system.2/@consistsOf.1 //@system.2/@consistsOf.2 //@system.2/@consistsOf.3 //@system.2/@consistsOf.4 //@system.2/@consistsOf.5"/>
+    <consistsOf
+        xsi:type="STPAsec:ControlAction"
+        name="ManualControls"
+        description="Flight Crew manual controls"
+        id="6"
+        controllerReceiver="//@system.7/@consistsOf.0"
+        contollerSender="//@system.2/@consistsOf.0"/>
+    <consistsOf
+        xsi:type="STPAsec:ControlAction"
+        name="ArmAndSisarm"
+        description="Arm and Set  Disarm"
+        id="10"
+        controllerReceiver="//@system.4/@consistsOf.0"
+        contollerSender="//@system.2/@consistsOf.0"/>
+    <consistsOf
+        xsi:type="STPAsec:ControlAction"
+        name="BrakeHydraulicControlCmd"
+        description="sends command to hydiraulic control"
+        id="11"
+        controllerReceiver="//@system.4/@consistsOf.1"
+        contollerSender="//@system.2/@consistsOf.0"/>
+    <consistsOf
+        xsi:type="STPAsec:ControlAction"
+        name="BrakeHydraulicWheelBrakesCmd"
+        description="sends command to hydiraulic wheel brakes"
+        id="11"
+        contollerSender="//@system.2/@consistsOf.0"
+        controlledProcessReceiver="//@system.6/@consistsOf.0"/>
+    <consistsOf
+        xsi:type="STPAsec:ControlAction"
+        name="BSCUPower"
+        description="turn on of off of BSCU"
+        id="12"
+        controllerReceiver="//@system.4/@consistsOf.6"
+        contollerSender="//@system.2/@consistsOf.0"/>
+  </system>
+  <system system="//@system.0"
+      subSystem="//@system.4 //@system.5 //@system.6 //@system.7"
+      name="Aircraft"
+      description="Aircraft">
+    <consistsOf
+        xsi:type="STPAsec:ControlledProcess"
+        name="Wheels"
+        description="Wheels"
+        sentFeedbacks="//@system.3/@consistsOf.3"
+        controlledProcessReceivedCommands="//@system.6/@consistsOf.2"/>
+    <consistsOf
+        xsi:type="STPAsec:ControlAction"
+        name="TouchDownRejectedTakeOff"
+        description="Touch Down Rejected TakeOff"
+        id="1"
+        controllerReceiver="//@system.4/@consistsOf.0"
+        contollerSender="//@system.3/@consistsOf.2"/>
+    <consistsOf
+        xsi:type="STPAsec:Controller"
+        name="ACController"
+        description="Aircarft general controller"
+        sentCommands="//@system.3/@consistsOf.1"/>
+    <consistsOf
+        xsi:type="STPAsec:Feedback"
+        name="WheelSpeedState"
+        description="Wheel speed state"
+        id="7"
+        controllerReceiver="//@system.4/@consistsOf.1"
+        controlledProcessSender="//@system.3/@consistsOf.0"/>
+  </system>
+  <system system="//@system.3"
+      name="BSCU"
+      description="Brake System Control Unit">
+    <consistsOf
+        xsi:type="STPAsec:Controller"
+        name="AutobrakeControl"
+        description="Autobrake Control"
+        receivedCommands="//@system.3/@consistsOf.1 //@system.2/@consistsOf.2"
+        receivedFeedbacks="//@system.4/@consistsOf.3"
+        sentCommands="//@system.4/@consistsOf.2"
+        sentFeedbacks="//@system.4/@consistsOf.5"/>
+    <consistsOf
+        xsi:type="STPAsec:Controller"
+        name="HydraulicControl"
+        description="Hydraulic Control"
+        receivedCommands="//@system.4/@consistsOf.2 //@system.2/@consistsOf.3"
+        receivedFeedbacks="//@system.3/@consistsOf.3"
+        sentCommands="//@system.4/@consistsOf.4"
+        sentFeedbacks="//@system.4/@consistsOf.3"/>
+    <consistsOf
+        xsi:type="STPAsec:ControlAction"
+        name="BrakeCmd"
+        description="BrakeCommand"
+        id="2"
+        controllerReceiver="//@system.4/@consistsOf.1"
+        contollerSender="//@system.4/@consistsOf.0"/>
+    <consistsOf
+        xsi:type="STPAsec:Feedback"
+        name="WheelAndBrakeState"
+        description="Manual Brake state and wheel state"
+        id="3"
+        controllerReceiver="//@system.4/@consistsOf.0"
+        controllerSender="//@system.4/@consistsOf.1"/>
+    <consistsOf
+        xsi:type="STPAsec:ControlAction"
+        name="OpenCloseValves"
+        description="Open Close Valves"
+        id="4"
+        contollerSender="//@system.4/@consistsOf.1"
+        controlledProcessReceiver="//@system.6/@consistsOf.0"/>
+    <consistsOf
+        xsi:type="STPAsec:Feedback"
+        name="AutobrakeMode"
+        description="Autobrake mode"
+        id="8"
+        controllerReceiver="//@system.2/@consistsOf.0"
+        controllerSender="//@system.4/@consistsOf.0"/>
+    <consistsOf
+        xsi:type="STPAsec:Controller"
+        name="BSCUGeneralController"
+        description="BSCU general Contrroller"
+        receivedCommands="//@system.2/@consistsOf.5"
+        sentFeedbacks="//@system.4/@consistsOf.7"/>
+    <consistsOf
+        xsi:type="STPAsec:Feedback"
+        name="BSCUModeFault"
+        description="BSCU mode / fault"
+        id="9"
+        controllerReceiver="//@system.2/@consistsOf.0"
+        controllerSender="//@system.4/@consistsOf.6"/>
+  </system>
+  <system system="//@system.3"
+      name="WBS"
+      description="Wheel Braking System"/>
+  <system system="//@system.3"
+      name="WB"
+      description="Wheel brakes">
+    <consistsOf
+        xsi:type="STPAsec:ControlledProcess"
+        name="Hydraulics"
+        description="Hydraulics"
+        sentFeedbacks="//@system.6/@consistsOf.3"
+        controlledProcessReceivedCommands="//@system.4/@consistsOf.4 //@system.2/@consistsOf.4"/>
+    <consistsOf
+        xsi:type="STPAsec:Controller"
+        name="WheelBrakesGeneralControl"
+        description="Wheel Brakes General Control"
+        sentCommands="//@system.6/@consistsOf.2"/>
+    <consistsOf
+        xsi:type="STPAsec:ControlAction"
+        name="Brake"
+        description="Actual brake"
+        id="5"
+        contollerSender="//@system.6/@consistsOf.1"
+        controlledProcessReceiver="//@system.3/@consistsOf.0"/>
+    <consistsOf
+        xsi:type="STPAsec:Feedback"
+        name="BrakingMode"
+        description="Braking mode manual or alternate"
+        id="7"
+        controllerReceiver="//@system.2/@consistsOf.0"
+        controlledProcessSender="//@system.6/@consistsOf.0"/>
+  </system>
+  <system system="//@system.3"
+      name="OSS"
+      description="Other subSystems">
+    <consistsOf
+        xsi:type="STPAsec:Controller"
+        name="OSSGeneralController"
+        description="Other SubSystems General Controller"
+        receivedCommands="//@system.2/@consistsOf.1"
+        sentFeedbacks="//@system.7/@consistsOf.1"/>
+    <consistsOf
+        xsi:type="STPAsec:Feedback"
+        name="OtherSystemStates"
+        description="Other subsystems states and modes"
+        id="6"
+        controllerReceiver="//@system.2/@consistsOf.0"
+        controllerSender="//@system.7/@consistsOf.0"/>
+  </system>
+</STPAsec:STPASec>

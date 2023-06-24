@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ControlledProcess extends StructureElement {
+public interface ControlledProcess extends ControlStructure {
 
 	/**
 	 * Returns the value of the '<em><b>Sent Feedbacks</b></em>' reference list.

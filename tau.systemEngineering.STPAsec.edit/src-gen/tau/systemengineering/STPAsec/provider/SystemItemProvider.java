@@ -238,7 +238,16 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 				STPAsecFactory.eINSTANCE.createLossScenario()));
 
 		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__CONSISTS_OF,
-				STPAsecFactory.eINSTANCE.createControlStructure()));
+				STPAsecFactory.eINSTANCE.createFeedback()));
+
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__CONSISTS_OF,
+				STPAsecFactory.eINSTANCE.createControlledProcess()));
+
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__CONSISTS_OF,
+				STPAsecFactory.eINSTANCE.createController()));
+
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__CONSISTS_OF,
+				STPAsecFactory.eINSTANCE.createControlAction()));
 
 		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__POTENTIAL_HAZARDS,
 				STPAsecFactory.eINSTANCE.createHazard()));

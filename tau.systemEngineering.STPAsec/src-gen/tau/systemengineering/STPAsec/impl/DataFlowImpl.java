@@ -32,7 +32,7 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  *
  * @generated
  */
-public abstract class DataFlowImpl extends StructureElementImpl implements DataFlow {
+public abstract class DataFlowImpl extends ControlStructureImpl implements DataFlow {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -20,7 +20,6 @@ import tau.systemengineering.STPAsec.MissionGoal;
 import tau.systemengineering.STPAsec.STPASec;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 import tau.systemengineering.STPAsec.SecurityRecommendation;
-import tau.systemengineering.STPAsec.StructureElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -127,14 +126,7 @@ public class STPAsecSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseDataFlow(feedback);
 			if (result == null)
-				result = caseStructureElement(feedback);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case STPAsecPackage.STRUCTURE_ELEMENT: {
-			StructureElement structureElement = (StructureElement) theEObject;
-			T result = caseStructureElement(structureElement);
+				result = caseControlStructure(feedback);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -143,7 +135,7 @@ public class STPAsecSwitch<T> extends Switch<T> {
 			ControlledProcess controlledProcess = (ControlledProcess) theEObject;
 			T result = caseControlledProcess(controlledProcess);
 			if (result == null)
-				result = caseStructureElement(controlledProcess);
+				result = caseControlStructure(controlledProcess);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -152,7 +144,7 @@ public class STPAsecSwitch<T> extends Switch<T> {
 			Controller controller = (Controller) theEObject;
 			T result = caseController(controller);
 			if (result == null)
-				result = caseStructureElement(controller);
+				result = caseControlStructure(controller);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -168,7 +160,7 @@ public class STPAsecSwitch<T> extends Switch<T> {
 			DataFlow dataFlow = (DataFlow) theEObject;
 			T result = caseDataFlow(dataFlow);
 			if (result == null)
-				result = caseStructureElement(dataFlow);
+				result = caseControlStructure(dataFlow);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -179,7 +171,7 @@ public class STPAsecSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseDataFlow(controlAction);
 			if (result == null)
-				result = caseStructureElement(controlAction);
+				result = caseControlStructure(controlAction);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -298,21 +290,6 @@ public class STPAsecSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFeedback(Feedback object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Structure Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Structure Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStructureElement(StructureElement object) {
 		return null;
 	}
 

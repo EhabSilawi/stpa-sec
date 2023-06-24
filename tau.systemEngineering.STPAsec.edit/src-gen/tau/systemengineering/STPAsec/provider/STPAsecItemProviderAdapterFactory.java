@@ -280,29 +280,6 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.ControlStructure} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ControlStructureItemProvider controlStructureItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.ControlStructure}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createControlStructureAdapter() {
-		if (controlStructureItemProvider == null) {
-			controlStructureItemProvider = new ControlStructureItemProvider(this);
-		}
-
-		return controlStructureItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.ControlAction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -465,8 +442,6 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 			controlledProcessItemProvider.dispose();
 		if (controllerItemProvider != null)
 			controllerItemProvider.dispose();
-		if (controlStructureItemProvider != null)
-			controlStructureItemProvider.dispose();
 		if (controlActionItemProvider != null)
 			controlActionItemProvider.dispose();
 		if (dataElmentItemProvider != null)

@@ -103,15 +103,6 @@ public interface STPAsecFactory extends EFactory {
 	Controller createController();
 
 	/**
-	 * Returns a new object of class '<em>Control Structure</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Control Structure</em>'.
-	 * @generated
-	 */
-	ControlStructure createControlStructure();
-
-	/**
 	 * Returns a new object of class '<em>Control Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
