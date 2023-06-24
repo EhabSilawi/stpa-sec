@@ -39,6 +39,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/potentialHazards"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/system"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/subSystem"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//System/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//System/description"/>
     </genClasses>
     <genClasses ecoreClass="STPAsec.ecore#//STPASec">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//STPASec/system"/>

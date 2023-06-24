@@ -419,13 +419,31 @@ public interface STPAsecPackage extends EPackage {
 	int SYSTEM__SUB_SYSTEM = 6;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__NAME = 7;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__DESCRIPTION = 8;
+
+	/**
 	 * The number of structural features of the '<em>System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_FEATURE_COUNT = 7;
+	int SYSTEM_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>System</em>' class.
@@ -1232,6 +1250,28 @@ public interface STPAsecPackage extends EPackage {
 	EReference getSystem_SubSystem();
 
 	/**
+	 * Returns the meta object for the attribute '{@link tau.systemengineering.STPAsec.System#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see tau.systemengineering.STPAsec.System#getName()
+	 * @see #getSystem()
+	 * @generated
+	 */
+	EAttribute getSystem_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tau.systemengineering.STPAsec.System#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see tau.systemengineering.STPAsec.System#getDescription()
+	 * @see #getSystem()
+	 * @generated
+	 */
+	EAttribute getSystem_Description();
+
+	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.STPASec <em>STPA Sec</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1806,6 +1846,22 @@ public interface STPAsecPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SYSTEM__SUB_SYSTEM = eINSTANCE.getSystem_SubSystem();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYSTEM__NAME = eINSTANCE.getSystem_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYSTEM__DESCRIPTION = eINSTANCE.getSystem_Description();
 
 		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.STPASecImpl <em>STPA Sec</em>}' class.

@@ -21,6 +21,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tau.systemengineering.STPAsec.System#getPotentialHazards <em>Potential Hazards</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.System#getSystem <em>System</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.System#getSubSystem <em>Sub System</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.System#getName <em>Name</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.System#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem()
@@ -125,5 +127,49 @@ public interface System extends EObject {
 	 * @generated
 	 */
 	EList<System> getSubSystem();
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link tau.systemengineering.STPAsec.System#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem_Description()
+	 * @model
+	 * @generated
+	 */
+	String getDescription();
+
+	/**
+	 * Sets the value of the '{@link tau.systemengineering.STPAsec.System#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(String value);
 
 } // System

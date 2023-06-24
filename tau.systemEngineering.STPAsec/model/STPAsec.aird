@@ -3,10 +3,9 @@
   <viewpoint:DAnalysis uid="_KajNAPFmEe2GtYKjU7tmFw" selectedViews="_KdSX8PFmEe2GtYKjU7tmFw" version="15.1.0.202211301600">
     <semanticResources>STPAsec.ecore</semanticResources>
     <semanticResources>STPAsec.genmodel</semanticResources>
-    <semanticResources>STPASec.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_KdSX8PFmEe2GtYKjU7tmFw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_La8NIAE3Ee674Posn3RtiQ" name="STPAsec class diagram" repPath="#_Lax1EAE3Ee674Posn3RtiQ" changeId="1687593815333">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_La8NIAE3Ee674Posn3RtiQ" name="STPAsec class diagram" repPath="#_Lax1EAE3Ee674Posn3RtiQ" changeId="1687601222287">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="STPAsec.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -90,6 +89,14 @@
         <children xmi:type="notation:Node" xmi:id="_L9BmigE3Ee674Posn3RtiQ" type="2003" element="_L7_rwAE3Ee674Posn3RtiQ">
           <children xmi:type="notation:Node" xmi:id="_L9BmjQE3Ee674Posn3RtiQ" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_L9BmjgE3Ee674Posn3RtiQ" type="7004">
+            <children xmi:type="notation:Node" xmi:id="__CUWsBJlEe6ykNUSdLcZOg" type="3010" element="__BYikBJlEe6ykNUSdLcZOg">
+              <styles xmi:type="notation:FontStyle" xmi:id="__CUWsRJlEe6ykNUSdLcZOg" fontColor="2697711" fontName=".AppleSystemUIFont" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="__CUWshJlEe6ykNUSdLcZOg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_DovIMBJmEe6ykNUSdLcZOg" type="3010" element="_DniOUBJmEe6ykNUSdLcZOg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_DovIMRJmEe6ykNUSdLcZOg" fontColor="2697711" fontName=".AppleSystemUIFont" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_DovIMhJmEe6ykNUSdLcZOg"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_L9BmjwE3Ee674Posn3RtiQ"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_L9BmkAE3Ee674Posn3RtiQ"/>
           </children>
@@ -737,10 +744,26 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_M71hpwIHEe6eUpT4bF8BcQ" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_IQJsURJzEe6ykNUSdLcZOg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="__BYikBJlEe6ykNUSdLcZOg" name="name : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="STPAsec.ecore#//System/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="STPAsec.ecore#//System/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_CSa1hRJmEe6ykNUSdLcZOg" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_DniOUBJmEe6ykNUSdLcZOg" name="description : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="STPAsec.ecore#//System/description"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="STPAsec.ecore#//System/description"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_GRf6NhJmEe6ykNUSdLcZOg" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_L7_rwwE3Ee674Posn3RtiQ" name="STPASec" tooltipText="" outgoingEdges="_L8xH0AE3Ee674Posn3RtiQ" width="12" height="10">
       <target xmi:type="ecore:EClass" href="STPAsec.ecore#//STPASec"/>

@@ -427,6 +427,24 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSystem_Name() {
+		return (EAttribute) systemEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSystem_Description() {
+		return (EAttribute) systemEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSTPASec() {
 		return stpaSecEClass;
 	}
@@ -768,6 +786,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		createEReference(systemEClass, SYSTEM__POTENTIAL_HAZARDS);
 		createEReference(systemEClass, SYSTEM__SYSTEM);
 		createEReference(systemEClass, SYSTEM__SUB_SYSTEM);
+		createEAttribute(systemEClass, SYSTEM__NAME);
+		createEAttribute(systemEClass, SYSTEM__DESCRIPTION);
 
 		stpaSecEClass = createEClass(STPA_SEC);
 		createEReference(stpaSecEClass, STPA_SEC__SYSTEM);
@@ -920,6 +940,12 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		initEReference(getSystem_SubSystem(), this.getSystem(), this.getSystem_System(), "subSystem", null, 0, -1,
 				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSystem_Name(), ecorePackage.getEString(), "name", null, 0, 1,
+				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSystem_Description(), ecorePackage.getEString(), "description", null, 0, 1,
+				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stpaSecEClass, STPASec.class, "STPASec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSTPASec_System(), this.getSystem(), null, "system", null, 1, -1, STPASec.class, !IS_TRANSIENT,

@@ -18,6 +18,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -55,6 +56,8 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 
 			addSystemPropertyDescriptor(object);
 			addSubSystemPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,6 +89,37 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 						getString("_UI_PropertyDescriptor_description", "_UI_System_subSystem_feature",
 								"_UI_System_type"),
 						STPAsecPackage.Literals.SYSTEM__SUB_SYSTEM, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_System_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_System_name_feature", "_UI_System_type"),
+						STPAsecPackage.Literals.SYSTEM__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Description feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_System_description_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_System_description_feature",
+								"_UI_System_type"),
+						STPAsecPackage.Literals.SYSTEM__DESCRIPTION, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -151,7 +185,9 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_System_type");
+		String label = ((tau.systemengineering.STPAsec.System) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_System_type")
+				: getString("_UI_System_type") + " " + label;
 	}
 
 	/**
@@ -166,6 +202,10 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(tau.systemengineering.STPAsec.System.class)) {
+		case STPAsecPackage.SYSTEM__NAME:
+		case STPAsecPackage.SYSTEM__DESCRIPTION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		case STPAsecPackage.SYSTEM__RECOMMENDS:
 		case STPAsecPackage.SYSTEM__GOALS:
 		case STPAsecPackage.SYSTEM__SCENARIO:

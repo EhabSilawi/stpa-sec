@@ -38,6 +38,8 @@ import tau.systemengineering.STPAsec.SecurityRecommendation;
  *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getPotentialHazards <em>Potential Hazards</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getSystem <em>System</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getSubSystem <em>Sub System</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getName <em>Name</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.SystemImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
@@ -112,6 +114,46 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 	 * @ordered
 	 */
 	protected EList<tau.systemengineering.STPAsec.System> subSystem;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -282,6 +324,49 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.SYSTEM__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDescription(String newDescription) {
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.SYSTEM__DESCRIPTION, oldDescription,
+					description));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -347,6 +432,10 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 			return basicGetSystem();
 		case STPAsecPackage.SYSTEM__SUB_SYSTEM:
 			return getSubSystem();
+		case STPAsecPackage.SYSTEM__NAME:
+			return getName();
+		case STPAsecPackage.SYSTEM__DESCRIPTION:
+			return getDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -387,6 +476,12 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 			getSubSystem().clear();
 			getSubSystem().addAll((Collection<? extends tau.systemengineering.STPAsec.System>) newValue);
 			return;
+		case STPAsecPackage.SYSTEM__NAME:
+			setName((String) newValue);
+			return;
+		case STPAsecPackage.SYSTEM__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -420,6 +515,12 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 		case STPAsecPackage.SYSTEM__SUB_SYSTEM:
 			getSubSystem().clear();
 			return;
+		case STPAsecPackage.SYSTEM__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case STPAsecPackage.SYSTEM__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -446,8 +547,31 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements tau.syst
 			return system != null;
 		case STPAsecPackage.SYSTEM__SUB_SYSTEM:
 			return subSystem != null && !subSystem.isEmpty();
+		case STPAsecPackage.SYSTEM__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case STPAsecPackage.SYSTEM__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", description: ");
+		result.append(description);
+		result.append(')');
+		return result.toString();
 	}
 
 } //SystemImpl
