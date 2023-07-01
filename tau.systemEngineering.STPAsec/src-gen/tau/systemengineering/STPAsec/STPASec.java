@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link tau.systemengineering.STPAsec.STPASec#getSystem <em>System</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.STPASec#getSystems <em>Systems</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getSTPASec()
@@ -22,16 +22,16 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface STPASec extends EObject {
+
 	/**
-	 * Returns the value of the '<em><b>System</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Systems</b></em>' containment reference list.
 	 * The list contents are of type {@link tau.systemengineering.STPAsec.System}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>System</em>' containment reference list.
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSTPASec_System()
-	 * @model containment="true" required="true"
+	 * @return the value of the '<em>Systems</em>' containment reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSTPASec_Systems()
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<tau.systemengineering.STPAsec.System> getSystem();
-
+	EList<tau.systemengineering.STPAsec.System> getSystems();
 } // STPASec

@@ -9,17 +9,12 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import tau.systemengineering.STPAsec.ControlAction;
 import tau.systemengineering.STPAsec.ControlStructure;
+import tau.systemengineering.STPAsec.ControlStructureElement;
 import tau.systemengineering.STPAsec.ControlledProcess;
-import tau.systemengineering.STPAsec.Controller;
-import tau.systemengineering.STPAsec.DataElment;
-import tau.systemengineering.STPAsec.DataFlow;
 import tau.systemengineering.STPAsec.Feedback;
-import tau.systemengineering.STPAsec.Hazard;
-import tau.systemengineering.STPAsec.LossScenario;
-import tau.systemengineering.STPAsec.MissionGoal;
+import tau.systemengineering.STPAsec.OtherInformation;
 import tau.systemengineering.STPAsec.STPASec;
 import tau.systemengineering.STPAsec.STPAsecPackage;
-import tau.systemengineering.STPAsec.SecurityRecommendation;
 
 /**
  * <!-- begin-user-doc -->
@@ -78,30 +73,9 @@ public class STPAsecSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case STPAsecPackage.LOSS_SCENARIO: {
-			LossScenario lossScenario = (LossScenario) theEObject;
-			T result = caseLossScenario(lossScenario);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case STPAsecPackage.HAZARD: {
-			Hazard hazard = (Hazard) theEObject;
-			T result = caseHazard(hazard);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case STPAsecPackage.MISSION_GOAL: {
-			MissionGoal missionGoal = (MissionGoal) theEObject;
-			T result = caseMissionGoal(missionGoal);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case STPAsecPackage.SECURITY_RECOMMENDATION: {
-			SecurityRecommendation securityRecommendation = (SecurityRecommendation) theEObject;
-			T result = caseSecurityRecommendation(securityRecommendation);
+		case STPAsecPackage.STPA_SEC: {
+			STPASec stpaSec = (STPASec) theEObject;
+			T result = caseSTPASec(stpaSec);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -113,20 +87,16 @@ public class STPAsecSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case STPAsecPackage.STPA_SEC: {
-			STPASec stpaSec = (STPASec) theEObject;
-			T result = caseSTPASec(stpaSec);
+		case STPAsecPackage.CONTROL_STRUCTURE: {
+			ControlStructure controlStructure = (ControlStructure) theEObject;
+			T result = caseControlStructure(controlStructure);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case STPAsecPackage.FEEDBACK: {
-			Feedback feedback = (Feedback) theEObject;
-			T result = caseFeedback(feedback);
-			if (result == null)
-				result = caseDataFlow(feedback);
-			if (result == null)
-				result = caseControlStructure(feedback);
+		case STPAsecPackage.CONTROL_STRUCTURE_ELEMENT: {
+			ControlStructureElement controlStructureElement = (ControlStructureElement) theEObject;
+			T result = caseControlStructureElement(controlStructureElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -135,32 +105,7 @@ public class STPAsecSwitch<T> extends Switch<T> {
 			ControlledProcess controlledProcess = (ControlledProcess) theEObject;
 			T result = caseControlledProcess(controlledProcess);
 			if (result == null)
-				result = caseControlStructure(controlledProcess);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case STPAsecPackage.CONTROLLER: {
-			Controller controller = (Controller) theEObject;
-			T result = caseController(controller);
-			if (result == null)
-				result = caseControlStructure(controller);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case STPAsecPackage.CONTROL_STRUCTURE: {
-			ControlStructure controlStructure = (ControlStructure) theEObject;
-			T result = caseControlStructure(controlStructure);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case STPAsecPackage.DATA_FLOW: {
-			DataFlow dataFlow = (DataFlow) theEObject;
-			T result = caseDataFlow(dataFlow);
-			if (result == null)
-				result = caseControlStructure(dataFlow);
+				result = caseControlStructureElement(controlledProcess);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -169,16 +114,25 @@ public class STPAsecSwitch<T> extends Switch<T> {
 			ControlAction controlAction = (ControlAction) theEObject;
 			T result = caseControlAction(controlAction);
 			if (result == null)
-				result = caseDataFlow(controlAction);
-			if (result == null)
-				result = caseControlStructure(controlAction);
+				result = caseControlStructureElement(controlAction);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case STPAsecPackage.DATA_ELMENT: {
-			DataElment dataElment = (DataElment) theEObject;
-			T result = caseDataElment(dataElment);
+		case STPAsecPackage.FEEDBACK: {
+			Feedback feedback = (Feedback) theEObject;
+			T result = caseFeedback(feedback);
+			if (result == null)
+				result = caseControlStructureElement(feedback);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case STPAsecPackage.OTHER_INFORMATION: {
+			OtherInformation otherInformation = (OtherInformation) theEObject;
+			T result = caseOtherInformation(otherInformation);
+			if (result == null)
+				result = caseControlStructureElement(otherInformation);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -189,62 +143,17 @@ public class STPAsecSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Loss Scenario</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>STPA Sec</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Loss Scenario</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>STPA Sec</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseLossScenario(LossScenario object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Hazard</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Hazard</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseHazard(Hazard object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Mission Goal</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Mission Goal</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMissionGoal(MissionGoal object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Security Recommendation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Security Recommendation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSecurityRecommendation(SecurityRecommendation object) {
+	public T caseSTPASec(STPASec object) {
 		return null;
 	}
 
@@ -264,32 +173,32 @@ public class STPAsecSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>STPA Sec</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Control Structure</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>STPA Sec</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Control Structure</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSTPASec(STPASec object) {
+	public T caseControlStructure(ControlStructure object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Feedback</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Control Structure Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Feedback</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Control Structure Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFeedback(Feedback object) {
+	public T caseControlStructureElement(ControlStructureElement object) {
 		return null;
 	}
 
@@ -309,36 +218,6 @@ public class STPAsecSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Controller</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Controller</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseController(Controller object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Control Structure</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Control Structure</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseControlStructure(ControlStructure object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Control Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -354,32 +233,32 @@ public class STPAsecSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Elment</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Feedback</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Elment</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Feedback</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDataElment(DataElment object) {
+	public T caseFeedback(Feedback object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Flow</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Other Information</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Flow</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Other Information</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDataFlow(DataFlow object) {
+	public T caseOtherInformation(OtherInformation object) {
 		return null;
 	}
 

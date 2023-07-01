@@ -9,6 +9,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -54,41 +55,10 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSystemPropertyDescriptor(object);
-			addSubSystemPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the System feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSystemPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_System_system_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_System_system_feature", "_UI_System_type"),
-						STPAsecPackage.Literals.SYSTEM__SYSTEM, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Sub System feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSubSystemPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_System_subSystem_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_System_subSystem_feature",
-								"_UI_System_type"),
-						STPAsecPackage.Literals.SYSTEM__SUB_SYSTEM, true, false, true, null, null, null));
 	}
 
 	/**
@@ -134,11 +104,8 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__RECOMMENDS);
-			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__GOALS);
-			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__SCENARIO);
-			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__CONSISTS_OF);
-			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__POTENTIAL_HAZARDS);
+			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__SUBSYSTEMS);
+			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__SYSTEM_MODE);
 		}
 		return childrenFeatures;
 	}
@@ -206,11 +173,8 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 		case STPAsecPackage.SYSTEM__DESCRIPTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case STPAsecPackage.SYSTEM__RECOMMENDS:
-		case STPAsecPackage.SYSTEM__GOALS:
-		case STPAsecPackage.SYSTEM__SCENARIO:
-		case STPAsecPackage.SYSTEM__CONSISTS_OF:
-		case STPAsecPackage.SYSTEM__POTENTIAL_HAZARDS:
+		case STPAsecPackage.SYSTEM__SUBSYSTEMS:
+		case STPAsecPackage.SYSTEM__SYSTEM_MODE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -228,29 +192,11 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__RECOMMENDS,
-				STPAsecFactory.eINSTANCE.createSecurityRecommendation()));
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__SUBSYSTEMS,
+				STPAsecFactory.eINSTANCE.createSystem()));
 
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__GOALS,
-				STPAsecFactory.eINSTANCE.createMissionGoal()));
-
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__SCENARIO,
-				STPAsecFactory.eINSTANCE.createLossScenario()));
-
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__CONSISTS_OF,
-				STPAsecFactory.eINSTANCE.createFeedback()));
-
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__CONSISTS_OF,
-				STPAsecFactory.eINSTANCE.createControlledProcess()));
-
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__CONSISTS_OF,
-				STPAsecFactory.eINSTANCE.createController()));
-
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__CONSISTS_OF,
-				STPAsecFactory.eINSTANCE.createControlAction()));
-
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__POTENTIAL_HAZARDS,
-				STPAsecFactory.eINSTANCE.createHazard()));
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__SYSTEM_MODE,
+				STPAsecFactory.eINSTANCE.createControlStructure()));
 	}
 
 	/**

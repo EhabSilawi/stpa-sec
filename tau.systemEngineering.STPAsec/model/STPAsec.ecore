@@ -1,100 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="STPAsec" nsURI="http://www.example.org/STPAsec" nsPrefix="STPAsec">
-  <eClassifiers xsi:type="ecore:EClass" name="LossScenario">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="solutions" upperBound="-1"
-        eType="#//SecurityRecommendation"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Hazard">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedLosses" upperBound="-1"
-        eType="#//LossScenario"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="unsafeControlActions" upperBound="-1"
-        eType="#//ControlAction" eOpposite="#//ControlAction/hazards"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MissionGoal">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="issues" upperBound="-1"
-        eType="#//LossScenario"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SecurityRecommendation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="solution" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="STPASec">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="systems" upperBound="-1"
+        eType="#//System" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="System">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="recommends" upperBound="-1"
-        eType="#//SecurityRecommendation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="goals" lowerBound="1" upperBound="-1"
-        eType="#//MissionGoal" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" upperBound="-1"
-        eType="#//LossScenario" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="consistsOf" lowerBound="1"
-        upperBound="-1" eType="#//ControlStructure" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="potentialHazards" upperBound="-1"
-        eType="#//Hazard" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="system" eType="#//System"
-        eOpposite="#//System/subSystem"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="subSystem" upperBound="-1"
-        eType="#//System" eOpposite="#//System/system"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subsystems" upperBound="-1"
+        eType="#//System" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="systemMode" upperBound="-1"
+        eType="#//ControlStructure" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlStructure">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelGoal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlledprocess" upperBound="-1"
+        eType="#//ControlledProcess" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlaction" upperBound="-1"
+        eType="#//ControlAction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feedback" upperBound="-1"
+        eType="#//Feedback" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sendsFeedbacks" eType="#//Feedback"
+        eOpposite="#//Feedback/controllerFeedbackReceiver"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sendsCommands" eType="#//ControlAction"
+        eOpposite="#//ControlAction/controllerCommandReceiver"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controllerSendsInfo" upperBound="-1"
+        eType="#//OtherInformation" eOpposite="#//OtherInformation/ccontrollerReceiverInfo"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controller" upperBound="-1"
+        eType="#//System"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlStructureElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="STPASec">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="system" lowerBound="1"
-        upperBound="-1" eType="#//System" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlledProcess" eSuperTypes="#//ControlStructureElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sendsFeedbacks" eType="#//Feedback"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controledProcessSendsInfo"
+        upperBound="-1" eType="#//OtherInformation" eOpposite="#//OtherInformation/ControledProcessRecevierInfo"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Feedback" eSuperTypes="#//DataFlow">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controllerReceiver" eType="#//Controller"
-        eOpposite="#//Controller/receivedFeedbacks"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controlledProcessSender"
-        eType="#//ControlledProcess" eOpposite="#//ControlledProcess/sentFeedbacks"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controllerSender" eType="#//Controller"
-        eOpposite="#//Controller/sentFeedbacks"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlAction" eSuperTypes="#//ControlStructureElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controllerCommandReceiver"
+        upperBound="-1" eType="#//ControlStructure" eOpposite="#//ControlStructure/sendsCommands"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controledProccessReceiverCommands"
+        eType="#//ControlledProcess"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ControlledProcess" eSuperTypes="#//ControlStructure">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sentFeedbacks" upperBound="-1"
-        eType="#//Feedback" eOpposite="#//Feedback/controlledProcessSender"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controlledProcessReceivedCommands"
-        upperBound="-1" eType="#//ControlAction" eOpposite="#//ControlAction/controlledProcessReceiver"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Feedback" eSuperTypes="#//ControlStructureElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controllerFeedbackReceiver"
+        upperBound="-1" eType="#//ControlStructure" eOpposite="#//ControlStructure/sendsFeedbacks"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Controller" eSuperTypes="#//ControlStructure">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="receivedCommands" upperBound="-1"
-        eType="#//ControlAction" eOpposite="#//ControlAction/controllerReceiver"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="receivedFeedbacks" lowerBound="1"
-        upperBound="-1" eType="#//Feedback" eOpposite="#//Feedback/controllerReceiver"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sentCommands" upperBound="-1"
-        eType="#//ControlAction" eOpposite="#//ControlAction/contollerSender"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sentFeedbacks" lowerBound="1"
-        upperBound="-1" eType="#//Feedback" eOpposite="#//Feedback/controllerSender"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ControlStructure" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataFlow" abstract="true" eSuperTypes="#//ControlStructure">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dataElment" upperBound="-1"
-        eType="#//DataElment" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ControlAction" eSuperTypes="#//DataFlow">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controllerReceiver" eType="#//Controller"
-        eOpposite="#//Controller/receivedCommands"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hazards" upperBound="-1"
-        eType="#//Hazard" eOpposite="#//Hazard/unsafeControlActions"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contollerSender" eType="#//Controller"
-        eOpposite="#//Controller/sentCommands"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controlledProcessReceiver"
-        eType="#//ControlledProcess" eOpposite="#//ControlledProcess/controlledProcessReceivedCommands"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataElment">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OtherInformation" eSuperTypes="#//ControlStructureElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ccontrollerReceiverInfo"
+        upperBound="-1" eType="#//ControlStructure" eOpposite="#//ControlStructure/controllerSendsInfo"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ControledProcessRecevierInfo"
+        eType="#//ControlledProcess" eOpposite="#//ControlledProcess/controledProcessSendsInfo"/>
   </eClassifiers>
 </ecore:EPackage>

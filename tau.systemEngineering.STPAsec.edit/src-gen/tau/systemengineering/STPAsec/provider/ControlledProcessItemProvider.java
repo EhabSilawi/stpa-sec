@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+
 import tau.systemengineering.STPAsec.ControlledProcess;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 
@@ -19,7 +20,7 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ControlledProcessItemProvider extends ControlStructureItemProvider {
+public class ControlledProcessItemProvider extends ControlStructureElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -41,42 +42,41 @@ public class ControlledProcessItemProvider extends ControlStructureItemProvider 
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSentFeedbacksPropertyDescriptor(object);
-			addControlledProcessReceivedCommandsPropertyDescriptor(object);
+			addSendsFeedbacksPropertyDescriptor(object);
+			addControledProcessSendsInfoPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Sent Feedbacks feature.
+	 * This adds a property descriptor for the Sends Feedbacks feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSentFeedbacksPropertyDescriptor(Object object) {
+	protected void addSendsFeedbacksPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_ControlledProcess_sentFeedbacks_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_ControlledProcess_sentFeedbacks_feature",
+				getString("_UI_ControlledProcess_sendsFeedbacks_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ControlledProcess_sendsFeedbacks_feature",
 						"_UI_ControlledProcess_type"),
-				STPAsecPackage.Literals.CONTROLLED_PROCESS__SENT_FEEDBACKS, true, false, true, null, null, null));
+				STPAsecPackage.Literals.CONTROLLED_PROCESS__SENDS_FEEDBACKS, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Controlled Process Received Commands feature.
+	 * This adds a property descriptor for the Controled Process Sends Info feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addControlledProcessReceivedCommandsPropertyDescriptor(Object object) {
+	protected void addControledProcessSendsInfoPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_ControlledProcess_controlledProcessReceivedCommands_feature"),
+				getString("_UI_ControlledProcess_controledProcessSendsInfo_feature"),
 				getString("_UI_PropertyDescriptor_description",
-						"_UI_ControlledProcess_controlledProcessReceivedCommands_feature",
-						"_UI_ControlledProcess_type"),
-				STPAsecPackage.Literals.CONTROLLED_PROCESS__CONTROLLED_PROCESS_RECEIVED_COMMANDS, true, false, true,
-				null, null, null));
+						"_UI_ControlledProcess_controledProcessSendsInfo_feature", "_UI_ControlledProcess_type"),
+				STPAsecPackage.Literals.CONTROLLED_PROCESS__CONTROLED_PROCESS_SENDS_INFO, true, false, true, null, null,
+				null));
 	}
 
 	/**

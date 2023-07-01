@@ -11,7 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -20,7 +19,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import tau.systemengineering.STPAsec.STPASec;
 import tau.systemengineering.STPAsec.STPAsecFactory;
 import tau.systemengineering.STPAsec.STPAsecPackage;
@@ -70,7 +68,7 @@ public class STPASecItemProvider extends ItemProviderAdapter implements IEditing
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(STPAsecPackage.Literals.STPA_SEC__SYSTEM);
+			childrenFeatures.add(STPAsecPackage.Literals.STPA_SEC__SYSTEMS);
 		}
 		return childrenFeatures;
 	}
@@ -132,7 +130,7 @@ public class STPASecItemProvider extends ItemProviderAdapter implements IEditing
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(STPASec.class)) {
-		case STPAsecPackage.STPA_SEC__SYSTEM:
+		case STPAsecPackage.STPA_SEC__SYSTEMS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -150,7 +148,7 @@ public class STPASecItemProvider extends ItemProviderAdapter implements IEditing
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.STPA_SEC__SYSTEM,
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.STPA_SEC__SYSTEMS,
 				STPAsecFactory.eINSTANCE.createSystem()));
 	}
 

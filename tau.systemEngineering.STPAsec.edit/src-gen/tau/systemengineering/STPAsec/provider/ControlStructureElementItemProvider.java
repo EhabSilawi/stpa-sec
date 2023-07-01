@@ -21,16 +21,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import tau.systemengineering.STPAsec.ControlStructureElement;
 import tau.systemengineering.STPAsec.STPAsecPackage;
-import tau.systemengineering.STPAsec.SecurityRecommendation;
 
 /**
- * This is the item provider adapter for a {@link tau.systemengineering.STPAsec.SecurityRecommendation} object.
+ * This is the item provider adapter for a {@link tau.systemengineering.STPAsec.ControlStructureElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SecurityRecommendationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class ControlStructureElementItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -38,7 +38,7 @@ public class SecurityRecommendationItemProvider extends ItemProviderAdapter impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SecurityRecommendationItemProvider(AdapterFactory adapterFactory) {
+	public ControlStructureElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,53 +53,53 @@ public class SecurityRecommendationItemProvider extends ItemProviderAdapter impl
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIdPropertyDescriptor(object);
-			addSolutionPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Id feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_SecurityRecommendation_id_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_SecurityRecommendation_id_feature",
-								"_UI_SecurityRecommendation_type"),
-						STPAsecPackage.Literals.SECURITY_RECOMMENDATION__ID, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Solution feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSolutionPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_SecurityRecommendation_solution_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_SecurityRecommendation_solution_feature",
-						"_UI_SecurityRecommendation_type"),
-				STPAsecPackage.Literals.SECURITY_RECOMMENDATION__SOLUTION, true, false, false,
+				getString("_UI_ControlStructureElement_name_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ControlStructureElement_name_feature",
+						"_UI_ControlStructureElement_type"),
+				STPAsecPackage.Literals.CONTROL_STRUCTURE_ELEMENT__NAME, true, false, false,
 				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns SecurityRecommendation.gif.
+	 * This adds a property descriptor for the Description feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ControlStructureElement_description_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_ControlStructureElement_description_feature", "_UI_ControlStructureElement_type"),
+						STPAsecPackage.Literals.CONTROL_STRUCTURE_ELEMENT__DESCRIPTION, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This returns ControlStructureElement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/SecurityRecommendation"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ControlStructureElement"));
 	}
 
 	/**
@@ -120,8 +120,9 @@ public class SecurityRecommendationItemProvider extends ItemProviderAdapter impl
 	 */
 	@Override
 	public String getText(Object object) {
-		SecurityRecommendation securityRecommendation = (SecurityRecommendation) object;
-		return getString("_UI_SecurityRecommendation_type") + " " + securityRecommendation.getId();
+		String label = ((ControlStructureElement) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_ControlStructureElement_type")
+				: getString("_UI_ControlStructureElement_type") + " " + label;
 	}
 
 	/**
@@ -135,9 +136,9 @@ public class SecurityRecommendationItemProvider extends ItemProviderAdapter impl
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SecurityRecommendation.class)) {
-		case STPAsecPackage.SECURITY_RECOMMENDATION__ID:
-		case STPAsecPackage.SECURITY_RECOMMENDATION__SOLUTION:
+		switch (notification.getFeatureID(ControlStructureElement.class)) {
+		case STPAsecPackage.CONTROL_STRUCTURE_ELEMENT__NAME:
+		case STPAsecPackage.CONTROL_STRUCTURE_ELEMENT__DESCRIPTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

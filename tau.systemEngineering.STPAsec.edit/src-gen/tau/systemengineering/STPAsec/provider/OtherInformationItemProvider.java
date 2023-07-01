@@ -11,23 +11,23 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import tau.systemengineering.STPAsec.Feedback;
+import tau.systemengineering.STPAsec.OtherInformation;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 
 /**
- * This is the item provider adapter for a {@link tau.systemengineering.STPAsec.Feedback} object.
+ * This is the item provider adapter for a {@link tau.systemengineering.STPAsec.OtherInformation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeedbackItemProvider extends ControlStructureElementItemProvider {
+public class OtherInformationItemProvider extends ControlStructureElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeedbackItemProvider(AdapterFactory adapterFactory) {
+	public OtherInformationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -42,35 +42,53 @@ public class FeedbackItemProvider extends ControlStructureElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addControllerFeedbackReceiverPropertyDescriptor(object);
+			addCcontrollerReceiverInfoPropertyDescriptor(object);
+			addControledProcessRecevierInfoPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Controller Feedback Receiver feature.
+	 * This adds a property descriptor for the Ccontroller Receiver Info feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addControllerFeedbackReceiverPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_Feedback_controllerFeedbackReceiver_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Feedback_controllerFeedbackReceiver_feature",
-						"_UI_Feedback_type"),
-				STPAsecPackage.Literals.FEEDBACK__CONTROLLER_FEEDBACK_RECEIVER, true, false, true, null, null, null));
+	protected void addCcontrollerReceiverInfoPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_OtherInformation_ccontrollerReceiverInfo_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_OtherInformation_ccontrollerReceiverInfo_feature", "_UI_OtherInformation_type"),
+						STPAsecPackage.Literals.OTHER_INFORMATION__CCONTROLLER_RECEIVER_INFO, true, false, true, null,
+						null, null));
 	}
 
 	/**
-	 * This returns Feedback.gif.
+	 * This adds a property descriptor for the Controled Process Recevier Info feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControledProcessRecevierInfoPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_OtherInformation_ControledProcessRecevierInfo_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_OtherInformation_ControledProcessRecevierInfo_feature", "_UI_OtherInformation_type"),
+				STPAsecPackage.Literals.OTHER_INFORMATION__CONTROLED_PROCESS_RECEVIER_INFO, true, false, true, null,
+				null, null));
+	}
+
+	/**
+	 * This returns OtherInformation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Feedback"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/OtherInformation"));
 	}
 
 	/**
@@ -91,9 +109,9 @@ public class FeedbackItemProvider extends ControlStructureElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Feedback) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Feedback_type")
-				: getString("_UI_Feedback_type") + " " + label;
+		String label = ((OtherInformation) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_OtherInformation_type")
+				: getString("_UI_OtherInformation_type") + " " + label;
 	}
 
 	/**

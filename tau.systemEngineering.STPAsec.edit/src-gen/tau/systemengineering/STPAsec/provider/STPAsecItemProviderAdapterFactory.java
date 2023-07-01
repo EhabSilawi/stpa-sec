@@ -73,95 +73,26 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.LossScenario} instances.
+	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.STPASec} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LossScenarioItemProvider lossScenarioItemProvider;
+	protected STPASecItemProvider stpaSecItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.LossScenario}.
+	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.STPASec}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createLossScenarioAdapter() {
-		if (lossScenarioItemProvider == null) {
-			lossScenarioItemProvider = new LossScenarioItemProvider(this);
+	public Adapter createSTPASecAdapter() {
+		if (stpaSecItemProvider == null) {
+			stpaSecItemProvider = new STPASecItemProvider(this);
 		}
 
-		return lossScenarioItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.Hazard} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected HazardItemProvider hazardItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.Hazard}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createHazardAdapter() {
-		if (hazardItemProvider == null) {
-			hazardItemProvider = new HazardItemProvider(this);
-		}
-
-		return hazardItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.MissionGoal} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MissionGoalItemProvider missionGoalItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.MissionGoal}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMissionGoalAdapter() {
-		if (missionGoalItemProvider == null) {
-			missionGoalItemProvider = new MissionGoalItemProvider(this);
-		}
-
-		return missionGoalItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.SecurityRecommendation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SecurityRecommendationItemProvider securityRecommendationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.SecurityRecommendation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSecurityRecommendationAdapter() {
-		if (securityRecommendationItemProvider == null) {
-			securityRecommendationItemProvider = new SecurityRecommendationItemProvider(this);
-		}
-
-		return securityRecommendationItemProvider;
+		return stpaSecItemProvider;
 	}
 
 	/**
@@ -188,49 +119,26 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.STPASec} instances.
+	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.ControlStructure} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected STPASecItemProvider stpaSecItemProvider;
+	protected ControlStructureItemProvider controlStructureItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.STPASec}.
+	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.ControlStructure}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSTPASecAdapter() {
-		if (stpaSecItemProvider == null) {
-			stpaSecItemProvider = new STPASecItemProvider(this);
+	public Adapter createControlStructureAdapter() {
+		if (controlStructureItemProvider == null) {
+			controlStructureItemProvider = new ControlStructureItemProvider(this);
 		}
 
-		return stpaSecItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.Feedback} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FeedbackItemProvider feedbackItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.Feedback}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFeedbackAdapter() {
-		if (feedbackItemProvider == null) {
-			feedbackItemProvider = new FeedbackItemProvider(this);
-		}
-
-		return feedbackItemProvider;
+		return controlStructureItemProvider;
 	}
 
 	/**
@@ -257,29 +165,6 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.Controller} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ControllerItemProvider controllerItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.Controller}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createControllerAdapter() {
-		if (controllerItemProvider == null) {
-			controllerItemProvider = new ControllerItemProvider(this);
-		}
-
-		return controllerItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.ControlAction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -303,26 +188,49 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.DataElment} instances.
+	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.Feedback} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DataElmentItemProvider dataElmentItemProvider;
+	protected FeedbackItemProvider feedbackItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.DataElment}.
+	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.Feedback}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createDataElmentAdapter() {
-		if (dataElmentItemProvider == null) {
-			dataElmentItemProvider = new DataElmentItemProvider(this);
+	public Adapter createFeedbackAdapter() {
+		if (feedbackItemProvider == null) {
+			feedbackItemProvider = new FeedbackItemProvider(this);
 		}
 
-		return dataElmentItemProvider;
+		return feedbackItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.OtherInformation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OtherInformationItemProvider otherInformationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.OtherInformation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOtherInformationAdapter() {
+		if (otherInformationItemProvider == null) {
+			otherInformationItemProvider = new OtherInformationItemProvider(this);
+		}
+
+		return otherInformationItemProvider;
 	}
 
 	/**
@@ -424,28 +332,20 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 	 * @generated
 	 */
 	public void dispose() {
-		if (lossScenarioItemProvider != null)
-			lossScenarioItemProvider.dispose();
-		if (hazardItemProvider != null)
-			hazardItemProvider.dispose();
-		if (missionGoalItemProvider != null)
-			missionGoalItemProvider.dispose();
-		if (securityRecommendationItemProvider != null)
-			securityRecommendationItemProvider.dispose();
-		if (systemItemProvider != null)
-			systemItemProvider.dispose();
 		if (stpaSecItemProvider != null)
 			stpaSecItemProvider.dispose();
-		if (feedbackItemProvider != null)
-			feedbackItemProvider.dispose();
+		if (systemItemProvider != null)
+			systemItemProvider.dispose();
+		if (controlStructureItemProvider != null)
+			controlStructureItemProvider.dispose();
 		if (controlledProcessItemProvider != null)
 			controlledProcessItemProvider.dispose();
-		if (controllerItemProvider != null)
-			controllerItemProvider.dispose();
 		if (controlActionItemProvider != null)
 			controlActionItemProvider.dispose();
-		if (dataElmentItemProvider != null)
-			dataElmentItemProvider.dispose();
+		if (feedbackItemProvider != null)
+			feedbackItemProvider.dispose();
+		if (otherInformationItemProvider != null)
+			otherInformationItemProvider.dispose();
 	}
 
 }

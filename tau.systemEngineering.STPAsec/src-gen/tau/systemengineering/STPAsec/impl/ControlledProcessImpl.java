@@ -3,16 +3,20 @@
 package tau.systemengineering.STPAsec.impl;
 
 import java.util.Collection;
+import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import tau.systemengineering.STPAsec.ControlAction;
 import tau.systemengineering.STPAsec.ControlledProcess;
 import tau.systemengineering.STPAsec.Feedback;
+import tau.systemengineering.STPAsec.OtherInformation;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 
 /**
@@ -23,31 +27,32 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tau.systemengineering.STPAsec.impl.ControlledProcessImpl#getSentFeedbacks <em>Sent Feedbacks</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.ControlledProcessImpl#getControlledProcessReceivedCommands <em>Controlled Process Received Commands</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.ControlledProcessImpl#getSendsFeedbacks <em>Sends Feedbacks</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.ControlledProcessImpl#getControledProcessSendsInfo <em>Controled Process Sends Info</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ControlledProcessImpl extends ControlStructureImpl implements ControlledProcess {
+public class ControlledProcessImpl extends ControlStructureElementImpl implements ControlledProcess {
 	/**
-	 * The cached value of the '{@link #getSentFeedbacks() <em>Sent Feedbacks</em>}' reference list.
+	 * The cached value of the '{@link #getSendsFeedbacks() <em>Sends Feedbacks</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSentFeedbacks()
+	 * @see #getSendsFeedbacks()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Feedback> sentFeedbacks;
+	protected Feedback sendsFeedbacks;
+
 	/**
-	 * The cached value of the '{@link #getControlledProcessReceivedCommands() <em>Controlled Process Received Commands</em>}' reference list.
+	 * The cached value of the '{@link #getControledProcessSendsInfo() <em>Controled Process Sends Info</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getControlledProcessReceivedCommands()
+	 * @see #getControledProcessSendsInfo()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ControlAction> controlledProcessReceivedCommands;
+	protected EList<OtherInformation> controledProcessSendsInfo;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,13 +78,17 @@ public class ControlledProcessImpl extends ControlStructureImpl implements Contr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Feedback> getSentFeedbacks() {
-		if (sentFeedbacks == null) {
-			sentFeedbacks = new EObjectWithInverseResolvingEList<Feedback>(Feedback.class, this,
-					STPAsecPackage.CONTROLLED_PROCESS__SENT_FEEDBACKS,
-					STPAsecPackage.FEEDBACK__CONTROLLED_PROCESS_SENDER);
+	public Feedback getSendsFeedbacks() {
+		if (sendsFeedbacks != null && sendsFeedbacks.eIsProxy()) {
+			InternalEObject oldSendsFeedbacks = (InternalEObject) sendsFeedbacks;
+			sendsFeedbacks = (Feedback) eResolveProxy(oldSendsFeedbacks);
+			if (sendsFeedbacks != oldSendsFeedbacks) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							STPAsecPackage.CONTROLLED_PROCESS__SENDS_FEEDBACKS, oldSendsFeedbacks, sendsFeedbacks));
+			}
 		}
-		return sentFeedbacks;
+		return sendsFeedbacks;
 	}
 
 	/**
@@ -87,13 +96,35 @@ public class ControlledProcessImpl extends ControlStructureImpl implements Contr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ControlAction> getControlledProcessReceivedCommands() {
-		if (controlledProcessReceivedCommands == null) {
-			controlledProcessReceivedCommands = new EObjectWithInverseResolvingEList<ControlAction>(ControlAction.class,
-					this, STPAsecPackage.CONTROLLED_PROCESS__CONTROLLED_PROCESS_RECEIVED_COMMANDS,
-					STPAsecPackage.CONTROL_ACTION__CONTROLLED_PROCESS_RECEIVER);
+	public Feedback basicGetSendsFeedbacks() {
+		return sendsFeedbacks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSendsFeedbacks(Feedback newSendsFeedbacks) {
+		Feedback oldSendsFeedbacks = sendsFeedbacks;
+		sendsFeedbacks = newSendsFeedbacks;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.CONTROLLED_PROCESS__SENDS_FEEDBACKS,
+					oldSendsFeedbacks, sendsFeedbacks));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<OtherInformation> getControledProcessSendsInfo() {
+		if (controledProcessSendsInfo == null) {
+			controledProcessSendsInfo = new EObjectWithInverseResolvingEList<OtherInformation>(OtherInformation.class,
+					this, STPAsecPackage.CONTROLLED_PROCESS__CONTROLED_PROCESS_SENDS_INFO,
+					STPAsecPackage.OTHER_INFORMATION__CONTROLED_PROCESS_RECEVIER_INFO);
 		}
-		return controlledProcessReceivedCommands;
+		return controledProcessSendsInfo;
 	}
 
 	/**
@@ -105,10 +136,8 @@ public class ControlledProcessImpl extends ControlStructureImpl implements Contr
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case STPAsecPackage.CONTROLLED_PROCESS__SENT_FEEDBACKS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getSentFeedbacks()).basicAdd(otherEnd, msgs);
-		case STPAsecPackage.CONTROLLED_PROCESS__CONTROLLED_PROCESS_RECEIVED_COMMANDS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getControlledProcessReceivedCommands())
+		case STPAsecPackage.CONTROLLED_PROCESS__CONTROLED_PROCESS_SENDS_INFO:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getControledProcessSendsInfo())
 					.basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -122,10 +151,8 @@ public class ControlledProcessImpl extends ControlStructureImpl implements Contr
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case STPAsecPackage.CONTROLLED_PROCESS__SENT_FEEDBACKS:
-			return ((InternalEList<?>) getSentFeedbacks()).basicRemove(otherEnd, msgs);
-		case STPAsecPackage.CONTROLLED_PROCESS__CONTROLLED_PROCESS_RECEIVED_COMMANDS:
-			return ((InternalEList<?>) getControlledProcessReceivedCommands()).basicRemove(otherEnd, msgs);
+		case STPAsecPackage.CONTROLLED_PROCESS__CONTROLED_PROCESS_SENDS_INFO:
+			return ((InternalEList<?>) getControledProcessSendsInfo()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -138,10 +165,12 @@ public class ControlledProcessImpl extends ControlStructureImpl implements Contr
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case STPAsecPackage.CONTROLLED_PROCESS__SENT_FEEDBACKS:
-			return getSentFeedbacks();
-		case STPAsecPackage.CONTROLLED_PROCESS__CONTROLLED_PROCESS_RECEIVED_COMMANDS:
-			return getControlledProcessReceivedCommands();
+		case STPAsecPackage.CONTROLLED_PROCESS__SENDS_FEEDBACKS:
+			if (resolve)
+				return getSendsFeedbacks();
+			return basicGetSendsFeedbacks();
+		case STPAsecPackage.CONTROLLED_PROCESS__CONTROLED_PROCESS_SENDS_INFO:
+			return getControledProcessSendsInfo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -155,13 +184,12 @@ public class ControlledProcessImpl extends ControlStructureImpl implements Contr
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case STPAsecPackage.CONTROLLED_PROCESS__SENT_FEEDBACKS:
-			getSentFeedbacks().clear();
-			getSentFeedbacks().addAll((Collection<? extends Feedback>) newValue);
+		case STPAsecPackage.CONTROLLED_PROCESS__SENDS_FEEDBACKS:
+			setSendsFeedbacks((Feedback) newValue);
 			return;
-		case STPAsecPackage.CONTROLLED_PROCESS__CONTROLLED_PROCESS_RECEIVED_COMMANDS:
-			getControlledProcessReceivedCommands().clear();
-			getControlledProcessReceivedCommands().addAll((Collection<? extends ControlAction>) newValue);
+		case STPAsecPackage.CONTROLLED_PROCESS__CONTROLED_PROCESS_SENDS_INFO:
+			getControledProcessSendsInfo().clear();
+			getControledProcessSendsInfo().addAll((Collection<? extends OtherInformation>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -175,11 +203,11 @@ public class ControlledProcessImpl extends ControlStructureImpl implements Contr
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case STPAsecPackage.CONTROLLED_PROCESS__SENT_FEEDBACKS:
-			getSentFeedbacks().clear();
+		case STPAsecPackage.CONTROLLED_PROCESS__SENDS_FEEDBACKS:
+			setSendsFeedbacks((Feedback) null);
 			return;
-		case STPAsecPackage.CONTROLLED_PROCESS__CONTROLLED_PROCESS_RECEIVED_COMMANDS:
-			getControlledProcessReceivedCommands().clear();
+		case STPAsecPackage.CONTROLLED_PROCESS__CONTROLED_PROCESS_SENDS_INFO:
+			getControledProcessSendsInfo().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -193,10 +221,10 @@ public class ControlledProcessImpl extends ControlStructureImpl implements Contr
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case STPAsecPackage.CONTROLLED_PROCESS__SENT_FEEDBACKS:
-			return sentFeedbacks != null && !sentFeedbacks.isEmpty();
-		case STPAsecPackage.CONTROLLED_PROCESS__CONTROLLED_PROCESS_RECEIVED_COMMANDS:
-			return controlledProcessReceivedCommands != null && !controlledProcessReceivedCommands.isEmpty();
+		case STPAsecPackage.CONTROLLED_PROCESS__SENDS_FEEDBACKS:
+			return sendsFeedbacks != null;
+		case STPAsecPackage.CONTROLLED_PROCESS__CONTROLED_PROCESS_SENDS_INFO:
+			return controledProcessSendsInfo != null && !controledProcessSendsInfo.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

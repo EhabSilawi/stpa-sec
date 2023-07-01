@@ -11,17 +11,12 @@ import org.eclipse.emf.ecore.EObject;
 
 import tau.systemengineering.STPAsec.ControlAction;
 import tau.systemengineering.STPAsec.ControlStructure;
+import tau.systemengineering.STPAsec.ControlStructureElement;
 import tau.systemengineering.STPAsec.ControlledProcess;
-import tau.systemengineering.STPAsec.Controller;
-import tau.systemengineering.STPAsec.DataElment;
-import tau.systemengineering.STPAsec.DataFlow;
 import tau.systemengineering.STPAsec.Feedback;
-import tau.systemengineering.STPAsec.Hazard;
-import tau.systemengineering.STPAsec.LossScenario;
-import tau.systemengineering.STPAsec.MissionGoal;
+import tau.systemengineering.STPAsec.OtherInformation;
 import tau.systemengineering.STPAsec.STPASec;
 import tau.systemengineering.STPAsec.STPAsecPackage;
-import tau.systemengineering.STPAsec.SecurityRecommendation;
 
 /**
  * <!-- begin-user-doc -->
@@ -79,23 +74,8 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected STPAsecSwitch<Adapter> modelSwitch = new STPAsecSwitch<Adapter>() {
 		@Override
-		public Adapter caseLossScenario(LossScenario object) {
-			return createLossScenarioAdapter();
-		}
-
-		@Override
-		public Adapter caseHazard(Hazard object) {
-			return createHazardAdapter();
-		}
-
-		@Override
-		public Adapter caseMissionGoal(MissionGoal object) {
-			return createMissionGoalAdapter();
-		}
-
-		@Override
-		public Adapter caseSecurityRecommendation(SecurityRecommendation object) {
-			return createSecurityRecommendationAdapter();
+		public Adapter caseSTPASec(STPASec object) {
+			return createSTPASecAdapter();
 		}
 
 		@Override
@@ -104,13 +84,13 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseSTPASec(STPASec object) {
-			return createSTPASecAdapter();
+		public Adapter caseControlStructure(ControlStructure object) {
+			return createControlStructureAdapter();
 		}
 
 		@Override
-		public Adapter caseFeedback(Feedback object) {
-			return createFeedbackAdapter();
+		public Adapter caseControlStructureElement(ControlStructureElement object) {
+			return createControlStructureElementAdapter();
 		}
 
 		@Override
@@ -119,28 +99,18 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseController(Controller object) {
-			return createControllerAdapter();
-		}
-
-		@Override
-		public Adapter caseControlStructure(ControlStructure object) {
-			return createControlStructureAdapter();
-		}
-
-		@Override
-		public Adapter caseDataFlow(DataFlow object) {
-			return createDataFlowAdapter();
-		}
-
-		@Override
 		public Adapter caseControlAction(ControlAction object) {
 			return createControlActionAdapter();
 		}
 
 		@Override
-		public Adapter caseDataElment(DataElment object) {
-			return createDataElmentAdapter();
+		public Adapter caseFeedback(Feedback object) {
+			return createFeedbackAdapter();
+		}
+
+		@Override
+		public Adapter caseOtherInformation(OtherInformation object) {
+			return createOtherInformationAdapter();
 		}
 
 		@Override
@@ -163,58 +133,16 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.LossScenario <em>Loss Scenario</em>}'.
+	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.STPASec <em>STPA Sec</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.LossScenario
+	 * @see tau.systemengineering.STPAsec.STPASec
 	 * @generated
 	 */
-	public Adapter createLossScenarioAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.Hazard <em>Hazard</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.Hazard
-	 * @generated
-	 */
-	public Adapter createHazardAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.MissionGoal <em>Mission Goal</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.MissionGoal
-	 * @generated
-	 */
-	public Adapter createMissionGoalAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.SecurityRecommendation <em>Security Recommendation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.SecurityRecommendation
-	 * @generated
-	 */
-	public Adapter createSecurityRecommendationAdapter() {
+	public Adapter createSTPASecAdapter() {
 		return null;
 	}
 
@@ -233,30 +161,30 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.STPASec <em>STPA Sec</em>}'.
+	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.ControlStructure <em>Control Structure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.STPASec
+	 * @see tau.systemengineering.STPAsec.ControlStructure
 	 * @generated
 	 */
-	public Adapter createSTPASecAdapter() {
+	public Adapter createControlStructureAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.Feedback <em>Feedback</em>}'.
+	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.ControlStructureElement <em>Control Structure Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.Feedback
+	 * @see tau.systemengineering.STPAsec.ControlStructureElement
 	 * @generated
 	 */
-	public Adapter createFeedbackAdapter() {
+	public Adapter createControlStructureElementAdapter() {
 		return null;
 	}
 
@@ -275,34 +203,6 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.Controller <em>Controller</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.Controller
-	 * @generated
-	 */
-	public Adapter createControllerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.ControlStructure <em>Control Structure</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.ControlStructure
-	 * @generated
-	 */
-	public Adapter createControlStructureAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.ControlAction <em>Control Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -317,30 +217,30 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.DataElment <em>Data Elment</em>}'.
+	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.Feedback <em>Feedback</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.DataElment
+	 * @see tau.systemengineering.STPAsec.Feedback
 	 * @generated
 	 */
-	public Adapter createDataElmentAdapter() {
+	public Adapter createFeedbackAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.DataFlow <em>Data Flow</em>}'.
+	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.OtherInformation <em>Other Information</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.DataFlow
+	 * @see tau.systemengineering.STPAsec.OtherInformation
 	 * @generated
 	 */
-	public Adapter createDataFlowAdapter() {
+	public Adapter createOtherInformationAdapter() {
 		return null;
 	}
 

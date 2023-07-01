@@ -20,7 +20,7 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ControlActionItemProvider extends DataFlowItemProvider {
+public class ControlActionItemProvider extends ControlStructureElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -42,74 +42,42 @@ public class ControlActionItemProvider extends DataFlowItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addControllerReceiverPropertyDescriptor(object);
-			addHazardsPropertyDescriptor(object);
-			addContollerSenderPropertyDescriptor(object);
-			addControlledProcessReceiverPropertyDescriptor(object);
+			addControllerCommandReceiverPropertyDescriptor(object);
+			addControledProccessReceiverCommandsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Controller Receiver feature.
+	 * This adds a property descriptor for the Controller Command Receiver feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addControllerReceiverPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ControlAction_controllerReceiver_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_controllerReceiver_feature",
-								"_UI_ControlAction_type"),
-						STPAsecPackage.Literals.CONTROL_ACTION__CONTROLLER_RECEIVER, true, false, true, null, null,
-						null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Hazards feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHazardsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ControlAction_hazards_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_hazards_feature",
-								"_UI_ControlAction_type"),
-						STPAsecPackage.Literals.CONTROL_ACTION__HAZARDS, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Contoller Sender feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContollerSenderPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ControlAction_contollerSender_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_contollerSender_feature",
-								"_UI_ControlAction_type"),
-						STPAsecPackage.Literals.CONTROL_ACTION__CONTOLLER_SENDER, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Controlled Process Receiver feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addControlledProcessReceiverPropertyDescriptor(Object object) {
+	protected void addControllerCommandReceiverPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_ControlAction_controlledProcessReceiver_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_controlledProcessReceiver_feature",
+				getString("_UI_ControlAction_controllerCommandReceiver_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_controllerCommandReceiver_feature",
 						"_UI_ControlAction_type"),
-				STPAsecPackage.Literals.CONTROL_ACTION__CONTROLLED_PROCESS_RECEIVER, true, false, true, null, null,
+				STPAsecPackage.Literals.CONTROL_ACTION__CONTROLLER_COMMAND_RECEIVER, true, false, true, null, null,
 				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Controled Proccess Receiver Commands feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControledProccessReceiverCommandsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_ControlAction_controledProccessReceiverCommands_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_ControlAction_controledProccessReceiverCommands_feature", "_UI_ControlAction_type"),
+				STPAsecPackage.Literals.CONTROL_ACTION__CONTROLED_PROCCESS_RECEIVER_COMMANDS, true, false, true, null,
+				null, null));
 	}
 
 	/**

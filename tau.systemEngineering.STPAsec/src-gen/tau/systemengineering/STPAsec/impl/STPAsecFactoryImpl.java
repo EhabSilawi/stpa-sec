@@ -11,17 +11,13 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import tau.systemengineering.STPAsec.ControlAction;
+import tau.systemengineering.STPAsec.ControlStructure;
 import tau.systemengineering.STPAsec.ControlledProcess;
-import tau.systemengineering.STPAsec.Controller;
-import tau.systemengineering.STPAsec.DataElment;
 import tau.systemengineering.STPAsec.Feedback;
-import tau.systemengineering.STPAsec.Hazard;
-import tau.systemengineering.STPAsec.LossScenario;
-import tau.systemengineering.STPAsec.MissionGoal;
+import tau.systemengineering.STPAsec.OtherInformation;
 import tau.systemengineering.STPAsec.STPASec;
 import tau.systemengineering.STPAsec.STPAsecFactory;
 import tau.systemengineering.STPAsec.STPAsecPackage;
-import tau.systemengineering.STPAsec.SecurityRecommendation;
 
 /**
  * <!-- begin-user-doc -->
@@ -67,81 +63,23 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case STPAsecPackage.LOSS_SCENARIO:
-			return createLossScenario();
-		case STPAsecPackage.HAZARD:
-			return createHazard();
-		case STPAsecPackage.MISSION_GOAL:
-			return createMissionGoal();
-		case STPAsecPackage.SECURITY_RECOMMENDATION:
-			return createSecurityRecommendation();
-		case STPAsecPackage.SYSTEM:
-			return createSystem();
 		case STPAsecPackage.STPA_SEC:
 			return createSTPASec();
-		case STPAsecPackage.FEEDBACK:
-			return createFeedback();
+		case STPAsecPackage.SYSTEM:
+			return createSystem();
+		case STPAsecPackage.CONTROL_STRUCTURE:
+			return createControlStructure();
 		case STPAsecPackage.CONTROLLED_PROCESS:
 			return createControlledProcess();
-		case STPAsecPackage.CONTROLLER:
-			return createController();
 		case STPAsecPackage.CONTROL_ACTION:
 			return createControlAction();
-		case STPAsecPackage.DATA_ELMENT:
-			return createDataElment();
+		case STPAsecPackage.FEEDBACK:
+			return createFeedback();
+		case STPAsecPackage.OTHER_INFORMATION:
+			return createOtherInformation();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public LossScenario createLossScenario() {
-		LossScenarioImpl lossScenario = new LossScenarioImpl();
-		return lossScenario;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Hazard createHazard() {
-		HazardImpl hazard = new HazardImpl();
-		return hazard;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MissionGoal createMissionGoal() {
-		MissionGoalImpl missionGoal = new MissionGoalImpl();
-		return missionGoal;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SecurityRecommendation createSecurityRecommendation() {
-		SecurityRecommendationImpl securityRecommendation = new SecurityRecommendationImpl();
-		return securityRecommendation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public tau.systemengineering.STPAsec.System createSystem() {
-		SystemImpl system = new SystemImpl();
-		return system;
 	}
 
 	/**
@@ -159,9 +97,19 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Feedback createFeedback() {
-		FeedbackImpl feedback = new FeedbackImpl();
-		return feedback;
+	public tau.systemengineering.STPAsec.System createSystem() {
+		SystemImpl system = new SystemImpl();
+		return system;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ControlStructure createControlStructure() {
+		ControlStructureImpl controlStructure = new ControlStructureImpl();
+		return controlStructure;
 	}
 
 	/**
@@ -179,16 +127,6 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Controller createController() {
-		ControllerImpl controller = new ControllerImpl();
-		return controller;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ControlAction createControlAction() {
 		ControlActionImpl controlAction = new ControlActionImpl();
 		return controlAction;
@@ -199,9 +137,19 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataElment createDataElment() {
-		DataElmentImpl dataElment = new DataElmentImpl();
-		return dataElment;
+	public Feedback createFeedback() {
+		FeedbackImpl feedback = new FeedbackImpl();
+		return feedback;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OtherInformation createOtherInformation() {
+		OtherInformationImpl otherInformation = new OtherInformationImpl();
+		return otherInformation;
 	}
 
 	/**

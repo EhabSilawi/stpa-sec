@@ -2,39 +2,32 @@
  */
 package tau.systemengineering.STPAsec.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
-import tau.systemengineering.STPAsec.LossScenario;
-import tau.systemengineering.STPAsec.MissionGoal;
+import tau.systemengineering.STPAsec.ControlStructureElement;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Mission Goal</b></em>'.
+ * An implementation of the model object '<em><b>Control Structure Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tau.systemengineering.STPAsec.impl.MissionGoalImpl#getName <em>Name</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.MissionGoalImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.MissionGoalImpl#getIssues <em>Issues</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.ControlStructureElementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.ControlStructureElementImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MissionGoalImpl extends MinimalEObjectImpl.Container implements MissionGoal {
+public abstract class ControlStructureElementImpl extends MinimalEObjectImpl.Container
+		implements ControlStructureElement {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -76,21 +69,11 @@ public class MissionGoalImpl extends MinimalEObjectImpl.Container implements Mis
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getIssues() <em>Issues</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIssues()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<LossScenario> issues;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MissionGoalImpl() {
+	protected ControlStructureElementImpl() {
 		super();
 	}
 
@@ -101,7 +84,7 @@ public class MissionGoalImpl extends MinimalEObjectImpl.Container implements Mis
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return STPAsecPackage.Literals.MISSION_GOAL;
+		return STPAsecPackage.Literals.CONTROL_STRUCTURE_ELEMENT;
 	}
 
 	/**
@@ -122,7 +105,8 @@ public class MissionGoalImpl extends MinimalEObjectImpl.Container implements Mis
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.MISSION_GOAL__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.CONTROL_STRUCTURE_ELEMENT__NAME,
+					oldName, name));
 	}
 
 	/**
@@ -143,21 +127,8 @@ public class MissionGoalImpl extends MinimalEObjectImpl.Container implements Mis
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.MISSION_GOAL__DESCRIPTION,
+			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.CONTROL_STRUCTURE_ELEMENT__DESCRIPTION,
 					oldDescription, description));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<LossScenario> getIssues() {
-		if (issues == null) {
-			issues = new EObjectResolvingEList<LossScenario>(LossScenario.class, this,
-					STPAsecPackage.MISSION_GOAL__ISSUES);
-		}
-		return issues;
 	}
 
 	/**
@@ -168,12 +139,10 @@ public class MissionGoalImpl extends MinimalEObjectImpl.Container implements Mis
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case STPAsecPackage.MISSION_GOAL__NAME:
+		case STPAsecPackage.CONTROL_STRUCTURE_ELEMENT__NAME:
 			return getName();
-		case STPAsecPackage.MISSION_GOAL__DESCRIPTION:
+		case STPAsecPackage.CONTROL_STRUCTURE_ELEMENT__DESCRIPTION:
 			return getDescription();
-		case STPAsecPackage.MISSION_GOAL__ISSUES:
-			return getIssues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,19 +152,14 @@ public class MissionGoalImpl extends MinimalEObjectImpl.Container implements Mis
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case STPAsecPackage.MISSION_GOAL__NAME:
+		case STPAsecPackage.CONTROL_STRUCTURE_ELEMENT__NAME:
 			setName((String) newValue);
 			return;
-		case STPAsecPackage.MISSION_GOAL__DESCRIPTION:
+		case STPAsecPackage.CONTROL_STRUCTURE_ELEMENT__DESCRIPTION:
 			setDescription((String) newValue);
-			return;
-		case STPAsecPackage.MISSION_GOAL__ISSUES:
-			getIssues().clear();
-			getIssues().addAll((Collection<? extends LossScenario>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -209,14 +173,11 @@ public class MissionGoalImpl extends MinimalEObjectImpl.Container implements Mis
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case STPAsecPackage.MISSION_GOAL__NAME:
+		case STPAsecPackage.CONTROL_STRUCTURE_ELEMENT__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case STPAsecPackage.MISSION_GOAL__DESCRIPTION:
+		case STPAsecPackage.CONTROL_STRUCTURE_ELEMENT__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
-			return;
-		case STPAsecPackage.MISSION_GOAL__ISSUES:
-			getIssues().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -230,12 +191,10 @@ public class MissionGoalImpl extends MinimalEObjectImpl.Container implements Mis
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case STPAsecPackage.MISSION_GOAL__NAME:
+		case STPAsecPackage.CONTROL_STRUCTURE_ELEMENT__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case STPAsecPackage.MISSION_GOAL__DESCRIPTION:
+		case STPAsecPackage.CONTROL_STRUCTURE_ELEMENT__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		case STPAsecPackage.MISSION_GOAL__ISSUES:
-			return issues != null && !issues.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -259,4 +218,4 @@ public class MissionGoalImpl extends MinimalEObjectImpl.Container implements Mis
 		return result.toString();
 	}
 
-} //MissionGoalImpl
+} //ControlStructureElementImpl

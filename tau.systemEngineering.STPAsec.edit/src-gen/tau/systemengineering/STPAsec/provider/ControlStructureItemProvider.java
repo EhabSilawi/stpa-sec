@@ -9,6 +9,9 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -19,7 +22,9 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import tau.systemengineering.STPAsec.ControlStructure;
+import tau.systemengineering.STPAsec.STPAsecFactory;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 
 /**
@@ -52,7 +57,12 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addModelGoalPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
+			addSendsFeedbacksPropertyDescriptor(object);
+			addSendsCommandsPropertyDescriptor(object);
+			addControllerSendsInfoPropertyDescriptor(object);
+			addControllerPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -74,6 +84,22 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
+	 * This adds a property descriptor for the Model Goal feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addModelGoalPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ControlStructure_modelGoal_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ControlStructure_modelGoal_feature",
+								"_UI_ControlStructure_type"),
+						STPAsecPackage.Literals.CONTROL_STRUCTURE__MODEL_GOAL, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Description feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -87,6 +113,99 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 								"_UI_ControlStructure_type"),
 						STPAsecPackage.Literals.CONTROL_STRUCTURE__DESCRIPTION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sends Feedbacks feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSendsFeedbacksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_ControlStructure_sendsFeedbacks_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ControlStructure_sendsFeedbacks_feature",
+						"_UI_ControlStructure_type"),
+				STPAsecPackage.Literals.CONTROL_STRUCTURE__SENDS_FEEDBACKS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sends Commands feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSendsCommandsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ControlStructure_sendsCommands_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ControlStructure_sendsCommands_feature",
+								"_UI_ControlStructure_type"),
+						STPAsecPackage.Literals.CONTROL_STRUCTURE__SENDS_COMMANDS, true, false, true, null, null,
+						null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Controller Sends Info feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControllerSendsInfoPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_ControlStructure_controllerSendsInfo_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ControlStructure_controllerSendsInfo_feature",
+						"_UI_ControlStructure_type"),
+				STPAsecPackage.Literals.CONTROL_STRUCTURE__CONTROLLER_SENDS_INFO, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Controller feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControllerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ControlStructure_controller_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ControlStructure_controller_feature",
+								"_UI_ControlStructure_type"),
+						STPAsecPackage.Literals.CONTROL_STRUCTURE__CONTROLLER, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(STPAsecPackage.Literals.CONTROL_STRUCTURE__CONTROLLEDPROCESS);
+			childrenFeatures.add(STPAsecPackage.Literals.CONTROL_STRUCTURE__CONTROLACTION);
+			childrenFeatures.add(STPAsecPackage.Literals.CONTROL_STRUCTURE__FEEDBACK);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -136,8 +255,14 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 
 		switch (notification.getFeatureID(ControlStructure.class)) {
 		case STPAsecPackage.CONTROL_STRUCTURE__NAME:
+		case STPAsecPackage.CONTROL_STRUCTURE__MODEL_GOAL:
 		case STPAsecPackage.CONTROL_STRUCTURE__DESCRIPTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case STPAsecPackage.CONTROL_STRUCTURE__CONTROLLEDPROCESS:
+		case STPAsecPackage.CONTROL_STRUCTURE__CONTROLACTION:
+		case STPAsecPackage.CONTROL_STRUCTURE__FEEDBACK:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -153,6 +278,15 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__CONTROLLEDPROCESS,
+				STPAsecFactory.eINSTANCE.createControlledProcess()));
+
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__CONTROLACTION,
+				STPAsecFactory.eINSTANCE.createControlAction()));
+
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__FEEDBACK,
+				STPAsecFactory.eINSTANCE.createFeedback()));
 	}
 
 	/**

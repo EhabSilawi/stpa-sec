@@ -22,40 +22,13 @@ public interface STPAsecFactory extends EFactory {
 	STPAsecFactory eINSTANCE = tau.systemengineering.STPAsec.impl.STPAsecFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Loss Scenario</em>'.
+	 * Returns a new object of class '<em>STPA Sec</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Loss Scenario</em>'.
+	 * @return a new object of class '<em>STPA Sec</em>'.
 	 * @generated
 	 */
-	LossScenario createLossScenario();
-
-	/**
-	 * Returns a new object of class '<em>Hazard</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Hazard</em>'.
-	 * @generated
-	 */
-	Hazard createHazard();
-
-	/**
-	 * Returns a new object of class '<em>Mission Goal</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Mission Goal</em>'.
-	 * @generated
-	 */
-	MissionGoal createMissionGoal();
-
-	/**
-	 * Returns a new object of class '<em>Security Recommendation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Security Recommendation</em>'.
-	 * @generated
-	 */
-	SecurityRecommendation createSecurityRecommendation();
+	STPASec createSTPASec();
 
 	/**
 	 * Returns a new object of class '<em>System</em>'.
@@ -67,22 +40,13 @@ public interface STPAsecFactory extends EFactory {
 	System createSystem();
 
 	/**
-	 * Returns a new object of class '<em>STPA Sec</em>'.
+	 * Returns a new object of class '<em>Control Structure</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>STPA Sec</em>'.
+	 * @return a new object of class '<em>Control Structure</em>'.
 	 * @generated
 	 */
-	STPASec createSTPASec();
-
-	/**
-	 * Returns a new object of class '<em>Feedback</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Feedback</em>'.
-	 * @generated
-	 */
-	Feedback createFeedback();
+	ControlStructure createControlStructure();
 
 	/**
 	 * Returns a new object of class '<em>Controlled Process</em>'.
@@ -94,15 +58,6 @@ public interface STPAsecFactory extends EFactory {
 	ControlledProcess createControlledProcess();
 
 	/**
-	 * Returns a new object of class '<em>Controller</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Controller</em>'.
-	 * @generated
-	 */
-	Controller createController();
-
-	/**
 	 * Returns a new object of class '<em>Control Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,13 +67,22 @@ public interface STPAsecFactory extends EFactory {
 	ControlAction createControlAction();
 
 	/**
-	 * Returns a new object of class '<em>Data Elment</em>'.
+	 * Returns a new object of class '<em>Feedback</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data Elment</em>'.
+	 * @return a new object of class '<em>Feedback</em>'.
 	 * @generated
 	 */
-	DataElment createDataElment();
+	Feedback createFeedback();
+
+	/**
+	 * Returns a new object of class '<em>Other Information</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Other Information</em>'.
+	 * @generated
+	 */
+	OtherInformation createOtherInformation();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -13,101 +13,49 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link tau.systemengineering.STPAsec.ControlAction#getControllerReceiver <em>Controller Receiver</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.ControlAction#getHazards <em>Hazards</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.ControlAction#getContollerSender <em>Contoller Sender</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.ControlAction#getControlledProcessReceiver <em>Controlled Process Receiver</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.ControlAction#getControllerCommandReceiver <em>Controller Command Receiver</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.ControlAction#getControledProccessReceiverCommands <em>Controled Proccess Receiver Commands</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlAction()
  * @model
  * @generated
  */
-public interface ControlAction extends DataFlow {
-
+public interface ControlAction extends ControlStructureElement {
 	/**
-	 * Returns the value of the '<em><b>Controller Receiver</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.Controller#getReceivedCommands <em>Received Commands</em>}'.
+	 * Returns the value of the '<em><b>Controller Command Receiver</b></em>' reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.ControlStructure}.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.ControlStructure#getSendsCommands <em>Sends Commands</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Controller Receiver</em>' reference.
-	 * @see #setControllerReceiver(Controller)
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlAction_ControllerReceiver()
-	 * @see tau.systemengineering.STPAsec.Controller#getReceivedCommands
-	 * @model opposite="receivedCommands"
+	 * @return the value of the '<em>Controller Command Receiver</em>' reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlAction_ControllerCommandReceiver()
+	 * @see tau.systemengineering.STPAsec.ControlStructure#getSendsCommands
+	 * @model opposite="sendsCommands"
 	 * @generated
 	 */
-	Controller getControllerReceiver();
+	EList<ControlStructure> getControllerCommandReceiver();
 
 	/**
-	 * Sets the value of the '{@link tau.systemengineering.STPAsec.ControlAction#getControllerReceiver <em>Controller Receiver</em>}' reference.
+	 * Returns the value of the '<em><b>Controled Proccess Receiver Commands</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Controller Receiver</em>' reference.
-	 * @see #getControllerReceiver()
+	 * @return the value of the '<em>Controled Proccess Receiver Commands</em>' reference.
+	 * @see #setControledProccessReceiverCommands(ControlledProcess)
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlAction_ControledProccessReceiverCommands()
+	 * @model
 	 * @generated
 	 */
-	void setControllerReceiver(Controller value);
+	ControlledProcess getControledProccessReceiverCommands();
 
 	/**
-	 * Returns the value of the '<em><b>Hazards</b></em>' reference list.
-	 * The list contents are of type {@link tau.systemengineering.STPAsec.Hazard}.
-	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.Hazard#getUnsafeControlActions <em>Unsafe Control Actions</em>}'.
+	 * Sets the value of the '{@link tau.systemengineering.STPAsec.ControlAction#getControledProccessReceiverCommands <em>Controled Proccess Receiver Commands</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Hazards</em>' reference list.
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlAction_Hazards()
-	 * @see tau.systemengineering.STPAsec.Hazard#getUnsafeControlActions
-	 * @model opposite="unsafeControlActions"
+	 * @param value the new value of the '<em>Controled Proccess Receiver Commands</em>' reference.
+	 * @see #getControledProccessReceiverCommands()
 	 * @generated
 	 */
-	EList<Hazard> getHazards();
+	void setControledProccessReceiverCommands(ControlledProcess value);
 
-	/**
-	 * Returns the value of the '<em><b>Contoller Sender</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.Controller#getSentCommands <em>Sent Commands</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contoller Sender</em>' reference.
-	 * @see #setContollerSender(Controller)
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlAction_ContollerSender()
-	 * @see tau.systemengineering.STPAsec.Controller#getSentCommands
-	 * @model opposite="sentCommands"
-	 * @generated
-	 */
-	Controller getContollerSender();
-
-	/**
-	 * Sets the value of the '{@link tau.systemengineering.STPAsec.ControlAction#getContollerSender <em>Contoller Sender</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contoller Sender</em>' reference.
-	 * @see #getContollerSender()
-	 * @generated
-	 */
-	void setContollerSender(Controller value);
-
-	/**
-	 * Returns the value of the '<em><b>Controlled Process Receiver</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.ControlledProcess#getControlledProcessReceivedCommands <em>Controlled Process Received Commands</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Controlled Process Receiver</em>' reference.
-	 * @see #setControlledProcessReceiver(ControlledProcess)
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlAction_ControlledProcessReceiver()
-	 * @see tau.systemengineering.STPAsec.ControlledProcess#getControlledProcessReceivedCommands
-	 * @model opposite="controlledProcessReceivedCommands"
-	 * @generated
-	 */
-	ControlledProcess getControlledProcessReceiver();
-
-	/**
-	 * Sets the value of the '{@link tau.systemengineering.STPAsec.ControlAction#getControlledProcessReceiver <em>Controlled Process Receiver</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Controlled Process Receiver</em>' reference.
-	 * @see #getControlledProcessReceiver()
-	 * @generated
-	 */
-	void setControlledProcessReceiver(ControlledProcess value);
 } // ControlAction
