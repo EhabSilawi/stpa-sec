@@ -104,8 +104,7 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__SUBSYSTEMS);
-			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__SYSTEM_MODE);
+			childrenFeatures.add(STPAsecPackage.Literals.SYSTEM__SYSTEM_MODEL);
 		}
 		return childrenFeatures;
 	}
@@ -173,8 +172,7 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 		case STPAsecPackage.SYSTEM__DESCRIPTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case STPAsecPackage.SYSTEM__SUBSYSTEMS:
-		case STPAsecPackage.SYSTEM__SYSTEM_MODE:
+		case STPAsecPackage.SYSTEM__SYSTEM_MODEL:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -192,10 +190,7 @@ public class SystemItemProvider extends ItemProviderAdapter implements IEditingD
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__SUBSYSTEMS,
-				STPAsecFactory.eINSTANCE.createSystem()));
-
-		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__SYSTEM_MODE,
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.SYSTEM__SYSTEM_MODEL,
 				STPAsecFactory.eINSTANCE.createControlStructure()));
 	}
 

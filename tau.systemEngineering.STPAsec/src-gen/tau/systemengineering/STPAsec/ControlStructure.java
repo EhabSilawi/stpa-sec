@@ -21,10 +21,15 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tau.systemengineering.STPAsec.ControlStructure#getControlledprocess <em>Controlledprocess</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.ControlStructure#getControlaction <em>Controlaction</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.ControlStructure#getFeedback <em>Feedback</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.ControlStructure#getSendsFeedbacks <em>Sends Feedbacks</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.ControlStructure#getSendsCommands <em>Sends Commands</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.ControlStructure#getControllerSendsInfo <em>Controller Sends Info</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.ControlStructure#getController <em>Controller</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.ControlStructure#getSubsystemModel <em>Subsystem Model</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.ControlStructure#getOtherinformation <em>Otherinformation</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.ControlStructure#getSubsystemSenders <em>Subsystem Senders</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.ControlStructure#getSubsystemsReceivers <em>Subsystems Receivers</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.ControlStructure#getSwndsInfor <em>Swnds Infor</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.ControlStructure#getReceivesInfo <em>Receives Info</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.ControlStructure#getSendsCommands <em>Sends Commands</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.ControlStructure#getReceivesCommands <em>Receives Commands</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlStructure()
@@ -99,16 +104,124 @@ public interface ControlStructure extends EObject {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Controller</b></em>' reference list.
+	 * Returns the value of the '<em><b>Controller</b></em>' containment reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.Controller}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Controller</em>' containment reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlStructure_Controller()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Controller> getController();
+
+	/**
+	 * Returns the value of the '<em><b>Subsystem Model</b></em>' containment reference list.
 	 * The list contents are of type {@link tau.systemengineering.STPAsec.System}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Controller</em>' reference list.
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlStructure_Controller()
-	 * @model
+	 * @return the value of the '<em>Subsystem Model</em>' containment reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlStructure_SubsystemModel()
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<tau.systemengineering.STPAsec.System> getController();
+	EList<tau.systemengineering.STPAsec.System> getSubsystemModel();
+
+	/**
+	 * Returns the value of the '<em><b>Otherinformation</b></em>' containment reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.OtherInformation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Otherinformation</em>' containment reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlStructure_Otherinformation()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<OtherInformation> getOtherinformation();
+
+	/**
+	 * Returns the value of the '<em><b>Subsystem Senders</b></em>' reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.Feedback}.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.Feedback#getSendsFeedbacks <em>Sends Feedbacks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Subsystem Senders</em>' reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlStructure_SubsystemSenders()
+	 * @see tau.systemengineering.STPAsec.Feedback#getSendsFeedbacks
+	 * @model opposite="sendsFeedbacks"
+	 * @generated
+	 */
+	EList<Feedback> getSubsystemSenders();
+
+	/**
+	 * Returns the value of the '<em><b>Subsystems Receivers</b></em>' reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.Feedback}.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.Feedback#getReceiversFeedbacks <em>Receivers Feedbacks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Subsystems Receivers</em>' reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlStructure_SubsystemsReceivers()
+	 * @see tau.systemengineering.STPAsec.Feedback#getReceiversFeedbacks
+	 * @model opposite="receiversFeedbacks"
+	 * @generated
+	 */
+	EList<Feedback> getSubsystemsReceivers();
+
+	/**
+	 * Returns the value of the '<em><b>Swnds Infor</b></em>' reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.OtherInformation}.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.OtherInformation#getSubsystemSenders <em>Subsystem Senders</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Swnds Infor</em>' reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlStructure_SwndsInfor()
+	 * @see tau.systemengineering.STPAsec.OtherInformation#getSubsystemSenders
+	 * @model opposite="subsystemSenders"
+	 * @generated
+	 */
+	EList<OtherInformation> getSwndsInfor();
+
+	/**
+	 * Returns the value of the '<em><b>Receives Info</b></em>' reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.OtherInformation}.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.OtherInformation#getSubsystemReceivers <em>Subsystem Receivers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Receives Info</em>' reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlStructure_ReceivesInfo()
+	 * @see tau.systemengineering.STPAsec.OtherInformation#getSubsystemReceivers
+	 * @model opposite="subsystemReceivers"
+	 * @generated
+	 */
+	EList<OtherInformation> getReceivesInfo();
+
+	/**
+	 * Returns the value of the '<em><b>Sends Commands</b></em>' reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.ControlAction}.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.ControlAction#getSubsystemSenders <em>Subsystem Senders</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sends Commands</em>' reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlStructure_SendsCommands()
+	 * @see tau.systemengineering.STPAsec.ControlAction#getSubsystemSenders
+	 * @model opposite="subsystemSenders"
+	 * @generated
+	 */
+	EList<ControlAction> getSendsCommands();
+
+	/**
+	 * Returns the value of the '<em><b>Receives Commands</b></em>' reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.ControlAction}.
+	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.ControlAction#getSubsystemReceivers <em>Subsystem Receivers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Receives Commands</em>' reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlStructure_ReceivesCommands()
+	 * @see tau.systemengineering.STPAsec.ControlAction#getSubsystemReceivers
+	 * @model opposite="subsystemReceivers"
+	 * @generated
+	 */
+	EList<ControlAction> getReceivesCommands();
 
 	/**
 	 * Returns the value of the '<em><b>Controlledprocess</b></em>' containment reference list.
@@ -145,67 +258,5 @@ public interface ControlStructure extends EObject {
 	 * @generated
 	 */
 	EList<Feedback> getFeedback();
-
-	/**
-	 * Returns the value of the '<em><b>Sends Feedbacks</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.Feedback#getControllerFeedbackReceiver <em>Controller Feedback Receiver</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sends Feedbacks</em>' reference.
-	 * @see #setSendsFeedbacks(Feedback)
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlStructure_SendsFeedbacks()
-	 * @see tau.systemengineering.STPAsec.Feedback#getControllerFeedbackReceiver
-	 * @model opposite="controllerFeedbackReceiver"
-	 * @generated
-	 */
-	Feedback getSendsFeedbacks();
-
-	/**
-	 * Sets the value of the '{@link tau.systemengineering.STPAsec.ControlStructure#getSendsFeedbacks <em>Sends Feedbacks</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sends Feedbacks</em>' reference.
-	 * @see #getSendsFeedbacks()
-	 * @generated
-	 */
-	void setSendsFeedbacks(Feedback value);
-
-	/**
-	 * Returns the value of the '<em><b>Sends Commands</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.ControlAction#getControllerCommandReceiver <em>Controller Command Receiver</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sends Commands</em>' reference.
-	 * @see #setSendsCommands(ControlAction)
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlStructure_SendsCommands()
-	 * @see tau.systemengineering.STPAsec.ControlAction#getControllerCommandReceiver
-	 * @model opposite="controllerCommandReceiver"
-	 * @generated
-	 */
-	ControlAction getSendsCommands();
-
-	/**
-	 * Sets the value of the '{@link tau.systemengineering.STPAsec.ControlStructure#getSendsCommands <em>Sends Commands</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sends Commands</em>' reference.
-	 * @see #getSendsCommands()
-	 * @generated
-	 */
-	void setSendsCommands(ControlAction value);
-
-	/**
-	 * Returns the value of the '<em><b>Controller Sends Info</b></em>' reference list.
-	 * The list contents are of type {@link tau.systemengineering.STPAsec.OtherInformation}.
-	 * It is bidirectional and its opposite is '{@link tau.systemengineering.STPAsec.OtherInformation#getCcontrollerReceiverInfo <em>Ccontroller Receiver Info</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Controller Sends Info</em>' reference list.
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getControlStructure_ControllerSendsInfo()
-	 * @see tau.systemengineering.STPAsec.OtherInformation#getCcontrollerReceiverInfo
-	 * @model opposite="ccontrollerReceiverInfo"
-	 * @generated
-	 */
-	EList<OtherInformation> getControllerSendsInfo();
 
 } // ControlStructure

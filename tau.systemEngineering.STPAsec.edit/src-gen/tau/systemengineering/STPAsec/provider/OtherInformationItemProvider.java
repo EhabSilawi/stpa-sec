@@ -42,42 +42,106 @@ public class OtherInformationItemProvider extends ControlStructureElementItemPro
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCcontrollerReceiverInfoPropertyDescriptor(object);
-			addControledProcessRecevierInfoPropertyDescriptor(object);
+			addControllerSendersPropertyDescriptor(object);
+			addControledProcessSendersPropertyDescriptor(object);
+			addControledProcessReceiversPropertyDescriptor(object);
+			addControllerReceiversPropertyDescriptor(object);
+			addSubsystemSendersPropertyDescriptor(object);
+			addSubsystemReceiversPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Ccontroller Receiver Info feature.
+	 * This adds a property descriptor for the Controller Senders feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCcontrollerReceiverInfoPropertyDescriptor(Object object) {
+	protected void addControllerSendersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_OtherInformation_controllerSenders_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_OtherInformation_controllerSenders_feature",
+						"_UI_OtherInformation_type"),
+				STPAsecPackage.Literals.OTHER_INFORMATION__CONTROLLER_SENDERS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Controled Process Senders feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControledProcessSendersPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_OtherInformation_ccontrollerReceiverInfo_feature"),
+						getResourceLocator(), getString("_UI_OtherInformation_controledProcessSenders_feature"),
 						getString("_UI_PropertyDescriptor_description",
-								"_UI_OtherInformation_ccontrollerReceiverInfo_feature", "_UI_OtherInformation_type"),
-						STPAsecPackage.Literals.OTHER_INFORMATION__CCONTROLLER_RECEIVER_INFO, true, false, true, null,
+								"_UI_OtherInformation_controledProcessSenders_feature", "_UI_OtherInformation_type"),
+						STPAsecPackage.Literals.OTHER_INFORMATION__CONTROLED_PROCESS_SENDERS, true, false, true, null,
 						null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Controled Process Recevier Info feature.
+	 * This adds a property descriptor for the Controled Process Receivers feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addControledProcessRecevierInfoPropertyDescriptor(Object object) {
+	protected void addControledProcessReceiversPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_OtherInformation_controledProcessReceivers_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_OtherInformation_controledProcessReceivers_feature", "_UI_OtherInformation_type"),
+						STPAsecPackage.Literals.OTHER_INFORMATION__CONTROLED_PROCESS_RECEIVERS, true, false, true, null,
+						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Controller Receivers feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControllerReceiversPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_OtherInformation_ControledProcessRecevierInfo_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_OtherInformation_ControledProcessRecevierInfo_feature", "_UI_OtherInformation_type"),
-				STPAsecPackage.Literals.OTHER_INFORMATION__CONTROLED_PROCESS_RECEVIER_INFO, true, false, true, null,
-				null, null));
+				getString("_UI_OtherInformation_controllerReceivers_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_OtherInformation_controllerReceivers_feature",
+						"_UI_OtherInformation_type"),
+				STPAsecPackage.Literals.OTHER_INFORMATION__CONTROLLER_RECEIVERS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Subsystem Senders feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSubsystemSendersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_OtherInformation_subsystemSenders_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_OtherInformation_subsystemSenders_feature",
+						"_UI_OtherInformation_type"),
+				STPAsecPackage.Literals.OTHER_INFORMATION__SUBSYSTEM_SENDERS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Subsystem Receivers feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSubsystemReceiversPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_OtherInformation_subsystemReceivers_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_OtherInformation_subsystemReceivers_feature",
+						"_UI_OtherInformation_type"),
+				STPAsecPackage.Literals.OTHER_INFORMATION__SUBSYSTEM_RECEIVERS, true, false, true, null, null, null));
 	}
 
 	/**

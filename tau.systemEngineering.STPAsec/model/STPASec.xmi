@@ -2,4 +2,195 @@
 <STPAsec:STPASec
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:STPAsec="http://www.example.org/STPAsec"/>
+    xmlns:STPAsec="http://www.example.org/STPAsec">
+  <systems name="NextGen In-Trail"
+      description="NextGen In-Trail Procedure with new equipment (aviation)">
+    <systemModel
+        name="NextGen In-Trail"
+        modelGoal="NextGen In-Trail"
+        description="NextGen In-Trail">
+      <controlledprocess
+          name="GPS Constellation"
+          description="GPS Constellation"
+          sendsFeedbacks="//@systems.0/@systemModel.0/@subsystemModel.1/@systemModel.0/@feedback.0"/>
+      <controlaction
+          name="Instructions, Procedures, Training, Reviews"
+          description="Instructions, Procedures, Training, Reviews"
+          controllerSenders="//@systems.0/@systemModel.0/@controller.0"
+          controllerReceivers="//@systems.0/@systemModel.0/@controller.1"/>
+      <controlaction
+          name="Request Clearance*, Transcribe ITP Info"
+          description="Request Clearance*, Transcribe ITP Info"
+          controllerReceivers="//@systems.0/@systemModel.0/@controller.1"/>
+      <controlaction
+          name=" Request / Transmit Information"
+          description="Request / Transmit Information"
+          controllerReceivers="//@systems.0/@systemModel.0/@controller.1"/>
+      <controlaction
+          name="Flight Instructions, ITP Clearance"
+          description="Flight Instructions, ITP Clearance"
+          controllerReceivers="//@systems.0/@systemModel.0/@controller.3"/>
+      <controlaction
+          name="Flight Instructions"
+          description="Flight Instructions"
+          controllerSenders="//@systems.0/@systemModel.0/@controller.1"
+          controllerReceivers="//@systems.0/@systemModel.0/@controller.4"/>
+      <controlaction
+          name="Maneuver Commands ITP"
+          description="Maneuver Commands ITP"
+          controllerSenders="//@systems.0/@systemModel.0/@controller.3"
+          subsystemReceivers="//@systems.0/@systemModel.0/@subsystemModel.0/@systemModel.0"/>
+      <controlaction
+          name="Maneuver Commands"
+          description="Maneuver Commands"
+          controllerSenders="//@systems.0/@systemModel.0/@controller.4"
+          subsystemReceivers="//@systems.0/@systemModel.0/@subsystemModel.1/@systemModel.0"/>
+      <feedback
+          name="Status Reports, IncidentReports"
+          description="Status Reports, IncidentReports"
+          controllerSenders="//@systems.0/@systemModel.0/@controller.1"
+          controllerReceivers="//@systems.0/@systemModel.0/@controller.0"/>
+      <feedback
+          name="Time/State Data"
+          description="Time/State Data"
+          controllerReceivers="//@systems.0/@systemModel.0/@subsystemModel.0/@systemModel.0/@controller.2"/>
+      <controller
+          name="ATC Manager"
+          description="ATC Manager"
+          sendsCommands="//@systems.0/@systemModel.0/@controlaction.0"
+          sendsInfo="//@systems.0/@systemModel.0/@otherinformation.1"
+          receivesInfo="//@systems.0/@systemModel.0/@otherinformation.0"
+          receivesFeedbacks="//@systems.0/@systemModel.0/@feedback.0"/>
+      <controller
+          name="Controller A"
+          description="Controller A"
+          sendsFeedbacks="//@systems.0/@systemModel.0/@feedback.0"
+          sendsCommands="//@systems.0/@systemModel.0/@controlaction.4"
+          sendsInfo="//@systems.0/@systemModel.0/@otherinformation.3"
+          receivesInfo="//@systems.0/@systemModel.0/@otherinformation.2"
+          receivesCommands="//@systems.0/@systemModel.0/@controlaction.0 //@systems.0/@systemModel.0/@controlaction.1 //@systems.0/@systemModel.0/@controlaction.2"/>
+      <controller
+          name="Controller B"
+          description="Controller B"
+          sendsInfo="//@systems.0/@systemModel.0/@otherinformation.2"
+          receivesInfo="//@systems.0/@systemModel.0/@otherinformation.3"/>
+      <controller
+          name="ITP"
+          description="ITP Flight Crew"
+          sendsCommands="//@systems.0/@systemModel.0/@controlaction.5"
+          receivesInfo="//@systems.0/@systemModel.0/@otherinformation.5"
+          receivesCommands="//@systems.0/@systemModel.0/@controlaction.3"/>
+      <controller
+          name="Ref Flight Crew"
+          description="Ref Flight Crew"
+          sendsCommands="//@systems.0/@systemModel.0/@controlaction.6"
+          receivesInfo="//@systems.0/@systemModel.0/@otherinformation.4"
+          receivesCommands="//@systems.0/@systemModel.0/@controlaction.4"/>
+      <subsystemModel
+          name="ITP Aircraft"
+          description="ITP Aircraft">
+        <systemModel
+            name="ITP Aircraft"
+            modelGoal="ITP Aircraft"
+            description="ITP Aircraft"
+            swndsInfor="//@systems.0/@systemModel.0/@otherinformation.5"
+            receivesCommands="//@systems.0/@systemModel.0/@controlaction.5">
+          <controlledprocess
+              name="ADS-B"
+              description="ADS-B"
+              sendsInfo="//@systems.0/@systemModel.0/@subsystemModel.0/@systemModel.0/@otherinformation.0"
+              receivesFeedbacks="//@systems.0/@systemModel.0/@subsystemModel.1/@systemModel.0/@feedback.0"/>
+          <controller
+              name="ITP Equipmen"
+              description="ITP Equipmen"/>
+          <controller
+              name="TCAS/ Transponder"
+              description="TCAS/ Transponder"
+              sendsInfo="//@systems.0/@systemModel.0/@subsystemModel.0/@systemModel.0/@otherinformation.1"
+              receivesCommands="//@systems.0/@systemModel.0/@subsystemModel.1/@systemModel.0/@controlaction.0"/>
+          <controller
+              name="GNSSU Receiver"
+              description="GNSSU Receiver"
+              sendsInfo="//@systems.0/@systemModel.0/@subsystemModel.0/@systemModel.0/@otherinformation.0"
+              receivesFeedbacks="//@systems.0/@systemModel.0/@feedback.1"/>
+          <otherinformation
+              name="info"
+              description="info"
+              controllerSenders="//@systems.0/@systemModel.0/@subsystemModel.0/@systemModel.0/@controller.2"
+              controledProcessSenders="//@systems.0/@systemModel.0/@subsystemModel.0/@systemModel.0/@controlledprocess.0"/>
+          <otherinformation
+              name="info 2"
+              description="info 2"
+              controllerSenders="//@systems.0/@systemModel.0/@subsystemModel.0/@systemModel.0/@controller.1"/>
+        </systemModel>
+      </subsystemModel>
+      <subsystemModel
+          name="Reference Aircraft**"
+          description="Reference Aircraft**">
+        <systemModel
+            modelGoal="Reference Aircraft"
+            description="Reference Aircraft"
+            swndsInfor="//@systems.0/@systemModel.0/@otherinformation.4"
+            receivesCommands="//@systems.0/@systemModel.0/@controlaction.6">
+          <controlledprocess
+              name="ADS-B"
+              description="ADS-B"
+              sendsInfo="//@systems.0/@systemModel.0/@subsystemModel.1/@systemModel.0/@otherinformation.0"
+              sendsFeedbacks="//@systems.0/@systemModel.0/@subsystemModel.1/@systemModel.0/@feedback.0"/>
+          <controlaction
+              name="TCAS Interrogations"
+              description="TCAS Interrogations"
+              controllerReceivers="//@systems.0/@systemModel.0/@subsystemModel.0/@systemModel.0/@controller.1"/>
+          <feedback
+              name="Ref Aircraft State (speed, heading, alt, etc) Information,"
+              description="Ref Aircraft State (speed, heading, alt, etc) Information,"
+              controledProcessReceivers="//@systems.0/@systemModel.0/@subsystemModel.0/@systemModel.0/@controlledprocess.0"
+              controledProcessSenders="//@systems.0/@systemModel.0/@subsystemModel.1/@systemModel.0/@controlledprocess.0 //@systems.0/@systemModel.0/@controlledprocess.0"/>
+          <controller
+              name="Other Sensors"
+              description="Other Sensors"/>
+          <controller
+              name="TCAS/ Transponder"
+              description="TCAS/ Transponder"/>
+          <controller
+              name="GNSSU Receiver"
+              description="GNSSU Receiver"
+              sendsInfo="//@systems.0/@systemModel.0/@subsystemModel.1/@systemModel.0/@otherinformation.0"/>
+          <otherinformation
+              name="info"
+              description="info"
+              controllerSenders="//@systems.0/@systemModel.0/@subsystemModel.1/@systemModel.0/@controller.2"
+              controledProcessSenders="//@systems.0/@systemModel.0/@subsystemModel.1/@systemModel.0/@controlledprocess.0"/>
+        </systemModel>
+      </subsystemModel>
+      <otherinformation
+          name="Policy"
+          description="Policy"
+          controllerReceivers="//@systems.0/@systemModel.0/@controller.0"/>
+      <otherinformation
+          name="Certification information"
+          description="Certification information"
+          controllerSenders="//@systems.0/@systemModel.0/@controller.0"/>
+      <otherinformation
+          name="Airspace Transfer B"
+          description="Airspace Transfer B"
+          controllerSenders="//@systems.0/@systemModel.0/@controller.2"
+          controllerReceivers="//@systems.0/@systemModel.0/@controller.1"/>
+      <otherinformation
+          name="Airspace Transfer A"
+          description="Airspace Transfer A"
+          controllerSenders="//@systems.0/@systemModel.0/@controller.1"
+          controllerReceivers="//@systems.0/@systemModel.0/@controller.2"/>
+      <otherinformation
+          name="Attitude Information"
+          description="Attitude Information"
+          controllerReceivers="//@systems.0/@systemModel.0/@controller.4"
+          subsystemSenders="//@systems.0/@systemModel.0/@subsystemModel.1/@systemModel.0"/>
+      <otherinformation
+          name="Attitude Information ITP"
+          description="Attitude Information ITP"
+          controllerReceivers="//@systems.0/@systemModel.0/@controller.3"
+          subsystemSenders="//@systems.0/@systemModel.0/@subsystemModel.0/@systemModel.0"/>
+    </systemModel>
+  </systems>
+</STPAsec:STPASec>

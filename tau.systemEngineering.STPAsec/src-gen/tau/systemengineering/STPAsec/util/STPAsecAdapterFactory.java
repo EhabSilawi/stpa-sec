@@ -13,6 +13,7 @@ import tau.systemengineering.STPAsec.ControlAction;
 import tau.systemengineering.STPAsec.ControlStructure;
 import tau.systemengineering.STPAsec.ControlStructureElement;
 import tau.systemengineering.STPAsec.ControlledProcess;
+import tau.systemengineering.STPAsec.Controller;
 import tau.systemengineering.STPAsec.Feedback;
 import tau.systemengineering.STPAsec.OtherInformation;
 import tau.systemengineering.STPAsec.STPASec;
@@ -111,6 +112,11 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseOtherInformation(OtherInformation object) {
 			return createOtherInformationAdapter();
+		}
+
+		@Override
+		public Adapter caseController(Controller object) {
+			return createControllerAdapter();
 		}
 
 		@Override
@@ -241,6 +247,20 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOtherInformationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.Controller <em>Controller</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tau.systemengineering.STPAsec.Controller
+	 * @generated
+	 */
+	public Adapter createControllerAdapter() {
 		return null;
 	}
 

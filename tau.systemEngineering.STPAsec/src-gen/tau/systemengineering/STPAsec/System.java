@@ -15,10 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link tau.systemengineering.STPAsec.System#getSubsystems <em>Subsystems</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.System#getName <em>Name</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.System#getDescription <em>Description</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.System#getSystemMode <em>System Mode</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.System#getSystemModel <em>System Model</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem()
@@ -26,18 +25,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface System extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Subsystems</b></em>' containment reference list.
-	 * The list contents are of type {@link tau.systemengineering.STPAsec.System}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subsystems</em>' containment reference list.
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem_Subsystems()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<System> getSubsystems();
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -83,15 +70,15 @@ public interface System extends EObject {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>System Mode</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>System Model</b></em>' containment reference list.
 	 * The list contents are of type {@link tau.systemengineering.STPAsec.ControlStructure}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>System Mode</em>' containment reference list.
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem_SystemMode()
+	 * @return the value of the '<em>System Model</em>' containment reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystem_SystemModel()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ControlStructure> getSystemMode();
+	EList<ControlStructure> getSystemModel();
 
 } // System

@@ -42,10 +42,28 @@ public class ControlledProcessItemProvider extends ControlStructureElementItemPr
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSendsInfoPropertyDescriptor(object);
+			addReceivesInfoPropertyDescriptor(object);
+			addReceivesCommandsPropertyDescriptor(object);
+			addReceivesFeedbacksPropertyDescriptor(object);
 			addSendsFeedbacksPropertyDescriptor(object);
-			addControledProcessSendsInfoPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Sends Info feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSendsInfoPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ControlledProcess_sendsInfo_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ControlledProcess_sendsInfo_feature",
+								"_UI_ControlledProcess_type"),
+						STPAsecPackage.Literals.CONTROLLED_PROCESS__SENDS_INFO, true, false, true, null, null, null));
 	}
 
 	/**
@@ -64,19 +82,48 @@ public class ControlledProcessItemProvider extends ControlStructureElementItemPr
 	}
 
 	/**
-	 * This adds a property descriptor for the Controled Process Sends Info feature.
+	 * This adds a property descriptor for the Receives Info feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addControledProcessSendsInfoPropertyDescriptor(Object object) {
+	protected void addReceivesInfoPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_ControlledProcess_controledProcessSendsInfo_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ControlledProcess_controledProcessSendsInfo_feature", "_UI_ControlledProcess_type"),
-				STPAsecPackage.Literals.CONTROLLED_PROCESS__CONTROLED_PROCESS_SENDS_INFO, true, false, true, null, null,
-				null));
+				getString("_UI_ControlledProcess_receivesInfo_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ControlledProcess_receivesInfo_feature",
+						"_UI_ControlledProcess_type"),
+				STPAsecPackage.Literals.CONTROLLED_PROCESS__RECEIVES_INFO, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Receives Commands feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReceivesCommandsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_ControlledProcess_receivesCommands_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ControlledProcess_receivesCommands_feature",
+						"_UI_ControlledProcess_type"),
+				STPAsecPackage.Literals.CONTROLLED_PROCESS__RECEIVES_COMMANDS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Receives Feedbacks feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReceivesFeedbacksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_ControlledProcess_receivesFeedbacks_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ControlledProcess_receivesFeedbacks_feature",
+						"_UI_ControlledProcess_type"),
+				STPAsecPackage.Literals.CONTROLLED_PROCESS__RECEIVES_FEEDBACKS, true, false, true, null, null, null));
 	}
 
 	/**

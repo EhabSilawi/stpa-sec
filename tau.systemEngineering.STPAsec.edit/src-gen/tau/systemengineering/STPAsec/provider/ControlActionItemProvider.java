@@ -42,42 +42,93 @@ public class ControlActionItemProvider extends ControlStructureElementItemProvid
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addControllerCommandReceiverPropertyDescriptor(object);
-			addControledProccessReceiverCommandsPropertyDescriptor(object);
+			addControllerSendersPropertyDescriptor(object);
+			addControllerReceiversPropertyDescriptor(object);
+			addControledProccessReceiversPropertyDescriptor(object);
+			addSubsystemSendersPropertyDescriptor(object);
+			addSubsystemReceiversPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Controller Command Receiver feature.
+	 * This adds a property descriptor for the Controller Senders feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addControllerCommandReceiverPropertyDescriptor(Object object) {
+	protected void addControllerSendersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ControlAction_controllerSenders_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_controllerSenders_feature",
+								"_UI_ControlAction_type"),
+						STPAsecPackage.Literals.CONTROL_ACTION__CONTROLLER_SENDERS, true, false, true, null, null,
+						null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Controller Receivers feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControllerReceiversPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ControlAction_controllerReceivers_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_controllerReceivers_feature",
+								"_UI_ControlAction_type"),
+						STPAsecPackage.Literals.CONTROL_ACTION__CONTROLLER_RECEIVERS, true, false, true, null, null,
+						null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Controled Proccess Receivers feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControledProccessReceiversPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_ControlAction_controllerCommandReceiver_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_controllerCommandReceiver_feature",
+				getString("_UI_ControlAction_controledProccessReceivers_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_controledProccessReceivers_feature",
 						"_UI_ControlAction_type"),
-				STPAsecPackage.Literals.CONTROL_ACTION__CONTROLLER_COMMAND_RECEIVER, true, false, true, null, null,
+				STPAsecPackage.Literals.CONTROL_ACTION__CONTROLED_PROCCESS_RECEIVERS, true, false, true, null, null,
 				null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Controled Proccess Receiver Commands feature.
+	 * This adds a property descriptor for the Subsystem Senders feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addControledProccessReceiverCommandsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_ControlAction_controledProccessReceiverCommands_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ControlAction_controledProccessReceiverCommands_feature", "_UI_ControlAction_type"),
-				STPAsecPackage.Literals.CONTROL_ACTION__CONTROLED_PROCCESS_RECEIVER_COMMANDS, true, false, true, null,
-				null, null));
+	protected void addSubsystemSendersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ControlAction_subsystemSenders_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_subsystemSenders_feature",
+								"_UI_ControlAction_type"),
+						STPAsecPackage.Literals.CONTROL_ACTION__SUBSYSTEM_SENDERS, true, false, true, null, null,
+						null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Subsystem Receivers feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSubsystemReceiversPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ControlAction_subsystemReceivers_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ControlAction_subsystemReceivers_feature",
+								"_UI_ControlAction_type"),
+						STPAsecPackage.Literals.CONTROL_ACTION__SUBSYSTEM_RECEIVERS, true, false, true, null, null,
+						null));
 	}
 
 	/**

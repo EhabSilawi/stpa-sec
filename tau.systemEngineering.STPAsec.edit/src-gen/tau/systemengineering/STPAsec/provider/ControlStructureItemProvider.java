@@ -59,10 +59,12 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 			addNamePropertyDescriptor(object);
 			addModelGoalPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
-			addSendsFeedbacksPropertyDescriptor(object);
+			addSubsystemSendersPropertyDescriptor(object);
+			addSubsystemsReceiversPropertyDescriptor(object);
+			addSwndsInforPropertyDescriptor(object);
+			addReceivesInfoPropertyDescriptor(object);
 			addSendsCommandsPropertyDescriptor(object);
-			addControllerSendsInfoPropertyDescriptor(object);
-			addControllerPropertyDescriptor(object);
+			addReceivesCommandsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -116,18 +118,63 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
-	 * This adds a property descriptor for the Sends Feedbacks feature.
+	 * This adds a property descriptor for the Subsystem Senders feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSendsFeedbacksPropertyDescriptor(Object object) {
+	protected void addSubsystemSendersPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_ControlStructure_sendsFeedbacks_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_ControlStructure_sendsFeedbacks_feature",
+				getString("_UI_ControlStructure_subsystemSenders_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ControlStructure_subsystemSenders_feature",
 						"_UI_ControlStructure_type"),
-				STPAsecPackage.Literals.CONTROL_STRUCTURE__SENDS_FEEDBACKS, true, false, true, null, null, null));
+				STPAsecPackage.Literals.CONTROL_STRUCTURE__SUBSYSTEM_SENDERS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Subsystems Receivers feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSubsystemsReceiversPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_ControlStructure_subsystemsReceivers_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ControlStructure_subsystemsReceivers_feature",
+						"_UI_ControlStructure_type"),
+				STPAsecPackage.Literals.CONTROL_STRUCTURE__SUBSYSTEMS_RECEIVERS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Swnds Infor feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSwndsInforPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ControlStructure_swndsInfor_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ControlStructure_swndsInfor_feature",
+								"_UI_ControlStructure_type"),
+						STPAsecPackage.Literals.CONTROL_STRUCTURE__SWNDS_INFOR, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Receives Info feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReceivesInfoPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ControlStructure_receivesInfo_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ControlStructure_receivesInfo_feature",
+								"_UI_ControlStructure_type"),
+						STPAsecPackage.Literals.CONTROL_STRUCTURE__RECEIVES_INFO, true, false, true, null, null, null));
 	}
 
 	/**
@@ -147,33 +194,18 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
-	 * This adds a property descriptor for the Controller Sends Info feature.
+	 * This adds a property descriptor for the Receives Commands feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addControllerSendsInfoPropertyDescriptor(Object object) {
+	protected void addReceivesCommandsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_ControlStructure_controllerSendsInfo_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_ControlStructure_controllerSendsInfo_feature",
+				getString("_UI_ControlStructure_receivesCommands_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ControlStructure_receivesCommands_feature",
 						"_UI_ControlStructure_type"),
-				STPAsecPackage.Literals.CONTROL_STRUCTURE__CONTROLLER_SENDS_INFO, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Controller feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addControllerPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ControlStructure_controller_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ControlStructure_controller_feature",
-								"_UI_ControlStructure_type"),
-						STPAsecPackage.Literals.CONTROL_STRUCTURE__CONTROLLER, true, false, true, null, null, null));
+				STPAsecPackage.Literals.CONTROL_STRUCTURE__RECEIVES_COMMANDS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -191,6 +223,9 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 			childrenFeatures.add(STPAsecPackage.Literals.CONTROL_STRUCTURE__CONTROLLEDPROCESS);
 			childrenFeatures.add(STPAsecPackage.Literals.CONTROL_STRUCTURE__CONTROLACTION);
 			childrenFeatures.add(STPAsecPackage.Literals.CONTROL_STRUCTURE__FEEDBACK);
+			childrenFeatures.add(STPAsecPackage.Literals.CONTROL_STRUCTURE__CONTROLLER);
+			childrenFeatures.add(STPAsecPackage.Literals.CONTROL_STRUCTURE__SUBSYSTEM_MODEL);
+			childrenFeatures.add(STPAsecPackage.Literals.CONTROL_STRUCTURE__OTHERINFORMATION);
 		}
 		return childrenFeatures;
 	}
@@ -262,6 +297,9 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 		case STPAsecPackage.CONTROL_STRUCTURE__CONTROLLEDPROCESS:
 		case STPAsecPackage.CONTROL_STRUCTURE__CONTROLACTION:
 		case STPAsecPackage.CONTROL_STRUCTURE__FEEDBACK:
+		case STPAsecPackage.CONTROL_STRUCTURE__CONTROLLER:
+		case STPAsecPackage.CONTROL_STRUCTURE__SUBSYSTEM_MODEL:
+		case STPAsecPackage.CONTROL_STRUCTURE__OTHERINFORMATION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -287,6 +325,15 @@ public class ControlStructureItemProvider extends ItemProviderAdapter implements
 
 		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__FEEDBACK,
 				STPAsecFactory.eINSTANCE.createFeedback()));
+
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__CONTROLLER,
+				STPAsecFactory.eINSTANCE.createController()));
+
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__SUBSYSTEM_MODEL,
+				STPAsecFactory.eINSTANCE.createSystem()));
+
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.CONTROL_STRUCTURE__OTHERINFORMATION,
+				STPAsecFactory.eINSTANCE.createOtherInformation()));
 	}
 
 	/**

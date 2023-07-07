@@ -13,6 +13,7 @@ import tau.systemengineering.STPAsec.ControlAction;
 import tau.systemengineering.STPAsec.ControlStructure;
 import tau.systemengineering.STPAsec.ControlStructureElement;
 import tau.systemengineering.STPAsec.ControlledProcess;
+import tau.systemengineering.STPAsec.Controller;
 import tau.systemengineering.STPAsec.Feedback;
 import tau.systemengineering.STPAsec.OtherInformation;
 import tau.systemengineering.STPAsec.STPASec;
@@ -81,6 +82,13 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * @generated
 	 */
 	private EClass otherInformationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass controllerEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -178,17 +186,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSystem_Subsystems() {
-		return (EReference) systemEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getSystem_Name() {
-		return (EAttribute) systemEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) systemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -197,7 +196,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * @generated
 	 */
 	public EAttribute getSystem_Description() {
-		return (EAttribute) systemEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) systemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -205,8 +204,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSystem_SystemMode() {
-		return (EReference) systemEClass.getEStructuralFeatures().get(3);
+	public EReference getSystem_SystemModel() {
+		return (EReference) systemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -251,7 +250,79 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * @generated
 	 */
 	public EReference getControlStructure_Controller() {
+		return (EReference) controlStructureEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControlStructure_SubsystemModel() {
+		return (EReference) controlStructureEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControlStructure_Otherinformation() {
+		return (EReference) controlStructureEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControlStructure_SubsystemSenders() {
 		return (EReference) controlStructureEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControlStructure_SubsystemsReceivers() {
+		return (EReference) controlStructureEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControlStructure_SwndsInfor() {
+		return (EReference) controlStructureEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControlStructure_ReceivesInfo() {
+		return (EReference) controlStructureEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControlStructure_SendsCommands() {
+		return (EReference) controlStructureEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControlStructure_ReceivesCommands() {
+		return (EReference) controlStructureEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -279,33 +350,6 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 */
 	public EReference getControlStructure_Feedback() {
 		return (EReference) controlStructureEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getControlStructure_SendsFeedbacks() {
-		return (EReference) controlStructureEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getControlStructure_SendsCommands() {
-		return (EReference) controlStructureEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getControlStructure_ControllerSendsInfo() {
-		return (EReference) controlStructureEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -349,7 +393,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getControlledProcess_SendsFeedbacks() {
+	public EReference getControlledProcess_SendsInfo() {
 		return (EReference) controlledProcessEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -358,8 +402,35 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getControlledProcess_ControledProcessSendsInfo() {
+	public EReference getControlledProcess_SendsFeedbacks() {
+		return (EReference) controlledProcessEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControlledProcess_ReceivesInfo() {
 		return (EReference) controlledProcessEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControlledProcess_ReceivesCommands() {
+		return (EReference) controlledProcessEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControlledProcess_ReceivesFeedbacks() {
+		return (EReference) controlledProcessEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -376,7 +447,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getControlAction_ControllerCommandReceiver() {
+	public EReference getControlAction_ControllerSenders() {
 		return (EReference) controlActionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -385,8 +456,35 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getControlAction_ControledProccessReceiverCommands() {
+	public EReference getControlAction_ControllerReceivers() {
 		return (EReference) controlActionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControlAction_ControledProccessReceivers() {
+		return (EReference) controlActionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControlAction_SubsystemSenders() {
+		return (EReference) controlActionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControlAction_SubsystemReceivers() {
+		return (EReference) controlActionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -403,8 +501,53 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeedback_ControllerFeedbackReceiver() {
+	public EReference getFeedback_ControllerSenders() {
 		return (EReference) feedbackEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeedback_ControllerReceivers() {
+		return (EReference) feedbackEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeedback_ControledProcessReceivers() {
+		return (EReference) feedbackEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeedback_ControledProcessSenders() {
+		return (EReference) feedbackEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeedback_SendsFeedbacks() {
+		return (EReference) feedbackEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeedback_ReceiversFeedbacks() {
+		return (EReference) feedbackEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -421,7 +564,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOtherInformation_CcontrollerReceiverInfo() {
+	public EReference getOtherInformation_ControllerSenders() {
 		return (EReference) otherInformationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -430,8 +573,107 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOtherInformation_ControledProcessRecevierInfo() {
+	public EReference getOtherInformation_ControledProcessSenders() {
 		return (EReference) otherInformationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOtherInformation_ControledProcessReceivers() {
+		return (EReference) otherInformationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOtherInformation_ControllerReceivers() {
+		return (EReference) otherInformationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOtherInformation_SubsystemSenders() {
+		return (EReference) otherInformationEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOtherInformation_SubsystemReceivers() {
+		return (EReference) otherInformationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getController() {
+		return controllerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getController_SendsFeedbacks() {
+		return (EReference) controllerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getController_SendsCommands() {
+		return (EReference) controllerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getController_SendsInfo() {
+		return (EReference) controllerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getController_ReceivesInfo() {
+		return (EReference) controllerEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getController_ReceivesFeedbacks() {
+		return (EReference) controllerEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getController_ReceivesCommands() {
+		return (EReference) controllerEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -467,10 +709,9 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		createEReference(stpaSecEClass, STPA_SEC__SYSTEMS);
 
 		systemEClass = createEClass(SYSTEM);
-		createEReference(systemEClass, SYSTEM__SUBSYSTEMS);
 		createEAttribute(systemEClass, SYSTEM__NAME);
 		createEAttribute(systemEClass, SYSTEM__DESCRIPTION);
-		createEReference(systemEClass, SYSTEM__SYSTEM_MODE);
+		createEReference(systemEClass, SYSTEM__SYSTEM_MODEL);
 
 		controlStructureEClass = createEClass(CONTROL_STRUCTURE);
 		createEAttribute(controlStructureEClass, CONTROL_STRUCTURE__NAME);
@@ -479,29 +720,57 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		createEReference(controlStructureEClass, CONTROL_STRUCTURE__CONTROLLEDPROCESS);
 		createEReference(controlStructureEClass, CONTROL_STRUCTURE__CONTROLACTION);
 		createEReference(controlStructureEClass, CONTROL_STRUCTURE__FEEDBACK);
-		createEReference(controlStructureEClass, CONTROL_STRUCTURE__SENDS_FEEDBACKS);
-		createEReference(controlStructureEClass, CONTROL_STRUCTURE__SENDS_COMMANDS);
-		createEReference(controlStructureEClass, CONTROL_STRUCTURE__CONTROLLER_SENDS_INFO);
 		createEReference(controlStructureEClass, CONTROL_STRUCTURE__CONTROLLER);
+		createEReference(controlStructureEClass, CONTROL_STRUCTURE__SUBSYSTEM_MODEL);
+		createEReference(controlStructureEClass, CONTROL_STRUCTURE__OTHERINFORMATION);
+		createEReference(controlStructureEClass, CONTROL_STRUCTURE__SUBSYSTEM_SENDERS);
+		createEReference(controlStructureEClass, CONTROL_STRUCTURE__SUBSYSTEMS_RECEIVERS);
+		createEReference(controlStructureEClass, CONTROL_STRUCTURE__SWNDS_INFOR);
+		createEReference(controlStructureEClass, CONTROL_STRUCTURE__RECEIVES_INFO);
+		createEReference(controlStructureEClass, CONTROL_STRUCTURE__SENDS_COMMANDS);
+		createEReference(controlStructureEClass, CONTROL_STRUCTURE__RECEIVES_COMMANDS);
 
 		controlStructureElementEClass = createEClass(CONTROL_STRUCTURE_ELEMENT);
 		createEAttribute(controlStructureElementEClass, CONTROL_STRUCTURE_ELEMENT__NAME);
 		createEAttribute(controlStructureElementEClass, CONTROL_STRUCTURE_ELEMENT__DESCRIPTION);
 
 		controlledProcessEClass = createEClass(CONTROLLED_PROCESS);
+		createEReference(controlledProcessEClass, CONTROLLED_PROCESS__SENDS_INFO);
+		createEReference(controlledProcessEClass, CONTROLLED_PROCESS__RECEIVES_INFO);
+		createEReference(controlledProcessEClass, CONTROLLED_PROCESS__RECEIVES_COMMANDS);
+		createEReference(controlledProcessEClass, CONTROLLED_PROCESS__RECEIVES_FEEDBACKS);
 		createEReference(controlledProcessEClass, CONTROLLED_PROCESS__SENDS_FEEDBACKS);
-		createEReference(controlledProcessEClass, CONTROLLED_PROCESS__CONTROLED_PROCESS_SENDS_INFO);
 
 		controlActionEClass = createEClass(CONTROL_ACTION);
-		createEReference(controlActionEClass, CONTROL_ACTION__CONTROLLER_COMMAND_RECEIVER);
-		createEReference(controlActionEClass, CONTROL_ACTION__CONTROLED_PROCCESS_RECEIVER_COMMANDS);
+		createEReference(controlActionEClass, CONTROL_ACTION__CONTROLLER_SENDERS);
+		createEReference(controlActionEClass, CONTROL_ACTION__CONTROLLER_RECEIVERS);
+		createEReference(controlActionEClass, CONTROL_ACTION__CONTROLED_PROCCESS_RECEIVERS);
+		createEReference(controlActionEClass, CONTROL_ACTION__SUBSYSTEM_SENDERS);
+		createEReference(controlActionEClass, CONTROL_ACTION__SUBSYSTEM_RECEIVERS);
 
 		feedbackEClass = createEClass(FEEDBACK);
-		createEReference(feedbackEClass, FEEDBACK__CONTROLLER_FEEDBACK_RECEIVER);
+		createEReference(feedbackEClass, FEEDBACK__CONTROLLER_SENDERS);
+		createEReference(feedbackEClass, FEEDBACK__CONTROLLER_RECEIVERS);
+		createEReference(feedbackEClass, FEEDBACK__CONTROLED_PROCESS_RECEIVERS);
+		createEReference(feedbackEClass, FEEDBACK__CONTROLED_PROCESS_SENDERS);
+		createEReference(feedbackEClass, FEEDBACK__SENDS_FEEDBACKS);
+		createEReference(feedbackEClass, FEEDBACK__RECEIVERS_FEEDBACKS);
 
 		otherInformationEClass = createEClass(OTHER_INFORMATION);
-		createEReference(otherInformationEClass, OTHER_INFORMATION__CCONTROLLER_RECEIVER_INFO);
-		createEReference(otherInformationEClass, OTHER_INFORMATION__CONTROLED_PROCESS_RECEVIER_INFO);
+		createEReference(otherInformationEClass, OTHER_INFORMATION__CONTROLLER_SENDERS);
+		createEReference(otherInformationEClass, OTHER_INFORMATION__CONTROLED_PROCESS_SENDERS);
+		createEReference(otherInformationEClass, OTHER_INFORMATION__CONTROLED_PROCESS_RECEIVERS);
+		createEReference(otherInformationEClass, OTHER_INFORMATION__CONTROLLER_RECEIVERS);
+		createEReference(otherInformationEClass, OTHER_INFORMATION__SUBSYSTEM_SENDERS);
+		createEReference(otherInformationEClass, OTHER_INFORMATION__SUBSYSTEM_RECEIVERS);
+
+		controllerEClass = createEClass(CONTROLLER);
+		createEReference(controllerEClass, CONTROLLER__SENDS_FEEDBACKS);
+		createEReference(controllerEClass, CONTROLLER__SENDS_COMMANDS);
+		createEReference(controllerEClass, CONTROLLER__SENDS_INFO);
+		createEReference(controllerEClass, CONTROLLER__RECEIVES_INFO);
+		createEReference(controllerEClass, CONTROLLER__RECEIVES_FEEDBACKS);
+		createEReference(controllerEClass, CONTROLLER__RECEIVES_COMMANDS);
 	}
 
 	/**
@@ -537,6 +806,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		controlActionEClass.getESuperTypes().add(this.getControlStructureElement());
 		feedbackEClass.getESuperTypes().add(this.getControlStructureElement());
 		otherInformationEClass.getESuperTypes().add(this.getControlStructureElement());
+		controllerEClass.getESuperTypes().add(this.getControlStructureElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(stpaSecEClass, STPASec.class, "STPASec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -546,16 +816,13 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 
 		initEClass(systemEClass, tau.systemengineering.STPAsec.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSystem_Subsystems(), this.getSystem(), null, "subsystems", null, 0, -1,
-				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSystem_Name(), ecorePackage.getEString(), "name", null, 0, 1,
 				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
 				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSystem_Description(), ecorePackage.getEString(), "description", null, 0, 1,
 				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
 				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSystem_SystemMode(), this.getControlStructure(), null, "systemMode", null, 0, -1,
+		initEReference(getSystem_SystemModel(), this.getControlStructure(), null, "systemModel", null, 0, -1,
 				tau.systemengineering.STPAsec.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -579,21 +846,38 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		initEReference(getControlStructure_Feedback(), this.getFeedback(), null, "feedback", null, 0, -1,
 				ControlStructure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getControlStructure_SendsFeedbacks(), this.getFeedback(),
-				this.getFeedback_ControllerFeedbackReceiver(), "sendsFeedbacks", null, 0, 1, ControlStructure.class,
+		initEReference(getControlStructure_Controller(), this.getController(), null, "controller", null, 0, -1,
+				ControlStructure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlStructure_SubsystemModel(), this.getSystem(), null, "subsystemModel", null, 0, -1,
+				ControlStructure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlStructure_Otherinformation(), this.getOtherInformation(), null, "otherinformation",
+				null, 0, -1, ControlStructure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlStructure_SubsystemSenders(), this.getFeedback(), this.getFeedback_SendsFeedbacks(),
+				"subsystemSenders", null, 0, -1, ControlStructure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlStructure_SubsystemsReceivers(), this.getFeedback(),
+				this.getFeedback_ReceiversFeedbacks(), "subsystemsReceivers", null, 0, -1, ControlStructure.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlStructure_SwndsInfor(), this.getOtherInformation(),
+				this.getOtherInformation_SubsystemSenders(), "swndsInfor", null, 0, -1, ControlStructure.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlStructure_ReceivesInfo(), this.getOtherInformation(),
+				this.getOtherInformation_SubsystemReceivers(), "receivesInfo", null, 0, -1, ControlStructure.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getControlStructure_SendsCommands(), this.getControlAction(),
-				this.getControlAction_ControllerCommandReceiver(), "sendsCommands", null, 0, 1, ControlStructure.class,
+				this.getControlAction_SubsystemSenders(), "sendsCommands", null, 0, -1, ControlStructure.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getControlStructure_ControllerSendsInfo(), this.getOtherInformation(),
-				this.getOtherInformation_CcontrollerReceiverInfo(), "controllerSendsInfo", null, 0, -1,
-				ControlStructure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getControlStructure_Controller(), this.getSystem(), null, "controller", null, 0, -1,
-				ControlStructure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlStructure_ReceivesCommands(), this.getControlAction(),
+				this.getControlAction_SubsystemReceivers(), "receivesCommands", null, 0, -1, ControlStructure.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controlStructureElementEClass, ControlStructureElement.class, "ControlStructureElement", IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -606,41 +890,124 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 
 		initEClass(controlledProcessEClass, ControlledProcess.class, "ControlledProcess", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getControlledProcess_SendsFeedbacks(), this.getFeedback(), null, "sendsFeedbacks", null, 0, 1,
+		initEReference(getControlledProcess_SendsInfo(), this.getOtherInformation(),
+				this.getOtherInformation_ControledProcessSenders(), "sendsInfo", null, 0, -1, ControlledProcess.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlledProcess_ReceivesInfo(), this.getOtherInformation(),
+				this.getOtherInformation_ControledProcessReceivers(), "receivesInfo", null, 0, -1,
 				ControlledProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getControlledProcess_ControledProcessSendsInfo(), this.getOtherInformation(),
-				this.getOtherInformation_ControledProcessRecevierInfo(), "controledProcessSendsInfo", null, 0, -1,
+		initEReference(getControlledProcess_ReceivesCommands(), this.getControlAction(),
+				this.getControlAction_ControledProccessReceivers(), "receivesCommands", null, 0, -1,
 				ControlledProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlledProcess_ReceivesFeedbacks(), this.getFeedback(),
+				this.getFeedback_ControledProcessReceivers(), "receivesFeedbacks", null, 0, -1, ControlledProcess.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlledProcess_SendsFeedbacks(), this.getFeedback(),
+				this.getFeedback_ControledProcessSenders(), "sendsFeedbacks", null, 0, -1, ControlledProcess.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controlActionEClass, ControlAction.class, "ControlAction", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getControlAction_ControllerCommandReceiver(), this.getControlStructure(),
-				this.getControlStructure_SendsCommands(), "controllerCommandReceiver", null, 0, -1, ControlAction.class,
+		initEReference(getControlAction_ControllerSenders(), this.getController(), this.getController_SendsCommands(),
+				"controllerSenders", null, 0, -1, ControlAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlAction_ControllerReceivers(), this.getController(),
+				this.getController_ReceivesCommands(), "controllerReceivers", null, 0, -1, ControlAction.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getControlAction_ControledProccessReceiverCommands(), this.getControlledProcess(), null,
-				"controledProccessReceiverCommands", null, 0, 1, ControlAction.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlAction_ControledProccessReceivers(), this.getControlledProcess(),
+				this.getControlledProcess_ReceivesCommands(), "controledProccessReceivers", null, 0, -1,
+				ControlAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlAction_SubsystemSenders(), this.getControlStructure(),
+				this.getControlStructure_SendsCommands(), "subsystemSenders", null, 0, -1, ControlAction.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlAction_SubsystemReceivers(), this.getControlStructure(),
+				this.getControlStructure_ReceivesCommands(), "subsystemReceivers", null, 0, -1, ControlAction.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(feedbackEClass, Feedback.class, "Feedback", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFeedback_ControllerFeedbackReceiver(), this.getControlStructure(),
-				this.getControlStructure_SendsFeedbacks(), "controllerFeedbackReceiver", null, 0, -1, Feedback.class,
+		initEReference(getFeedback_ControllerSenders(), this.getController(), this.getController_SendsFeedbacks(),
+				"controllerSenders", null, 0, -1, Feedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeedback_ControllerReceivers(), this.getController(), this.getController_ReceivesFeedbacks(),
+				"controllerReceivers", null, 0, -1, Feedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeedback_ControledProcessReceivers(), this.getControlledProcess(),
+				this.getControlledProcess_ReceivesFeedbacks(), "controledProcessReceivers", null, 0, -1, Feedback.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeedback_ControledProcessSenders(), this.getControlledProcess(),
+				this.getControlledProcess_SendsFeedbacks(), "controledProcessSenders", null, 0, -1, Feedback.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeedback_SendsFeedbacks(), this.getControlStructure(),
+				this.getControlStructure_SubsystemSenders(), "sendsFeedbacks", null, 0, -1, Feedback.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeedback_ReceiversFeedbacks(), this.getControlStructure(),
+				this.getControlStructure_SubsystemsReceivers(), "receiversFeedbacks", null, 0, -1, Feedback.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(otherInformationEClass, OtherInformation.class, "OtherInformation", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOtherInformation_CcontrollerReceiverInfo(), this.getControlStructure(),
-				this.getControlStructure_ControllerSendsInfo(), "ccontrollerReceiverInfo", null, 0, -1,
+		initEReference(getOtherInformation_ControllerSenders(), this.getController(), this.getController_SendsInfo(),
+				"controllerSenders", null, 0, -1, OtherInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOtherInformation_ControledProcessSenders(), this.getControlledProcess(),
+				this.getControlledProcess_SendsInfo(), "controledProcessSenders", null, 0, -1, OtherInformation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOtherInformation_ControledProcessReceivers(), this.getControlledProcess(),
+				this.getControlledProcess_ReceivesInfo(), "controledProcessReceivers", null, 0, -1,
 				OtherInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOtherInformation_ControledProcessRecevierInfo(), this.getControlledProcess(),
-				this.getControlledProcess_ControledProcessSendsInfo(), "ControledProcessRecevierInfo", null, 0, 1,
-				OtherInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOtherInformation_ControllerReceivers(), this.getController(),
+				this.getController_ReceivesInfo(), "controllerReceivers", null, 0, -1, OtherInformation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOtherInformation_SubsystemSenders(), this.getControlStructure(),
+				this.getControlStructure_SwndsInfor(), "subsystemSenders", null, 0, -1, OtherInformation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOtherInformation_SubsystemReceivers(), this.getControlStructure(),
+				this.getControlStructure_ReceivesInfo(), "subsystemReceivers", null, 0, 1, OtherInformation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(controllerEClass, Controller.class, "Controller", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getController_SendsFeedbacks(), this.getFeedback(), this.getFeedback_ControllerSenders(),
+				"sendsFeedbacks", null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getController_SendsCommands(), this.getControlAction(),
+				this.getControlAction_ControllerSenders(), "sendsCommands", null, 0, -1, Controller.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getController_SendsInfo(), this.getOtherInformation(),
+				this.getOtherInformation_ControllerSenders(), "sendsInfo", null, 0, -1, Controller.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getController_ReceivesInfo(), this.getOtherInformation(),
+				this.getOtherInformation_ControllerReceivers(), "receivesInfo", null, 0, -1, Controller.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getController_ReceivesFeedbacks(), this.getFeedback(), this.getFeedback_ControllerReceivers(),
+				"receivesFeedbacks", null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getController_ReceivesCommands(), this.getControlAction(),
+				this.getControlAction_ControllerReceivers(), "receivesCommands", null, 0, -1, Controller.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

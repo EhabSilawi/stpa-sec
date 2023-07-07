@@ -11,6 +11,7 @@ import tau.systemengineering.STPAsec.ControlAction;
 import tau.systemengineering.STPAsec.ControlStructure;
 import tau.systemengineering.STPAsec.ControlStructureElement;
 import tau.systemengineering.STPAsec.ControlledProcess;
+import tau.systemengineering.STPAsec.Controller;
 import tau.systemengineering.STPAsec.Feedback;
 import tau.systemengineering.STPAsec.OtherInformation;
 import tau.systemengineering.STPAsec.STPASec;
@@ -137,6 +138,15 @@ public class STPAsecSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case STPAsecPackage.CONTROLLER: {
+			Controller controller = (Controller) theEObject;
+			T result = caseController(controller);
+			if (result == null)
+				result = caseControlStructureElement(controller);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -259,6 +269,21 @@ public class STPAsecSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOtherInformation(OtherInformation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Controller</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Controller</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseController(Controller object) {
 		return null;
 	}
 

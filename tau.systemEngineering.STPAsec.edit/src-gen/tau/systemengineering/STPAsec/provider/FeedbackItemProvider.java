@@ -42,24 +42,105 @@ public class FeedbackItemProvider extends ControlStructureElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addControllerFeedbackReceiverPropertyDescriptor(object);
+			addControllerSendersPropertyDescriptor(object);
+			addControllerReceiversPropertyDescriptor(object);
+			addControledProcessReceiversPropertyDescriptor(object);
+			addControledProcessSendersPropertyDescriptor(object);
+			addSendsFeedbacksPropertyDescriptor(object);
+			addReceiversFeedbacksPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Controller Feedback Receiver feature.
+	 * This adds a property descriptor for the Controller Senders feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addControllerFeedbackReceiverPropertyDescriptor(Object object) {
+	protected void addControllerSendersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Feedback_controllerSenders_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Feedback_controllerSenders_feature",
+								"_UI_Feedback_type"),
+						STPAsecPackage.Literals.FEEDBACK__CONTROLLER_SENDERS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Controller Receivers feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControllerReceiversPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Feedback_controllerReceivers_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Feedback_controllerReceivers_feature",
+								"_UI_Feedback_type"),
+						STPAsecPackage.Literals.FEEDBACK__CONTROLLER_RECEIVERS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Controled Process Receivers feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControledProcessReceiversPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_Feedback_controllerFeedbackReceiver_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Feedback_controllerFeedbackReceiver_feature",
+				getString("_UI_Feedback_controledProcessReceivers_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Feedback_controledProcessReceivers_feature",
 						"_UI_Feedback_type"),
-				STPAsecPackage.Literals.FEEDBACK__CONTROLLER_FEEDBACK_RECEIVER, true, false, true, null, null, null));
+				STPAsecPackage.Literals.FEEDBACK__CONTROLED_PROCESS_RECEIVERS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Controled Process Senders feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControledProcessSendersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Feedback_controledProcessSenders_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Feedback_controledProcessSenders_feature",
+								"_UI_Feedback_type"),
+						STPAsecPackage.Literals.FEEDBACK__CONTROLED_PROCESS_SENDERS, true, false, true, null, null,
+						null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sends Feedbacks feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSendsFeedbacksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Feedback_sendsFeedbacks_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Feedback_sendsFeedbacks_feature",
+								"_UI_Feedback_type"),
+						STPAsecPackage.Literals.FEEDBACK__SENDS_FEEDBACKS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Receivers Feedbacks feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReceiversFeedbacksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Feedback_receiversFeedbacks_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Feedback_receiversFeedbacks_feature",
+								"_UI_Feedback_type"),
+						STPAsecPackage.Literals.FEEDBACK__RECEIVERS_FEEDBACKS, true, false, true, null, null, null));
 	}
 
 	/**

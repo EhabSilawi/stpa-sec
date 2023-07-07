@@ -234,6 +234,29 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link tau.systemengineering.STPAsec.Controller} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ControllerItemProvider controllerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link tau.systemengineering.STPAsec.Controller}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createControllerAdapter() {
+		if (controllerItemProvider == null) {
+			controllerItemProvider = new ControllerItemProvider(this);
+		}
+
+		return controllerItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -346,6 +369,8 @@ public class STPAsecItemProviderAdapterFactory extends STPAsecAdapterFactory
 			feedbackItemProvider.dispose();
 		if (otherInformationItemProvider != null)
 			otherInformationItemProvider.dispose();
+		if (controllerItemProvider != null)
+			controllerItemProvider.dispose();
 	}
 
 }

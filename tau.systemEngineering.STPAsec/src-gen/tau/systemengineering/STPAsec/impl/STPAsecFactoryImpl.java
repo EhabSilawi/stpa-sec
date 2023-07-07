@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import tau.systemengineering.STPAsec.ControlAction;
 import tau.systemengineering.STPAsec.ControlStructure;
 import tau.systemengineering.STPAsec.ControlledProcess;
+import tau.systemengineering.STPAsec.Controller;
 import tau.systemengineering.STPAsec.Feedback;
 import tau.systemengineering.STPAsec.OtherInformation;
 import tau.systemengineering.STPAsec.STPASec;
@@ -77,6 +78,8 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 			return createFeedback();
 		case STPAsecPackage.OTHER_INFORMATION:
 			return createOtherInformation();
+		case STPAsecPackage.CONTROLLER:
+			return createController();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -150,6 +153,16 @@ public class STPAsecFactoryImpl extends EFactoryImpl implements STPAsecFactory {
 	public OtherInformation createOtherInformation() {
 		OtherInformationImpl otherInformation = new OtherInformationImpl();
 		return otherInformation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Controller createController() {
+		ControllerImpl controller = new ControllerImpl();
+		return controller;
 	}
 
 	/**
