@@ -33,5 +33,4 @@ public interface STPASec extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<tau.systemengineering.STPAsec.System> getSystems();
 } // STPASec

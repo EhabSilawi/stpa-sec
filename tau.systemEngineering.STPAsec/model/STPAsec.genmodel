@@ -11,71 +11,64 @@
   <genPackages prefix="STPAsec" basePackage="tau.systemengineering" disposableProviderFactory="true"
       ecorePackage="STPAsec.ecore#/">
     <genClasses ecoreClass="STPAsec.ecore#//STPASec">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//STPASec/systems"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//STPASec/system"/>
     </genClasses>
     <genClasses ecoreClass="STPAsec.ecore#//System">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/controller"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/controAction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/feedback"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/controlLoop"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/subSystem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/controlledProcess"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//System/Id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//System/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//System/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/systemModel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//System/goal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/information"/>
     </genClasses>
-    <genClasses ecoreClass="STPAsec.ecore#//ControlStructure">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//ControlStructure/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//ControlStructure/modelGoal"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//ControlStructure/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlStructure/controlledprocess"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlStructure/controlaction"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlStructure/feedback"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlStructure/controller"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlStructure/subsystemModel"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlStructure/otherinformation"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlStructure/subsystemSenders"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlStructure/subsystemsReceivers"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlStructure/swndsInfo"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlStructure/receivesInfo"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlStructure/sendsCommands"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlStructure/receivesCommands"/>
-    </genClasses>
-    <genClasses ecoreClass="STPAsec.ecore#//ControlStructureElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//ControlStructureElement/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//ControlStructureElement/description"/>
-    </genClasses>
-    <genClasses ecoreClass="STPAsec.ecore#//ControlledProcess">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlledProcess/sendsInfo"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlledProcess/receivesInfo"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlledProcess/receivesCommands"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlledProcess/receivesFeedbacks"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlledProcess/sendsFeedbacks"/>
+    <genClasses ecoreClass="STPAsec.ecore#//ControlComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//ControlComponent/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//ControlComponent/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlComponent/performs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlComponent/controls"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlComponent/sendsFeedback"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlComponent/receivesFeedback"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlComponent/receivesInfo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlComponent/sendsInfo"/>
     </genClasses>
     <genClasses ecoreClass="STPAsec.ecore#//ControlAction">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlAction/controllerSenders"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlAction/controllerReceivers"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlAction/controledProccessReceivers"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlAction/subsystemSenders"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlAction/subsystemReceivers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//ControlAction/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//ControlAction/name"/>
     </genClasses>
     <genClasses ecoreClass="STPAsec.ecore#//Feedback">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Feedback/controllerSenders"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Feedback/controllerReceivers"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Feedback/controledProcessReceivers"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Feedback/controledProcessSenders"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Feedback/sendsFeedbacks"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Feedback/receiversFeedbacks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Feedback/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Feedback/name"/>
     </genClasses>
-    <genClasses ecoreClass="STPAsec.ecore#//OtherInformation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//OtherInformation/controllerSenders"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//OtherInformation/controledProcessSenders"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//OtherInformation/controledProcessReceivers"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//OtherInformation/controllerReceivers"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//OtherInformation/subsystemSenders"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//OtherInformation/subsystemReceivers"/>
+    <genClasses ecoreClass="STPAsec.ecore#//ControlLoop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlLoop/cmdflow"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlLoop/feedbackflow"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlLoop/infoflow"/>
     </genClasses>
-    <genClasses ecoreClass="STPAsec.ecore#//Controller">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Controller/sendsFeedbacks"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Controller/sendsCommands"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Controller/sendsInfo"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Controller/receivesInfo"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Controller/receivesFeedbacks"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Controller/receivesCommands"/>
+    <genClasses ecoreClass="STPAsec.ecore#//CmdFlow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//CmdFlow/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//CmdFlow/performedBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//CmdFlow/contorledBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//CmdFlow/cmd"/>
+    </genClasses>
+    <genClasses ecoreClass="STPAsec.ecore#//FeedbackFlow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//FeedbackFlow/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//FeedbackFlow/feedbackSender"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//FeedbackFlow/feedbackReceiver"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//FeedbackFlow/feedback"/>
+    </genClasses>
+    <genClasses ecoreClass="STPAsec.ecore#//InfoFlow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//InfoFlow/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//InfoFlow/information"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//InfoFlow/infoReceiver"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//InfoFlow/infoSender"/>
+    </genClasses>
+    <genClasses ecoreClass="STPAsec.ecore#//Information">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Information/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Information/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

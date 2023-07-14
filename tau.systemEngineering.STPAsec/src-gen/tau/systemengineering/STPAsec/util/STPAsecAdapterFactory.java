@@ -9,15 +9,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import tau.systemengineering.STPAsec.ControlAction;
-import tau.systemengineering.STPAsec.ControlStructure;
-import tau.systemengineering.STPAsec.ControlStructureElement;
-import tau.systemengineering.STPAsec.ControlledProcess;
-import tau.systemengineering.STPAsec.Controller;
-import tau.systemengineering.STPAsec.Feedback;
-import tau.systemengineering.STPAsec.OtherInformation;
 import tau.systemengineering.STPAsec.STPASec;
-import tau.systemengineering.STPAsec.STPAsecPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,13 +20,7 @@ import tau.systemengineering.STPAsec.STPAsecPackage;
  * @generated
  */
 public class STPAsecAdapterFactory extends AdapterFactoryImpl {
-	/**
-	 * The cached model package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static STPAsecPackage modelPackage;
+
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -42,101 +28,9 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public STPAsecAdapterFactory() {
-		if (modelPackage == null) {
-			modelPackage = STPAsecPackage.eINSTANCE;
-		}
-	}
 
-	/**
-	 * Returns whether this factory is applicable for the type of the object.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
-	 * <!-- end-user-doc -->
-	 * @return whether this factory is applicable for the type of the object.
-	 * @generated
-	 */
-	@Override
-	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
-			return true;
-		}
-		if (object instanceof EObject) {
-			return ((EObject) object).eClass().getEPackage() == modelPackage;
-		}
-		return false;
-	}
 
-	/**
-	 * The switch that delegates to the <code>createXXX</code> methods.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected STPAsecSwitch<Adapter> modelSwitch = new STPAsecSwitch<Adapter>() {
-		@Override
-		public Adapter caseSTPASec(STPASec object) {
-			return createSTPASecAdapter();
-		}
-
-		@Override
-		public Adapter caseSystem(tau.systemengineering.STPAsec.System object) {
-			return createSystemAdapter();
-		}
-
-		@Override
-		public Adapter caseControlStructure(ControlStructure object) {
-			return createControlStructureAdapter();
-		}
-
-		@Override
-		public Adapter caseControlStructureElement(ControlStructureElement object) {
-			return createControlStructureElementAdapter();
-		}
-
-		@Override
-		public Adapter caseControlledProcess(ControlledProcess object) {
-			return createControlledProcessAdapter();
-		}
-
-		@Override
-		public Adapter caseControlAction(ControlAction object) {
-			return createControlActionAdapter();
-		}
-
-		@Override
-		public Adapter caseFeedback(Feedback object) {
-			return createFeedbackAdapter();
-		}
-
-		@Override
-		public Adapter caseOtherInformation(OtherInformation object) {
-			return createOtherInformationAdapter();
-		}
-
-		@Override
-		public Adapter caseController(Controller object) {
-			return createControllerAdapter();
-		}
-
-		@Override
-		public Adapter defaultCase(EObject object) {
-			return createEObjectAdapter();
-		}
-	};
-
-	/**
-	 * Creates an adapter for the <code>target</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
-	 * @return the adapter for the <code>target</code>.
-	 * @generated
-	 */
-	@Override
-	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject) target);
-	}
+	
 
 	/**
 	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.STPASec <em>STPA Sec</em>}'.
@@ -163,104 +57,6 @@ public class STPAsecAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSystemAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.ControlStructure <em>Control Structure</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.ControlStructure
-	 * @generated
-	 */
-	public Adapter createControlStructureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.ControlStructureElement <em>Control Structure Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.ControlStructureElement
-	 * @generated
-	 */
-	public Adapter createControlStructureElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.ControlledProcess <em>Controlled Process</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.ControlledProcess
-	 * @generated
-	 */
-	public Adapter createControlledProcessAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.ControlAction <em>Control Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.ControlAction
-	 * @generated
-	 */
-	public Adapter createControlActionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.Feedback <em>Feedback</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.Feedback
-	 * @generated
-	 */
-	public Adapter createFeedbackAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.OtherInformation <em>Other Information</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.OtherInformation
-	 * @generated
-	 */
-	public Adapter createOtherInformationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link tau.systemengineering.STPAsec.Controller <em>Controller</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see tau.systemengineering.STPAsec.Controller
-	 * @generated
-	 */
-	public Adapter createControllerAdapter() {
 		return null;
 	}
 

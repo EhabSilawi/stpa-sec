@@ -6,12 +6,4 @@
 
 <plugin>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated STPAsec -->
-      <package
-            uri="http://www.example.org/STPAsec"
-            class="tau.systemengineering.STPAsec.STPAsecPackage"
-            genModel="model/STPAsec.genmodel"/>
-   </extension>
-
 </plugin>
