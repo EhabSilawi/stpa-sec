@@ -2,6 +2,246 @@
 <STPAsec:STPASec
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:STPAsec="http://www.example.org/STPAsec"
-    xsi:schemaLocation="http://www.example.org/STPAsec STPAsec.ecore"/>
+    xmlns:STPAsec="http://www.example.org/STPAsec">
+  <system name="Derived Load Alleviation System"
+      goal=" In order to contribute to faster cycle times and lower operating costs CONSTRAINTS / RESTRAINTS: While maximizing system autonomy and maintaining safety of flight.">
+    <controAction
+        id="1"
+        name="ARO files the boom to the receptacle"/>
+    <controAction
+        id="5"
+        name="Tanker movement"/>
+    <feedback
+        id="2"
+        name="Connect / disconnect signal &amp; feedback"/>
+    <feedback
+        id="3"
+        name="Receiver responds to varbel coaching"/>
+    <feedback
+        name="Receivers moves to maintain retaltive postion"/>
+    <controlLoop>
+      <cmdflow
+          id="1"
+          performedBy="//@system.0/@subSystem.1/@subSystem.0"
+          controledBy="//@system.0/@subSystem.0/@subSystem.3"
+          cmd="//@system.0/@controAction.0"/>
+      <cmdflow
+          performedBy="//@system.0/@subSystem.1/@subSystem.0"
+          controledBy="//@system.0/@subSystem.0/@subSystem.0"
+          cmd="//@system.0/@controAction.1"/>
+      <feedbackflow
+          id="2"
+          feedbackSender="//@system.0/@subSystem.0/@subSystem.5"
+          feedbackReceiver="//@system.0/@subSystem.1/@subSystem.2"
+          feedback="//@system.0/@feedback.0"/>
+      <feedbackflow
+          id="3"
+          feedbackSender="//@system.0/@subSystem.1/@subSystem.2"
+          feedbackReceiver="//@system.0/@subSystem.0/@subSystem.5"
+          feedback="//@system.0/@feedback.0"/>
+      <feedbackflow
+          id="4"
+          feedbackSender="//@system.0/@subSystem.1/@subSystem.0"
+          feedbackReceiver="//@system.0/@subSystem.0/@subSystem.3"
+          feedback="//@system.0/@feedback.1"/>
+      <feedbackflow
+          feedbackSender="//@system.0/@subSystem.1/@subSystem.0"
+          feedbackReceiver="//@system.0/@subSystem.0/@subSystem.0"
+          feedback="//@system.0/@feedback.2"/>
+    </controlLoop>
+    <subSystem
+        Id="1"
+        name="Tanker">
+      <controAction
+          id="1"
+          name="Flight Path Commands"/>
+      <controAction
+          id="2"
+          name="CMD1"/>
+      <controAction
+          id="3"
+          name="Manual Boom Pos. BCU off/on and BCU next mode"/>
+      <controAction
+          id="4"
+          name="Control surface movement (x,y.z)"/>
+      <feedback
+          id="1"
+          name="TFeedback 1"/>
+      <feedback
+          id="2"
+          name="TFeedback 2"/>
+      <feedback
+          id="2"
+          name="Boom Postion Sensor , Boom Contack Sensor,  Boom Force Sensor"/>
+      <feedback
+          id="4"
+          name="Synthetic feel, Boom Postion, Boom Coupled"/>
+      <feedback
+          id="5"
+          name="Visual Postion feedback"/>
+      <controlLoop>
+        <cmdflow
+            id="1"
+            performedBy="//@system.0/@subSystem.0/@subSystem.1"
+            controledBy="//@system.0/@subSystem.0/@subSystem.0"
+            cmd="//@system.0/@subSystem.0/@controAction.0"/>
+        <cmdflow
+            id="2"
+            performedBy="//@system.0/@subSystem.0/@subSystem.2"
+            controledBy="//@system.0/@subSystem.0/@subSystem.1"
+            cmd="//@system.0/@subSystem.0/@controAction.1"/>
+        <cmdflow
+            id="3"
+            performedBy="//@system.0/@subSystem.0/@subSystem.4"
+            controledBy="//@system.0/@subSystem.0/@subSystem.3"
+            cmd="//@system.0/@subSystem.0/@controAction.2"/>
+        <cmdflow
+            id="4"
+            performedBy="//@system.0/@subSystem.0/@subSystem.5"
+            controledBy="//@system.0/@subSystem.0/@subSystem.4"
+            cmd="//@system.0/@subSystem.0/@controAction.3"/>
+        <feedbackflow
+            id="5"
+            feedbackSender="//@system.0/@subSystem.0/@subSystem.1"
+            feedbackReceiver="//@system.0/@subSystem.0/@subSystem.0"
+            feedback="//@system.0/@subSystem.0/@feedback.0"/>
+        <feedbackflow
+            id="6"
+            feedbackSender="//@system.0/@subSystem.0/@subSystem.2"
+            feedbackReceiver="//@system.0/@subSystem.0/@subSystem.1"
+            feedback="//@system.0/@subSystem.0/@feedback.1"/>
+        <feedbackflow
+            id="7"
+            feedbackSender="//@system.0/@subSystem.0/@subSystem.5"
+            feedbackReceiver="//@system.0/@subSystem.0/@subSystem.4"
+            feedback="//@system.0/@subSystem.0/@feedback.2"/>
+        <feedbackflow
+            id="8"
+            feedbackSender="//@system.0/@subSystem.0/@subSystem.4"
+            feedbackReceiver="//@system.0/@subSystem.0/@subSystem.3"
+            feedback="//@system.0/@subSystem.0/@feedback.3"/>
+        <feedbackflow
+            id="9"
+            feedbackSender="//@system.0/@subSystem.0/@subSystem.5"
+            feedbackReceiver="//@system.0/@subSystem.0/@subSystem.3"
+            feedback="//@system.0/@subSystem.0/@feedback.4"/>
+        <infoflow
+            id="10"
+            information="//@system.0/@subSystem.0/@information.0"
+            infoReceiver="//@system.0/@subSystem.0/@subSystem.3"
+            infoSender="//@system.0/@subSystem.0/@subSystem.0"/>
+        <infoflow
+            id="11"
+            information="//@system.0/@subSystem.0/@information.1"
+            infoReceiver="//@system.0/@subSystem.0/@subSystem.0"
+            infoSender="//@system.0/@subSystem.0/@subSystem.3"/>
+      </controlLoop>
+      <subSystem
+          Id="6"
+          name="Tanker Pilot"
+          receivesInfo="//@system.0/@subSystem.0/@controlLoop.0/@infoflow.1"
+          sendsInfo="//@system.0/@subSystem.0/@controlLoop.0/@infoflow.0"
+          receivesFeedback="//@system.0/@subSystem.0/@controlLoop.0/@feedbackflow.0 //@system.0/@controlLoop.0/@feedbackflow.3"
+          controls="//@system.0/@subSystem.0/@controlLoop.0/@cmdflow.0 //@system.0/@controlLoop.0/@cmdflow.1"/>
+      <subSystem
+          Id="7"
+          name="Tanker Filght Control System"
+          receivesFeedback="//@system.0/@subSystem.0/@controlLoop.0/@feedbackflow.1"
+          sendsFeedback="//@system.0/@subSystem.0/@controlLoop.0/@feedbackflow.0"
+          controls="//@system.0/@subSystem.0/@controlLoop.0/@cmdflow.1"
+          performs="//@system.0/@subSystem.0/@controlLoop.0/@cmdflow.0"/>
+      <subSystem
+          Id="8"
+          name="Physical Aircraft"
+          sendsFeedback="//@system.0/@subSystem.0/@controlLoop.0/@feedbackflow.1"
+          performs="//@system.0/@subSystem.0/@controlLoop.0/@cmdflow.1"/>
+      <subSystem
+          Id="9"
+          name="Boom Operator"
+          receivesInfo="//@system.0/@subSystem.0/@controlLoop.0/@infoflow.0"
+          sendsInfo="//@system.0/@subSystem.0/@controlLoop.0/@infoflow.1"
+          receivesFeedback="//@system.0/@subSystem.0/@controlLoop.0/@feedbackflow.3 //@system.0/@subSystem.0/@controlLoop.0/@feedbackflow.4 //@system.0/@controlLoop.0/@feedbackflow.2"
+          controls="//@system.0/@subSystem.0/@controlLoop.0/@cmdflow.2 //@system.0/@controlLoop.0/@cmdflow.0"/>
+      <subSystem
+          Id="10"
+          name="Boom Control Unit"
+          receivesFeedback="//@system.0/@subSystem.0/@controlLoop.0/@feedbackflow.2"
+          sendsFeedback="//@system.0/@subSystem.0/@controlLoop.0/@feedbackflow.3"
+          controls="//@system.0/@subSystem.0/@controlLoop.0/@cmdflow.3"
+          performs="//@system.0/@subSystem.0/@controlLoop.0/@cmdflow.2"/>
+      <subSystem
+          Id="11"
+          name="Boom"
+          receivesFeedback="//@system.0/@controlLoop.0/@feedbackflow.1"
+          sendsFeedback="//@system.0/@subSystem.0/@controlLoop.0/@feedbackflow.2 //@system.0/@subSystem.0/@controlLoop.0/@feedbackflow.4 //@system.0/@controlLoop.0/@feedbackflow.0"
+          performs="//@system.0/@subSystem.0/@controlLoop.0/@cmdflow.3"/>
+      <information
+          id="1"
+          name="Info 1"/>
+      <information
+          id="2"
+          name="Info 2"/>
+    </subSystem>
+    <subSystem
+        Id="2"
+        name="Receiver">
+      <controAction
+          id="1"
+          name="cmd 1"/>
+      <controAction
+          name="RS flight path commands"/>
+      <feedback
+          id="1"
+          name="Feedback 1"/>
+      <feedback
+          id="2"
+          name="Feesback 2"/>
+      <controlLoop>
+        <cmdflow
+            id="1"
+            performedBy="//@system.0/@subSystem.1/@subSystem.1"
+            controledBy="//@system.0/@subSystem.1/@subSystem.0"
+            cmd="//@system.0/@subSystem.1/@controAction.1"/>
+        <cmdflow
+            id="2"
+            performedBy="//@system.0/@subSystem.1/@subSystem.2"
+            controledBy="//@system.0/@subSystem.1/@subSystem.1"
+            cmd="//@system.0/@subSystem.1/@controAction.0"/>
+        <feedbackflow
+            id="1"
+            feedbackSender="//@system.0/@subSystem.1/@subSystem.2"
+            feedbackReceiver="//@system.0/@subSystem.1/@subSystem.1"
+            feedback="//@system.0/@subSystem.1/@feedback.0"/>
+        <feedbackflow
+            id="2"
+            feedbackSender="//@system.0/@subSystem.1/@subSystem.1"
+            feedbackReceiver="//@system.0/@subSystem.1/@subSystem.0"
+            feedback="//@system.0/@subSystem.1/@feedback.1"/>
+      </controlLoop>
+      <subSystem
+          Id="3"
+          name="Recevier Pilots"
+          receivesFeedback="//@system.0/@subSystem.1/@controlLoop.0/@feedbackflow.1"
+          sendsFeedback="//@system.0/@controlLoop.0/@feedbackflow.2 //@system.0/@controlLoop.0/@feedbackflow.3"
+          controls="//@system.0/@subSystem.1/@controlLoop.0/@cmdflow.0"
+          performs="//@system.0/@controlLoop.0/@cmdflow.0 //@system.0/@controlLoop.0/@cmdflow.1"/>
+      <subSystem
+          Id="4"
+          name="Aircraft Automation"
+          receivesFeedback="//@system.0/@subSystem.1/@controlLoop.0/@feedbackflow.0"
+          sendsFeedback="//@system.0/@subSystem.1/@controlLoop.0/@feedbackflow.1"
+          controls="//@system.0/@subSystem.1/@controlLoop.0/@cmdflow.1"
+          performs="//@system.0/@subSystem.1/@controlLoop.0/@cmdflow.0"/>
+      <subSystem
+          Id="5"
+          name="Receiver Aircraft"
+          receivesFeedback="//@system.0/@controlLoop.0/@feedbackflow.0"
+          sendsFeedback="//@system.0/@subSystem.1/@controlLoop.0/@feedbackflow.0 //@system.0/@controlLoop.0/@feedbackflow.1"
+          performs="//@system.0/@subSystem.1/@controlLoop.0/@cmdflow.1"/>
+    </subSystem>
+  </system>
+  <loss name="Loss of Critical Protected Information (CPI)"/>
+  <SystemLevelConstraint
+      conditionToEnforce="CPI should not be exposed to an unauthorized individual"
+      system="//@system.0/@subSystem.0"/>
+</STPAsec:STPASec>

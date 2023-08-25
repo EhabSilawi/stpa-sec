@@ -10,30 +10,36 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="STPAsec" basePackage="tau.systemengineering" disposableProviderFactory="true"
       ecorePackage="STPAsec.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="STPAsec.ecore#//TypeOfUnsecureControlAction">
+      <genEnumLiterals ecoreEnumLiteral="STPAsec.ecore#//TypeOfUnsecureControlAction/NotProvided"/>
+      <genEnumLiterals ecoreEnumLiteral="STPAsec.ecore#//TypeOfUnsecureControlAction/ProvidingCausesHazard"/>
+      <genEnumLiterals ecoreEnumLiteral="STPAsec.ecore#//TypeOfUnsecureControlAction/ToEarlyToLate"/>
+      <genEnumLiterals ecoreEnumLiteral="STPAsec.ecore#//TypeOfUnsecureControlAction/StopTooSoonAppliedToLong"/>
+    </genEnums>
     <genClasses ecoreClass="STPAsec.ecore#//STPASec">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//STPASec/system"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//STPASec/loss"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//STPASec/systemLevelHazard"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//STPASec/SystemLevelConstraint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//STPASec/scenario"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//STPASec/insecureControlAction"/>
     </genClasses>
     <genClasses ecoreClass="STPAsec.ecore#//System">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/controller"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/controAction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/feedback"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/controlLoop"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/subSystem"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/controlledProcess"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//System/Id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//System/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//System/goal"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/information"/>
-    </genClasses>
-    <genClasses ecoreClass="STPAsec.ecore#//ControlComponent">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//ControlComponent/id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//ControlComponent/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlComponent/performs"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlComponent/controls"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlComponent/sendsFeedback"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlComponent/receivesFeedback"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlComponent/receivesInfo"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControlComponent/sendsInfo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/receivesInfo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/sendsInfo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/receivesFeedback"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/sendsFeedback"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/controls"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/performs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//System/controllerConstraints"/>
     </genClasses>
     <genClasses ecoreClass="STPAsec.ecore#//ControlAction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//ControlAction/id"/>
@@ -51,7 +57,7 @@
     <genClasses ecoreClass="STPAsec.ecore#//CmdFlow">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//CmdFlow/id"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//CmdFlow/performedBy"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//CmdFlow/contorledBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//CmdFlow/controledBy"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//CmdFlow/cmd"/>
     </genClasses>
     <genClasses ecoreClass="STPAsec.ecore#//FeedbackFlow">
@@ -69,6 +75,48 @@
     <genClasses ecoreClass="STPAsec.ecore#//Information">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Information/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Information/name"/>
+    </genClasses>
+    <genClasses ecoreClass="STPAsec.ecore#//Loss">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Loss/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Loss/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Loss/traceableTo"/>
+    </genClasses>
+    <genClasses ecoreClass="STPAsec.ecore#//SystemLevelHazard">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference STPAsec.ecore#//SystemLevelHazard/refineHazards"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//SystemLevelHazard/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//SystemLevelHazard/leadsTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//SystemLevelHazard/unsecureCondition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//SystemLevelHazard/constraint"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//SystemLevelHazard/system"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//SystemLevelHazard/ICA"/>
+    </genClasses>
+    <genClasses ecoreClass="STPAsec.ecore#//SystemLevelConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//SystemLevelConstraint/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//SystemLevelConstraint/conditionToEnforce"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//SystemLevelConstraint/traceableTo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//SystemLevelConstraint/system"/>
+    </genClasses>
+    <genClasses ecoreClass="STPAsec.ecore#//InsecureControlAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//InsecureControlAction/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//InsecureControlAction/context"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//InsecureControlAction/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//InsecureControlAction/linkToHazrd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//InsecureControlAction/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//InsecureControlAction/controlAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//InsecureControlAction/cmdflow"/>
+    </genClasses>
+    <genClasses ecoreClass="STPAsec.ecore#//ControllerConstraints">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControllerConstraints/ICA"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//ControllerConstraints/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//ControllerConstraints/constraints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//ControllerConstraints/systemlevelhazard"/>
+    </genClasses>
+    <genClasses ecoreClass="STPAsec.ecore#//Scenario">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Scenario/ICA"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Scenario/system"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Scenario/systemLevelHazard"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Scenario/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Scenario/context"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
