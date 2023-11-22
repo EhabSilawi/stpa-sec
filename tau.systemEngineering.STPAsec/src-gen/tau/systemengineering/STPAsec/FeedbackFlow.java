@@ -56,7 +56,7 @@ public interface FeedbackFlow extends EObject {
 	 * @see #setFeedbackSender(tau.systemengineering.STPAsec.System)
 	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getFeedbackFlow_FeedbackSender()
 	 * @see tau.systemengineering.STPAsec.System#getSendsFeedback
-	 * @model opposite="sendsFeedback"
+	 * @model opposite="sendsFeedback" required="true"
 	 * @generated
 	 */
 	tau.systemengineering.STPAsec.System getFeedbackSender();
@@ -80,7 +80,7 @@ public interface FeedbackFlow extends EObject {
 	 * @see #setFeedbackReceiver(tau.systemengineering.STPAsec.System)
 	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getFeedbackFlow_FeedbackReceiver()
 	 * @see tau.systemengineering.STPAsec.System#getReceivesFeedback
-	 * @model opposite="receivesFeedback"
+	 * @model opposite="receivesFeedback" required="true"
 	 * @generated
 	 */
 	tau.systemengineering.STPAsec.System getFeedbackReceiver();

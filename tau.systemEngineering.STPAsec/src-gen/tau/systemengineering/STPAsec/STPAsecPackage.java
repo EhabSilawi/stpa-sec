@@ -1090,22 +1090,13 @@ public interface STPAsecPackage extends EPackage {
 	int SCENARIO__SYSTEM = 1;
 
 	/**
-	 * The feature id for the '<em><b>System Level Hazard</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCENARIO__SYSTEM_LEVEL_HAZARD = 2;
-
-	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__ID = 3;
+	int SCENARIO__ID = 2;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' attribute.
@@ -1114,7 +1105,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__CONTEXT = 4;
+	int SCENARIO__CONTEXT = 3;
 
 	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
@@ -1123,7 +1114,7 @@ public interface STPAsecPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_FEATURE_COUNT = 5;
+	int SCENARIO_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Scenario</em>' class.
@@ -2065,17 +2056,6 @@ public interface STPAsecPackage extends EPackage {
 	EReference getScenario_System();
 
 	/**
-	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.Scenario#getSystemLevelHazard <em>System Level Hazard</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>System Level Hazard</em>'.
-	 * @see tau.systemengineering.STPAsec.Scenario#getSystemLevelHazard()
-	 * @see #getScenario()
-	 * @generated
-	 */
-	EReference getScenario_SystemLevelHazard();
-
-	/**
 	 * Returns the meta object for the attribute '{@link tau.systemengineering.STPAsec.Scenario#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2840,14 +2820,6 @@ public interface STPAsecPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SCENARIO__SYSTEM = eINSTANCE.getScenario_System();
-
-		/**
-		 * The meta object literal for the '<em><b>System Level Hazard</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SCENARIO__SYSTEM_LEVEL_HAZARD = eINSTANCE.getScenario_SystemLevelHazard();
 
 		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.

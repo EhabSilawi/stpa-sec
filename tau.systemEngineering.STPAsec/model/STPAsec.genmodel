@@ -115,7 +115,6 @@
     <genClasses ecoreClass="STPAsec.ecore#//Scenario">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Scenario/ICA"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Scenario/system"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference STPAsec.ecore#//Scenario/systemLevelHazard"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Scenario/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute STPAsec.ecore#//Scenario/context"/>
     </genClasses>

@@ -981,17 +981,8 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getScenario_SystemLevelHazard() {
-		return (EReference) scenarioEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getScenario_Id() {
-		return (EAttribute) scenarioEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) scenarioEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1000,7 +991,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * @generated
 	 */
 	public EAttribute getScenario_Context() {
-		return (EAttribute) scenarioEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) scenarioEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1140,7 +1131,6 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		scenarioEClass = createEClass(SCENARIO);
 		createEReference(scenarioEClass, SCENARIO__ICA);
 		createEReference(scenarioEClass, SCENARIO__SYSTEM);
-		createEReference(scenarioEClass, SCENARIO__SYSTEM_LEVEL_HAZARD);
 		createEAttribute(scenarioEClass, SCENARIO__ID);
 		createEAttribute(scenarioEClass, SCENARIO__CONTEXT);
 
@@ -1281,10 +1271,10 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		initEClass(cmdFlowEClass, CmdFlow.class, "CmdFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCmdFlow_Id(), ecorePackage.getEInt(), "id", null, 0, 1, CmdFlow.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCmdFlow_PerformedBy(), this.getSystem(), this.getSystem_Performs(), "performedBy", null, 0, 1,
+		initEReference(getCmdFlow_PerformedBy(), this.getSystem(), this.getSystem_Performs(), "performedBy", null, 1, 1,
 				CmdFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCmdFlow_ControledBy(), this.getSystem(), this.getSystem_Controls(), "controledBy", null, 0, 1,
+		initEReference(getCmdFlow_ControledBy(), this.getSystem(), this.getSystem_Controls(), "controledBy", null, 1, 1,
 				CmdFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCmdFlow_Cmd(), this.getControlAction(), null, "cmd", null, 1, -1, CmdFlow.class,
@@ -1296,10 +1286,10 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		initEAttribute(getFeedbackFlow_Id(), ecorePackage.getEInt(), "id", null, 0, 1, FeedbackFlow.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFeedbackFlow_FeedbackSender(), this.getSystem(), this.getSystem_SendsFeedback(),
-				"feedbackSender", null, 0, 1, FeedbackFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				"feedbackSender", null, 1, 1, FeedbackFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFeedbackFlow_FeedbackReceiver(), this.getSystem(), this.getSystem_ReceivesFeedback(),
-				"feedbackReceiver", null, 0, 1, FeedbackFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				"feedbackReceiver", null, 1, 1, FeedbackFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFeedbackFlow_Feedback(), this.getFeedback(), null, "feedback", null, 1, -1,
 				FeedbackFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
@@ -1313,9 +1303,9 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 				InfoFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInfoFlow_InfoReceiver(), this.getSystem(), this.getSystem_ReceivesInfo(), "infoReceiver",
-				null, 0, 1, InfoFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				null, 1, 1, InfoFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInfoFlow_InfoSender(), this.getSystem(), this.getSystem_SendsInfo(), "infoSender", null, 0, 1,
+		initEReference(getInfoFlow_InfoSender(), this.getSystem(), this.getSystem_SendsInfo(), "infoSender", null, 1, 1,
 				InfoFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1424,9 +1414,6 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		initEReference(getScenario_System(), this.getSystem(), null, "system", null, 1, 1, Scenario.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getScenario_SystemLevelHazard(), this.getSTPASec(), null, "systemLevelHazard", null, 1, -1,
-				Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getScenario_Id(), ecorePackage.getEInt(), "id", null, 0, 1, Scenario.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getScenario_Context(), ecorePackage.getEString(), "context", null, 0, 1, Scenario.class,

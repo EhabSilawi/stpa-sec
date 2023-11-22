@@ -68,7 +68,7 @@ public interface InfoFlow extends EObject {
 	 * @see #setInfoReceiver(tau.systemengineering.STPAsec.System)
 	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getInfoFlow_InfoReceiver()
 	 * @see tau.systemengineering.STPAsec.System#getReceivesInfo
-	 * @model opposite="receivesInfo"
+	 * @model opposite="receivesInfo" required="true"
 	 * @generated
 	 */
 	tau.systemengineering.STPAsec.System getInfoReceiver();
@@ -92,7 +92,7 @@ public interface InfoFlow extends EObject {
 	 * @see #setInfoSender(tau.systemengineering.STPAsec.System)
 	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getInfoFlow_InfoSender()
 	 * @see tau.systemengineering.STPAsec.System#getSendsInfo
-	 * @model opposite="sendsInfo"
+	 * @model opposite="sendsInfo" required="true"
 	 * @generated
 	 */
 	tau.systemengineering.STPAsec.System getInfoSender();

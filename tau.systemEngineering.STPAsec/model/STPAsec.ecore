@@ -64,19 +64,19 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CmdFlow">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="performedBy" eType="#//System"
-        eOpposite="#//System/performs"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controledBy" eType="#//System"
-        eOpposite="#//System/controls"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="performedBy" lowerBound="1"
+        eType="#//System" eOpposite="#//System/performs"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controledBy" lowerBound="1"
+        eType="#//System" eOpposite="#//System/controls"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cmd" lowerBound="1" upperBound="-1"
         eType="#//ControlAction"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FeedbackFlow">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="feedbackSender" eType="#//System"
-        eOpposite="#//System/sendsFeedback"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="feedbackReceiver" eType="#//System"
-        eOpposite="#//System/receivesFeedback"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feedbackSender" lowerBound="1"
+        eType="#//System" eOpposite="#//System/sendsFeedback"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feedbackReceiver" lowerBound="1"
+        eType="#//System" eOpposite="#//System/receivesFeedback"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="feedback" lowerBound="1"
         upperBound="-1" eType="#//Feedback"/>
   </eClassifiers>
@@ -84,10 +84,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="information" lowerBound="1"
         upperBound="-1" eType="#//Information"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="infoReceiver" eType="#//System"
-        eOpposite="#//System/receivesInfo"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="infoSender" eType="#//System"
-        eOpposite="#//System/sendsInfo"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="infoReceiver" lowerBound="1"
+        eType="#//System" eOpposite="#//System/receivesInfo"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="infoSender" lowerBound="1"
+        eType="#//System" eOpposite="#//System/sendsInfo"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Information">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -147,8 +147,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ICA" eType="#//InsecureControlAction"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="system" lowerBound="1"
         eType="#//System"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="systemLevelHazard" lowerBound="1"
-        upperBound="-1" eType="#//STPASec"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

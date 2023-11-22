@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<STPAsec:STPASec
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:STPAsec="http://www.example.org/STPAsec">
+  <system Id="1"
+      name="PACS"
+      goal="Picture Archiving and Communication System">
+    <controAction
+        id="18"
+        name="RISA requirements"/>
+    <controAction
+        id="19"
+        name="Rwanda Information Society Authority"/>
+    <controAction
+        id="110"
+        name="Directives on cyber security for network and information systems for all public institutions (official guidelines)"/>
+    <controAction
+        id="111"
+        name="RISA standards, procedures"/>
+    <controAction
+        id="112"
+        name="COHSASA standards (safety and security recommendations) "/>
+    <controAction
+        id="113"
+        name="Legal punishment (internal policy)"/>
+    <controAction
+        id="114"
+        name="MOH policies"/>
+    <controAction
+        id="115"
+        name="Budget, Laws"/>
+    <controAction
+        id="116"
+        name="RISA regulatory compliance must be audited"/>
+    <controAction
+        id="117"
+        name="MOH information systems policies"/>
+    <controAction
+        id="118"
+        name="All policies must be implemented in all departments"/>
+    <controAction
+        id="119"
+        name="Standards must be implemented"/>
+    <controAction
+        id="120"
+        name="Regulations and guidelines"/>
+    <controAction
+        id="121"
+        name="Automatically"/>
+    <controAction
+        id="122"
+        name="RISA, MOH information systems policies, COMSASA standards enforcement must be done"/>
+    <controAction
+        id="123"
+        name="Security policy, procedures (PL1, PL2, PL3)"/>
+    <feedback
+        id="124"
+        name="RISA Compliance&#xA;"/>
+    <feedback
+        id="125"
+        name="Audit report (RISA compliance)"/>
+    <feedback
+        id="125"
+        name="Audit report (compiled reports)"/>
+    <feedback
+        id="126"
+        name="COHSASA internal evaluation report"/>
+    <feedback
+        id="127"
+        name="COHSASA internal evaluation report - twice a year"/>
+    <feedback
+        id="128"
+        name="Details audit reports (compiled reports)"/>
+    <feedback
+        id="129"
+        name="Incident reports (ICT detailed report of security incidents)"/>
+    <feedback
+        id="130"
+        name=" audit reports (policy issues, standards requirements)"/>
+    <feedback
+        id="131"
+        name="Incident report (a form must be filled and submitted)"/>
+    <feedback
+        id="132"
+        name="audit report (security policy and procedures, security standards recommendations: RISA, COHSASA)"/>
+    <controlLoop>
+      <cmdflow
+          id="1"
+          performedBy="//@system.0/@subSystem.0"
+          controledBy="//@system.0/@subSystem.1"
+          cmd="//@system.0/@controAction.0"/>
+      <cmdflow
+          id="2"
+          performedBy="//@system.0/@subSystem.1"
+          controledBy="//@system.0/@subSystem.2"
+          cmd="//@system.0/@controAction.1 //@system.0/@controAction.2"/>
+      <cmdflow
+          id="3"
+          performedBy="//@system.0/@subSystem.2"
+          controledBy="//@system.0/@subSystem.3"
+          cmd="//@system.0/@controAction.3 //@system.0/@controAction.4 //@system.0/@controAction.5 //@system.0/@controAction.6 //@system.0/@controAction.7"/>
+      <cmdflow
+          id="4"
+          performedBy="//@system.0/@subSystem.3"
+          controledBy="//@system.0/@subSystem.4"
+          cmd="//@system.0/@controAction.8 //@system.0/@controAction.9 //@system.0/@controAction.10 //@system.0/@controAction.11 //@system.0/@controAction.12"/>
+      <cmdflow
+          id="5"
+          performedBy="//@system.0/@subSystem.4"
+          controledBy="//@system.0/@subSystem.5"
+          cmd="//@system.0/@controAction.14 //@system.0/@controAction.15"/>
+      <cmdflow
+          id="6"
+          performedBy="//@system.0/@subSystem.0"
+          controledBy="//@system.0/@subSystem.4"
+          cmd="//@system.0/@controAction.13"/>
+      <cmdflow
+          id="7"
+          performedBy="//@system.0/@subSystem.6"
+          controledBy="//@system.0/@subSystem.5"/>
+      <feedbackflow
+          id="8"
+          feedbackSender="//@system.0/@subSystem.1"
+          feedbackReceiver="//@system.0/@subSystem.0"
+          feedback="//@system.0/@feedback.0"/>
+      <feedbackflow
+          id="9"
+          feedbackSender="//@system.0/@subSystem.2"
+          feedbackReceiver="//@system.0/@subSystem.1"
+          feedback="//@system.0/@feedback.1 //@system.0/@feedback.2 //@system.0/@feedback.3"/>
+      <feedbackflow
+          id="10"
+          feedbackSender="//@system.0/@subSystem.3"
+          feedbackReceiver="//@system.0/@subSystem.2"
+          feedback="//@system.0/@feedback.4 //@system.0/@feedback.5"/>
+      <feedbackflow
+          id="11"
+          feedbackSender="//@system.0/@subSystem.4"
+          feedbackReceiver="//@system.0/@subSystem.3"
+          feedback="//@system.0/@feedback.6 //@system.0/@feedback.7"/>
+      <feedbackflow
+          id="12"
+          feedbackSender="//@system.0/@subSystem.5"
+          feedbackReceiver="//@system.0/@subSystem.4"
+          feedback="//@system.0/@feedback.8 //@system.0/@feedback.9"/>
+      <feedbackflow
+          id="13"
+          feedbackSender="//@system.0/@subSystem.6"
+          feedbackReceiver="//@system.0/@subSystem.5"/>
+    </controlLoop>
+    <subSystem
+        Id="11"
+        name="Ministry of ICT in Rwanda"
+        goal="Ministry of ICT in Rwanda"
+        receivesFeedback="//@system.0/@controlLoop.0/@feedbackflow.0"
+        performs="//@system.0/@controlLoop.0/@cmdflow.5 //@system.0/@controlLoop.0/@cmdflow.0"/>
+    <subSystem
+        Id="12"
+        name="MOH"
+        goal=" Ministry of Health (MOH)"
+        receivesFeedback="//@system.0/@controlLoop.0/@feedbackflow.1"
+        sendsFeedback="//@system.0/@controlLoop.0/@feedbackflow.0"
+        controls="//@system.0/@controlLoop.0/@cmdflow.0"
+        performs="//@system.0/@controlLoop.0/@cmdflow.1"/>
+    <subSystem
+        Id="13"
+        name="Hospital General Directorate"
+        goal="Hospital General Directorate"
+        receivesFeedback="//@system.0/@controlLoop.0/@feedbackflow.2"
+        sendsFeedback="//@system.0/@controlLoop.0/@feedbackflow.1"
+        controls="//@system.0/@controlLoop.0/@cmdflow.1"
+        performs="//@system.0/@controlLoop.0/@cmdflow.2"/>
+    <subSystem
+        Id="14"
+        name="Quality Assurance Management unit"
+        goal="Quality Assurance Management unit"
+        receivesFeedback="//@system.0/@controlLoop.0/@feedbackflow.3"
+        sendsFeedback="//@system.0/@controlLoop.0/@feedbackflow.2"
+        controls="//@system.0/@controlLoop.0/@cmdflow.2"
+        performs="//@system.0/@controlLoop.0/@cmdflow.3"/>
+    <subSystem
+        Id="15"
+        name="ICT department"
+        goal="ICT department"
+        receivesFeedback="//@system.0/@controlLoop.0/@feedbackflow.4"
+        sendsFeedback="//@system.0/@controlLoop.0/@feedbackflow.3"
+        controls="//@system.0/@controlLoop.0/@cmdflow.5 //@system.0/@controlLoop.0/@cmdflow.3"
+        performs="//@system.0/@controlLoop.0/@cmdflow.4"/>
+    <subSystem
+        Id="16"
+        name="Human Controller"
+        goal="Human Controller"
+        receivesFeedback="//@system.0/@controlLoop.0/@feedbackflow.5"
+        sendsFeedback="//@system.0/@controlLoop.0/@feedbackflow.4"
+        controls="//@system.0/@controlLoop.0/@cmdflow.4 //@system.0/@controlLoop.0/@cmdflow.6"/>
+    <subSystem
+        Id="17"
+        name="PACS logic"
+        goal="PACS logic"
+        sendsFeedback="//@system.0/@controlLoop.0/@feedbackflow.5"
+        performs="//@system.0/@controlLoop.0/@cmdflow.6">
+      <controlLoop>
+        <feedbackflow
+            id="14"
+            feedbackSender="//@system.0/@subSystem.6/@subSystem.0"
+            feedbackReceiver="//@system.0/@subSystem.6/@subSystem.2"/>
+        <feedbackflow
+            id="15"
+            feedbackSender="//@system.0/@subSystem.6/@subSystem.2"
+            feedbackReceiver="//@system.0/@subSystem.6/@subSystem.1"/>
+        <feedbackflow
+            id="16"
+            feedbackSender="//@system.0/@subSystem.6/@subSystem.1"
+            feedbackReceiver="//@system.0/@subSystem.6/@subSystem.0"/>
+      </controlLoop>
+      <subSystem
+          Id="171"
+          name="PACS Users"
+          goal="PACS Users"
+          receivesFeedback="//@system.0/@subSystem.6/@controlLoop.0/@feedbackflow.2"
+          sendsFeedback="//@system.0/@subSystem.6/@controlLoop.0/@feedbackflow.0"/>
+      <subSystem
+          Id="172"
+          name="Controlled Process"
+          goal="Controlled Process"
+          receivesFeedback="//@system.0/@subSystem.6/@controlLoop.0/@feedbackflow.1"
+          sendsFeedback="//@system.0/@subSystem.6/@controlLoop.0/@feedbackflow.2"/>
+      <subSystem
+          Id="173"
+          name="PACS Administrator&#xA;"
+          goal="PACS Administrator&#xA;"
+          receivesFeedback="//@system.0/@subSystem.6/@controlLoop.0/@feedbackflow.0"
+          sendsFeedback="//@system.0/@subSystem.6/@controlLoop.0/@feedbackflow.1"/>
+    </subSystem>
+  </system>
+  <loss id="1"
+      name="L1 -  Loss on clinical planning or reputation or time for treatment or inability to render timely diagnosis"
+      traceableTo="//@systemLevelHazard.0 //@systemLevelHazard.1 //@systemLevelHazard.2 //@systemLevelHazard.3"/>
+  <loss id="2"
+      name="L2 - Loss of hospital cyber security goals or mission"
+      traceableTo="//@systemLevelHazard.0 //@systemLevelHazard.1 //@systemLevelHazard.2 //@systemLevelHazard.3"/>
+  <loss id="3"
+      name="L3 - Loss of prevention behavior"
+      traceableTo="//@systemLevelHazard.0 //@systemLevelHazard.1 //@systemLevelHazard.2 //@systemLevelHazard.3"/>
+  <loss id="4"
+      name="L4 - Loss of adequate clinical security"
+      traceableTo="//@systemLevelHazard.0 //@systemLevelHazard.2 //@systemLevelHazard.3"/>
+  <systemLevelHazard
+      id="1"
+      leadsTo="//@loss.0 //@loss.2 //@loss.3 //@loss.1"
+      unsecureCondition="H1 - Deficient separation of duties and permissive privileges among PACS users violate the principle of least privileges"
+      constraint="//@SystemLevelConstraint.0"
+      system="//@system.0/@subSystem.6/@subSystem.0"
+      ICA="//@insecureControlAction.0 //@insecureControlAction.1"/>
+  <systemLevelHazard
+      id="2"
+      leadsTo="//@loss.0 //@loss.1 //@loss.2"
+      unsecureCondition="H2 - Lack of clear security policy i.e. internet policy and guidelines among PACS users does not improve ethical responses to cyber security issues"
+      constraint="//@SystemLevelConstraint.1"
+      system="//@system.0/@subSystem.6/@subSystem.0"
+      ICA="//@insecureControlAction.4"/>
+  <systemLevelHazard
+      id="3"
+      leadsTo="//@loss.0 //@loss.1 //@loss.2 //@loss.3"
+      unsecureCondition="H3 - Circumventing web filters from PACS systems by unauthenticated proxy tools increases the attack surface&#xA;"
+      constraint="//@SystemLevelConstraint.1"
+      system="//@system.0"
+      ICA="//@insecureControlAction.4"/>
+  <systemLevelHazard
+      id="4"
+      leadsTo="//@loss.0 //@loss.1 //@loss.2 //@loss.3"
+      unsecureCondition="h4 - Deficient end-point protection or out-of-date services on PACS systems and other interacting clinical information systems"
+      constraint="//@SystemLevelConstraint.1"
+      system="//@system.0"
+      ICA="//@insecureControlAction.1 //@insecureControlAction.2 //@insecureControlAction.3 //@insecureControlAction.5"/>
+  <SystemLevelConstraint
+      id="1"
+      conditionToEnforce="C1 - The management of privileges, permissions, and other security features that are used to perform PACS system’s access control should be very well designed and implemented"
+      traceableTo="//@systemLevelHazard.0"
+      system="//@system.0/@subSystem.6"/>
+  <SystemLevelConstraint
+      id="2"
+      conditionToEnforce="C2 - Protection mechanisms such as network and web application firewalls should be configured to prevent user bypassing of web-filters and the use of&#xA;unauthenticated internet proxies.&#xA;openunauthenticated internet proxies"
+      traceableTo="//@systemLevelHazard.1 //@systemLevelHazard.2 //@systemLevelHazard.3"
+      system="//@system.0/@subSystem.6"/>
+  <scenario
+      ICA="//@insecureControlAction.1"
+      id="1"
+      context="A remote access to PACS networks does not support the use of encryption schemes and these generic accounts access the PACS enterprise’s server not through a properly supported certificate https/TLS, SSL. M2, M3- “I don’t know how many who have this facility may be 4 or 5 but I am sure there are others who can easily interact with the PACS outside the hospital network”. M1, M3, M4 -“I need just to open my browser and access it? I can use my phone or my laptop”. And one of the reasons this is happening is the"/>
+  <scenario
+      ICA="//@insecureControlAction.5"
+      id="2"
+      context="The organization uses discretional controls to provide a minimum level of security for systems that cannot run automated security updates from the antivirus server M6, M7, M9 – “That’s why we subcontract with hardware and software companies to help us promoting that level of security, otherwise for those machines which cannot receive automatic updates, we told the users to download the updates by themselves”. And users with expired or lacking of adequate skills struggled to update their systems, M2, M3, M4, - “We need antivirus as you can see even PACS workstations do not have antiviruses or they should provide us training on how to do that?”. And as a result, some users including clinicians have to update their own systems while they did not have enough training for that"/>
+  <insecureControlAction
+      context="[UCA-1] In the management of user privileges for PACS no unique logon identity identified for PACS users as well as for users from other departments using PACS workstations while PACS serves many departments"
+      source="//@system.0/@subSystem.6/@subSystem.0"
+      linkToHazrd="//@systemLevelHazard.0"
+      id="1"/>
+  <insecureControlAction
+      type="ProvidingCausesHazard"
+      context="[UCA-2] A remote access network segment is provided for generic privileged accounts to access PACS enterprise’s server, while the accounts do not properly report SSL browser sessions and while there is no secure way the hospital extends its private network across the internet in a remote access manner and when the PACS networks does not use encryption methods"
+      linkToHazrd="//@systemLevelHazard.0 //@systemLevelHazard.3"
+      id="2"/>
+  <insecureControlAction
+      context="[UCA-3] No clear countermeasures in preventing or mitigating the vulnerabilities of systems that are no longer vendor supported while interacting with the hospital and PACS networks"
+      linkToHazrd="//@systemLevelHazard.3"
+      id="3"/>
+  <insecureControlAction
+      type="ProvidingCausesHazard"
+      context="[UCA-4] The organization allows the prevalent use of legacy systems by internal and external users before patching for vulnerabilities while interacting with the hospital and PACS networks"
+      linkToHazrd="//@systemLevelHazard.3"
+      id="4"/>
+  <insecureControlAction
+      context="[UCA-5] Automatic security updates from the antivirus server are prevented on PACS systems and on individual endpoints interacting with PACS networks, while some users use unsupported tools to bypass controls"
+      linkToHazrd="//@systemLevelHazard.1 //@systemLevelHazard.2"
+      id="5"/>
+  <insecureControlAction
+      type="ProvidingCausesHazard"
+      context="[UCA-6] The organization runs mandatory automated security controls i.e. antivirus updates, for few systems and many users including clinicians have to update their own systems while they did not have enough training for that"
+      linkToHazrd="//@systemLevelHazard.3"
+      id="6"/>
+</STPAsec:STPASec>

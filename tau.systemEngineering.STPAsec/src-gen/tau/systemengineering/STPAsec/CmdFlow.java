@@ -56,7 +56,7 @@ public interface CmdFlow extends EObject {
 	 * @see #setPerformedBy(tau.systemengineering.STPAsec.System)
 	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getCmdFlow_PerformedBy()
 	 * @see tau.systemengineering.STPAsec.System#getPerforms
-	 * @model opposite="performs"
+	 * @model opposite="performs" required="true"
 	 * @generated
 	 */
 	tau.systemengineering.STPAsec.System getPerformedBy();
@@ -80,7 +80,7 @@ public interface CmdFlow extends EObject {
 	 * @see #setControledBy(tau.systemengineering.STPAsec.System)
 	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getCmdFlow_ControledBy()
 	 * @see tau.systemengineering.STPAsec.System#getControls
-	 * @model opposite="controls"
+	 * @model opposite="controls" required="true"
 	 * @generated
 	 */
 	tau.systemengineering.STPAsec.System getControledBy();

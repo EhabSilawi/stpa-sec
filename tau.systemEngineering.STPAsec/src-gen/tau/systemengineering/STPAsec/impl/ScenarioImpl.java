@@ -2,22 +2,13 @@
  */
 package tau.systemengineering.STPAsec.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import tau.systemengineering.STPAsec.InsecureControlAction;
-import tau.systemengineering.STPAsec.STPASec;
 import tau.systemengineering.STPAsec.STPAsecPackage;
 import tau.systemengineering.STPAsec.Scenario;
 
@@ -31,7 +22,6 @@ import tau.systemengineering.STPAsec.Scenario;
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.impl.ScenarioImpl#getICA <em>ICA</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.ScenarioImpl#getSystem <em>System</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.impl.ScenarioImpl#getSystemLevelHazard <em>System Level Hazard</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.ScenarioImpl#getId <em>Id</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.ScenarioImpl#getContext <em>Context</em>}</li>
  * </ul>
@@ -58,16 +48,6 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * @ordered
 	 */
 	protected tau.systemengineering.STPAsec.System system;
-
-	/**
-	 * The cached value of the '{@link #getSystemLevelHazard() <em>System Level Hazard</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSystemLevelHazard()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<STPASec> systemLevelHazard;
 
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -211,19 +191,6 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<STPASec> getSystemLevelHazard() {
-		if (systemLevelHazard == null) {
-			systemLevelHazard = new EObjectResolvingEList<STPASec>(STPASec.class, this,
-					STPAsecPackage.SCENARIO__SYSTEM_LEVEL_HAZARD);
-		}
-		return systemLevelHazard;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getId() {
 		return id;
 	}
@@ -278,8 +245,6 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			if (resolve)
 				return getSystem();
 			return basicGetSystem();
-		case STPAsecPackage.SCENARIO__SYSTEM_LEVEL_HAZARD:
-			return getSystemLevelHazard();
 		case STPAsecPackage.SCENARIO__ID:
 			return getId();
 		case STPAsecPackage.SCENARIO__CONTEXT:
@@ -302,10 +267,6 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			return;
 		case STPAsecPackage.SCENARIO__SYSTEM:
 			setSystem((tau.systemengineering.STPAsec.System) newValue);
-			return;
-		case STPAsecPackage.SCENARIO__SYSTEM_LEVEL_HAZARD:
-			getSystemLevelHazard().clear();
-			getSystemLevelHazard().addAll((Collection<? extends STPASec>) newValue);
 			return;
 		case STPAsecPackage.SCENARIO__ID:
 			setId((Integer) newValue);
@@ -331,9 +292,6 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 		case STPAsecPackage.SCENARIO__SYSTEM:
 			setSystem((tau.systemengineering.STPAsec.System) null);
 			return;
-		case STPAsecPackage.SCENARIO__SYSTEM_LEVEL_HAZARD:
-			getSystemLevelHazard().clear();
-			return;
 		case STPAsecPackage.SCENARIO__ID:
 			setId(ID_EDEFAULT);
 			return;
@@ -356,8 +314,6 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			return ica != null;
 		case STPAsecPackage.SCENARIO__SYSTEM:
 			return system != null;
-		case STPAsecPackage.SCENARIO__SYSTEM_LEVEL_HAZARD:
-			return systemLevelHazard != null && !systemLevelHazard.isEmpty();
 		case STPAsecPackage.SCENARIO__ID:
 			return id != ID_EDEFAULT;
 		case STPAsecPackage.SCENARIO__CONTEXT:

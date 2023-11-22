@@ -4,9 +4,11 @@
     <semanticResources>STPAsec.ecore</semanticResources>
     <semanticResources>STPAsec.genmodel</semanticResources>
     <semanticResources>STPASec.xmi</semanticResources>
+    <semanticResources>PACS.xmi</semanticResources>
+    <semanticResources>STPASec1.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_KdSX8PFmEe2GtYKjU7tmFw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_8yfGIBZXEe6_kMP0VmsHLg" name="STPAsec class diagram" repPath="#_8yVVIBZXEe6_kMP0VmsHLg" changeId="1698496269097">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_8yfGIBZXEe6_kMP0VmsHLg" name="STPAsec class diagram" repPath="#_8yVVIBZXEe6_kMP0VmsHLg" changeId="1700662734202">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="STPAsec.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -804,22 +806,6 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tERaEDgzEe6v2cZZZQCIfA" id="(0.0,0.9392265193370165)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tERaETgzEe6v2cZZZQCIfA" id="(1.2222222222222223,0.8056872037914692)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_OIhh0EMvEe61va-XL_EcYg" visible="false" type="4001" element="_0MUa7jgzEe6v2cZZZQCIfA" source="_gl9fQDgzEe6v2cZZZQCIfA" target="_KkzEQCIxEe6q7JewsXXUmQ">
-          <children xmi:type="notation:Node" xmi:id="_OIklIEMvEe61va-XL_EcYg" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OIklIUMvEe61va-XL_EcYg" x="288" y="-9"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_OIklIkMvEe61va-XL_EcYg" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OIklI0MvEe61va-XL_EcYg" x="86" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_OIklJEMvEe61va-XL_EcYg" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OIklJUMvEe61va-XL_EcYg" x="128" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_OIhh0UMvEe61va-XL_EcYg" routing="Rectilinear"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_OIhh0kMvEe61va-XL_EcYg" fontColor="7490599" fontName=".AppleSystemUIFont" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_OIhh00MvEe61va-XL_EcYg" points="[-26, 98, 35, 585]$[-26, 156, 35, 643]$[480, 156, 541, 643]$[480, 75, 541, 562]$[330, 75, 391, 562]$[330, -637, 391, -150]$[-88, -637, -27, -150]$[-88, -504, -27, -17]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_OIqrwEMvEe61va-XL_EcYg" id="(0.8237547892720306,0.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_OIqrwUMvEe61va-XL_EcYg" id="(1.0250348360706563,-2.988277616075963)"/>
-        </edges>
         <edges xmi:type="notation:Edge" xmi:id="_RNaPIEMvEe61va-XL_EcYg" type="4001" element="_RMOjZkMvEe61va-XL_EcYg" source="_qwKkEDggEe6v2cZZZQCIfA" target="_ugvR4CJXEe6q7JewsXXUmQ">
           <children xmi:type="notation:Node" xmi:id="_RNcEUEMvEe61va-XL_EcYg" type="6001">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RNcEUUMvEe61va-XL_EcYg" x="-198" y="-33"/>
@@ -1046,7 +1032,7 @@
         </computedStyleDescriptions>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_KkbQ0CIxEe6q7JewsXXUmQ" name="STPASec" tooltipText="" outgoingEdges="_v3qL4CIzEe6q7JewsXXUmQ _O_v7CiJYEe6q7JewsXXUmQ _SYuo4CJYEe6q7JewsXXUmQ _U2Mw-CJYEe6q7JewsXXUmQ _ZkDKDkMvEe61va-XL_EcYg _r55De0MwEe61va-XL_EcYg _51QhMFrNEe6zX4N7cxE5Vg" incomingEdges="_0MUa7jgzEe6v2cZZZQCIfA" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_KkbQ0CIxEe6q7JewsXXUmQ" name="STPASec" tooltipText="" outgoingEdges="_v3qL4CIzEe6q7JewsXXUmQ _O_v7CiJYEe6q7JewsXXUmQ _SYuo4CJYEe6q7JewsXXUmQ _U2Mw-CJYEe6q7JewsXXUmQ _ZkDKDkMvEe61va-XL_EcYg _r55De0MwEe61va-XL_EcYg _51QhMFrNEe6zX4N7cxE5Vg" width="12" height="10">
       <target xmi:type="ecore:EClass" href="STPAsec.ecore#//STPASec"/>
       <semanticElements xmi:type="ecore:EClass" href="STPAsec.ecore#//STPASec"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1830,7 +1816,7 @@
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_3HsogChpEe6c6qi1PoV63w" sourceNode="_PmElwCIxEe6q7JewsXXUmQ" targetNode="_ugZEsCI4Ee6q7JewsXXUmQ" beginLabel="[0..1] infoReceiver" endLabel="[0..*] receivesInfo">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_3HsogChpEe6c6qi1PoV63w" sourceNode="_PmElwCIxEe6q7JewsXXUmQ" targetNode="_ugZEsCI4Ee6q7JewsXXUmQ" beginLabel="[1..1] infoReceiver" endLabel="[0..*] receivesInfo">
       <target xmi:type="ecore:EReference" href="STPAsec.ecore#//System/receivesInfo"/>
       <semanticElements xmi:type="ecore:EReference" href="STPAsec.ecore#//InfoFlow/infoReceiver"/>
       <semanticElements xmi:type="ecore:EReference" href="STPAsec.ecore#//System/receivesInfo"/>
@@ -1844,7 +1830,7 @@
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_4YeT-ChpEe6c6qi1PoV63w" sourceNode="_PmElwCIxEe6q7JewsXXUmQ" targetNode="_ugZEsCI4Ee6q7JewsXXUmQ" beginLabel="[0..1] infoSender" endLabel="[0..*] sendsInfo">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_4YeT-ChpEe6c6qi1PoV63w" sourceNode="_PmElwCIxEe6q7JewsXXUmQ" targetNode="_ugZEsCI4Ee6q7JewsXXUmQ" beginLabel="[1..1] infoSender" endLabel="[0..*] sendsInfo">
       <target xmi:type="ecore:EReference" href="STPAsec.ecore#//System/sendsInfo"/>
       <semanticElements xmi:type="ecore:EReference" href="STPAsec.ecore#//InfoFlow/infoSender"/>
       <semanticElements xmi:type="ecore:EReference" href="STPAsec.ecore#//System/sendsInfo"/>
@@ -1858,7 +1844,7 @@
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_6vzXpihpEe6c6qi1PoV63w" sourceNode="_PmElwCIxEe6q7JewsXXUmQ" targetNode="_jfsewCI1Ee6q7JewsXXUmQ" beginLabel="[0..1] feedbackReceiver" endLabel="[0..*] receivesFeedback">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_6vzXpihpEe6c6qi1PoV63w" sourceNode="_PmElwCIxEe6q7JewsXXUmQ" targetNode="_jfsewCI1Ee6q7JewsXXUmQ" beginLabel="[1..1] feedbackReceiver" endLabel="[0..*] receivesFeedback">
       <target xmi:type="ecore:EReference" href="STPAsec.ecore#//System/receivesFeedback"/>
       <semanticElements xmi:type="ecore:EReference" href="STPAsec.ecore#//FeedbackFlow/feedbackReceiver"/>
       <semanticElements xmi:type="ecore:EReference" href="STPAsec.ecore#//System/receivesFeedback"/>
@@ -1872,7 +1858,7 @@
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_7g75vihpEe6c6qi1PoV63w" sourceNode="_PmElwCIxEe6q7JewsXXUmQ" targetNode="_jfsewCI1Ee6q7JewsXXUmQ" beginLabel="[0..1] feedbackSender" endLabel="[0..*] sendsFeedback">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_7g75vihpEe6c6qi1PoV63w" sourceNode="_PmElwCIxEe6q7JewsXXUmQ" targetNode="_jfsewCI1Ee6q7JewsXXUmQ" beginLabel="[1..1] feedbackSender" endLabel="[0..*] sendsFeedback">
       <target xmi:type="ecore:EReference" href="STPAsec.ecore#//System/sendsFeedback"/>
       <semanticElements xmi:type="ecore:EReference" href="STPAsec.ecore#//FeedbackFlow/feedbackSender"/>
       <semanticElements xmi:type="ecore:EReference" href="STPAsec.ecore#//System/sendsFeedback"/>
@@ -1886,7 +1872,7 @@
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_9SQteihpEe6c6qi1PoV63w" sourceNode="_PmElwCIxEe6q7JewsXXUmQ" targetNode="_gqdXACI1Ee6q7JewsXXUmQ" beginLabel="[0..1] controledBy" endLabel="[0..*] controls">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_9SQteihpEe6c6qi1PoV63w" sourceNode="_PmElwCIxEe6q7JewsXXUmQ" targetNode="_gqdXACI1Ee6q7JewsXXUmQ" beginLabel="[1..1] controledBy" endLabel="[0..*] controls">
       <target xmi:type="ecore:EReference" href="STPAsec.ecore#//System/controls"/>
       <semanticElements xmi:type="ecore:EReference" href="STPAsec.ecore#//CmdFlow/controledBy"/>
       <semanticElements xmi:type="ecore:EReference" href="STPAsec.ecore#//System/controls"/>
@@ -1900,7 +1886,7 @@
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_-ILB2ShpEe6c6qi1PoV63w" sourceNode="_PmElwCIxEe6q7JewsXXUmQ" targetNode="_gqdXACI1Ee6q7JewsXXUmQ" beginLabel="[0..1] performedBy" endLabel="[0..*] performs">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_-ILB2ShpEe6c6qi1PoV63w" sourceNode="_PmElwCIxEe6q7JewsXXUmQ" targetNode="_gqdXACI1Ee6q7JewsXXUmQ" beginLabel="[1..1] performedBy" endLabel="[0..*] performs">
       <target xmi:type="ecore:EReference" href="STPAsec.ecore#//System/performs"/>
       <semanticElements xmi:type="ecore:EReference" href="STPAsec.ecore#//CmdFlow/performedBy"/>
       <semanticElements xmi:type="ecore:EReference" href="STPAsec.ecore#//System/performs"/>
@@ -1981,7 +1967,7 @@
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_gk8yoDgzEe6v2cZZZQCIfA" name="Scenario" tooltipText="" outgoingEdges="_kTCODjgzEe6v2cZZZQCIfA _tDIKmTgzEe6v2cZZZQCIfA _0MUa7jgzEe6v2cZZZQCIfA" incomingEdges="_ZkDKDkMvEe61va-XL_EcYg" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_gk8yoDgzEe6v2cZZZQCIfA" name="Scenario" tooltipText="" outgoingEdges="_kTCODjgzEe6v2cZZZQCIfA _tDIKmTgzEe6v2cZZZQCIfA" incomingEdges="_ZkDKDkMvEe61va-XL_EcYg" width="12" height="10">
       <target xmi:type="ecore:EClass" href="STPAsec.ecore#//Scenario"/>
       <semanticElements xmi:type="ecore:EClass" href="STPAsec.ecore#//Scenario"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -2039,24 +2025,6 @@
           <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_Bpz60jg0Ee6v2cZZZQCIfA" labelSize="6" showIcon="false" labelColor="39,76,114"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
-      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_0MUa7jgzEe6v2cZZZQCIfA" name="[1..*] systemLevelHazard" visible="false" sourceNode="_gk8yoDgzEe6v2cZZZQCIfA" targetNode="_KkbQ0CIxEe6q7JewsXXUmQ">
-      <target xmi:type="ecore:EReference" href="STPAsec.ecore#//Scenario/systemLevelHazard"/>
-      <semanticElements xmi:type="ecore:EReference" href="STPAsec.ecore#//Scenario/systemLevelHazard"/>
-      <graphicalFilters xmi:type="diagram:HideFilter" uid="_ZTEywHWEEe6U3NF3E3ccWA"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_-kK_cDgzEe6v2cZZZQCIfA" description="_-kJxUDgzEe6v2cZZZQCIfA" routingStyle="manhattan" strokeColor="0,0,0">
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_-kK_cjgzEe6v2cZZZQCIfA" showIcon="false">
-          <customFeatures>labelSize</customFeatures>
-          <labelFormat>bold</labelFormat>
-        </centerLabelStyle>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_-kK_cTgzEe6v2cZZZQCIfA" showIcon="false" labelColor="39,76,114">
-          <customFeatures>labelSize</customFeatures>
-        </endLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>

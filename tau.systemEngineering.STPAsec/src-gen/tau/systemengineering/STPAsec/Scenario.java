@@ -2,8 +2,6 @@
  */
 package tau.systemengineering.STPAsec;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -17,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link tau.systemengineering.STPAsec.Scenario#getICA <em>ICA</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.Scenario#getSystem <em>System</em>}</li>
- *   <li>{@link tau.systemengineering.STPAsec.Scenario#getSystemLevelHazard <em>System Level Hazard</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.Scenario#getId <em>Id</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.Scenario#getContext <em>Context</em>}</li>
  * </ul>
@@ -70,18 +67,6 @@ public interface Scenario extends EObject {
 	 * @generated
 	 */
 	void setSystem(tau.systemengineering.STPAsec.System value);
-
-	/**
-	 * Returns the value of the '<em><b>System Level Hazard</b></em>' reference list.
-	 * The list contents are of type {@link tau.systemengineering.STPAsec.STPASec}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>System Level Hazard</em>' reference list.
-	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getScenario_SystemLevelHazard()
-	 * @model required="true"
-	 * @generated
-	 */
-	EList<STPASec> getSystemLevelHazard();
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
