@@ -1387,7 +1387,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		initEReference(getInsecureControlAction_ControlAction(), this.getControlAction(), null, "controlAction", null,
 				1, 1, InsecureControlAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getInsecureControlAction_Cmdflow(), this.getCmdFlow(), null, "cmdflow", null, 0, 1,
+		initEReference(getInsecureControlAction_Cmdflow(), this.getCmdFlow(), null, "cmdflow", null, 1, 1,
 				InsecureControlAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

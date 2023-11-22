@@ -8,7 +8,7 @@
     <semanticResources>STPASec1.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_KdSX8PFmEe2GtYKjU7tmFw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_8yfGIBZXEe6_kMP0VmsHLg" name="STPAsec class diagram" repPath="#_8yVVIBZXEe6_kMP0VmsHLg" changeId="1700662734202">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_8yfGIBZXEe6_kMP0VmsHLg" name="STPAsec class diagram" repPath="#_8yVVIBZXEe6_kMP0VmsHLg" changeId="1700671865694">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="STPAsec.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -1900,17 +1900,14 @@
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_6fm_IDbFEe6MI9LTyEHuUg" name="[0..1] cmdflow" sourceNode="_0c_xsCMXEe6q7JewsXXUmQ" targetNode="_gqdXACI1Ee6q7JewsXXUmQ">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_6fm_IDbFEe6MI9LTyEHuUg" name="[1..1] cmdflow" sourceNode="_0c_xsCMXEe6q7JewsXXUmQ" targetNode="_gqdXACI1Ee6q7JewsXXUmQ">
       <target xmi:type="ecore:EReference" href="STPAsec.ecore#//InsecureControlAction/cmdflow"/>
       <semanticElements xmi:type="ecore:EReference" href="STPAsec.ecore#//InsecureControlAction/cmdflow"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_6fu68DbFEe6MI9LTyEHuUg" routingStyle="manhattan" strokeColor="0,0,0">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_6fu68jbFEe6MI9LTyEHuUg" showIcon="false">
-          <customFeatures>labelSize</customFeatures>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_U9PmEIlXEe6ESstanuO0NA" description="_-kJxUDgzEe6v2cZZZQCIfA" routingStyle="manhattan" strokeColor="0,0,0">
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_U9PmEolXEe6ESstanuO0NA" showIcon="false">
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_6fu68TbFEe6MI9LTyEHuUg" showIcon="false" labelColor="39,76,114">
-          <customFeatures>labelSize</customFeatures>
-        </endLabelStyle>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_U9PmEYlXEe6ESstanuO0NA" labelSize="6" showIcon="false" labelColor="39,76,114"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>

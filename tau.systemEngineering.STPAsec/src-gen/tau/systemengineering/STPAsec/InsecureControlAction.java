@@ -163,7 +163,7 @@ public interface InsecureControlAction extends EObject {
 	 * @return the value of the '<em>Cmdflow</em>' reference.
 	 * @see #setCmdflow(CmdFlow)
 	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getInsecureControlAction_Cmdflow()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	CmdFlow getCmdflow();

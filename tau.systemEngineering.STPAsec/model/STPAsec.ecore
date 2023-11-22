@@ -129,7 +129,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controlAction" lowerBound="1"
         eType="#//ControlAction" derived="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cmdflow" eType="#//CmdFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cmdflow" lowerBound="1"
+        eType="#//CmdFlow"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TypeOfUnsecureControlAction">
     <eLiterals name="NotProvided" literal="NotProvided"/>
