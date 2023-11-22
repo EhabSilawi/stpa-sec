@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import tau.systemengineering.STPAsec.ControllerConstraints;
 import tau.systemengineering.STPAsec.InsecureControlAction;
 import tau.systemengineering.STPAsec.Loss;
 import tau.systemengineering.STPAsec.STPASec;
@@ -34,6 +35,7 @@ import tau.systemengineering.STPAsec.SystemLevelHazard;
  *   <li>{@link tau.systemengineering.STPAsec.impl.STPASecImpl#getSystemLevelConstraint <em>System Level Constraint</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.STPASecImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.impl.STPASecImpl#getInsecureControlAction <em>Insecure Control Action</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.impl.STPASecImpl#getControllerConstraints <em>Controller Constraints</em>}</li>
  * </ul>
  *
  * @generated
@@ -96,6 +98,16 @@ public class STPASecImpl extends MinimalEObjectImpl.Container implements STPASec
 	 * @ordered
 	 */
 	protected EList<InsecureControlAction> insecureControlAction;
+
+	/**
+	 * The cached value of the '{@link #getControllerConstraints() <em>Controller Constraints</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getControllerConstraints()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ControllerConstraints> controllerConstraints;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,6 +209,19 @@ public class STPASecImpl extends MinimalEObjectImpl.Container implements STPASec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ControllerConstraints> getControllerConstraints() {
+		if (controllerConstraints == null) {
+			controllerConstraints = new EObjectContainmentEList<ControllerConstraints>(ControllerConstraints.class,
+					this, STPAsecPackage.STPA_SEC__CONTROLLER_CONSTRAINTS);
+		}
+		return controllerConstraints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -212,6 +237,8 @@ public class STPASecImpl extends MinimalEObjectImpl.Container implements STPASec
 			return ((InternalEList<?>) getScenario()).basicRemove(otherEnd, msgs);
 		case STPAsecPackage.STPA_SEC__INSECURE_CONTROL_ACTION:
 			return ((InternalEList<?>) getInsecureControlAction()).basicRemove(otherEnd, msgs);
+		case STPAsecPackage.STPA_SEC__CONTROLLER_CONSTRAINTS:
+			return ((InternalEList<?>) getControllerConstraints()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -236,6 +263,8 @@ public class STPASecImpl extends MinimalEObjectImpl.Container implements STPASec
 			return getScenario();
 		case STPAsecPackage.STPA_SEC__INSECURE_CONTROL_ACTION:
 			return getInsecureControlAction();
+		case STPAsecPackage.STPA_SEC__CONTROLLER_CONSTRAINTS:
+			return getControllerConstraints();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -273,6 +302,10 @@ public class STPASecImpl extends MinimalEObjectImpl.Container implements STPASec
 			getInsecureControlAction().clear();
 			getInsecureControlAction().addAll((Collection<? extends InsecureControlAction>) newValue);
 			return;
+		case STPAsecPackage.STPA_SEC__CONTROLLER_CONSTRAINTS:
+			getControllerConstraints().clear();
+			getControllerConstraints().addAll((Collection<? extends ControllerConstraints>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -303,6 +336,9 @@ public class STPASecImpl extends MinimalEObjectImpl.Container implements STPASec
 		case STPAsecPackage.STPA_SEC__INSECURE_CONTROL_ACTION:
 			getInsecureControlAction().clear();
 			return;
+		case STPAsecPackage.STPA_SEC__CONTROLLER_CONSTRAINTS:
+			getControllerConstraints().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -327,6 +363,8 @@ public class STPASecImpl extends MinimalEObjectImpl.Container implements STPASec
 			return scenario != null && !scenario.isEmpty();
 		case STPAsecPackage.STPA_SEC__INSECURE_CONTROL_ACTION:
 			return insecureControlAction != null && !insecureControlAction.isEmpty();
+		case STPAsecPackage.STPA_SEC__CONTROLLER_CONSTRAINTS:
+			return controllerConstraints != null && !controllerConstraints.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

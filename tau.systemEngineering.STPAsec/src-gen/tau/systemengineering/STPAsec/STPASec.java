@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tau.systemengineering.STPAsec.STPASec#getSystemLevelConstraint <em>System Level Constraint</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.STPASec#getScenario <em>Scenario</em>}</li>
  *   <li>{@link tau.systemengineering.STPAsec.STPASec#getInsecureControlAction <em>Insecure Control Action</em>}</li>
+ *   <li>{@link tau.systemengineering.STPAsec.STPASec#getControllerConstraints <em>Controller Constraints</em>}</li>
  * </ul>
  *
  * @see tau.systemengineering.STPAsec.STPAsecPackage#getSTPASec()
@@ -99,6 +100,18 @@ public interface STPASec extends EObject {
 	 * @generated
 	 */
 	EList<InsecureControlAction> getInsecureControlAction();
+
+	/**
+	 * Returns the value of the '<em><b>Controller Constraints</b></em>' containment reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.ControllerConstraints}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Controller Constraints</em>' containment reference list.
+	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSTPASec_ControllerConstraints()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ControllerConstraints> getControllerConstraints();
 
 	/**
 	 * Returns the value of the '<em><b>Systems</b></em>' containment reference list.

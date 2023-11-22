@@ -76,6 +76,7 @@ public class STPASecItemProvider extends ItemProviderAdapter implements IEditing
 			childrenFeatures.add(STPAsecPackage.Literals.STPA_SEC__SYSTEM_LEVEL_CONSTRAINT);
 			childrenFeatures.add(STPAsecPackage.Literals.STPA_SEC__SCENARIO);
 			childrenFeatures.add(STPAsecPackage.Literals.STPA_SEC__INSECURE_CONTROL_ACTION);
+			childrenFeatures.add(STPAsecPackage.Literals.STPA_SEC__CONTROLLER_CONSTRAINTS);
 		}
 		return childrenFeatures;
 	}
@@ -143,6 +144,7 @@ public class STPASecItemProvider extends ItemProviderAdapter implements IEditing
 		case STPAsecPackage.STPA_SEC__SYSTEM_LEVEL_CONSTRAINT:
 		case STPAsecPackage.STPA_SEC__SCENARIO:
 		case STPAsecPackage.STPA_SEC__INSECURE_CONTROL_ACTION:
+		case STPAsecPackage.STPA_SEC__CONTROLLER_CONSTRAINTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -177,6 +179,9 @@ public class STPASecItemProvider extends ItemProviderAdapter implements IEditing
 
 		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.STPA_SEC__INSECURE_CONTROL_ACTION,
 				STPAsecFactory.eINSTANCE.createInsecureControlAction()));
+
+		newChildDescriptors.add(createChildParameter(STPAsecPackage.Literals.STPA_SEC__CONTROLLER_CONSTRAINTS,
+				STPAsecFactory.eINSTANCE.createControllerConstraints()));
 	}
 
 	/**

@@ -122,13 +122,22 @@ public interface STPAsecPackage extends EPackage {
 	int STPA_SEC__INSECURE_CONTROL_ACTION = 5;
 
 	/**
+	 * The feature id for the '<em><b>Controller Constraints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STPA_SEC__CONTROLLER_CONSTRAINTS = 6;
+
+	/**
 	 * The number of structural features of the '<em>STPA Sec</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STPA_SEC_FEATURE_COUNT = 6;
+	int STPA_SEC_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>STPA Sec</em>' class.
@@ -1212,6 +1221,17 @@ public interface STPAsecPackage extends EPackage {
 	EReference getSTPASec_InsecureControlAction();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link tau.systemengineering.STPAsec.STPASec#getControllerConstraints <em>Controller Constraints</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Controller Constraints</em>'.
+	 * @see tau.systemengineering.STPAsec.STPASec#getControllerConstraints()
+	 * @see #getSTPASec()
+	 * @generated
+	 */
+	EReference getSTPASec_ControllerConstraints();
+
+	/**
 	 * Returns the meta object for class '{@link tau.systemengineering.STPAsec.System <em>System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2167,6 +2187,14 @@ public interface STPAsecPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STPA_SEC__INSECURE_CONTROL_ACTION = eINSTANCE.getSTPASec_InsecureControlAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Controller Constraints</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STPA_SEC__CONTROLLER_CONSTRAINTS = eINSTANCE.getSTPASec_ControllerConstraints();
 
 		/**
 		 * The meta object literal for the '{@link tau.systemengineering.STPAsec.impl.SystemImpl <em>System</em>}' class.

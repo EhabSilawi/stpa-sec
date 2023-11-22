@@ -279,6 +279,15 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSTPASec_ControllerConstraints() {
+		return (EReference) stpaSecEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSystem() {
 		return systemEClass;
 	}
@@ -1039,6 +1048,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 		createEReference(stpaSecEClass, STPA_SEC__SYSTEM_LEVEL_CONSTRAINT);
 		createEReference(stpaSecEClass, STPA_SEC__SCENARIO);
 		createEReference(stpaSecEClass, STPA_SEC__INSECURE_CONTROL_ACTION);
+		createEReference(stpaSecEClass, STPA_SEC__CONTROLLER_CONSTRAINTS);
 
 		systemEClass = createEClass(SYSTEM);
 		createEReference(systemEClass, SYSTEM__CONTRO_ACTION);
@@ -1187,6 +1197,9 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSTPASec_InsecureControlAction(), this.getInsecureControlAction(), null,
 				"insecureControlAction", null, 0, -1, STPASec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSTPASec_ControllerConstraints(), this.getControllerConstraints(), null,
+				"controllerConstraints", null, 0, -1, STPASec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(systemEClass, tau.systemengineering.STPAsec.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE,

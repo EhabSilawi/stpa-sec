@@ -14,6 +14,8 @@
         eType="#//Scenario" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="insecureControlAction"
         upperBound="-1" eType="#//InsecureControlAction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controllerConstraints"
+        upperBound="-1" eType="#//ControllerConstraints" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="System">
     <eStructuralFeatures xsi:type="ecore:EReference" name="controAction" upperBound="-1"
