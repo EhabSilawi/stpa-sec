@@ -1342,7 +1342,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 				this.getSystemLevelConstraint_TraceableTo(), "constraint", null, 1, -1, SystemLevelHazard.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSystemLevelHazard_System(), this.getSystem(), null, "system", null, 0, 1,
+		initEReference(getSystemLevelHazard_System(), this.getSystem(), null, "system", null, 1, 1,
 				SystemLevelHazard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSystemLevelHazard_ICA(), this.getInsecureControlAction(),
@@ -1408,7 +1408,7 @@ public class STPAsecPackageImpl extends EPackageImpl implements STPAsecPackage {
 
 		initEClass(scenarioEClass, Scenario.class, "Scenario", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getScenario_ICA(), this.getInsecureControlAction(), null, "ICA", null, 0, 1, Scenario.class,
+		initEReference(getScenario_ICA(), this.getInsecureControlAction(), null, "ICA", null, 1, 1, Scenario.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScenario_System(), this.getSystem(), null, "system", null, 1, 1, Scenario.class,

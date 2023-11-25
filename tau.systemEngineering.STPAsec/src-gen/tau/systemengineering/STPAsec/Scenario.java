@@ -31,7 +31,7 @@ public interface Scenario extends EObject {
 	 * @return the value of the '<em>ICA</em>' reference.
 	 * @see #setICA(InsecureControlAction)
 	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getScenario_ICA()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	InsecureControlAction getICA();

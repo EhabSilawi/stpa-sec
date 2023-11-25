@@ -120,7 +120,7 @@ public interface SystemLevelHazard extends EObject {
 	 * @return the value of the '<em>System</em>' reference.
 	 * @see #setSystem(tau.systemengineering.STPAsec.System)
 	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystemLevelHazard_System()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	tau.systemengineering.STPAsec.System getSystem();
