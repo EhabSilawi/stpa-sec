@@ -114,26 +114,16 @@ public interface SystemLevelHazard extends EObject {
 	EList<SystemLevelConstraint> getConstraint();
 
 	/**
-	 * Returns the value of the '<em><b>System</b></em>' reference.
+	 * Returns the value of the '<em><b>System</b></em>' reference list.
+	 * The list contents are of type {@link tau.systemengineering.STPAsec.System}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>System</em>' reference.
-	 * @see #setSystem(tau.systemengineering.STPAsec.System)
+	 * @return the value of the '<em>System</em>' reference list.
 	 * @see tau.systemengineering.STPAsec.STPAsecPackage#getSystemLevelHazard_System()
 	 * @model required="true"
 	 * @generated
 	 */
-	tau.systemengineering.STPAsec.System getSystem();
-
-	/**
-	 * Sets the value of the '{@link tau.systemengineering.STPAsec.SystemLevelHazard#getSystem <em>System</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>System</em>' reference.
-	 * @see #getSystem()
-	 * @generated
-	 */
-	void setSystem(tau.systemengineering.STPAsec.System value);
+	EList<tau.systemengineering.STPAsec.System> getSystem();
 
 	/**
 	 * Returns the value of the '<em><b>ICA</b></em>' reference list.

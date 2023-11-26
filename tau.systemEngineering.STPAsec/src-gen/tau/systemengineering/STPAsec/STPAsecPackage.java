@@ -807,7 +807,7 @@ public interface STPAsecPackage extends EPackage {
 	int SYSTEM_LEVEL_HAZARD__CONSTRAINT = 4;
 
 	/**
-	 * The feature id for the '<em><b>System</b></em>' reference.
+	 * The feature id for the '<em><b>System</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1807,10 +1807,10 @@ public interface STPAsecPackage extends EPackage {
 	EReference getSystemLevelHazard_Constraint();
 
 	/**
-	 * Returns the meta object for the reference '{@link tau.systemengineering.STPAsec.SystemLevelHazard#getSystem <em>System</em>}'.
+	 * Returns the meta object for the reference list '{@link tau.systemengineering.STPAsec.SystemLevelHazard#getSystem <em>System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>System</em>'.
+	 * @return the meta object for the reference list '<em>System</em>'.
 	 * @see tau.systemengineering.STPAsec.SystemLevelHazard#getSystem()
 	 * @see #getSystemLevelHazard()
 	 * @generated
@@ -2629,7 +2629,7 @@ public interface STPAsecPackage extends EPackage {
 		EReference SYSTEM_LEVEL_HAZARD__CONSTRAINT = eINSTANCE.getSystemLevelHazard_Constraint();
 
 		/**
-		 * The meta object literal for the '<em><b>System</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>System</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -6,9 +6,10 @@
     <semanticResources>STPASec.xmi</semanticResources>
     <semanticResources>PACS.xmi</semanticResources>
     <semanticResources>STPASec1.xmi</semanticResources>
+    <semanticResources>SUAS.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_KdSX8PFmEe2GtYKjU7tmFw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_8yfGIBZXEe6_kMP0VmsHLg" name="STPAsec class diagram" repPath="#_8yVVIBZXEe6_kMP0VmsHLg" changeId="1700835442316">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_8yfGIBZXEe6_kMP0VmsHLg" name="STPAsec class diagram" repPath="#_8yVVIBZXEe6_kMP0VmsHLg" changeId="1700995421472">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="STPAsec.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -1638,7 +1639,7 @@
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_aqrUViJcEe6q7JewsXXUmQ" name="[1..1] system" sourceNode="_uggoYCJXEe6q7JewsXXUmQ" targetNode="_PmElwCIxEe6q7JewsXXUmQ">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_aqrUViJcEe6q7JewsXXUmQ" name="[1..*] system" sourceNode="_uggoYCJXEe6q7JewsXXUmQ" targetNode="_PmElwCIxEe6q7JewsXXUmQ">
       <target xmi:type="ecore:EReference" href="STPAsec.ecore#//SystemLevelHazard/system"/>
       <semanticElements xmi:type="ecore:EReference" href="STPAsec.ecore#//SystemLevelHazard/system"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_ejzSVorJEe6_ceG3cXROBA" description="_-kJxUDgzEe6v2cZZZQCIfA" routingStyle="manhattan" strokeColor="0,0,0">

@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<STPAsec:STPASec
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:STPAsec="http://www.example.org/STPAsec">
+  <system Id="14"
+      name="SUAS"
+      goal="provide close and timely short range visual reconnaissance capability for ground elements in combat and other tactical operators &#xA;&#xD;timely short range visual reconnaissance capability&#xD;for ground elements in combat and other tactical&#xD;operators  ">
+    <controAction
+        id="30"
+        name="Position MxI&#xA;"/>
+    <controAction
+        id="31"
+        name="Velocity Mx!&#xA;"/>
+    <controAction
+        id="32"
+        name="Imagery Mx&#xA;"/>
+    <controAction
+        id="33"
+        name="Configure Mission Scenario&#xA;"/>
+    <controAction
+        id="34"
+        name="Flight Mode I&#xA;"/>
+    <controAction
+        id="35"
+        name="Imaging Mode&#xA;"/>
+    <controAction
+        id="36"
+        name="Loss Link Mode&#xA;"/>
+    <controAction
+        id="49"
+        name="Encrypt/Decrypt transmissions"/>
+    <controAction
+        id="51"
+        name="Receive/Process Information"/>
+    <controAction
+        id="52"
+        name="Data Transmission"/>
+    <controAction
+        id="53"
+        name="Launch/Recovery"/>
+    <controAction
+        id="54"
+        name="Mission Planning"/>
+    <controAction
+        id="55"
+        name="Mission Management"/>
+    <feedback
+        id="37"
+        name="Location"/>
+    <feedback
+        id="38"
+        name="Imagery"/>
+    <feedback
+        id="39"
+        name="Health &amp; Status&#xA;"/>
+    <feedback
+        id="40"
+        name="Airspeed"/>
+    <feedback
+        id="41"
+        name="Altitude"/>
+    <controlLoop>
+      <cmdflow
+          id="23"
+          performedBy="//@system.0/@subSystem.1"
+          controledBy="//@system.0/@subSystem.0"
+          cmd="//@system.0/@controAction.0 //@system.0/@controAction.1 //@system.0/@controAction.2 //@system.0/@controAction.3 //@system.0/@controAction.4 //@system.0/@controAction.5 //@system.0/@controAction.6"/>
+      <cmdflow
+          id="24"
+          performedBy="//@system.0/@subSystem.2/@subSystem.0"
+          controledBy="//@system.0/@subSystem.1"
+          cmd="//@system.0/@controAction.0 //@system.0/@controAction.1 //@system.0/@controAction.2 //@system.0/@controAction.3 //@system.0/@controAction.4 //@system.0/@controAction.5 //@system.0/@controAction.6"/>
+      <feedbackflow
+          id="42"
+          feedbackSender="//@system.0/@subSystem.1"
+          feedbackReceiver="//@system.0/@subSystem.0"
+          feedback="//@system.0/@feedback.0 //@system.0/@feedback.1 //@system.0/@feedback.2 //@system.0/@feedback.3 //@system.0/@feedback.4"/>
+      <feedbackflow
+          id="43"
+          feedbackSender="//@system.0/@subSystem.2/@subSystem.0"
+          feedbackReceiver="//@system.0/@subSystem.1"
+          feedback="//@system.0/@feedback.0 //@system.0/@feedback.1 //@system.0/@feedback.2 //@system.0/@feedback.3 //@system.0/@feedback.4"/>
+    </controlLoop>
+    <subSystem
+        Id="15"
+        name="Mission Operator&#xA;"
+        receivesFeedback="//@system.0/@controlLoop.0/@feedbackflow.0"
+        controls="//@system.0/@controlLoop.0/@cmdflow.0"/>
+    <subSystem
+        Id="16"
+        name="Ground Control Station&#xA;"
+        goal="Ground Control Station&#xA;"
+        receivesFeedback="//@system.0/@controlLoop.0/@feedbackflow.1"
+        sendsFeedback="//@system.0/@controlLoop.0/@feedbackflow.0"
+        controls="//@system.0/@controlLoop.0/@cmdflow.1"
+        performs="//@system.0/@controlLoop.0/@cmdflow.0"/>
+    <subSystem
+        Id="17"
+        name="small unmanned aerial system"
+        goal="small unmanned aerial system physical">
+      <controAction
+          id="48"
+          name="Health/Status mode"/>
+      <controAction
+          id="50"
+          name="Transmit/Distribute commands between systems"/>
+      <feedback
+          id="60"
+          name="provide data"/>
+      <controlLoop>
+        <cmdflow
+            id="25"
+            performedBy="//@system.0/@subSystem.2/@subSystem.1"
+            controledBy="//@system.0/@subSystem.2/@subSystem.0"/>
+        <cmdflow
+            id="26"
+            performedBy="//@system.0/@subSystem.2/@subSystem.2"
+            controledBy="//@system.0/@subSystem.2/@subSystem.0"/>
+        <cmdflow
+            id="27"
+            performedBy="//@system.0/@subSystem.2/@subSystem.3"
+            controledBy="//@system.0/@subSystem.2/@subSystem.0"/>
+        <cmdflow
+            id="28"
+            performedBy="//@system.0/@subSystem.2/@subSystem.4"
+            controledBy="//@system.0/@subSystem.2/@subSystem.0"/>
+        <feedbackflow
+            id="44"
+            feedbackSender="//@system.0/@subSystem.2/@subSystem.1"
+            feedbackReceiver="//@system.0/@subSystem.2/@subSystem.0"/>
+        <feedbackflow
+            id="45"
+            feedbackSender="//@system.0/@subSystem.2/@subSystem.2"
+            feedbackReceiver="//@system.0/@subSystem.2/@subSystem.0"/>
+        <feedbackflow
+            id="46"
+            feedbackSender="//@system.0/@subSystem.2/@subSystem.3"
+            feedbackReceiver="//@system.0/@subSystem.2/@subSystem.0"/>
+        <feedbackflow
+            id="47"
+            feedbackSender="//@system.0/@subSystem.2/@subSystem.4"
+            feedbackReceiver="//@system.0/@subSystem.2/@subSystem.0"/>
+      </controlLoop>
+      <subSystem
+          Id="18"
+          name="Flight Computer"
+          goal="Flight Computer"
+          receivesFeedback="//@system.0/@subSystem.2/@controlLoop.0/@feedbackflow.0 //@system.0/@subSystem.2/@controlLoop.0/@feedbackflow.1 //@system.0/@subSystem.2/@controlLoop.0/@feedbackflow.2 //@system.0/@subSystem.2/@controlLoop.0/@feedbackflow.3"
+          sendsFeedback="//@system.0/@controlLoop.0/@feedbackflow.1"
+          controls="//@system.0/@subSystem.2/@controlLoop.0/@cmdflow.1 //@system.0/@subSystem.2/@controlLoop.0/@cmdflow.2 //@system.0/@subSystem.2/@controlLoop.0/@cmdflow.3 //@system.0/@subSystem.2/@controlLoop.0/@cmdflow.0"
+          performs="//@system.0/@controlLoop.0/@cmdflow.1"/>
+      <subSystem
+          Id="19"
+          name="Camera Subsystem&#xA;"
+          goal="Camera Subsystem&#xA;"
+          sendsFeedback="//@system.0/@subSystem.2/@controlLoop.0/@feedbackflow.0"
+          performs="//@system.0/@subSystem.2/@controlLoop.0/@cmdflow.0"/>
+      <subSystem
+          Id="20"
+          name="Flight Subsystem&#xA;"
+          goal="Flight Subsystem&#xA;"
+          sendsFeedback="//@system.0/@subSystem.2/@controlLoop.0/@feedbackflow.1"
+          performs="//@system.0/@subSystem.2/@controlLoop.0/@cmdflow.1"/>
+      <subSystem
+          Id="21"
+          name="Navigation Subsystem&#xA;"
+          goal="Navigation Subsystem&#xA;"
+          sendsFeedback="//@system.0/@subSystem.2/@controlLoop.0/@feedbackflow.2"
+          performs="//@system.0/@subSystem.2/@controlLoop.0/@cmdflow.2"/>
+      <subSystem
+          Id="22"
+          name="Communications Subsystem"
+          goal="Communications Subsystem"
+          sendsFeedback="//@system.0/@subSystem.2/@controlLoop.0/@feedbackflow.3"
+          performs="//@system.0/@subSystem.2/@controlLoop.0/@cmdflow.3"/>
+    </subSystem>
+  </system>
+  <loss id="1"
+      name="L1: Loss of sensitive information&#xA;L1 -  Loss of sensitive&#xA;information"
+      traceableTo="//@systemLevelHazard.2 //@systemLevelHazard.4"/>
+  <loss id="2"
+      name="L2 -  Loss of imaging capability/visual&#xA;capability/visual"
+      traceableTo="//@systemLevelHazard.0 //@systemLevelHazard.1 //@systemLevelHazard.2"/>
+  <loss id="3"
+      name="L3 - Loss of life"
+      traceableTo="//@systemLevelHazard.0 //@systemLevelHazard.1 //@systemLevelHazard.3"/>
+  <systemLevelHazard
+      id="4"
+      leadsTo="//@loss.1 //@loss.2"
+      unsecureCondition="H1 - Violating minimum separation requirements when in flight.&#xA;requirements when in flight."
+      constraint="//@SystemLevelConstraint.0"
+      system="//@system.0/@subSystem.2"
+      ICA="//@insecureControlAction.0 //@insecureControlAction.1 //@insecureControlAction.2 //@insecureControlAction.3 //@insecureControlAction.4 //@insecureControlAction.13 //@insecureControlAction.14 //@insecureControlAction.15 //@insecureControlAction.16 //@insecureControlAction.19 //@insecureControlAction.22"/>
+  <systemLevelHazard
+      id="5"
+      leadsTo="//@loss.1 //@loss.2"
+      unsecureCondition="H2 - SUAS departure from controlled flight&#xA;flight."
+      constraint="//@SystemLevelConstraint.1"
+      system="//@system.0/@subSystem.2"
+      ICA="//@insecureControlAction.0 //@insecureControlAction.1 //@insecureControlAction.2 //@insecureControlAction.3 //@insecureControlAction.4 //@insecureControlAction.6 //@insecureControlAction.7 //@insecureControlAction.8 //@insecureControlAction.9 //@insecureControlAction.12 //@insecureControlAction.13 //@insecureControlAction.14 //@insecureControlAction.15 //@insecureControlAction.16 //@insecureControlAction.19 //@insecureControlAction.22 //@insecureControlAction.21"/>
+  <systemLevelHazard
+      id="6"
+      leadsTo="//@loss.0 //@loss.1"
+      unsecureCondition="H3 -  Loss of communication in flight or during a handoff.&#xA;flight or during a handoff."
+      constraint="//@SystemLevelConstraint.2"
+      system="//@system.0/@subSystem.2"
+      ICA="//@insecureControlAction.0 //@insecureControlAction.1 //@insecureControlAction.2 //@insecureControlAction.5 //@insecureControlAction.10 //@insecureControlAction.11 //@insecureControlAction.16 //@insecureControlAction.20"/>
+  <systemLevelHazard
+      id="7"
+      leadsTo="//@loss.2"
+      unsecureCondition="H4 - Loss of positive control of SUAS in flight or during a handoff&#xA;flight or during a handoff&#xA;flight or during a handoff&#xA;&#xA;flight or during a handoff"
+      constraint="//@SystemLevelConstraint.3"
+      system="//@system.0/@subSystem.2"
+      ICA="//@insecureControlAction.0 //@insecureControlAction.1 //@insecureControlAction.2 //@insecureControlAction.5 //@insecureControlAction.6 //@insecureControlAction.7 //@insecureControlAction.8 //@insecureControlAction.10 //@insecureControlAction.11 //@insecureControlAction.12 //@insecureControlAction.17 //@insecureControlAction.16 //@insecureControlAction.19 //@insecureControlAction.18 //@insecureControlAction.21"/>
+  <systemLevelHazard
+      id="8"
+      leadsTo="//@loss.0"
+      unsecureCondition="H5 - Exposure of sensitive information under the wrong conditions"
+      constraint="//@SystemLevelConstraint.4"
+      system="//@system.0/@subSystem.1 //@system.0/@subSystem.2"
+      ICA="//@insecureControlAction.0 //@insecureControlAction.1 //@insecureControlAction.2 //@insecureControlAction.4 //@insecureControlAction.6 //@insecureControlAction.7 //@insecureControlAction.8 //@insecureControlAction.10 //@insecureControlAction.11 //@insecureControlAction.12 //@insecureControlAction.17 //@insecureControlAction.16 //@insecureControlAction.20 //@insecureControlAction.18"/>
+  <SystemLevelConstraint
+      id="9"
+      conditionToEnforce="The system shall not exceed a minimum specified safe separation distance during operation"
+      traceableTo="//@systemLevelHazard.0"/>
+  <SystemLevelConstraint
+      id="10"
+      conditionToEnforce="The system shall accept no flight control inputs exceeding specified safe bank angle or pitch"
+      traceableTo="//@systemLevelHazard.1"/>
+  <SystemLevelConstraint
+      id="11"
+      conditionToEnforce="The system shall feature a standby emergency link functionality to the controller and shall divert to this mode immediately upon losing connection with the primary link.&#xA;controller and shall divert to this mode immediately upon losing connection with the primary link."
+      traceableTo="//@systemLevelHazard.2"/>
+  <SystemLevelConstraint
+      id="12"
+      conditionToEnforce="Thesystemshallconnecttothedesired controller within a maximum specified time requirement after handoff, and shall divert to an alternate control link if handoff fails"
+      traceableTo="//@systemLevelHazard.3"/>
+  <SystemLevelConstraint
+      id="13"
+      conditionToEnforce="The system shall have an encrypted datalink connection, and this connection shall only connect to active controller by default."
+      traceableTo="//@systemLevelHazard.4"/>
+  <scenario
+      ICA="//@insecureControlAction.10"
+      system="//@system.0/@subSystem.2"
+      id="86"
+      context="loss of communications between the Operator and the Aircraft due to cyber-attack by adversaries on the connection"/>
+  <scenario
+      ICA="//@insecureControlAction.5"
+      system="//@system.0/@subSystem.2"
+      id="85"
+      context="the command for the SoI to climb or descend is applied too long or not long enough due to the human operator falling behind the aircraft"/>
+  <insecureControlAction
+      context="Not Providing Mission Management is hazardous if in a critical phase of flight"
+      source="//@system.0/@subSystem.0"
+      linkToHazrd="//@systemLevelHazard.0 //@systemLevelHazard.1 //@systemLevelHazard.2 //@systemLevelHazard.3 //@systemLevelHazard.4"
+      id="61"
+      controlAction="//@system.0/@controAction.12"/>
+  <insecureControlAction
+      type="ToEarlyToLate"
+      context="Providing Mission Management is hazardous if done too early or too late in a critical phase of flight"
+      source="//@system.0/@subSystem.0"
+      linkToHazrd="//@systemLevelHazard.0 //@systemLevelHazard.1 //@systemLevelHazard.2 //@systemLevelHazard.3 //@systemLevelHazard.4"
+      id="62"
+      controlAction="//@system.0/@controAction.12"/>
+  <insecureControlAction
+      type="StopTooSoonAppliedToLong"
+      context="Providing Mission Management is hazardous if stopped too soon or applied too long in a critical phase of flight"
+      source="//@system.0/@subSystem.0"
+      linkToHazrd="//@systemLevelHazard.0 //@systemLevelHazard.1 //@systemLevelHazard.2 //@systemLevelHazard.3 //@systemLevelHazard.4"
+      id="63"
+      controlAction="//@system.0/@controAction.12"/>
+  <insecureControlAction
+      context="Not Providing Mission Planning is hazardous in almost all mission scenarios"
+      source="//@system.0/@subSystem.0"
+      linkToHazrd="//@systemLevelHazard.0 //@systemLevelHazard.1"
+      id="64"
+      controlAction="//@system.0/@controAction.11"/>
+  <insecureControlAction
+      type="ProvidingCausesHazard"
+      context="Providing Mission Planning is hazardous if attempted using incorrect or outdated data"
+      source="//@system.0/@subSystem.0"
+      linkToHazrd="//@systemLevelHazard.0 //@systemLevelHazard.1 //@systemLevelHazard.4"
+      id="65"
+      controlAction="//@system.0/@controAction.11"/>
+  <insecureControlAction
+      type="ToEarlyToLate"
+      context="Providing Mission Planning is hazardous if done in the wrong order in preflight"
+      source="//@system.0/@subSystem.0"
+      linkToHazrd="//@systemLevelHazard.2 //@systemLevelHazard.3"
+      id="66"
+      controlAction="//@system.0/@controAction.11"/>
+  <insecureControlAction
+      context="Not Providing Launch/Recovery is hazardous if in critical phase of launch or recover"
+      source="//@system.0/@subSystem.0"
+      linkToHazrd="//@systemLevelHazard.1 //@systemLevelHazard.3 //@systemLevelHazard.4"
+      id="67"
+      controlAction="//@system.0/@controAction.10"/>
+  <insecureControlAction
+      type="ProvidingCausesHazard"
+      context="Providing Launch/Recov ery is hazardous if conducted outside of operational limits of aircraft"
+      source="//@system.0/@subSystem.0"
+      linkToHazrd="//@systemLevelHazard.1 //@systemLevelHazard.3 //@systemLevelHazard.4"
+      id="68"
+      controlAction="//@system.0/@controAction.10"/>
+  <insecureControlAction
+      type="ToEarlyToLate"
+      context="Providing Launch/Recovery is hazardous if done too early, too late, or in the wrong order outside of operational limits"
+      source="//@system.0/@subSystem.0"
+      linkToHazrd="//@systemLevelHazard.1 //@systemLevelHazard.3 //@systemLevelHazard.4"
+      id="69"
+      controlAction="//@system.0/@controAction.10"/>
+  <insecureControlAction
+      type="StopTooSoonAppliedToLong"
+      context="Providing Launch/Recover y is hazardous if stopped too soon or applied too long when in critical phase of launch or recovery action"
+      source="//@system.0/@subSystem.0"
+      linkToHazrd="//@systemLevelHazard.1"
+      id="70"
+      controlAction="//@system.0/@controAction.10"/>
+  <insecureControlAction
+      context="Not Providing Data Transmission is hazardous if aircraft is in critical phase of flight or mission&#x9;"
+      source="//@system.0/@subSystem.1"
+      linkToHazrd="//@systemLevelHazard.2 //@systemLevelHazard.3 //@systemLevelHazard.4"
+      id="71"
+      controlAction="//@system.0/@controAction.9"/>
+  <insecureControlAction
+      type="ProvidingCausesHazard"
+      context="Providing Data Transmission is hazardous if data is malicious or compromised"
+      source="//@system.0/@subSystem.1"
+      linkToHazrd="//@systemLevelHazard.2 //@systemLevelHazard.3 //@systemLevelHazard.4"
+      id="72"
+      controlAction="//@system.0/@controAction.9"/>
+  <insecureControlAction
+      type="ToEarlyToLate"
+      context="Providing Data Transmission is hazardous if given in the wrong order in a critical phase of flight"
+      source="//@system.0/@subSystem.1"
+      linkToHazrd="//@systemLevelHazard.1 //@systemLevelHazard.3 //@systemLevelHazard.4"
+      id="73"
+      controlAction="//@system.0/@controAction.9"/>
+  <insecureControlAction
+      context="Not Providing Receive/Process Information is hazardous if in a critical phase of"
+      source="//@system.0/@subSystem.1"
+      linkToHazrd="//@systemLevelHazard.0 //@systemLevelHazard.1"
+      id="74"
+      controlAction="//@system.0/@controAction.8"/>
+  <insecureControlAction
+      type="ToEarlyToLate"
+      context="Providing Receive/Process Information is hazardous if given too early, too late, or in the wrong order in a critical phase of fligh"
+      source="//@system.0/@subSystem.1"
+      linkToHazrd="//@systemLevelHazard.0 //@systemLevelHazard.1"
+      id="75"
+      controlAction="//@system.0/@controAction.8"/>
+  <insecureControlAction
+      type="StopTooSoonAppliedToLong"
+      context="Providing Receive/Process Information is hazardous if given stopped too early or applied too long in a critical phase of flight"
+      source="//@system.0/@subSystem.1"
+      linkToHazrd="//@systemLevelHazard.0 //@systemLevelHazard.1"
+      id="76"
+      controlAction="//@system.0/@controAction.8"/>
+  <insecureControlAction
+      context="Not Providing Transmit/Distribut e Commands Between Systems is hazardous if in a critical phase of flight."
+      source="//@system.0/@subSystem.2/@subSystem.0"
+      linkToHazrd="//@systemLevelHazard.0 //@systemLevelHazard.1 //@systemLevelHazard.2 //@systemLevelHazard.3 //@systemLevelHazard.4"
+      id="77"
+      controlAction="//@system.0/@subSystem.2/@controAction.1"
+      cmdflow="//@system.0/@subSystem.2/@controlLoop.0/@cmdflow.0"/>
+  <insecureControlAction
+      type="ToEarlyToLate"
+      context="Providing Transmit/Distribut e Commands Between Systems is hazardous if commands are given too early, too late, or in the wrong order in critical phases of flight "
+      source="//@system.0/@subSystem.2/@subSystem.0"
+      linkToHazrd="//@systemLevelHazard.3 //@systemLevelHazard.4"
+      id="78"
+      controlAction="//@system.0/@subSystem.2/@controAction.1"
+      cmdflow="//@system.0/@subSystem.2/@controlLoop.0/@cmdflow.0"/>
+  <insecureControlAction
+      context="Not Providing Encrypt/Decrypt Transmission is hazardous if flying near enemies or hostiles"
+      source="//@system.0/@subSystem.1"
+      linkToHazrd="//@systemLevelHazard.3 //@systemLevelHazard.4"
+      id="79"
+      controlAction="//@system.0/@controAction.7"/>
+  <insecureControlAction
+      type="ProvidingCausesHazard"
+      context="Providing Encrypt/Decry pt Transmission is hazardous if the time to encrypt/decryp t transmissions prevents executing a flight operation in a timely manner"
+      source="//@system.0/@subSystem.1"
+      linkToHazrd="//@systemLevelHazard.0 //@systemLevelHazard.1 //@systemLevelHazard.3"
+      id="80"
+      controlAction="//@system.0/@controAction.7"/>
+  <insecureControlAction
+      type="ToEarlyToLate"
+      context="Providing Encrypt/ Decrypt Transmission is hazardous if done in the wrong order in flight "
+      source="//@system.0/@subSystem.1"
+      linkToHazrd="//@systemLevelHazard.2 //@systemLevelHazard.4"
+      id="81"
+      controlAction="//@system.0/@controAction.7"/>
+  <insecureControlAction
+      context="Not Providing Health/Status Updates is hazardous during critical flight and navigation operations"
+      source="//@system.0/@subSystem.2/@subSystem.0"
+      linkToHazrd="//@systemLevelHazard.1 //@systemLevelHazard.3"
+      id="82"
+      controlAction="//@system.0/@subSystem.2/@controAction.0"
+      cmdflow="//@system.0/@subSystem.2/@controlLoop.0/@cmdflow.0"/>
+  <insecureControlAction
+      type="ToEarlyToLate"
+      context="Providing Receive/Process Information is hazardous if given too late or in the wrong order in a critical phase of flight"
+      source="//@system.0/@subSystem.2/@subSystem.0"
+      linkToHazrd="//@systemLevelHazard.0 //@systemLevelHazard.1"
+      id="83"
+      controlAction="//@system.0/@subSystem.2/@controAction.0"
+      cmdflow="//@system.0/@subSystem.2/@controlLoop.0/@cmdflow.0"/>
+</STPAsec:STPASec>

@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -116,14 +117,14 @@ public class SystemLevelHazardImpl extends MinimalEObjectImpl.Container implemen
 	protected EList<SystemLevelConstraint> constraint;
 
 	/**
-	 * The cached value of the '{@link #getSystem() <em>System</em>}' reference.
+	 * The cached value of the '{@link #getSystem() <em>System</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSystem()
 	 * @generated
 	 * @ordered
 	 */
-	protected tau.systemengineering.STPAsec.System system;
+	protected EList<tau.systemengineering.STPAsec.System> system;
 
 	/**
 	 * The cached value of the '{@link #getICA() <em>ICA</em>}' reference list.
@@ -242,39 +243,12 @@ public class SystemLevelHazardImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public tau.systemengineering.STPAsec.System getSystem() {
-		if (system != null && system.eIsProxy()) {
-			InternalEObject oldSystem = (InternalEObject) system;
-			system = (tau.systemengineering.STPAsec.System) eResolveProxy(oldSystem);
-			if (system != oldSystem) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							STPAsecPackage.SYSTEM_LEVEL_HAZARD__SYSTEM, oldSystem, system));
-			}
+	public EList<tau.systemengineering.STPAsec.System> getSystem() {
+		if (system == null) {
+			system = new EObjectResolvingEList<tau.systemengineering.STPAsec.System>(
+					tau.systemengineering.STPAsec.System.class, this, STPAsecPackage.SYSTEM_LEVEL_HAZARD__SYSTEM);
 		}
 		return system;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public tau.systemengineering.STPAsec.System basicGetSystem() {
-		return system;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSystem(tau.systemengineering.STPAsec.System newSystem) {
-		tau.systemengineering.STPAsec.System oldSystem = system;
-		system = newSystem;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, STPAsecPackage.SYSTEM_LEVEL_HAZARD__SYSTEM, oldSystem,
-					system));
 	}
 
 	/**
@@ -349,9 +323,7 @@ public class SystemLevelHazardImpl extends MinimalEObjectImpl.Container implemen
 		case STPAsecPackage.SYSTEM_LEVEL_HAZARD__CONSTRAINT:
 			return getConstraint();
 		case STPAsecPackage.SYSTEM_LEVEL_HAZARD__SYSTEM:
-			if (resolve)
-				return getSystem();
-			return basicGetSystem();
+			return getSystem();
 		case STPAsecPackage.SYSTEM_LEVEL_HAZARD__ICA:
 			return getICA();
 		}
@@ -386,7 +358,8 @@ public class SystemLevelHazardImpl extends MinimalEObjectImpl.Container implemen
 			getConstraint().addAll((Collection<? extends SystemLevelConstraint>) newValue);
 			return;
 		case STPAsecPackage.SYSTEM_LEVEL_HAZARD__SYSTEM:
-			setSystem((tau.systemengineering.STPAsec.System) newValue);
+			getSystem().clear();
+			getSystem().addAll((Collection<? extends tau.systemengineering.STPAsec.System>) newValue);
 			return;
 		case STPAsecPackage.SYSTEM_LEVEL_HAZARD__ICA:
 			getICA().clear();
@@ -420,7 +393,7 @@ public class SystemLevelHazardImpl extends MinimalEObjectImpl.Container implemen
 			getConstraint().clear();
 			return;
 		case STPAsecPackage.SYSTEM_LEVEL_HAZARD__SYSTEM:
-			setSystem((tau.systemengineering.STPAsec.System) null);
+			getSystem().clear();
 			return;
 		case STPAsecPackage.SYSTEM_LEVEL_HAZARD__ICA:
 			getICA().clear();
@@ -449,7 +422,7 @@ public class SystemLevelHazardImpl extends MinimalEObjectImpl.Container implemen
 		case STPAsecPackage.SYSTEM_LEVEL_HAZARD__CONSTRAINT:
 			return constraint != null && !constraint.isEmpty();
 		case STPAsecPackage.SYSTEM_LEVEL_HAZARD__SYSTEM:
-			return system != null;
+			return system != null && !system.isEmpty();
 		case STPAsecPackage.SYSTEM_LEVEL_HAZARD__ICA:
 			return ica != null && !ica.isEmpty();
 		}
